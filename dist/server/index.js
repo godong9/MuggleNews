@@ -62,7 +62,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/Users/godong9/Desktop/Project/MuggleNews";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 37);
+/******/ 	return __webpack_require__(__webpack_require__.s = 38);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -93,7 +93,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var common_1 = __webpack_require__(27);
+var common_1 = __webpack_require__(28);
 var router_1 = __webpack_require__(1);
 var forms_1 = __webpack_require__(8);
 var api_service_1 = __webpack_require__(6);
@@ -198,7 +198,7 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'home',
-            template: __webpack_require__(26)
+            template: __webpack_require__(27)
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof api_service_1.ModelService !== 'undefined' && api_service_1.ModelService) === 'function' && _a) || Object])
     ], HomeComponent);
@@ -224,14 +224,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(28);
-var Observable_1 = __webpack_require__(30);
-__webpack_require__(32);
-__webpack_require__(31);
-__webpack_require__(35);
+var http_1 = __webpack_require__(29);
+var Observable_1 = __webpack_require__(31);
 __webpack_require__(33);
-__webpack_require__(34);
+__webpack_require__(32);
 __webpack_require__(36);
+__webpack_require__(34);
+__webpack_require__(35);
+__webpack_require__(37);
 var cache_service_1 = __webpack_require__(7);
 function hashCode(str) {
     var hash = 0;
@@ -426,7 +426,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 // Fix Material Support
-var platform_browser_1 = __webpack_require__(29);
+var platform_browser_1 = __webpack_require__(30);
 function universalMaterialSupports(eventName) { return Boolean(this.isCustomEvent(eventName)); }
 platform_browser_1.__platform_browser_private__.HammerGesturesPlugin.prototype.supports = universalMaterialSupports;
 // End Fix Material Support
@@ -696,8 +696,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
-            styles: [__webpack_require__(38)],
-            template: __webpack_require__(39)
+            styles: [__webpack_require__(25)],
+            template: __webpack_require__(26)
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -820,74 +820,85 @@ exports.fakeDataBase = {
 
 
 /***/ },
-/* 25 */,
+/* 25 */
+/***/ function(module, exports) {
+
+module.exports = ".active {\n    background-color: gray;\n    color: white;\n}"
+
+/***/ },
 /* 26 */
 /***/ function(module, exports) {
 
-module.exports = "<div>\n    Test Home\n</div>"
+module.exports = "<nav>\n    <a routerLink=\"/home\" routerLinkActive=\"active\">Home</a>\n    <a routerLink=\"/about\" routerLinkActive=\"active\">About</a>\n</nav>\n\n<p>Hello Angular Universal App</p>\n\n<router-outlet></router-outlet>"
 
 /***/ },
 /* 27 */
 /***/ function(module, exports) {
 
-module.exports = require("@angular/common");
+module.exports = "<div>\n    Test Home\n</div>"
 
 /***/ },
 /* 28 */
 /***/ function(module, exports) {
 
-module.exports = require("@angular/http");
+module.exports = require("@angular/common");
 
 /***/ },
 /* 29 */
 /***/ function(module, exports) {
 
-module.exports = require("@angular/platform-browser");
+module.exports = require("@angular/http");
 
 /***/ },
 /* 30 */
 /***/ function(module, exports) {
 
-module.exports = require("rxjs/Observable");
+module.exports = require("@angular/platform-browser");
 
 /***/ },
 /* 31 */
 /***/ function(module, exports) {
 
-module.exports = require("rxjs/add/observable/of");
+module.exports = require("rxjs/Observable");
 
 /***/ },
 /* 32 */
 /***/ function(module, exports) {
 
-module.exports = require("rxjs/add/observable/throw");
+module.exports = require("rxjs/add/observable/of");
 
 /***/ },
 /* 33 */
 /***/ function(module, exports) {
 
-module.exports = require("rxjs/add/operator/catch");
+module.exports = require("rxjs/add/observable/throw");
 
 /***/ },
 /* 34 */
 /***/ function(module, exports) {
 
-module.exports = require("rxjs/add/operator/do");
+module.exports = require("rxjs/add/operator/catch");
 
 /***/ },
 /* 35 */
 /***/ function(module, exports) {
 
-module.exports = require("rxjs/add/operator/map");
+module.exports = require("rxjs/add/operator/do");
 
 /***/ },
 /* 36 */
 /***/ function(module, exports) {
 
-module.exports = require("rxjs/add/operator/share");
+module.exports = require("rxjs/add/operator/map");
 
 /***/ },
 /* 37 */
+/***/ function(module, exports) {
+
+module.exports = require("rxjs/add/operator/share");
+
+/***/ },
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -964,18 +975,6 @@ var server = app.listen(app.get('port'), function () {
 });
 
 /* WEBPACK VAR INJECTION */}.call(exports, "src"))
-
-/***/ },
-/* 38 */
-/***/ function(module, exports) {
-
-module.exports = ".active {\n    background-color: gray;\n    color: white;\n}"
-
-/***/ },
-/* 39 */
-/***/ function(module, exports) {
-
-module.exports = "<nav>\n    <a routerLink=\"/home\" routerLinkActive=\"active\">Home</a>\n    <a routerLink=\"/about\" routerLinkActive=\"active\">About</a>\n</nav>\n\n<p>Hello Angular Universal App</p>\n\n<router-outlet></router-outlet>"
 
 /***/ }
 /******/ ]);
