@@ -58,7 +58,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/Users/godong9/Desktop/Project/MuggleNews/server";
+/******/ 	__webpack_require__.p = "/Users/godong9/Desktop/Project/MuggleNews";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 561);
@@ -70009,7 +70009,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
-            styles: ["\n   .active {\n     background-color: gray;\n     color: white;\n   }\n  "],
+            styles: [__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./css/app.component.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))],
             template: "\n    <nav>\n      <a routerLink=\"/home\" routerLinkActive=\"active\">Home</a>\n      <a routerLink=\"/about\" routerLinkActive=\"active\">About</a>\n    </nav>\n\n    <p>Hello Angular Universal App</p>\n\n    <router-outlet></router-outlet>\n  "
         }), 
         __metadata('design:paramtypes', [])
@@ -82614,7 +82614,7 @@ module.exports = {
 				"spec": ">=6.0.0 <7.0.0",
 				"type": "range"
 			},
-			"/Users/godong9/Desktop/Project/MuggleNews/server/node_modules/browserify-sign"
+			"/Users/godong9/Desktop/Project/MuggleNews/node_modules/browserify-sign"
 		]
 	],
 	"_from": "elliptic@>=6.0.0 <7.0.0",
@@ -82649,7 +82649,7 @@ module.exports = {
 	"_shasum": "e4c81e0829cf0a65ab70e998b8232723b5c1bc48",
 	"_shrinkwrap": null,
 	"_spec": "elliptic@^6.0.0",
-	"_where": "/Users/godong9/Desktop/Project/MuggleNews/server/node_modules/browserify-sign",
+	"_where": "/Users/godong9/Desktop/Project/MuggleNews/node_modules/browserify-sign",
 	"author": {
 		"name": "Fedor Indutny",
 		"email": "fedor@indutny.com"

@@ -2,12 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app',
-  styles: [`
-   .active {
-     background-color: gray;
-     color: white;
-   }
-  `],
+  styleUrls: ['css/app.component.css'],
   template: `
     <nav>
       <a routerLink="/home" routerLinkActive="active">Home</a>

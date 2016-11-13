@@ -59,7 +59,7 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/Users/godong9/Desktop/Project/MuggleNews/server";
+/******/ 	__webpack_require__.p = "/Users/godong9/Desktop/Project/MuggleNews";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 35);
@@ -696,7 +696,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
-            styles: ["\n   .active {\n     background-color: gray;\n     color: white;\n   }\n  "],
+            styles: [__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./css/app.component.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))],
             template: "\n    <nav>\n      <a routerLink=\"/home\" routerLinkActive=\"active\">Home</a>\n      <a routerLink=\"/about\" routerLinkActive=\"active\">About</a>\n    </nav>\n\n    <p>Hello Angular Universal App</p>\n\n    <router-outlet></router-outlet>\n  "
         }), 
         __metadata('design:paramtypes', [])
