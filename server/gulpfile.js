@@ -6,8 +6,7 @@ const jshint = require('gulp-jshint');
 const stylish = require('jshint-stylish');
 const mocha = require('gulp-mocha');
 const uglify = require('gulp-uglify');
-const minifyCss = require('gulp-minify-css');
-const nodemon = require('nodemon');
+const minifyCss = require('gulp-clean-css');
 const spawn = require('child_process').spawn;
 
 const serverJsFiles = ['./config/**/*.js', './routes/**/*.js', './models/**/*.js', './db/**/*.js', './controllers/**/*.js', './services/**/*.js'];
