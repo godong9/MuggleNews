@@ -8,7 +8,7 @@ define([
 
   function MainPage() {
     alert("Main Page");
-
+    let a = 10;
   }
 
   return new MainPage();
