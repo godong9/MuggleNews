@@ -4,10 +4,7 @@ import { ModelService } from '../shared/api.service';
 
 @Component({
   selector: 'home',
-  template: `
-  Home component
-  {{ data | json }}
-  `
+  templateUrl: './home.component.html'
 })
 export class HomeComponent {
   data = {};
