@@ -38,4 +38,10 @@ jspm_packages
 
 .idea
 
-dist
+server/doc
+
+server/dist
+
+server/public/javascripts/libs
+
+server/config/env
