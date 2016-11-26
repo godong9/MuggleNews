@@ -6,7 +6,8 @@ let UserController = {
   insertPreUser: function login(req, res) {
     let params = {
       email: req.body.email,
-      referrer: req.headers.referrer
+      referrer: req.headers.referer,
+      userAgent: req.headers['user-agent']
     };
     logger.debug(params);
     PreUser.insertPreUser(params, function(err) {
