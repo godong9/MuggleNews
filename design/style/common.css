@@ -150,66 +150,85 @@ padding: 30px;
 
 .container{
   width: 100%;
-  height: 620px;
-  background:#f05440 url(../images/main-visual@3x.png) no-repeat 90% 100%;
+  height: auto;
+  background:#f05440 url(../images/main-visual@3x.png) no-repeat center 100%;;
+  background-size:200px 133px;
 }
 .container.main .contents {
-  height:620px;
-  padding:0 0 0 280px;
-  background:url(../images/img-dot.png) no-repeat 230px 120px;
+  height:auto;
+  padding: 0 0 155px 0;
+  background:url(../images/m-img-dot@3x.png) no-repeat 7px 83px;
+  background-size:18px 537px;
 }
 .main .contents h1 {
-  padding:110px 0 0 0;
+  padding:80px 0 0 0;
   font-size:50px;
+  text-align: center;
   font-weight: bold;
   color: #ffffff;
 }
 .main .contents h2 {
   padding-top:5px;
   font-size:18px;
+  text-align: center;
   font-weight: normal;;
   color: #ffffff;
 }
 .main .contents .img {
   padding-top:15px;
+  width:100%;
+  height:40px;
+  text-align: center;
+}
+.main .contents .img img{
+  width:140px;
+  height:100%;
 }
 .main .contents .desc {
-  padding-top:55px;
+  width:58%;
+  padding-top:40px;
+  text-align: center;
+  margin:0 auto;
   font-size:14px;
-  line-height:24px;
+  line-height:20px;
   color: #ffffff;;
+}
+.main .contents .desc br {
+  display: none;
 }
 .sign-up-email {
   position: relative;
-  width:500px;
-  height:50px;
-  margin:15px 0;
+  width:100%;
+  height:105px;
+  margin:10px 0;
 }
 .sign-up-email .input-box {
   position: relative;
-  width: 350px;
+  width: 75%;
   height: 50px;
+  margin:0 auto 5px;
   font-size:16px;
   color: #bbbbbb;
+  text-align: center;
   border-radius: 25px;
   background-color: #ffffff;
 }
 .sign-up-email .input-box input {
-  width:300px;
+  width:70%;
   height:50px;
   font-size:16px;
   color: #bbbbbb;
   border:none;
   background: transparent;
   padding:0 25px;
+  text-align: center;
 }
 .sign-up-email .btn-sign-up {
   display: block;
-  position: absolute;
-  top:0;
-  right:0;
-  width: 100%;
+  position: static;;
+  width: 75%;
   height: 50px;
+  margin:0 auto;
   text-align: center;
   line-height:50px;
   font-size:16px;
@@ -219,13 +238,11 @@ padding: 30px;
 }
 
 
-@media all and (max-width: 320px) {
 
-}
 @media all and (min-width: 321px) and (max-width: 768px) {
 
 }
-@media all and (min-width: 769px) and (max-width: 1024px) {
+@media all and (min-width: 1000px) and (max-width: 1024px) {
   .wrap{
     width:100%;
   }
@@ -233,33 +250,9 @@ padding: 30px;
   .footer ul {
     text-align: center;
   }
-  .container{
-    width: 100%;
-    height: 620px;
-    background:#f05440 url(../images/main-visual.png) no-repeat center center;
-  }
-  .sign-up-email .input-box input {
-    width:300px;
-    height:50px;
-    font-size:16px;
-    color: #bbbbbb;
-    border:none;
-    background: transparent;
-    padding:0 25px;
-  }
-  .sign-up-email .btn-sign-up {
-    display: block;
-    position: absolute;
-    top:0;
-    right:0;
-    width: 140px;
-    height: 50px;
-    text-align: center;
-    line-height:50px;
-    font-size:16px;
-    color: #ffffff;;
-    border-radius: 25px;
-    background-color: #4d4d4d;
+
+  .main .contents .desc br {
+    display: block;;
   }
 }
 @media all and (min-width: 1024px) {
@@ -357,24 +350,74 @@ padding: 30px;
   }
   .main .contents h1 {
     padding:110px 0 0 0;
+    text-align: left;
     font-size:80px;
     font-weight: bold;
     color: #ffffff;
   }
   .main .contents h2 {
     padding-top:5px;
+    text-align: left;
     font-size:40px;
     font-weight: normal;;
     color: #ffffff;
   }
   .main .contents .img {
     padding-top:15px;
+    text-align: left;
   }
   .main .contents .desc {
+    width:100%;
     padding-top:55px;
+    margin:0;
+    text-align: left;
     font-size:16px;
     line-height:24px;
     color: #ffffff;;
   }
-
+  .main .contents .desc br {
+    display: block;
+  }
+  .sign-up-email {
+    position: relative;
+    width:500px;
+    height:105px;
+    margin:10px 0;
+  }
+  .sign-up-email .input-box {
+    position: relative;
+    width: 350px;
+    height: 50px;
+    margin:0 0 5px 0;
+    font-size:16px;
+    color: #bbbbbb;
+    text-align: left;
+    border-radius: 25px;
+    background-color: #ffffff;
+  }
+  .sign-up-email .input-box input {
+    width:300px;
+    height:50px;
+    font-size:16px;
+    color: #bbbbbb;
+    border:none;
+    background: transparent;
+    padding:0 25px;
+    text-align: center;
+  }
+  .sign-up-email .btn-sign-up {
+    display: block;
+    position: absolute;
+    right:0;
+    top:0;
+    width: 140px;
+    height: 50px;
+    margin:0 auto;
+    text-align: center;
+    line-height:50px;
+    font-size:16px;
+    color: #ffffff;;
+    border-radius: 25px;
+    background-color: #4d4d4d;
+  }
 }
