@@ -23,7 +23,7 @@ define([
       };
       HttpUtil.postData('/users/pre/register', params, function(data) {
         console.log("Success");
-        consolt.log(data);
+        console.log(data);
       });
     });
   };

@@ -6,11 +6,12 @@ const request = require('request');
 let SlackService = {
   sendToPreUser: function getKospiStockList(data, cb) {
     const url = config.slack.preUser;
-
+    logger.debug('data:', data);
+    logger.debug('url:', url);
     request({
       url: url,
       method: 'POST',
-      postData: data
+      json: { text: data.email }
     }, function (error, response, body) {
       if (cb) {
         logger.debug(error);
