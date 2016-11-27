@@ -152,7 +152,6 @@ padding: 30px;
   width: 100%;
   height: 620px;
   background:#f05440 url(../images/main-visual@3x.png) no-repeat 90% 100%;
-  background-size:200px 133px;
 }
 .container.main .contents {
   height:620px;
@@ -161,13 +160,13 @@ padding: 30px;
 }
 .main .contents h1 {
   padding:110px 0 0 0;
-  font-size:80px;
+  font-size:50px;
   font-weight: bold;
   color: #ffffff;
 }
 .main .contents h2 {
   padding-top:5px;
-  font-size:40px;
+  font-size:18px;
   font-weight: normal;;
   color: #ffffff;
 }
@@ -176,7 +175,7 @@ padding: 30px;
 }
 .main .contents .desc {
   padding-top:55px;
-  font-size:16px;
+  font-size:14px;
   line-height:24px;
   color: #ffffff;;
 }
@@ -209,7 +208,7 @@ padding: 30px;
   position: absolute;
   top:0;
   right:0;
-  width: 140px;
+  width: 100%;
   height: 50px;
   text-align: center;
   line-height:50px;
@@ -233,6 +232,11 @@ padding: 30px;
 
   .footer ul {
     text-align: center;
+  }
+  .container{
+    width: 100%;
+    height: 620px;
+    background:#f05440 url(../images/main-visual.png) no-repeat center center;
   }
 }
 @media all and (min-width: 1024px) {
@@ -321,13 +325,55 @@ padding: 30px;
   .container{
     width: 100%;
     height: 620px;
-    background:#f05440 url(../images/main-visual.png) no-repeat 90% 100%;
-    background-size:100% 100%;
+    background:#f05440 url(../images/main-visual.png) no-repeat 92% 100%;
   }
   .container.main .contents {
     height:620px;
     padding:0 0 0 280px;
     background:url(../images/img-dot.png) no-repeat 230px 120px;
-    background-size:100% 100%;
+  }
+  .main .contents h1 {
+    padding:110px 0 0 0;
+    font-size:80px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  .main .contents h2 {
+    padding-top:5px;
+    font-size:40px;
+    font-weight: normal;;
+    color: #ffffff;
+  }
+  .main .contents .img {
+    padding-top:15px;
+  }
+  .main .contents .desc {
+    padding-top:55px;
+    font-size:16px;
+    line-height:24px;
+    color: #ffffff;;
+  }
+  .sign-up-email .input-box input {
+    width:300px;
+    height:50px;
+    font-size:16px;
+    color: #bbbbbb;
+    border:none;
+    background: transparent;
+    padding:0 25px;
+  }
+  .sign-up-email .btn-sign-up {
+    display: block;
+    position: absolute;
+    top:0;
+    right:0;
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    line-height:50px;
+    font-size:16px;
+    color: #ffffff;;
+    border-radius: 25px;
+    background-color: #4d4d4d;
   }
 }
