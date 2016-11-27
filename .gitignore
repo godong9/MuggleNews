@@ -40,8 +40,6 @@ jspm_packages
 
 server/doc
 
-server/dist
-
 server/public/javascripts/libs
 
 server/config/env
