@@ -237,10 +237,91 @@ padding: 30px;
   background-color: #4d4d4d;
 }
 
+/*{ 우리가 누구*/
+.who-are {
+width:100%;
+background-color: #fafafa
+}
+.who-are h3 {
+  display: none;
+}
+.who-are .muggle-member {
+  padding-top:30px;;
+}
+.who-are .muggle-member  ul{
+  widht:100%;
+  text-align: center;
+}
+.who-are .muggle-member li {
+  display: inline-block;
+  width:33%;
+  padding:100px 13px 0 13px;
+  text-align: center;
+}
+.who-are .muggle-member li .txt {
+  width:100%;
+  height:70px;
+  font-size:14px;
+  color:#777777;
+}
+.who-are .muggle-member li .name {
+  padding:8px 0 6px 0;
+  font-size:16px;
+  color:#f05440;
+}
+.who-are .muggle-member li.no1 {
+  background: url(../images/jaipam.png) no-repeat center 0;
+}
+.who-are .muggle-member li.no2 {
+  background: url(../images/gd.png) no-repeat center 0;
+}
+.who-are .muggle-member li.no3 {
+  background: url(../images/lee_el.png) no-repeat center 0;
+}
+.who-are .muggle-member li.no4 {
+  background: url(../images/bernard.png) no-repeat center 0;
+}
+.who-are .muggle-member li.no5 {
+  background: url(../images/baka.png) no-repeat center 0;
+}
+.who-are .muggle-member li.no6 {
+  background: url(../images/alice.png) no-repeat center 0;
+}
+/* 우리가 누구}*/
 
 
-@media all (max-width: 768px) {
-
+@media all and (min-width: 768px) and (max-width: 1000px){/*{ 우리가 누구*/
+  .who-are {
+  width:100%;
+  background-color: #fafafa
+  }
+  .who-are h3 {
+    display: none;
+  }
+  .who-are .muggle-member {
+    padding-top:30px;;
+  }
+  .who-are .muggle-member  ul{
+    widht:100%;
+    text-align: center;
+  }
+  .who-are .muggle-member li {
+    display: inline-block;
+    width:29%;
+    padding:100px 13px 0 13px;
+    text-align: center;
+  }
+  .who-are .muggle-member li .txt {
+    width:100%;
+    height:50px;
+    font-size:14px;
+    color:#777777;
+  }
+  .who-are .muggle-member li .name {
+    padding:8px 0 6px 0;
+    font-size:16px;
+    color:#f05440;
+  }
 }
 @media all and (min-width: 1000px) and (max-width: 1440px) {
   .wrap{
@@ -405,6 +486,40 @@ padding: 30px;
     border-radius: 25px;
     background-color: #4d4d4d;
   }
+  /*{ 우리가 누구*/
+  .who-are {
+  width:100%;
+  background-color: #fafafa
+  }
+  .who-are h3 {
+    display: none;
+  }
+  .who-are .muggle-member {
+    padding-top:30px;;
+  }
+  .who-are .muggle-member  ul{
+    width:75%;
+    margin:0 auto;
+    text-align: center;
+  }
+  .who-are .muggle-member li {
+    display: inline-block;
+    width:29%;
+    padding:100px 13px 0 13px;
+    text-align: center;
+  }
+  .who-are .muggle-member li .txt {
+    width:100%;
+    height:50px;
+    font-size:14px;
+    color:#777777;
+  }
+  .who-are .muggle-member li .name {
+    padding:8px 0 6px 0;
+    font-size:16px;
+    color:#f05440;
+  }
+  /* 우리가 누구}*/
 }
 
 @media all and (min-width: 1440px) {
@@ -570,4 +685,37 @@ padding: 30px;
     border-radius: 25px;
     background-color: #4d4d4d;
   }
+  /*{ 우리가 누구*/
+  .who-are {
+  width:100%;
+  background-color: #fafafa
+  }
+  .who-are h3 {
+    display: none;
+  }
+  .who-are .muggle-member {
+    padding-top:30px;;
+  }
+  .who-are .muggle-member  ul{
+    widht:100%;
+    text-align: center;
+  }
+  .who-are .muggle-member li {
+    display: inline-block;
+    width:160px;
+    padding:100px 13px 0 13px;
+    text-align: center;
+  }
+  .who-are .muggle-member li .txt {
+    width:100%;
+    height:50px;
+    font-size:14px;
+    color:#777777;
+  }
+  .who-are .muggle-member li .name {
+    padding:8px 0 6px 0;
+    font-size:16px;
+    color:#f05440;
+  }
+  /* 우리가 누구}*/
 }
