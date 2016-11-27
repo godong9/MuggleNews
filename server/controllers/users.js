@@ -3,7 +3,7 @@ const logger = log4js.getLogger('controllers/users');
 const PreUser = require('../models/pre_users');
 const Slack = require('../services/slack');
 
-let UserController = {
+const UserController = {
   insertPreUser: function login(req, res) {
     let params = {
       email: req.body.email,
