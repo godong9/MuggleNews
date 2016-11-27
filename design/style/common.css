@@ -239,23 +239,10 @@ padding: 30px;
 
 
 
-@media all and (min-width: 321px) and (max-width: 768px) {
+@media all (max-width: 768px) {
 
 }
-@media all and (min-width: 1000px) and (max-width: 1024px) {
-  .wrap{
-    width:100%;
-  }
-
-  .footer ul {
-    text-align: center;
-  }
-
-  .main .contents .desc br {
-    display: block;;
-  }
-}
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1000px) and (max-width: 1440px) {
   .wrap{
     width:100%;
   }
@@ -278,6 +265,7 @@ padding: 30px;
   .footer ul {
     width:100%;
     height:20px;
+    text-align: center;
   }
   .footer ul li {
     float:left;
@@ -333,11 +321,173 @@ padding: 30px;
     width:100%;
     height:100%;
   }
+
+  .container{
+    width: 100%;
+    height: 620px;
+    background-color: #f05440;
+    background-image: none;
+  }
+  .container.main .contents {
+    height:620px;
+    padding:0 0 0 280px;
+    background:url(../images/img-dot.png) no-repeat 230px 120px;
+  }
+  .main .contents h1 {
+    padding:110px 0 0 0;
+    text-align: left;
+    font-size:80px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  .main .contents h2 {
+    padding-top:5px;
+    text-align: left;
+    font-size:40px;
+    font-weight: normal;;
+    color: #ffffff;
+  }
+  .main .contents .img {
+    padding-top:15px;
+    text-align: left;
+  }
+  .main .contents .desc {
+    width:100%;
+    padding-top:55px;
+    margin:0;
+    text-align: left;
+    font-size:16px;
+    line-height:24px;
+    color: #ffffff;;
+  }
+  .main .contents .desc br {
+    display: block;
+  }
+  .sign-up-email {
+    position: relative;
+    width:500px;
+    height:105px;
+    margin:10px 0;
+  }
+  .sign-up-email .input-box {
+    position: relative;
+    width: 350px;
+    height: 50px;
+    margin:0 0 5px 0;
+    font-size:16px;
+    color: #bbbbbb;
+    text-align: left;
+    border-radius: 25px;
+    background-color: #ffffff;
+  }
+  .sign-up-email .input-box input {
+    width:300px;
+    height:50px;
+    font-size:16px;
+    color: #bbbbbb;
+    border:none;
+    background: transparent;
+    padding:0 25px;
+    text-align: center;
+  }
+  .sign-up-email .btn-sign-up {
+    display: block;
+    position: absolute;
+    right:0;
+    top:0;
+    width: 140px;
+    height: 50px;
+    margin:0 auto;
+    text-align: center;
+    line-height:50px;
+    font-size:16px;
+    color: #ffffff;;
+    border-radius: 25px;
+    background-color: #4d4d4d;
+  }
 }
+
 @media all and (min-width: 1440px) {
   .wrap{
     width:1440px;
   }
+
+  .header a.logo {
+    display: block;
+    float:left;
+    margin:25px 0 0 30px;
+    width: 196px;
+    height: 30px;
+  }
+
+  .footer {
+    position: relative;
+    width:100%;
+    height:170px;
+  }
+  .foot-wrap {
+  padding: 30px;
+  }
+  .footer ul {
+    width:100%;
+    height:20px;
+    text-align: center;
+  }
+  .footer ul li {
+    float:left;
+    height:17px;
+    line-height;17px;
+    text-align: left;
+    font-size:14px;
+    color: #4d4d4d;
+  }
+  .footer ul li a {
+    display: block;
+    position: relative;
+    text-align: center;
+    padding:0 10px;
+    font-size:14px;
+    color: #4d4d4d;
+  }
+  .footer ul li a::after {
+    position: absolute;
+    top:0;
+    left:0;
+    content:"|";
+    color: #dddddd;
+    font-size:14px;
+  }
+  .footer ul li a:hover{
+    color: #4d4d4d;
+  }
+  .footer ul li:first-child a {
+    border:none;
+    padding:0 5px 0 0;
+  }
+  .footer ul li:first-child a::after {
+    display: none;
+  }
+  .footer .copyright {
+    margin-top:10px;
+  }
+  .footer .copyright p{
+    font-size:12px;
+    color: #bbbbbb;
+    text-align: left;
+  }
+  .footer .goto-facebook {
+    position: absolute;
+    top:30px;
+    right:30px;
+    width:24px;
+    height:24px;
+    padding:0;
+  }
+  .footer .goto-facebook img{
+    width:100%;
+    height:100%;
+  }
+
   .container{
     width: 100%;
     height: 620px;
