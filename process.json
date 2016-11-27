@@ -1,0 +1,7 @@
+{
+  "apps" : [{
+    "name"        : "MuggleNews",
+    "script"      : "server/bin/www",
+    "log_date_format"  : "YYYY-MM-DD HH:mm Z"
+  }]
+}
