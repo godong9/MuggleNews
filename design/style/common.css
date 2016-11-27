@@ -289,7 +289,14 @@ background-color: #fafafa
 }
 /* 우리가 누구}*/
 
-
+@media all and (min-width: 300px) and (max-width: 490px){
+  .who-are .muggle-member li {
+    display: block;
+    float:left;
+    width:40%;
+    padding:100px 5% 0 5%;
+  }
+}
 @media all and (min-width: 768px) and (max-width: 1000px){/*{ 우리가 누구*/
   .who-are {
   width:100%;
