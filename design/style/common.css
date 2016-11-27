@@ -87,7 +87,7 @@ body {
   height:170px;
 }
 .foot-wrap {
-padding: 30px;
+  padding: 30px 10px;
 }
 .footer ul {
   width:100%;
@@ -107,7 +107,7 @@ padding: 30px;
   position: relative;
   text-align: center;
   padding:0 10px;
-  font-size:14px;
+  font-size:13px;
   color: #4d4d4d;
 }
 .footer ul li a::after {
@@ -239,11 +239,17 @@ padding: 30px;
 
 /*{ 우리가 누구*/
 .who-are {
-width:100%;
-background-color: #fafafa
+  width:100%;
+  overflow: hidden;
+  background-color: #fafafa
 }
 .who-are h3 {
-  display: none;
+  width:100%;
+  line-height:29px;
+  padding-top:30px;
+  text-align: center;
+  font-size:24px;
+  color: #4d4d4d;
 }
 .who-are .muggle-member {
   padding-top:30px;;
@@ -294,7 +300,11 @@ background-color: #fafafa
     display: block;
     float:left;
     width:40%;
+    height:100px;
     padding:100px 5% 0 5%;
+  }
+  .foot-wrap {
+    padding:30px 10px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 1000px){/*{ 우리가 누구*/
@@ -303,7 +313,12 @@ background-color: #fafafa
   background-color: #fafafa
   }
   .who-are h3 {
-    display: none;
+    width:100%;
+    line-height:29px;
+    padding-top:30px;
+    text-align: center;
+    font-size:24px;
+    color: #4d4d4d;
   }
   .who-are .muggle-member {
     padding-top:30px;;
@@ -396,6 +411,7 @@ background-color: #fafafa
     font-size:12px;
     color: #bbbbbb;
     text-align: left;
+    line-height: 100%;
   }
   .footer .goto-facebook {
     position: absolute;
@@ -413,8 +429,8 @@ background-color: #fafafa
   .container{
     width: 100%;
     height: 620px;
-    background-color: #f05440;
-    background-image: none;
+    background:#f05440 url(../images/main-visual.png) no-repeat 100% 100%;
+    background-size:250px 211px
   }
   .container.main .contents {
     height:620px;
@@ -499,7 +515,12 @@ background-color: #fafafa
   background-color: #fafafa
   }
   .who-are h3 {
-    display: none;
+    width:100%;
+    line-height:29px;
+    padding-top:30px;
+    text-align: center;
+    font-size:24px;
+    color: #4d4d4d;
   }
   .who-are .muggle-member {
     padding-top:30px;;
@@ -613,7 +634,8 @@ background-color: #fafafa
   .container{
     width: 100%;
     height: 620px;
-    background:#f05440 url(../images/main-visual.png) no-repeat 92% 100%;
+    background:#f05440 url(../images/main-visual.png) no-repeat 90% 95%;
+    background-size:390px 330px
   }
   .container.main .contents {
     height:620px;
@@ -698,7 +720,12 @@ background-color: #fafafa
   background-color: #fafafa
   }
   .who-are h3 {
-    display: none;
+    width:100%;
+    line-height:29px;
+    padding-top:30px;
+    text-align: center;
+    font-size:24px;
+    color: #4d4d4d;
   }
   .who-are .muggle-member {
     padding-top:30px;;
