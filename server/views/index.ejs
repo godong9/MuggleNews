@@ -1,16 +1,101 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/css/style.css' />
+    <title>머글뉴스</title>
+    <link rel='stylesheet' href='/css/common.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="wrap">
+      <div class="header">
+        <a class="logo" href="">
+          <img src="images/logo-01@3x.png" alt="muggle.news" class="wb">
+        </a>
+        <div class="login-box">
+          <a href="" class="login">로그인</a>
+          <a href="" class="join">회원가입</a>
+        </div><!-- e//login -->
+      </div><!-- e//header -->
 
-    <input type="email" id="email" />
-    <button id="send_pre_user">전송</button>
+      <div class="container main">
+        <div class="contents">
+          <h1>머글뉴스</h1>
+          <h2>어렵고 복잡한 뉴스를,
+            <br>시간에 따라, 처음부터 끝까지
+          </h2>
+          <p class="img">
+            <img src="images/main-visual02.png" alt="">
+          </p>
+          <p class="desc">
+            뉴스레터를 등록하시면 머글뉴스 오픈 소식과 함께 #최순실게이트, #4대강 등 <br>최근 이슈를 시간순으로 정리한 뉴스를 보내드립니다.
+          </p>
+          <div class="sign-up-email">
+            <div class="input-box">
+              <input type="text" placeholder="이메일 주소를 입력하세요.">
+            </div>
+            <a href="" class="btn-sign-up">등록하기</a>
+          </div>
 
+          <div class="who-are">
+            <h3>우리가 누구?</h3>
+            <div class="muggle-member">
+              <ul>
+                <li>
+                  <div>
+                    <p class="name">장팸 (jaipam)</p>
+                    <p class="txt">'하다보면 뭐라도 되겠지'라고 생각하는 흔한 안흔한 서비스 기획자</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p class="name">지디 (GD)</p>
+                    <p class="txt">'성장하는 개발자'</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p class="name">리엘 (lee_el)</p>
+                    <p class="txt">'항상 배고픈 콘텐츠 제작자'</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p class="name">바카(baka)</p>
+                    <p class="txt">'내멋대로 디자이너'</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p class="name">앨리스(alice)</p>
+                    <p class="txt">'월급루팡을 꿈꾸는 퍼블리셔'</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p class="name">봉기님</p>
+                    <p class="txt">봉기님성명</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- e//contents -->
+      </div><!-- e//container -->
+
+      <div class="footer">
+        <div class="foot-wrap">
+          <ul class="foot-list">
+            <li><a href="">문의하기</a></li>
+            <li><a href="">이용악관</a></li>
+            <li><a href="">개인정보 취급방침</a></li>
+          </ul>
+          <div class="copyright">
+            <p>@Muggle.news All right reserved.</p>
+          </div>
+          <a href="" class="goto-facebook"><img src="images/ico-facebook-01@3x.png" alt="페이스북 바로가기"></a>
+        </div><!--e//foot-wrap -->
+      </div><!--e//footer -->
+
+    </div><!-- e//wrap -->
     <%- include partial/ga.ejs %>
     <script type="text/javascript" src="main.bundle.js" charset="utf-8"></script>
   </body>
