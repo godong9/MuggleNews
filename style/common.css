@@ -151,12 +151,12 @@ padding: 30px;
 .container{
   width: 100%;
   height: 620px;
-  background:#f05440 url(../images/main-visual.png) no-repeat 90% 100%;
+  background:#f05440 url(../design/images/main-visual.png) no-repeat 90% 100%;
 }
 .container.main .contents {
   height:620px;
   padding:0 0 0 280px;
-  background:url(../images/img-dot.png) no-repeat 230px 120px;
+  background:url(../design/images/img-dot.png) no-repeat 230px 120px;
 }
 .main .contents h1 {
   padding:110px 0 0 0;
