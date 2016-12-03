@@ -188,7 +188,8 @@ body {
   color: #666666;
 }
 .muggle-preview-main .muggle-preview-list {
-  width:100%;
+  width:96%;
+  margin:0 auto;
 }
 .muggle-preview-main .muggle-preview-list a {
   position: relative;
@@ -200,6 +201,10 @@ body {
   overflow: hidden;
 }
 .muggle-preview-main .muggle-preview-list .p-thum-img {
+  width:100%;
+  height:100%;
+}
+.muggle-preview-main .muggle-preview-list .p-thum-img img{
   width:100%;
   height:100%;
 }
@@ -417,7 +422,14 @@ body {
   background: url(../images/alice.png) no-repeat center 0;
 }
 /* 우리가 누구}*/
-
+/*광고 배너  {*/
+.adnwMRectRoot {
+  margin:0 auto;
+}
+.fb-page-and-ad {
+  text-align: center;
+}
+/*광고 배너  }*/
 @media all and (min-width: 300px) and (max-width: 490px){
   .who-are .muggle-member li {
     display: block;
@@ -431,6 +443,9 @@ body {
   }
   .foot-wrap {
     padding:30px 10px;
+  }
+  .muggle-preview-main .muggle-preview-list {
+    width:100%;
   }
   .muggle-preview-main .muggle-preview-list a {
     position: relative;
@@ -463,6 +478,9 @@ body {
     width:100%;
     text-align: center;
     margin:0 auto;
+  }
+  .muggle-preview-main .muggle-preview-list {
+    width:100%;
   }
   .muggle-preview-main .muggle-preview-list a {
     position: relative;
@@ -606,6 +624,9 @@ body {
     max-width:980px;
     text-align: center;
     margin:0 auto;
+  }
+  .muggle-preview-main .muggle-preview-list {
+    width:100%;
   }
   .muggle-preview-main .muggle-preview-list a {
     position: relative;
@@ -829,6 +850,9 @@ body {
     width:1140px;
     text-align: center;
     margin:0 auto;
+  }
+  .muggle-preview-main .muggle-preview-list {
+    width:100%;
   }
   .muggle-preview-main .muggle-preview-list a {
     position: relative;
