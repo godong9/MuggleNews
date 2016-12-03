@@ -23,6 +23,9 @@ const TimelineController = {
       }
       View.setCommonData(req, data);
       for (i=0; i<items.length; i++) {
+        if (items[i].preview_title && !items[i].preview_img) {
+          items[i].preview_img = '/images/no_image.png';
+        }
         items[i].item_date_text = moment(items[i].item_date).format("YYYY년 M월 D일 HH:mm:ss");
       }
       data.items = items;
