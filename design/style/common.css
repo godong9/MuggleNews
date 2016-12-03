@@ -97,7 +97,9 @@ body {
   width:24px;
   height:24px;
   margin:0 10px 0 0;
-  border-radius: 24px;
+  -webkit-border-radius:15px
+  -moz-border-radius:15px;
+  border-radius:15px;
 }
 .header .login-box .log-on a span {
   line-height:28px;
