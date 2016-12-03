@@ -11,6 +11,6 @@ const TimelineController = require('../controllers/timelines');
  *
  * @apiParam {String} id Timeline ID
  */
-router.get('/:name', TimelineController.getTimelinePage);
+router.get('/:id', TimelineController.getTimelinePage);
 
 module.exports = router;
