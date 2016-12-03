@@ -114,10 +114,7 @@
 }
 .container.view .last-edit {
     position: absolute;
-    bottom:20px;
-    left:0;
-    margin-left:-360px;
-    min-width:720px;
+    bottom:20px;;
     height:20px;
     line-height:1.3;
     text-align: left;
@@ -127,9 +124,6 @@
 .container.view .view-count {
     position: absolute;
     bottom:20px;
-    left:0;
-    margin-left:-360px;
-    min-width:720px;
     height:20px;
     line-height:1.3;
     text-align: right;
@@ -137,7 +131,6 @@
     color: #ffffff;
 }
 .view .news-container  {
-    width:720px;
     margin:0 auto;
 }
 .view .news-container ul {
@@ -213,10 +206,10 @@
 .view #preview .preview-wrap {
     position: relative;
     height:100%;
-    padding-left:23%;
+    padding-left:150px;
 }
 .view #preview .thum-img {
-    width:23%;
+    width:150px;
     height:100%;
     position: absolute;
     top:0;
@@ -227,9 +220,8 @@
     width:100%;
     height:100%;
 }
-
 .view #preview .title {
-    padding:15px 4% 10px 4%;
+    padding:15px 10px 10px 10px;
 }
 .view #preview .title p {
     font-size:20px;
@@ -257,7 +249,7 @@
 .view #preview .preview-link {
     position: absolute;
     bottom:10px;
-    left:27%;
+    left:160px;
     font-size:12px;
     color: #aaaaaa;
 }
@@ -288,40 +280,19 @@
         padding: 230px 0 0 0;
         z-index: 10;
     }
-
     .container.view .last-edit {
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        margin-left: -360px;
-        min-width: 720px;
-        height: 20px;
-        line-height: 1.3;
-        text-align: left;
-        font-size: 14px;
-        color: #ffffff;
+        width:100%;
+        left:5px;
+    }
+    .container.view .view-count {
+        width:auto;
+        right:5px;
+        padding-left:
     }
     .view .news-container {
         width: 96%;
         margin: 0 auto;
     }
-
-    .view .news-container ul {
-        padding: 0 0 0 22px;
-        margin-top: 125px;
-    }
-
-    .view .news-container ul li:first-child {
-        padding: 0;
-    }
-
-    .view .news-container ul li {
-        display: block;
-        position: relative;
-        padding: 95px 0 0 0;
-        border-left: 3px solid #ffeae7;
-    }
-
     .view .news-container .section {
         position: relative;
         padding-left: 35px;
@@ -332,47 +303,12 @@
         margin-left: -60px;
         padding: 0 0 0 60px;
     }
-
-    .view .news-container .section .new-conts #preview {
-        margin-top: 30px;
-    }
-
-    .view #preview {
-        position: relative;
-        width: 100%;
-        height: 150px;
-        overflow: hidden;
-        border: 1px solid #f7f7f7;
-    }
-
-    .view #preview .preview-wrap {
-        position: relative;
-        height: 100%;
-        padding-left: 150px;
-    }
-
-    .view #preview .thum-img {
-        width: 150px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-    }
-
-    .view #preview .thum-img img {
-        width: 100%;
-        height: 100%;
-    }
-
     .view #preview .title {
         padding: 15px 10px 10px 10px;
     }
-
     .view #preview .txt-area {
         padding: 0 10px;
     }
-
     .view #preview .txt-area p {
         font-size: 14px;
         color: #666666;
@@ -402,33 +338,22 @@
         z-index:10;
     }
     .container.view .last-edit {
+        width:720px;
         position: absolute;
-        bottom:20px;
-        left:0;
+        left:50%;
         margin-left:-360px;
-        min-width:720px;
-        height:20px;
-        line-height:1.3;
         text-align: left;
-        font-size:14px;
-        color: #ffffff;
+     }
+    .container.view .view-count {
+        width:720px;
+        max-width:720px;
+        left:50%;
+        margin-left:-360px;
+        text-align: right;
     }
     .view .news-container  {
         width:720px;
         margin:0 auto;
-    }
-    .view .news-container ul {
-        padding:0 0 0 22px;
-        margin-top:125px;
-    }
-    .view .news-container ul li:first-child {
-        padding:0;
-    }
-    .view .news-container ul li {
-        display: block;
-        position: relative;
-        padding:95px 0 0 0;
-        border-left:3px solid #ffeae7;
     }
     .view .news-container .section {
         position: relative;
@@ -439,34 +364,6 @@
         position: relative;
         margin-left:-60px;
         padding:0 0 0 60px;
-    }
-
-    .view .news-container .section .new-conts #preview {
-        margin-top:30px;
-    }
-    .view #preview {
-        position: relative;
-        width:100%;
-        height:150px;
-        overflow: hidden;
-        border:1px solid #f7f7f7;
-    }
-    .view #preview .preview-wrap {
-        position: relative;
-        height:100%;
-        padding-left:150px;
-    }
-    .view #preview .thum-img {
-        width:150px;
-        height:100%;
-        position: absolute;
-        top:0;
-        left:0;
-        overflow: hidden;
-    }
-    .view #preview .thum-img img{
-        width:100%;
-        height:100%;
     }
     .view #preview .title {
         padding:15px 20px 10px 20px;
