@@ -771,10 +771,6 @@ body {
 }
 
 @media all and (min-width: 1280px) {
-  .wrap{
-    width:1280px;
-  }
-
   .header a.logo {
     display: block;
     float:left;
