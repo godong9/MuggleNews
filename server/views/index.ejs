@@ -10,14 +10,26 @@
   <body>
     <%- include partial/ga.ejs %>
     <%- include partial/fb.ejs %>
+
     <div class="wrap">
       <div class="header">
         <a class="logo" href="">
           <img src="images/logo-01@3x.png" alt="muggle.news" class="wb">
         </a>
         <div class="login-box">
-          <a href="" class="login">로그인</a>
-          <a href="" class="join">회원가입</a>
+          <% if (me) { %>
+          <div class="log-on">
+            <a href="" class="log-in">
+              <img src="<%= me.picture && me.picture.data && me.picture.data.url %>" alt="">
+              <span><%= me.name %></span>
+            </a>
+          </div>
+          <% } else { %>
+          <a href="/users/login/facebook" class="log-in">
+            <img src="images/ico-facebook-01@3x.png" alt="">
+            <span>로그인</span>
+          </a>
+          <% } %>
         </div><!-- e//login -->
       </div><!-- e//header -->
 
@@ -61,7 +73,7 @@
             <li class="no3">
               <div>
                 <p class="name">리엘 (lee_el)</p>
-                <p class="txt">'배고픈 콘텐츠 제작자'</p>
+                <p class="txt">'배고픈 콘텐츠 마케터'</p>
               </div>
             </li>
             <li class="no4">
@@ -86,8 +98,6 @@
         </div>
       </div><!-- e// who-are-->
 
-      <%- include partial/fb_comment.ejs %>
-
       <div class="footer">
         <div class="foot-wrap">
           <ul class="foot-list">
@@ -98,11 +108,12 @@
           <div class="copyright">
             <p>@Muggle.news All right reserved.</p>
           </div>
-          <a href="https://www.facebook.com/muggle.news/?fref=ts" target="_blank" class="goto-facebook"><img src="images/ico-facebook-01@3x.png" alt="페이스북 바로가기"></a>
+          <a href="https://www.facebook.com/muggle.news/?fref=ts" target="_blank "class="goto-facebook"><img src="images/ico-facebook-01@3x.png" alt="페이스북 바로가기"></a>
         </div><!--e//foot-wrap -->
       </div><!--e//footer -->
 
     </div><!-- e//wrap -->
+
     <script type="text/javascript" src="main.bundle.js" charset="utf-8"></script>
   </body>
 </html>
