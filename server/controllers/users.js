@@ -30,7 +30,7 @@ const UserController = {
     ], function (err) {
       if (err) {
         logger.error(err);
-        return res.redirect('/login/error');
+        return res.redirect('/page/error');
       }
       res.redirect('/');
     });
