@@ -50,11 +50,7 @@
                                     <p class="list-count"><%= item.order %></p>
                                     <h2><%= item.title %></h2>
                                     <div class="news-date">
-                                        <span class="year">2016년</span>
-                                        <span class="month">12월</span>
-                                        <span class="day">1일</span>
-                                        <span class="week">(월)</span>
-                                        <span class="time">12:00</span>
+                                        <span><%= item.item_date_text %></span>
                                     </div><!-- e//news-data-->
                                 </div><!--number -->
                                 <div class="new-conts">
@@ -62,7 +58,7 @@
                                     <% if (item.preview_title) { %>
                                     <div id="preview">
                                         <div class="preview-wrap">
-                                            <div class="thum-img"><img src="http://imgnews.naver.net/image/032/2016/12/03/l_2016120301000389900025911_99_20161203170517.jpg" alt="차마 언니얼굴은 쓸수가 없었다고 한다" /></div>
+                                            <div class="thum-img"><img src="<%= item.preview_img %>" alt="이미지" /></div>
                                             <div class="title">
                                                 <p><%= item.preview_title %></p>
                                             </div>
