@@ -1,3 +1,3 @@
 #!/bin/sh
 
-pm2 start process.json
+npm install && pm2 start process.json
