@@ -14,6 +14,8 @@ let User = {
           'timelines.title AS timeline_title, ' +
           'timelines.subtitle AS timeline_subtitle, ' +
           'timelines.view_count AS timeline_view_count, ' +
+          'timelines.updated_at AS timeline_updated_at, ' +
+          'timelines.cover_img AS timeline_cover_img, ' +
           'users.name AS user_name, ' +
           'users.profile_img AS user_profile_img ' +
         'FROM items ' +

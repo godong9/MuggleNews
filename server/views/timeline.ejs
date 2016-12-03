@@ -23,7 +23,7 @@
             </div><!-- e//header -->
 
             <div class="container view">
-                <div class="inner-box">
+                <div class="inner-box" style="background: url(<%= timeline.timeline_cover_img %>) no-repeat center center; background-size: 100% 100%;">
                     <div class="news-cover">
                         <h1><%= timeline.timeline_title %></h1>
                         <p class="h1_desc"><%= timeline.timeline_subtitle %></p>
@@ -32,7 +32,7 @@
                             <span class="user-name"><%= timeline.user_name %></span>
                         </div><!-- e// user-infor-->
                         <div class="last-edit">
-                            <p>최종수정일: <span>2016년 1월 1일</span></p>
+                            <p>최종수정일: <span><%= lastUpdatedAt %></span></p>
                         </div>
                         <div class="view-count">
                             <span><%= timeline.timeline_view_count %></span>
