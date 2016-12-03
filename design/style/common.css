@@ -188,7 +188,8 @@ body {
   color: #666666;
 }
 .muggle-preview-main .muggle-preview-list {
-  width:100%;
+  width:96%;
+  margin:0 auto;
 }
 .muggle-preview-main .muggle-preview-list a {
   position: relative;
@@ -200,6 +201,10 @@ body {
   overflow: hidden;
 }
 .muggle-preview-main .muggle-preview-list .p-thum-img {
+  width:100%;
+  height:100%;
+}
+.muggle-preview-main .muggle-preview-list .p-thum-img img{
   width:100%;
   height:100%;
 }
@@ -432,6 +437,9 @@ body {
   .foot-wrap {
     padding:30px 10px;
   }
+  .muggle-preview-main .muggle-preview-list {
+    width:100%;
+  }
   .muggle-preview-main .muggle-preview-list a {
     position: relative;
     display: block;
@@ -463,6 +471,9 @@ body {
     width:100%;
     text-align: center;
     margin:0 auto;
+  }
+  .muggle-preview-main .muggle-preview-list {
+    width:100%;
   }
   .muggle-preview-main .muggle-preview-list a {
     position: relative;
@@ -606,6 +617,9 @@ body {
     max-width:980px;
     text-align: center;
     margin:0 auto;
+  }
+  .muggle-preview-main .muggle-preview-list {
+    width:100%;
   }
   .muggle-preview-main .muggle-preview-list a {
     position: relative;
@@ -830,6 +844,9 @@ body {
     text-align: center;
     margin:0 auto;
   }
+  .muggle-preview-main .muggle-preview-list {
+     width:100%;
+   }
   .muggle-preview-main .muggle-preview-list a {
     position: relative;
     display: block;
