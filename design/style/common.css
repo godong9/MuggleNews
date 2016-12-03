@@ -79,6 +79,29 @@ body {
   color: #dddddd;
   font-size:14px;
 }
+.header .login-box a img{
+  width:24px;
+  height:24px;
+  margin-right:10px;
+}
+.header .login-box a span {
+  line-height:28px;
+  font-size: 14px;
+  color: #ef5441;
+}
+.header .login-box .log-on {
+  line-height:30px;
+}
+.header .login-box .log-on a img {
+  width:24px;
+  height:24px;
+  margin:0 10px 0 0;
+}
+.header .login-box .log-on a span {
+  line-height:28px;
+  font-size:14px;
+  color:#bbbbbb;
+}
 /* header }*/
 /* footer { */
 .footer {
@@ -156,7 +179,7 @@ body {
 }
 .container.main .contents {
   height:auto;
-  padding: 0 0 155px 0;
+  padding: 0 0 150px 0;
   background:url(../images/m-img-dot@3x.png) no-repeat 7px 83px;
   background-size:18px 537px;
 }
@@ -185,7 +208,7 @@ body {
   height:100%;
 }
 .main .contents .desc {
-  width:58%;
+  width:62%;
   padding-top:40px;
   text-align: center;
   margin:0 auto;
@@ -307,7 +330,8 @@ body {
     padding:30px 10px;
   }
 }
-@media all and (min-width: 768px) and (max-width: 1000px){/*{ 우리가 누구*/
+@media all and (min-width: 768px) and (max-width: 980px){
+  /*{ 우리가 누구*/
   .who-are {
   width:100%;
   background-color: #fafafa
@@ -345,7 +369,7 @@ body {
     color:#f05440;
   }
 }
-@media all and (min-width: 1000px) and (max-width: 1440px) {
+@media all and (min-width: 980px) and (max-width: 1280px) {
   .wrap{
     width:100%;
   }
@@ -430,12 +454,12 @@ body {
     width: 100%;
     height: 620px;
     background:#f05440 url(../images/main-visual.png) no-repeat 100% 100%;
-    background-size:250px 211px
+    background-size:320px 271px
   }
   .container.main .contents {
     height:620px;
-    padding:0 0 0 280px;
-    background:url(../images/img-dot.png) no-repeat 230px 120px;
+    padding:0 0 0 200px;
+    background:url(../images/img-dot.png) no-repeat 150px 120px;
   }
   .main .contents h1 {
     padding:110px 0 0 0;
@@ -550,9 +574,9 @@ body {
   /* 우리가 누구}*/
 }
 
-@media all and (min-width: 1440px) {
+@media all and (min-width: 1280px) {
   .wrap{
-    width:1440px;
+    width:1280px;
   }
 
   .header a.logo {
@@ -639,8 +663,8 @@ body {
   }
   .container.main .contents {
     height:620px;
-    padding:0 0 0 280px;
-    background:url(../images/img-dot.png) no-repeat 230px 120px;
+    padding:0 0 0 230px;
+    background:url(../images/img-dot.png) no-repeat 180px 120px;
   }
   .main .contents h1 {
     padding:110px 0 0 0;
