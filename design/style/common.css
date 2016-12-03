@@ -422,7 +422,11 @@ body {
   background: url(../images/alice.png) no-repeat center 0;
 }
 /* 우리가 누구}*/
-
+/*광고 배너  {*/
+.adnwMRectRoot {
+  margin:0 auto;
+}
+/*광고 배너  }*/
 @media all and (min-width: 300px) and (max-width: 490px){
   .who-are .muggle-member li {
     display: block;
