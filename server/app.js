@@ -21,7 +21,7 @@ var sessionStore = new MySQLStore({
   port: config.db.port,
   user: config.db.user,
   password: config.db.password,
-  database: config.db.session_database
+  database: config.db.database
 });
 
 // view engine setup
