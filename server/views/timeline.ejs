@@ -14,7 +14,7 @@
                 <a class="logo" href="/">
                     <span>muggle.news</span>
                 </a>
-                <div class="edit-box">
+                <div class="edit-box" style="display: none;">
                     <a href="" class="modify"><img src="/images/ico-modify@3x.png" alt=""><span>수정</span></a>
                     <a href="" class="delete"><img src="/images/ico-delete@3x.png" alt=""><span>삭제</span></a>
                     <a href="" class="summary"><img src="/images/ico-summary@3x.png" alt=""><span>요약</span></a>
@@ -78,6 +78,10 @@
             </div><!-- e//container -->
 
         </div><!-- e//wrap -->
+
+        <%- include partial/fb_page.ejs %>
+        <%- include partial/fb_ad.ejs %>
+        <%- include partial/fb_comment.ejs %>
 
         <%- include partial/footer.ejs %>
 
