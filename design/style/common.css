@@ -426,6 +426,9 @@ body {
 .adnwMRectRoot {
   margin:0 auto;
 }
+.fb-page-and-ad {
+  text-align: center;
+}
 /*광고 배너  }*/
 @media all and (min-width: 300px) and (max-width: 490px){
   .who-are .muggle-member li {
