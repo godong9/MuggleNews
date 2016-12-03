@@ -110,6 +110,7 @@ body {
   position: relative;
   width:100%;
   height:170px;
+  margin:0 auto;
 }
 .foot-wrap {
   padding: 30px 10px;
@@ -328,11 +329,18 @@ body {
     height:100px;
     padding:100px 5% 0 5%;
   }
+  .footer {
+    width:100%;
+  }
   .foot-wrap {
     padding:30px 10px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 980px){
+
+  .footer {
+    width:100%;
+  }
   /*{ 우리가 누구*/
   .who-are {
   width:100%;
@@ -370,6 +378,10 @@ body {
     font-size:16px;
     color:#f05440;
   }
+  .footer {
+    position: relative;
+    width: 100%;
+  }
 }
 @media all and (min-width: 980px) and (max-width: 1280px) {
   .wrap{
@@ -385,8 +397,9 @@ body {
 
   .footer {
     position: relative;
-    width:100%;
+    width:980px;
     height:170px;
+    margin:0 auto;
   }
   .foot-wrap {
   padding: 30px;
@@ -591,7 +604,7 @@ body {
 
   .footer {
     position: relative;
-    width:100%;
+    width:1280px;
     height:170px;
   }
   .foot-wrap {

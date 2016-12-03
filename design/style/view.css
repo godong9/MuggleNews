@@ -130,6 +130,10 @@
     font-size:14px;
     color: #ffffff;
 }
+.container.view .view-count span {
+    padding-left:20px;
+    background:url(../images/ico-viewcount@3x.png) no-repeat;
+}
 .view .news-container  {
     margin:0 auto;
 }
