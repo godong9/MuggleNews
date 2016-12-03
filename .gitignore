@@ -43,3 +43,5 @@ server/doc
 server/public/javascripts/libs
 
 server/config/env
+
+server/upload/
