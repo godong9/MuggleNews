@@ -5,7 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var passport = require('passport');
 
+var auth = require('./middlewares/auth');
 var config = require('./config/index');
 
 var index = require('./routes/index');
@@ -43,6 +45,9 @@ if (config.isProduction()) {
     cookie: {}
   }));
 }
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', index);
 app.use('/users', users);
