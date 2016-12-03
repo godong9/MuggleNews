@@ -85,9 +85,10 @@ body {
   margin-right:10px;
 }
 .header .login-box a span {
-  line-height:28px;
+  line-height:30px;
   font-size: 14px;
   color: #ef5441;
+  vertical-align: top;
 }
 .header .login-box .log-on {
   line-height:30px;
