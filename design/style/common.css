@@ -97,7 +97,6 @@ body {
   height:24px;
   margin:0 10px 0 0;
   border-radius: 24px;
-  -moz-border-radius:
 }
 .header .login-box .log-on a span {
   line-height:28px;
@@ -123,7 +122,7 @@ body {
 .footer ul li {
   display: inline-block;
   height:17px;
-  line-height;17px;
+  line-height:17px;
   text-align: left;
   font-size:14px;
   color: #4d4d4d;
@@ -173,7 +172,71 @@ body {
 }
 /* footer ) */
 
-
+/* 스토리뉴스 미리보기 {*/
+.muggle-preview-main {
+  width:100%;
+  text-align: center;
+  margin:0 auto;
+}
+.muggle-preview-main h3 {
+  width:100%;
+  height:85px;
+  line-height:85px;;
+  font-size:24px;
+  text-align: center;
+  color: #666666;
+}
+.muggle-preview-main .muggle-preview-list {
+  width:100%;
+}
+.muggle-preview-main .muggle-preview-list a {
+  position: relative;
+  display: block;
+  float:left;
+  width:100%;
+  height:170px;
+  margin:5px 2%;
+  overflow: hidden;
+}
+.muggle-preview-main .muggle-preview-list .p-thum-img {
+  width:100%;
+  height:100%;
+}
+.muggle-preview-main .muggle-preview-list .p-list-wrap {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:125px;
+  padding-top:45px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.muggle-preview-main .p-list-wrap .title p{
+  line-height:1.0;;
+  text-align: center;
+  font-size:24px;
+  padding:0 5px;
+  color: #ffffff;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.muggle-preview-main .p-list-wrap .desc p{
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.0;
+  text-align: center;
+  color: #ffffff;
+  padding:6px 5px 13px 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/*스토리뉴스 미리보기스토리뉴스 미리보기 }*/
 .container{
   width: 100%;
   height: auto;
@@ -326,7 +389,7 @@ body {
     display: block;
     float:left;
     width:40%;
-    height:100px;
+    height:170px;
     padding:100px 5% 0 5%;
   }
   .footer {
@@ -335,12 +398,52 @@ body {
   .foot-wrap {
     padding:30px 10px;
   }
+  .muggle-preview-main .muggle-preview-list a {
+    position: relative;
+    display: block;
+    float:left;
+    width:100%;
+    height:100px;
+    margin:5px 0;
+    overflow: hidden;
+  }
+}
+@media all and (min-width: 490px) and (max-width: 768px){
+  .muggle-preview-main .muggle-preview-list a {
+    position: relative;
+    display: block;
+    float:left;
+    width:100%;
+    height:170px;
+    margin:5px 0;
+    overflow: hidden;
+  }
 }
 @media all and (min-width: 768px) and (max-width: 980px){
 
   .footer {
     width:100%;
   }
+  /* 스토리 뉴스 미리보기 }*/
+  .muggle-preview-main {
+    width:100%;
+    text-align: center;
+    margin:0 auto;
+  }
+  .muggle-preview-main .muggle-preview-list a {
+    position: relative;
+    display: block;
+    float: left;
+    width: 32%;
+    height: 170px;
+    margin: 0 2%;
+    overflow: hidden;
+  }
+  .muggle-preview-main .muggle-preview-list a:first-child,
+  .muggle-preview-main .muggle-preview-list a:last-child {
+    margin:0;
+  }
+  /* 스토리 뉴스 미리보기 }*/
   /*{ 우리가 누구*/
   .who-are {
   width:100%;
@@ -412,7 +515,7 @@ body {
   .footer ul li {
     float:left;
     height:17px;
-    line-height;17px;
+    line-height:17px;
     text-align: left;
     font-size:14px;
     color: #4d4d4d;
@@ -464,7 +567,25 @@ body {
     width:100%;
     height:100%;
   }
-
+  /* 스토리 뉴스 미리보기 {*/
+  .muggle-preview-main {
+    max-width:980px;
+    text-align: center;
+    margin:0 auto;
+  }
+  .muggle-preview-main .muggle-preview-list a {
+    position: relative;
+    display: block;
+    float: left;
+    width: 32%;
+    height: 170px;
+    margin: 0 2%;
+    overflow: hidden;
+  }
+  .muggle-preview-main .muggle-preview-list a:first-child,
+  .muggle-preview-main .muggle-preview-list a:last-child {
+    margin:0;
+  }
   .container{
     width: 100%;
     height: 620px;
@@ -618,7 +739,7 @@ body {
   .footer ul li {
     float:left;
     height:17px;
-    line-height;17px;
+    line-height:17px;
     text-align: left;
     font-size:14px;
     color: #4d4d4d;
@@ -669,7 +790,22 @@ body {
     width:100%;
     height:100%;
   }
-
+  /* 스토리 뉴스 미리보기 {*/
+  .muggle-preview-main {
+    width:1140px;
+    text-align: center;
+    margin:0 auto;
+  }
+  .muggle-preview-main .muggle-preview-list a {
+    position: relative;
+    display: block;
+    float: left;
+    width: 360px;
+    height: 170px;
+    margin: 0 10px;
+    overflow: hidden;
+  }
+  /* 스토리 뉴스 미리보기 }*/
   .container{
     width: 100%;
     height: 620px;
