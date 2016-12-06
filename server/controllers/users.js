@@ -40,6 +40,10 @@ const UserController = {
     res.redirect('/');
   },
   insertPreUser: function login(req, res) {
+    if (!req.body.email) {
+      res.status(500).send('이메일을 입력해주세요!');
+      return;
+    }
     let params = {
       email: req.body.email,
       referrer: req.headers.referer,

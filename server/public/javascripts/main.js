@@ -21,10 +21,13 @@ define([
       let params = {
         email: $('#email').val()
       };
-      HttpUtil.postData('/users/pre/register', params, function(data) {
+      HttpUtil.postData('/users/pre/register', params, function(err, data) {
+        if (err) {
+          console.log("Error");
+          return;
+        }
         alert("등록이 완료되었습니다.");
         console.log("Success");
-        console.log(data);
       });
     });
   };
