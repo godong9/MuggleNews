@@ -475,7 +475,7 @@
     .view #preview .preview-link {
         position: absolute;
         bottom:10px;
-        left:10px;
+        left:20px;
         font-size:12px;
         color: #aaaaaa;
     }
