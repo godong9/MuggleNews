@@ -40,6 +40,7 @@ body {
   position: relative;
   width:100%;
   height:80px;
+  background:#ffffff;
 }
 .header a.logo {
   display: block;
@@ -54,7 +55,7 @@ body {
 }
 .header .login-box {
   position: absolute;
-  right:30px;
+  right:20px;
   top:25px;
   text-align:right;
 }
@@ -86,7 +87,7 @@ body {
   vertical-align: middle;
 }
 .header .login-box a span {
-  line-height:30px;
+  line-height:32px;
   font-size: 14px;
   color: #ef5441;
   vertical-align: top;
@@ -102,9 +103,10 @@ body {
   -moz-border-radius:15px;
   border-radius:15px;
   vertical-align: middle;
+  border: solid 1px #ef5441;
 }
 .header .login-box .log-on a span {
-  line-height:31px;
+  line-height:32px;
   font-size:14px;
   color:#bbbbbb;
   vertical-align: top;
@@ -193,8 +195,9 @@ body {
   color: #666666;
 }
 .muggle-preview-main .muggle-preview-list {
-  width:96%;
-  margin:0 auto;
+  width:305px;
+  margin:0 auto 15px;
+  overflow: hidden;
 }
 .muggle-preview-main .muggle-preview-list a {
   position: relative;
@@ -202,7 +205,7 @@ body {
   float:left;
   width:100%;
   height:170px;
-  margin:5px 2%;
+  margin:0 0 20px 0;
   overflow: hidden;
 }
 .muggle-preview-main .muggle-preview-list .p-thum-img {
@@ -218,7 +221,7 @@ body {
   top:0;
   left:0;
   width:100%;
-  height:125px;
+  height:170px;
   padding-top:45px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.3);
@@ -250,7 +253,7 @@ body {
 .muggle-preview-main .muggle-preview-list .user-infor {
   width:95%;
   text-align: center;
-  margin:0 auto;
+  margin:5px auto;
   height:20px;
   line-height:20px;;
 }
@@ -262,11 +265,13 @@ body {
   -webkit-border-radius:20px;
   -moz-border-radius:20px;
   border-radius:20px;
+  border: solid 1px #ef5441;
 }
 .muggle-preview-main .muggle-preview-list .user-infor .user-profile img{
   width:100%;
   height:100%;
   vertical-align: middle;
+  object-fit: cover;
 }
 .muggle-preview-main .muggle-preview-list .user-infor .user-name {
   display: inline-block;
@@ -392,8 +397,9 @@ body {
   padding-top:30px;;
 }
 .who-are .muggle-member  ul{
-  widht:100%;
+  width:85%;
   text-align: center;
+  margin:0 auto;
 }
 .who-are .muggle-member li {
   display: inline-block;
@@ -442,7 +448,7 @@ body {
     display: block;
     float:left;
     width:40%;
-    height:170px;
+    height:140px;
     padding:100px 5% 0 5%;
   }
   .footer {
@@ -451,16 +457,13 @@ body {
   .foot-wrap {
     padding:30px 10px;
   }
-  .muggle-preview-main .muggle-preview-list {
-    width:100%;
-  }
   .muggle-preview-main .muggle-preview-list a {
     position: relative;
     display: block;
     float:left;
     width:100%;
-    height:100px;
-    margin:5px 0;
+    height:170px;
+    margin:0 0 20px 0;
     overflow: hidden;
   }
 }
@@ -471,12 +474,11 @@ body {
     float:left;
     width:100%;
     height:170px;
-    margin:5px 0;
+    margin:0 0 20px 0;
     overflow: hidden;
   }
 }
 @media all and (min-width: 768px) and (max-width: 980px){
-
   .footer {
     width:100%;
   }

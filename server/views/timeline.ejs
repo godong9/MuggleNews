@@ -20,10 +20,29 @@
                     <a href="" class="summary"><img src="/images/ico-summary@3x.png" alt=""><span>요약</span></a>
                     <a href="" class="share"><img src="/images/ico-share@3x.png" alt=""><span>공유</span></a>
                 </div><!-- e//login -->
+
+                <div class="login-box">
+                    <% if (me) { %>
+                    <div class="log-on">
+                        <a href="" class="log-in">
+                            <img src="<%= me.picture && me.picture.data && me.picture.data.url %>" alt="">
+                            <span><%= me.name %></span>
+                        </a>
+                    </div>
+                    <% } else { %>
+                    <a href="/users/login/facebook" class="log-in">
+                        <img src="images/ico-facebook-01@3x.png" alt="">
+                        <span>로그인</span>
+                    </a>
+                    <% } %>
+                </div><!-- e//login -->
             </div><!-- e//header -->
 
             <div class="container view">
-                <div class="inner-box" style="background: url(<%= timeline.timeline_cover_img %>) no-repeat center center; background-size: 100% 100%;">
+                <div class="bg">
+                    <img src="<%= timeline.timeline_cover_img %>" alt="">
+                </div>
+                <div class="inner-box">
                     <div class="news-cover">
                         <h1><%= timeline.timeline_title %></h1>
                         <p class="h1_desc"><%= timeline.timeline_subtitle %></p>
@@ -58,14 +77,16 @@
                                     <% if (item.preview_title) { %>
                                     <div id="preview">
                                         <div class="preview-wrap">
-                                            <div class="thum-img"><img src="<%= item.preview_img %>" alt="이미지" /></div>
-                                            <div class="title">
-                                                <p><%= item.preview_title %></p>
-                                            </div>
-                                            <div class="txt-area">
-                                                <p><%= item.preview_content %></p>
-                                                <a href="<%= item.preview_url %>" class="preview-link"><%= item.preview_url %></a>
-                                            </div>
+                                            <a href="">
+                                                <div class="thum-img"><img src="<%= item.preview_img %>" alt="이미지" /></div>
+                                                <div class="title">
+                                                    <p><%= item.preview_title %></p>
+                                                </div>
+                                                <div class="txt-area">
+                                                    <p><%= item.preview_content %></p>
+                                                    <span href="<%= item.preview_url %>" class="preview-link"><%= item.preview_url %></span>
+                                                </div>
+                                            </a>
                                         </div><!--e//inner-box -->
                                     </div><!--e//#preview -->
                                     <% } %>
