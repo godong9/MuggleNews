@@ -194,7 +194,8 @@ body {
 }
 .muggle-preview-main .muggle-preview-list {
   width:96%;
-  margin:0 auto;
+  margin:0 auto 25px;
+  overflow: hidden;
 }
 .muggle-preview-main .muggle-preview-list a {
   position: relative;
