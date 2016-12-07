@@ -54,7 +54,7 @@ body {
 }
 .header .login-box {
   position: absolute;
-  right:30px;
+  right:20px;
   top:25px;
   text-align:right;
 }
@@ -86,7 +86,7 @@ body {
   vertical-align: middle;
 }
 .header .login-box a span {
-  line-height:30px;
+  line-height:32px;
   font-size: 14px;
   color: #ef5441;
   vertical-align: top;
@@ -104,7 +104,7 @@ body {
   vertical-align: middle;
 }
 .header .login-box .log-on a span {
-  line-height:31px;
+  line-height:32px;
   font-size:14px;
   color:#bbbbbb;
   vertical-align: top;
