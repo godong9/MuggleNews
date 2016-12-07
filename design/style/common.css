@@ -102,6 +102,7 @@ body {
   -moz-border-radius:15px;
   border-radius:15px;
   vertical-align: middle;
+  border: solid 1px #ef5441;
 }
 .header .login-box .log-on a span {
   line-height:32px;
@@ -263,11 +264,13 @@ body {
   -webkit-border-radius:20px;
   -moz-border-radius:20px;
   border-radius:20px;
+  border: solid 1px #ef5441;
 }
 .muggle-preview-main .muggle-preview-list .user-infor .user-profile img{
   width:100%;
   height:100%;
   vertical-align: middle;
+  object-fit: cover;
 }
 .muggle-preview-main .muggle-preview-list .user-infor .user-name {
   display: inline-block;

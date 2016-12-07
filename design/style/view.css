@@ -119,6 +119,7 @@
     -webkit-border-radius:34px;
     -moz-border-radius:34px;
     border-radius:34px;
+    border: solid 1px #ef5441;
 }
 .container.view .user-infor .user-profile img{
     vertical-align: middle;
