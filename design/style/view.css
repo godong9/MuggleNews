@@ -76,10 +76,11 @@
     z-index:10;
 }
 .container.view h1 {
-    width:100%;
+    width:94%;
     height:60px;
     line-height:60px;
     text-align: center;
+    padding:0 3%;
     color: #ffffff;
     font-size:50px;
     white-space: nowrap;
@@ -88,11 +89,18 @@
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 .container.view .h1_desc {
-    width:100%;
+    width:94%;
     line-height:30px;
     text-align: center;
+    padding:0 3%;
     color: #ffffff;
     font-size:24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 .container.view .user-infor {
@@ -166,7 +174,7 @@
     display: block;
     position: relative;
     padding:90px 0 0 0;
-    border-left:3px solid #ffeae7;
+    border-left:2px solid #ffeae7;
 }
 
 .view .news-container .section .number {
@@ -216,33 +224,27 @@
 .view .news-container .section .new-conts p:first-child {
     padding-top:20px;
 }
-.view .news-container .section .new-conts #preview {
-}
 .view #preview {
     position: relative;
     width:100%;
-    height:150px;
+    height:275px;
     overflow: hidden;
     margin-top:20px;
+    border:1px solid #f7f7f7;
 }
 .view #preview .preview-wrap {
     position: relative;
     height:100%;
-    padding-left:150px;
-    border:1px solid #f7f7f7;
 }
 .view #preview .preview-wrap a{
     display: block;
+    text-align: left;
 }
 .view #preview .thum-img {
-    width:150px;
-    height:100%;
-    position: absolute;
-    top:0;
-    left:0;
+    width:100%;
+    height:150px;
     overflow: hidden;
 }
-
 .view #preview .thum-img img{
     width:100%;
     height:100%;
@@ -250,18 +252,15 @@
 }
 .view #preview .title {
     padding:10px 10px 5px 10px;
+    text-align: left;
 }
 .view #preview .title p {
     font-size:20px;
     color: #333333;
-    line-height:1.4;
+    line-height:1.2;
     padding:0;
+    text-align: left;
     overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* 라인수 */
-    -webkit-box-orient: vertical;
-    word-wrap:break-word;
 }
 
 .view #preview .txt-area p {
@@ -279,13 +278,13 @@
 .view #preview .preview-link {
     position: absolute;
     bottom:10px;
-    left:160px;
+    left:10px;
     font-size:12px;
     color: #aaaaaa;
     font-weight: 300;
     display: block;
     overflow: hidden;
-    width:70%;
+    width:90%;
     height:15px;
     white-space:nowrap;
     text-overflow:ellipsis;
@@ -313,6 +312,14 @@
     width:100%;
     margin:0 auto;
     text-align: center;
+}
+@media all and (max-width: 360px){
+    .view #preview {
+        height:275px !important;
+    }
+    .view #preview .thum-img {
+        height:150px !important;
+    }
 }
 @media all and (max-width: 719px) {
     .view .header {
@@ -349,7 +356,7 @@
     }
     .view .news-container {
         width: 96%;
-        margin: 0 auto;
+        margin: 0 3% 0 1%;
     }
     .view .news-container .section {
         position: relative;
@@ -361,8 +368,21 @@
         margin-left: -60px;
         padding: 0 0 0 60px;
     }
+    .view #preview {
+        height:325px;
+    }
+    .view #preview .thum-img {
+        height:200px;
+    }
     .view #preview .title {
+        max-height:27px;
         padding: 15px 10px 10px 10px;
+    }
+    .view #preview .title p {
+        width:100%;
+        overflow: hidden;
+        white-space:nowrap;
+        text-overflow: ellipsis;
     }
     .view #preview .txt-area {
         padding: 0 10px;
@@ -370,7 +390,7 @@
     .view #preview .txt-area p {
         font-size: 14px;
         color: #666666;
-        line-height: 1.1;
+        line-height: 1.4;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -381,8 +401,6 @@
 
     .view #preview .preview-link {
         position: absolute;
-        bottom: 10px;
-        left: 160px;
         font-size: 12px;
         color: #aaaaaa;
     }
@@ -431,6 +449,12 @@
         margin-left:-60px;
         padding:0 0 0 60px;
     }
+    .view #preview {
+        height:425px;
+    }
+    .view #preview .thum-img {
+        height:300px;
+    }
     .view #preview .title {
         padding:10px 20px 5px 20px;
     }
@@ -451,7 +475,7 @@
     .view #preview .preview-link {
         position: absolute;
         bottom:10px;
-        left:170px;
+        left:10px;
         font-size:12px;
         color: #aaaaaa;
     }
