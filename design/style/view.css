@@ -10,6 +10,7 @@
     height:80px;
     margin:0 auto;
     z-index:150;
+    background:transparent;
 }
 .view .header a.logo {
     width:130px;
@@ -43,6 +44,25 @@
     font-size:14px;
     color: #ffffff;
     line-height:1.3;
+}
+.view .header.middle {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+    background:#ffffff;
+    border-bottom: solid 1px #efefef;
+}
+.view .header.middle a.logo {
+    background: url(../images/logo-01@3x.png) no-repeat 0 0;
+    background-size:130px 20px;
+}
+.view .header.middle .edit-box {
+    display: none;
+}
+.view .header.middle .login-box {
+    display: block;
 }
 .container.view {
     position: relative;
