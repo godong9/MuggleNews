@@ -33,6 +33,15 @@ const TimelineController = {
       data.lastUpdatedAt = moment(items[0].timeline_updated_at).format("YYYY년 M월 D일");
       res.render('timeline', data);
     });
+  },
+  getNewTimelinePage: function getNewTimelinePage(req, res) {
+
+  },
+  postTimeline: function postTimeline(req, res) {
+
+  },
+  postTimelineItems: function postTimelineItems(req, res) {
+
   }
 };
 

@@ -2,7 +2,7 @@
 
 const pool = require('../db/db').pool;
 
-let User = {
+let Timeline = {
   getItemsByTimelineId: function getUser(id, cb) {
     let query =
         'SELECT ' +
@@ -29,4 +29,4 @@ let User = {
   }
 };
 
-module.exports = User;
+module.exports = Timeline;
