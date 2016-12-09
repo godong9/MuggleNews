@@ -25,6 +25,10 @@ html, body {
   height:100%;
   font-family:AppleSDGothic,"돋움",Dotum,Helvetica,Arial,"Apple Gothic",sans-serif!important;
 }
+html {
+  overflow-x:hidden;
+  overflow-y: auto;
+}
 body {
   position:relative;
   background:#ffffff;
