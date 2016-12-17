@@ -26,7 +26,7 @@ router.get('/:id', TimelineController.getTimelinePage);
  * @apiExample {url} Example usage:
  *    http://localhost:9000/timelines/new
  */
-router.get('/new', TimelineController.getNewTimelinePage);
+router.get('/edit', TimelineController.getNewTimelinePage);
 
 /**
  * @api {post} /timelines Post Timeline
@@ -47,19 +47,62 @@ router.get('/new', TimelineController.getNewTimelinePage);
 router.post('/', TimelineController.postTimeline);
 
 /**
- * @api {post} /timelines/items Post Timeline Items
+ * @api {post} /timelines/item Post Timeline Item
  * @apiVersion 1.0.0
- * @apiName PostTimelineItems
+ * @apiName PostTimelineItem
  * @apiGroup Timeline
  *
  * @apiExample {url} Example usage:
- *    http://localhost:9000/timelines/items
+ *    http://localhost:9000/timelines/item
  *
- * @apiParam {Object[]} items 뉴스 아이템 리스트
+ * @apiParam {Object} item 뉴스 아이템
+ * @apiParam {String} item.title 제목
+ * @apiParam {Number} item.timelineId 타임라인 ID
+ * @apiParam {Number} item.order 순서
+ * @apiParam {String} [item.content] 내용
+ * @apiParam {Number} [item.previewId] 프리뷰 ID
+ * @apiParam {Date} [item.itemDate] 날짜/시간
  *
  * @apiSuccess {Object} data data
  */
-router.post('/items', TimelineController.postTimelineItems);
+router.post('/item', TimelineController.postTimelineItem);
+
+/**
+ * @api {put} /timelines/item Put Timeline Item
+ * @apiVersion 1.0.0
+ * @apiName PutTimelineItem
+ * @apiGroup Timeline
+ *
+ * @apiExample {url} Example usage:
+ *    http://localhost:9000/timelines/item
+ *
+ * @apiParam {Object} item 뉴스 아이템
+ * @apiParam {Number} item.id 아이템 id
+ * @apiParam {String} item.title 제목
+ * @apiParam {Number} item.timelineId 타임라인 ID
+ * @apiParam {String} item.content 내용
+ * @apiParam {Number} item.previewId 프리뷰 ID
+ * @apiParam {Date} item.itemDate 날짜/시간
+ *
+ * @apiSuccess {Object} data data
+ */
+router.put('/item', TimelineController.putTimelineItem);
+
+/**
+ * @api {put} /timelines/orders Put Timeline Orders
+ * @apiVersion 1.0.0
+ * @apiName PutTimelineOrders
+ * @apiGroup Timeline
+ *
+ * @apiExample {url} Example usage:
+ *    http://localhost:9000/timelines/orders
+ *
+ * @apiParam {Number} item.beforeOrder 변경전 order
+ * @apiParam {Number} item.nextOrder 변경후 order
+ *
+ * @apiSuccess {Object} data data
+ */
+router.put('/orders', TimelineController.putTimelineOrders);
 
 
 module.exports = router;
