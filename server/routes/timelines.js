@@ -39,8 +39,10 @@ router.get('/new', TimelineController.getNewTimelinePage);
  *
  * @apiParam {String} title 제목
  * @apiParam {String} subtitle 부제목
+ * @apiParam {String} coverImg 커버이미지
  *
  * @apiSuccess {Object} data data
+ * @apiSuccess {String} data.id 생성된 timeline id
  */
 router.post('/', TimelineController.postTimeline);
 

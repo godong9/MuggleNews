@@ -1,5 +1,6 @@
 'use strict';
 
+const async = require('async');
 const pool = require('../db/db').pool;
 
 let Timeline = {
@@ -27,7 +28,7 @@ let Timeline = {
       cb(err, rows);
     });
   },
-  increaseTimelineViewCount: function (id, cb) {
+  increaseTimelineViewCount: function increaseTimelineViewCount(id, cb) {
     let query =
         'UPDATE ' +
           'timelines ' +
@@ -36,6 +37,24 @@ let Timeline = {
     pool.query(query, id, function(err) {
       cb(err);
     });
+  },
+  insertTimeline: function insertTimeline(params, cb) {
+    let query = 'INSERT INTO timelines (title, subtitle, cover_img, user_id) VALUES (?,?,?,?);';
+    let insertItem = [
+      params.title,
+      params.subtitle,
+      params.coverImg,
+      params.userId
+    ];
+    pool.query(query, insertItem, function(err, result) {
+      cb(err, result && result.insertId);
+    });
+  },
+  updateTimeline: function saveTimeline(params, cb) {
+
+  },
+  updateTimelineItems: function updateTimelineItems(params, cb) {
+
   }
 };
 

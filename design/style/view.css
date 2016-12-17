@@ -74,6 +74,8 @@
 .container.view .bg {
     width:100%;
     height:500px;
+    background:url(../images/img_cover_base_00.png) no-repeat center center;
+    background-size:cover;
 }
 .container.view .bg img {
     width:100%;
@@ -139,7 +141,7 @@
     -webkit-border-radius:34px;
     -moz-border-radius:34px;
     border-radius:34px;
-    border: solid 1px #ef5441;
+    border: solid 1px #ffffff;
 }
 .container.view .user-infor .user-profile img{
     vertical-align: middle;
@@ -190,7 +192,7 @@
 }
 .view .news-container ul li:last-child {
     padding:90px 0 150px 0;
-    border-left:2px solid #ffffff;
+    border-left:1px solid #ffffff;
 }
 .view .news-container ul li:last-child .section {
     position: relative;
@@ -200,16 +202,16 @@
     position: absolute;
     top: -90px;
     left: -2px;
-    width:2px;
+    width:1px;
     height:90px;
     content:"";
-    background:#ffeae7;
+    background:#eeeeee;
 }
 .view .news-container ul li {
     display: block;
     position: relative;
     padding:90px 0 0 0;
-    border-left:2px solid #ffeae7;
+    border-left:1px solid #eeeeee;
 }
 .view .news-container .section .number {
     position: relative;
@@ -220,11 +222,11 @@
     position: absolute;
     top:0;
     left:0;
-    width:46px;
-    height:46px;
+    width:45px;
+    height:45px;
     line-height:46px;
     text-align: center;
-    font-size:24px;
+    font-size:18px;
     color: #ffffff;
     background: #ef5441;
     -webkit-border-radius:25px;
@@ -278,6 +280,9 @@
     width:100%;
     height:150px;
     overflow: hidden;
+    background:url(../images/img_preview_base_00.png) no-repeat center center;
+    background-size:cover;
+    border-bottom:1px solid #eeeeee;
 }
 .view #preview .thum-img img{
     width:100%;
@@ -442,6 +447,7 @@
     }
     .view #preview .thum-img {
         height:200px;
+        background-size:cover;
     }
     .view #preview .title {
         max-height:27px;
@@ -523,6 +529,7 @@
     }
     .view #preview .thum-img {
         height:300px;
+        background-size:cover;
     }
     .view #preview .title {
         padding:10px 20px 5px 20px;
