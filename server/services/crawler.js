@@ -85,10 +85,10 @@ let CrawlerService = {
       title = URL.parse(url).host;
     }
     return {
-      preview_url: url,
-      preview_img: image || "",
       title: title,
-      content: description || ""
+      content: description || "",
+      preview_url: url,
+      preview_img: image || ""
     };
   }
 };
