@@ -44,7 +44,7 @@ const TimelineController = {
     });
   },
   getNewTimelinePage: function getNewTimelinePage(req, res) {
-
+    res.render('timeline-edit', {});
   },
   postTimeline: function postTimeline(req, res) {
     let userId = Session.getSessionUserId(req);

@@ -26,7 +26,7 @@ router.get('/:id', TimelineController.getTimelinePage);
  * @apiExample {url} Example usage:
  *    http://localhost:9000/timelines/new
  */
-router.get('/new', TimelineController.getNewTimelinePage);
+router.get('/edit', TimelineController.getNewTimelinePage);
 
 /**
  * @api {post} /timelines Post Timeline

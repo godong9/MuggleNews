@@ -45,7 +45,7 @@ module.exports = function (shipit) {
   shipit.blTask('deploy-start', function () {
     let buildCommand = [
       'cd ' + shipit.config.deployTo + '/current',
-      'pm2 start process.json'
+      './start.sh'
     ];
 
     return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
@@ -60,7 +60,7 @@ module.exports = function (shipit) {
     return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
   });
 
-  shipit.blTask('deploy-server', ['deploy', 'build', 'deploy-config', 'deploy-start'], function() {
+  shipit.blTask('deploy-server', ['deploy', 'build', 'deploy-config', 'deploy-restart'], function() {
 
   });
 
