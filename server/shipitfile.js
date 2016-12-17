@@ -54,6 +54,7 @@ module.exports = function (shipit) {
 
   shipit.blTask('deploy-start', function () {
     let buildCommand = [
+      'source ~/.bashrc',
       'cd ' + shipit.config.deployTo + '/current',
       'pm2 startOrRestart --env production process.json'
     ];
@@ -61,16 +62,7 @@ module.exports = function (shipit) {
     return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
   });
 
-  shipit.blTask('deploy-restart', function () {
-    let buildCommand = [
-      'cd ' + shipit.config.deployTo + '/current',
-      'pm2 restart MuggleNews'
-    ];
-
-    return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
-  });
-
-  shipit.blTask('deploy-server', ['deploy', 'deploy-config', 'build'], function() {
+  shipit.blTask('deploy-server', ['deploy', 'deploy-config', 'build', 'deploy-start'], function() {
 
   });
 
