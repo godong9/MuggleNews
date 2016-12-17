@@ -99,15 +99,18 @@ body {
 .header .login-box .log-on {
   line-height:30px;
 }
+.header .login-box .log-on .log-in {
+  padding:0 0 0 10px;
+}
 .header .login-box .log-on a img {
   width:24px;
   height:24px;
-  margin:0 10px 0 0;
+  margin:0 5px 0 0;
   -webkit-border-radius:15px;
   -moz-border-radius:15px;
   border-radius:15px;
   vertical-align: middle;
-  border: solid 1px #ef5441;
+ /* border: solid 1px #eeeeee;*/
 }
 .header .login-box .log-on a span {
   line-height:32px;
