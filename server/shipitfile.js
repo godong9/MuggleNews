@@ -16,7 +16,8 @@ module.exports = function (shipit) {
       shallowClone: true
     },
     staging: {
-      servers: 'godong@godong9.com'
+      servers: 'godong@godong9.com',
+      branch: 'master'
     }
   });
 
@@ -28,7 +29,9 @@ module.exports = function (shipit) {
     let buildCommand = [
       'cd ' + shipit.config.deployTo + '/current/server',
       //package 설치
-      'npm install'
+      'npm install',
+      'bower install',
+      'gulp build'
     ];
 
     return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
@@ -36,7 +39,8 @@ module.exports = function (shipit) {
 
   shipit.blTask('deploy-config', function () {
     let buildCommand = [
-      'scp /Users/godong9/project/MuggleNews/server/config/env/production.js godong@godong9.com:/home/godong/muggle-news/current/server/config/env'
+      'scp /Users/godong9/project/MuggleNews/server/config/env/production.js godong@godong9.com:/home/godong/muggle-news/current/server/config/env',
+      'scp /Users/godong9/project/MuggleNews/server/config/env/test.js godong@godong9.com:/home/godong/muggle-news/current/server/config/env'
     ];
 
     return shipit.local(makeCommandStr(buildCommand), cmdOptions);

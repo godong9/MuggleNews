@@ -53,7 +53,7 @@ gulp.task('test', ['lint', 'coverage'], function() {
     .pipe(mocha({reporter: 'nyan'}))
     // Creating the reports after tests ran
     .pipe(istanbul.writeReports())
-    // Enforce a coverage of at least 90%
+    // Enforce a coverage of at least 80%
     .pipe(istanbul.enforceThresholds({ thresholds: { global: 80 } }));
 });
 
