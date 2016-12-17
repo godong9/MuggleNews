@@ -261,6 +261,7 @@
 .view .news-container .section .new-conts p:first-child {
     padding-top:20px;
 }
+/* 프리뷰 가로 { */
 .view .news-container .section .preview {
     position: relative;
     width:100%;
@@ -330,6 +331,77 @@
     white-space:nowrap;
     text-overflow:ellipsis;
 }
+/* 프리뷰 가로 } */
+/* 프리뷰 세로 { */
+.view .news-container .section .preview.vertical{
+    height:auto!important;
+}
+.view .news-container .section .preview.vertical a{
+    display: block;
+    overflow: hidden;
+}
+.view .news-container .section .preview.vertical .thum-img {
+    width:35%;
+    height:100%;
+    float:left;
+    overflow: hidden;
+    background:url(../images/img_preview_base_00.png) no-repeat center center;
+    background-size:cover;
+    border-bottom:1px solid #eeeeee;
+}
+.view .news-container .section .preview.vertical .thum-img img{
+    width:100%;
+    height:100%;
+    /*object-fit: cover;*/
+}
+.view .news-container .section .preview.vertical .title {
+    width:65%;
+    float:right;
+    padding:0;
+}
+.view .news-container .section .preview.vertical .title p {
+    width:auto;
+    padding:10px 10px 5px 10px;
+    font-size:20px;
+    color: #333333;
+    line-height:1.2;
+    text-align: left;
+    overflow: hidden;
+}
+.view .news-container .section .preview.vertical .txt-area{
+    width:65%;
+    float:right;
+    padding:0;
+}
+.view .news-container .section .preview.vertical .txt-area p {
+    font-size:14px;
+    color: #666666;
+    line-height:1.4;
+    padding:0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+}
+.view .news-container .section .preview.vertical .preview-link {
+    position: absolute;
+    bottom:10px;
+    left:35%;
+    width:59%;
+    padding:0 0 0 10px;
+    font-size:12px;
+    color: #aaaaaa;
+    font-weight: 300;
+    display: block;
+    overflow: hidden;
+    height:15px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+/* 프리뷰 세로 } */
+
 .view .news-container .section .new-conts .other-news-list {
     margin-top:30px;
     width:100%;
@@ -481,6 +553,11 @@
         font-size: 12px;
         color: #aaaaaa;
     }
+    /*프리뷰 세로 {*/
+    .view .news-container .section .preview.vertical .title {
+        min-height:40px;
+    }
+    /*프리뷰 세로 }*/
     .fb-container {
         width:98%;
         margin:0 auto;
