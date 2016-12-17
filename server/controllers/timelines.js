@@ -7,6 +7,7 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('controllers/timelines');
 const Timeline = require('../models/timelines');
 const View = require('../services/view');
+const Session = require('../services/session');
 
 const TimelineController = {
   getTimelinePage: function login(req, res) {
@@ -46,7 +47,20 @@ const TimelineController = {
 
   },
   postTimeline: function postTimeline(req, res) {
-
+    let userId = Session.getSessionUserId(req);
+    if (!userId) {
+      res.status(401).send('로그인을 해주세요!');
+      return;
+    }
+    req.body.userId = userId;
+    Timeline.insertTimeline(req.body, function(err, result) {
+      if (err) {
+        logger.error(err);
+        res.status(500).send('서버 에러 발생');
+        return;
+      }
+      res.send({ id: result });
+    });
   },
   postTimelineItems: function postTimelineItems(req, res) {
 

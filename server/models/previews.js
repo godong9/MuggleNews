@@ -14,14 +14,13 @@ let Preview = {
           params.preview_url,
           params.preview_img
         ];
-        pool.query(query, insertItem, function(err) {
-          callback(err);
+        pool.query(query, insertItem, function(err, result) {
+          callback(err, result && result.insertId);
         });
       },
-      function(callback) {
-        let query = 'SELECT * FROM previews WHERE preview_url=? ORDER BY created_at DESC LIMIT 1;';
-        let queryItem = params.preview_url;
-        pool.query(query, queryItem, function(err, rows) {
+      function(id, callback) {
+        let query = 'SELECT * FROM previews WHERE id=?;';
+        pool.query(query, id, function(err, rows) {
           callback(err, rows && rows[0]);
         });
       }
