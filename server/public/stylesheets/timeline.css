@@ -74,6 +74,8 @@
 .container.view .bg {
     width:100%;
     height:500px;
+    background:url(../images/img_cover_base_00.png) no-repeat center center;
+    background-size:cover;
 }
 .container.view .bg img {
     width:100%;
@@ -139,7 +141,7 @@
     -webkit-border-radius:34px;
     -moz-border-radius:34px;
     border-radius:34px;
-    border: solid 1px #ef5441;
+    border: solid 1px #ffffff;
 }
 .container.view .user-infor .user-profile img{
     vertical-align: middle;
@@ -190,12 +192,26 @@
 }
 .view .news-container ul li:last-child {
     padding:90px 0 150px 0;
+    border-left:1px solid #ffffff;
+}
+.view .news-container ul li:last-child .section {
+    position: relative;
+}
+.view .news-container ul li:last-child .section::after{
+    display: block;
+    position: absolute;
+    top: -90px;
+    left: -2px;
+    width:1px;
+    height:90px;
+    content:"";
+    background:#eeeeee;
 }
 .view .news-container ul li {
     display: block;
     position: relative;
     padding:90px 0 0 0;
-    border-left:2px solid #ffeae7;
+    border-left:1px solid #eeeeee;
 }
 .view .news-container .section .number {
     position: relative;
@@ -206,11 +222,11 @@
     position: absolute;
     top:0;
     left:0;
-    width:46px;
-    height:46px;
+    width:45px;
+    height:45px;
     line-height:46px;
     text-align: center;
-    font-size:24px;
+    font-size:18px;
     color: #ffffff;
     background: #ef5441;
     -webkit-border-radius:25px;
@@ -250,7 +266,7 @@
     height:275px;
     overflow: hidden;
     margin-top:20px;
-    border:1px solid #f7f7f7;
+    border:1px solid #dddddd;
 }
 .view #preview .preview-wrap {
     position: relative;
@@ -264,11 +280,14 @@
     width:100%;
     height:150px;
     overflow: hidden;
+    background:url(../images/img_preview_base_00.png) no-repeat center center;
+    background-size:cover;
+    border-bottom:1px solid #eeeeee;
 }
 .view #preview .thum-img img{
     width:100%;
     height:100%;
-    object-fit: cover;
+    /*object-fit: cover;*/
 }
 .view #preview .title {
     padding:10px 10px 5px 10px;
@@ -342,32 +361,42 @@
     }
 }
 @media all and (max-width: 719px) {
-    .view .header {
-        position: relative;
-        background:#ffffff;
-    }
+
     .view .header .edit-box {
         position: absolute;
-        top: 100px;
+        top: 85px;
         right:20px;
     }
     .view .header a.logo {
         margin:30px 0 0 20px;
-        background: url(../images/logo-01@3x.png) no-repeat 0 0;
+        background: url(../images/logo-02@3x.png) no-repeat 0 0;
         background-size:130px 20px;
     }
     .view .header .login-box {
-        display: block;
+        display: none;
+    }
+    .view .header .edit-box a {
+        padding:0 5px;
     }
     .container.view .news-cover {
         position: relative;
         width: 100%;
-        height:300px;
-        padding: 200px 0 0 0;
+        height:280px;
+        padding: 220px 0 0 0;
         z-index: 10;
     }
+    .container.view h1 {
+        height: 30px;
+        line-height: 30px;
+        font-size:23px;
+    }
+    .container.view .h1_desc {
+        line-height: 1.3;
+        padding: 5px 0 0 0;
+        font-size:17px;
+    }
     .container.view .last-edit {
-        width:100%;
+        width:88%;
         left:20px;
     }
     .container.view .view-count {
@@ -390,7 +419,7 @@
     }
     .view .news-container .section .number .list-count {
         position: absolute;
-        top: -3px;
+        top: 0px;
         left: 10px;
         width: 27px;
         height: 27px;
@@ -418,6 +447,7 @@
     }
     .view #preview .thum-img {
         height:200px;
+        background-size:cover;
     }
     .view #preview .title {
         max-height:27px;
@@ -450,7 +480,7 @@
         color: #aaaaaa;
     }
     .fb-container {
-        width:100%;
+        width:98%;
         margin:0 auto;
         text-align: center;
     }
@@ -499,6 +529,7 @@
     }
     .view #preview .thum-img {
         height:300px;
+        background-size:cover;
     }
     .view #preview .title {
         padding:10px 20px 5px 20px;
