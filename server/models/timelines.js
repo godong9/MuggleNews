@@ -26,6 +26,16 @@ let Timeline = {
     pool.query(query, id, function(err, rows) {
       cb(err, rows);
     });
+  },
+  increaseTimelineViewCount: function (id, cb) {
+    let query =
+        'UPDATE ' +
+          'timelines ' +
+          'SET view_count = view_count + 1 ' +
+          'WHERE id = ?';
+    pool.query(query, id, function(err) {
+      cb(err);
+    });
   }
 };
 
