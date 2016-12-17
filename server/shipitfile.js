@@ -55,7 +55,7 @@ module.exports = function (shipit) {
   shipit.blTask('deploy-start', function () {
     let buildCommand = [
       'cd ' + shipit.config.deployTo + '/current',
-      'pm2 startOrRestart process.json'
+      'pm2 startOrRestart --env production process.json'
     ];
 
     return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
