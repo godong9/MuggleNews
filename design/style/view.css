@@ -260,23 +260,24 @@
 .view .news-container .section .new-conts p:first-child {
     padding-top:20px;
 }
-.view #preview {
+.view .news-container .section .preview {
     position: relative;
     width:100%;
     height:275px;
     overflow: hidden;
     margin-top:20px;
     border:1px solid #dddddd;
+    z-index:500;
 }
-.view #preview .preview-wrap {
+.view .news-container .section .preview .preview-wrap {
     position: relative;
     height:100%;
 }
-.view #preview .preview-wrap a{
+.view .news-container .section .preview .preview-wrap a{
     display: block;
     text-align: left;
 }
-.view #preview .thum-img {
+.view .news-container .section .preview .thum-img {
     width:100%;
     height:150px;
     overflow: hidden;
@@ -284,16 +285,16 @@
     background-size:cover;
     border-bottom:1px solid #eeeeee;
 }
-.view #preview .thum-img img{
+.view .news-container .section .preview .thum-img img{
     width:100%;
     height:100%;
     /*object-fit: cover;*/
 }
-.view #preview .title {
+.view .news-container .section .preview .title {
     padding:10px 10px 5px 10px;
     text-align: left;
 }
-.view #preview .title p {
+.view .news-container .section .preview .title p {
     font-size:20px;
     color: #333333;
     line-height:1.2;
@@ -302,7 +303,7 @@
     overflow: hidden;
 }
 
-.view #preview .txt-area p {
+.view .news-container .section .preview .txt-area p {
     font-size:14px;
     color: #666666;
     line-height:1.4;
@@ -314,7 +315,7 @@
     -webkit-box-orient: vertical;
     word-wrap:break-word;
 }
-.view #preview .preview-link {
+.view .news-container .section .preview .preview-link {
     position: absolute;
     bottom:10px;
     left:10px;
@@ -353,10 +354,10 @@
     text-align: center;
 }
 @media all and (max-width: 360px){
-    .view #preview {
+    .view .news-container .section .preview {
         height:275px !important;
     }
-    .view #preview .thum-img {
+    .view .news-container .section .preview .thum-img {
         height:150px !important;
     }
 }
@@ -442,27 +443,27 @@
         font-size: 17px;
         font-weight:300;
     }
-    .view #preview {
+    .view .news-container .section .preview {
         height:325px;
     }
-    .view #preview .thum-img {
+    .view .news-container .section .preview .thum-img {
         height:200px;
         background-size:cover;
     }
-    .view #preview .title {
+    .view .news-container .section .preview .title {
         max-height:27px;
         padding: 15px 10px 10px 10px;
     }
-    .view #preview .title p {
+    .view .news-container .section .preview .title p {
         width:100%;
         overflow: hidden;
         white-space:nowrap;
         text-overflow: ellipsis;
     }
-    .view #preview .txt-area {
+    .view .news-container .section .preview .txt-area {
         padding: 0 10px;
     }
-    .view #preview .txt-area p {
+    .view .news-container .section .preview .txt-area p {
         font-size: 14px;
         color: #666666;
         line-height: 1.4;
@@ -474,7 +475,7 @@
         word-wrap: break-word;
     }
 
-    .view #preview .preview-link {
+    .view .news-container .section .preview .preview-link {
         position: absolute;
         font-size: 12px;
         color: #aaaaaa;
@@ -524,20 +525,20 @@
         margin-left:-60px;
         padding:0 0 0 60px;
     }
-    .view #preview {
+    .view .news-container .section .preview {
         height:425px;
     }
-    .view #preview .thum-img {
+    .view .news-container .section .preview .thum-img {
         height:300px;
         background-size:cover;
     }
-    .view #preview .title {
+    .view .news-container .section .preview .title {
         padding:10px 20px 5px 20px;
     }
-    .view #preview .txt-area {
+    .view .news-container .section .preview .txt-area {
         padding:0 20px;
     }
-    .view #preview .txt-area p {
+    .view .news-container .section .preview .txt-area p {
         font-size:14px;
         color: #666666;
         line-height:1.4;
@@ -548,7 +549,7 @@
         -webkit-box-orient: vertical;
         word-wrap:break-word;
     }
-    .view #preview .preview-link {
+    .view .news-container .section .preview .preview-link {
         position: absolute;
         bottom:10px;
         left:20px;
