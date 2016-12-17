@@ -62,7 +62,16 @@ const TimelineController = {
       res.send({ id: result });
     });
   },
-  postTimelineItems: function postTimelineItems(req, res) {
+  putTimeline: function putTimeline(req, res) {
+
+  },
+  postTimelineItem: function postTimelineItem(req, res) {
+
+  },
+  putTimelineItem: function putTimelineItem(req, res) {
+
+  },
+  putTimelineOrders: function putTimelineOrders(req, res) {
 
   }
 };

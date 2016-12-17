@@ -50,11 +50,73 @@ let Timeline = {
       cb(err, result && result.insertId);
     });
   },
-  updateTimeline: function saveTimeline(params, cb) {
+  updateTimeline: function updateTimeline(params, cb) {
 
   },
-  updateTimelineItems: function updateTimelineItems(params, cb) {
-
+  insertTimelineItem: function insertTimelineItem(params, cb) {
+    let query = '' +
+        'INSERT INTO items ' +
+          '(title, content, timeline_id, preview_id, order, item_date) ' +
+          'VALUES (?,?,?,?,?,?);';
+    let insertItem = [
+      params.title,
+      params.content,
+      params.timelineId,
+      params.previewId,
+      params.order,
+      params.itemDate
+    ];
+    pool.query(query, insertItem, function(err, result) {
+      cb(err, result && result.insertId);
+    });
+  },
+  updateTimelineItem: function updateTimelineItem(params, cb) {
+    let query = '' +
+      'UPDATE ' +
+        'items ' +
+      'SET title = ?, ' +
+        'content = ? ' +
+        'timeline_id = ? ' +
+        'preview_id = ? ' +
+        'item_date = ? ' +
+      'WHERE id = ?';
+    let updateItem = [
+      params.title,
+      params.content,
+      params.timelineId,
+      params.previewId,
+      params.itemDate,
+      params.id
+    ];
+    pool.query(query, updateItem, function(err) {
+      cb(err);
+    });
+  },
+  changeTimelineOrders: function changeTimelineOrders(params, cb) {
+    async.waterfall([
+      function(callback) {
+        let query = 'UPDATE items SET order = ? WHERE id = ?;';
+        let updateItem = [
+          params.beforeOrder,
+          params.nextOrder
+        ];
+        pool.query(query, updateItem, function(err) {
+          callback(err);
+        });
+      },
+      function(callback) {
+        let query = 'UPDATE items SET order = ? WHERE id = ?;';
+        let updateItem = [
+          params.nextOrder,
+          params.beforeOrder
+        ];
+        pool.query(query, updateItem, function(err) {
+          callback(err);
+        });
+      },
+    ], function (err) {
+      cb(err);
+    });
   }
 };
 
