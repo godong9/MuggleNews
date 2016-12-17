@@ -43,7 +43,7 @@ const TimelineController = {
       res.render('timeline', data);
     });
   },
-  getNewTimelinePage: function getNewTimelinePage(req, res) {
+  getTimelineEditPage: function getNewTimelinePage(req, res) {
     res.render('timeline-edit', {});
   },
   postTimeline: function postTimeline(req, res) {

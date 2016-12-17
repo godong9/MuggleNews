@@ -18,15 +18,15 @@ const TimelineController = require('../controllers/timelines');
 router.get('/:id', TimelineController.getTimelinePage);
 
 /**
- * @api {get} /timelines/new Get New Timeline Page
+ * @api {get} /timelines/edit/:id Get Timeline Edit Page
  * @apiVersion 1.0.0
- * @apiName GetNewTimelinePage
+ * @apiName GetTimelineEditPage
  * @apiGroup Timeline
  *
  * @apiExample {url} Example usage:
- *    http://localhost:9000/timelines/new
+ *    http://localhost:9000/timelines/edit/1
  */
-router.get('/edit', TimelineController.getNewTimelinePage);
+router.get('/edit/:id', TimelineController.getTimelineEditPage);
 
 /**
  * @api {post} /timelines Post Timeline
