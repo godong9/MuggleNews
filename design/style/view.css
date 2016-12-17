@@ -16,7 +16,8 @@
     width:130px;
     height:20px;
     margin:30px 0 0 20px;
-    background:url(../images/logo-02.png) no-repeat 0 0;
+    background:url(../images/logo-02@3x.png) no-repeat 0 0;
+    background-size:131px 20px;
 }
 .view .header .logo img {
     width:18px;
@@ -260,23 +261,25 @@
 .view .news-container .section .new-conts p:first-child {
     padding-top:20px;
 }
-.view #preview {
+/* 프리뷰 가로 { */
+.view .news-container .section .preview {
     position: relative;
     width:100%;
     height:275px;
     overflow: hidden;
     margin-top:20px;
     border:1px solid #dddddd;
+    z-index:500;
 }
-.view #preview .preview-wrap {
+.view .news-container .section .preview .preview-wrap {
     position: relative;
     height:100%;
 }
-.view #preview .preview-wrap a{
+.view .news-container .section .preview .preview-wrap a{
     display: block;
     text-align: left;
 }
-.view #preview .thum-img {
+.view .news-container .section .preview .thum-img {
     width:100%;
     height:150px;
     overflow: hidden;
@@ -284,16 +287,16 @@
     background-size:cover;
     border-bottom:1px solid #eeeeee;
 }
-.view #preview .thum-img img{
+.view .news-container .section .preview .thum-img img{
     width:100%;
     height:100%;
     /*object-fit: cover;*/
 }
-.view #preview .title {
+.view .news-container .section .preview .title {
     padding:10px 10px 5px 10px;
     text-align: left;
 }
-.view #preview .title p {
+.view .news-container .section .preview .title p {
     font-size:20px;
     color: #333333;
     line-height:1.2;
@@ -302,7 +305,7 @@
     overflow: hidden;
 }
 
-.view #preview .txt-area p {
+.view .news-container .section .preview .txt-area p {
     font-size:14px;
     color: #666666;
     line-height:1.4;
@@ -314,7 +317,7 @@
     -webkit-box-orient: vertical;
     word-wrap:break-word;
 }
-.view #preview .preview-link {
+.view .news-container .section .preview .preview-link {
     position: absolute;
     bottom:10px;
     left:10px;
@@ -328,6 +331,77 @@
     white-space:nowrap;
     text-overflow:ellipsis;
 }
+/* 프리뷰 가로 } */
+/* 프리뷰 세로 { */
+.view .news-container .section .preview.vertical{
+    height:auto!important;
+}
+.view .news-container .section .preview.vertical a{
+    display: block;
+    overflow: hidden;
+}
+.view .news-container .section .preview.vertical .thum-img {
+    width:35%;
+    height:100%;
+    float:left;
+    overflow: hidden;
+    background:url(../images/img_preview_base_00.png) no-repeat center center;
+    background-size:cover;
+    border-bottom:1px solid #eeeeee;
+}
+.view .news-container .section .preview.vertical .thum-img img{
+    width:100%;
+    height:100%;
+    /*object-fit: cover;*/
+}
+.view .news-container .section .preview.vertical .title {
+    width:65%;
+    float:right;
+    padding:0;
+}
+.view .news-container .section .preview.vertical .title p {
+    width:auto;
+    padding:10px 10px 5px 10px;
+    font-size:20px;
+    color: #333333;
+    line-height:1.2;
+    text-align: left;
+    overflow: hidden;
+}
+.view .news-container .section .preview.vertical .txt-area{
+    width:65%;
+    float:right;
+    padding:0;
+}
+.view .news-container .section .preview.vertical .txt-area p {
+    font-size:14px;
+    color: #666666;
+    line-height:1.4;
+    padding:0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+}
+.view .news-container .section .preview.vertical .preview-link {
+    position: absolute;
+    bottom:10px;
+    left:35%;
+    width:59%;
+    padding:0 0 0 10px;
+    font-size:12px;
+    color: #aaaaaa;
+    font-weight: 300;
+    display: block;
+    overflow: hidden;
+    height:15px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+/* 프리뷰 세로 } */
+
 .view .news-container .section .new-conts .other-news-list {
     margin-top:30px;
     width:100%;
@@ -353,10 +427,10 @@
     text-align: center;
 }
 @media all and (max-width: 360px){
-    .view #preview {
+    .view .news-container .section .preview {
         height:275px !important;
     }
-    .view #preview .thum-img {
+    .view .news-container .section .preview .thum-img {
         height:150px !important;
     }
 }
@@ -442,27 +516,27 @@
         font-size: 17px;
         font-weight:300;
     }
-    .view #preview {
+    .view .news-container .section .preview {
         height:325px;
     }
-    .view #preview .thum-img {
+    .view .news-container .section .preview .thum-img {
         height:200px;
         background-size:cover;
     }
-    .view #preview .title {
+    .view .news-container .section .preview .title {
         max-height:27px;
         padding: 15px 10px 10px 10px;
     }
-    .view #preview .title p {
+    .view .news-container .section .preview .title p {
         width:100%;
         overflow: hidden;
         white-space:nowrap;
         text-overflow: ellipsis;
     }
-    .view #preview .txt-area {
+    .view .news-container .section .preview .txt-area {
         padding: 0 10px;
     }
-    .view #preview .txt-area p {
+    .view .news-container .section .preview .txt-area p {
         font-size: 14px;
         color: #666666;
         line-height: 1.4;
@@ -474,11 +548,16 @@
         word-wrap: break-word;
     }
 
-    .view #preview .preview-link {
+    .view .news-container .section .preview .preview-link {
         position: absolute;
         font-size: 12px;
         color: #aaaaaa;
     }
+    /*프리뷰 세로 {*/
+    .view .news-container .section .preview.vertical .title {
+        min-height:40px;
+    }
+    /*프리뷰 세로 }*/
     .fb-container {
         width:98%;
         margin:0 auto;
@@ -524,20 +603,20 @@
         margin-left:-60px;
         padding:0 0 0 60px;
     }
-    .view #preview {
+    .view .news-container .section .preview {
         height:425px;
     }
-    .view #preview .thum-img {
+    .view .news-container .section .preview .thum-img {
         height:300px;
         background-size:cover;
     }
-    .view #preview .title {
+    .view .news-container .section .preview .title {
         padding:10px 20px 5px 20px;
     }
-    .view #preview .txt-area {
+    .view .news-container .section .preview .txt-area {
         padding:0 20px;
     }
-    .view #preview .txt-area p {
+    .view .news-container .section .preview .txt-area p {
         font-size:14px;
         color: #666666;
         line-height:1.4;
@@ -548,7 +627,7 @@
         -webkit-box-orient: vertical;
         word-wrap:break-word;
     }
-    .view #preview .preview-link {
+    .view .news-container .section .preview .preview-link {
         position: absolute;
         bottom:10px;
         left:20px;
