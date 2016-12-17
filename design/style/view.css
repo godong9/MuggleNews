@@ -264,7 +264,7 @@
     height:275px;
     overflow: hidden;
     margin-top:20px;
-    border:1px solid #f7f7f7;
+    border:1px solid #dddddd;
 }
 .view #preview .preview-wrap {
     position: relative;
@@ -282,7 +282,7 @@
 .view #preview .thum-img img{
     width:100%;
     height:100%;
-    object-fit: cover;
+    /*object-fit: cover;*/
 }
 .view #preview .title {
     padding:10px 10px 5px 10px;
