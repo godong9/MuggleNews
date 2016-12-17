@@ -2,6 +2,7 @@
   "apps" : [{
     "name"        : "MuggleNews",
     "script"      : "server/bin/www",
+    "cwd": "/home/godong/muggle-news/current",
     "log_date_format"  : "YYYY-MM-DD HH:mm Z"
   }]
 }
