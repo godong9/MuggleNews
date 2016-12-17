@@ -31,6 +31,14 @@ module.exports = function (shipit) {
     return shipit.remote('pwd');
   });
 
+  shipit.task('env', function () {
+    let buildCommand = [
+      'env'
+    ];
+
+    return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
+  });
+
   shipit.blTask('build', function () {
     let buildCommand = [
       'cd ' + shipit.config.deployTo + '/current/server',
@@ -55,22 +63,13 @@ module.exports = function (shipit) {
   shipit.blTask('deploy-start', function () {
     let buildCommand = [
       'cd ' + shipit.config.deployTo + '/current',
-      'pm2 startOrRestart process.json'
+      'NODE_ENV="production" pm2 startOrRestart --env production process.json'
     ];
 
     return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
   });
 
-  shipit.blTask('deploy-restart', function () {
-    let buildCommand = [
-      'cd ' + shipit.config.deployTo + '/current',
-      'pm2 restart MuggleNews'
-    ];
-
-    return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
-  });
-
-  shipit.blTask('deploy-server', ['deploy', 'deploy-config', 'build'], function() {
+  shipit.blTask('deploy-server', ['deploy', 'deploy-config', 'build', 'deploy-start'], function() {
 
   });
 
