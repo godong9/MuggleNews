@@ -11,7 +11,15 @@ const View = require('../services/view');
 const TimelineController = {
   getTimelinePage: function login(req, res) {
     logger.debug("id: ", req.params.id);
-    Timeline.getItemsByTimelineId(req.params.id, function(err, items) {
+
+    async.waterfall([
+      function(callback) {
+        Timeline.increaseTimelineViewCount(req.params.id, callback);
+      },
+      function(callback) {
+        Timeline.getItemsByTimelineId(req.params.id, callback);
+      }
+    ], function (err, items) {
       let i;
       let data = {};
       if (err) {
