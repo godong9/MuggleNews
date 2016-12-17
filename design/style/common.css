@@ -565,7 +565,7 @@ body {
 
   .footer {
     position: relative;
-    width:980px;
+    width:100%;
     height:170px;
     margin:0 auto;
   }
@@ -789,11 +789,11 @@ body {
 
   .footer {
     position: relative;
-    width:1280px;
+    width:100%;
     height:170px;
   }
   .foot-wrap {
-  padding: 30px;
+    padding: 30px;
   }
   .footer ul {
     width:100%;

@@ -77,14 +77,14 @@
                                     <% if (item.preview_title) { %>
                                     <div id="preview">
                                         <div class="preview-wrap">
-                                            <a class="preview-link" target="_blank">
+                                            <a  href="<%= item.preview_url %>" target="_blank">
                                                 <div class="thum-img"><img src="<%= item.preview_img %>" alt="이미지" /></div>
                                                 <div class="title">
                                                     <p><%= item.preview_title %></p>
                                                 </div>
                                                 <div class="txt-area">
                                                     <p><%= item.preview_content %></p>
-                                                    <span href="<%= item.preview_url %>"><%= item.preview_url %></span>
+                                                    <span  class="preview-link"><%= item.preview_url %></span>
                                                 </div>
                                             </a>
                                         </div><!--e//inner-box -->
