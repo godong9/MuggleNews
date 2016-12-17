@@ -10,7 +10,7 @@ module.exports = function (shipit) {
       deployTo: '/home/godong/muggle-news',
       repositoryUrl: 'https://github.com/godong9/MuggleNews.git',
       ignores: ['.git', 'node_modules'],
-      keepReleases: 3,
+      keepReleases: 2,
       deleteOnRollback: false,
       key: '/Users/godong9/.ssh/id_rsa',
       shallowClone: true
@@ -42,6 +42,15 @@ module.exports = function (shipit) {
     return shipit.local(makeCommandStr(buildCommand), cmdOptions);
   });
 
+  shipit.blTask('deploy-start', function () {
+    let buildCommand = [
+      'cd ' + shipit.config.deployTo + '/current',
+      'pm2 start process.json'
+    ];
+
+    return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
+  });
+
   shipit.blTask('deploy-restart', function () {
     let buildCommand = [
       'cd ' + shipit.config.deployTo + '/current',
@@ -51,7 +60,7 @@ module.exports = function (shipit) {
     return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
   });
 
-  shipit.blTask('deploy-server', ['deploy', 'build', 'deploy-config', 'deploy-restart'], function() {
+  shipit.blTask('deploy-server', ['deploy', 'build', 'deploy-config', 'deploy-start'], function() {
 
   });
 
