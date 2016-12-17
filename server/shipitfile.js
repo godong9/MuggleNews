@@ -31,6 +31,14 @@ module.exports = function (shipit) {
     return shipit.remote('pwd');
   });
 
+  shipit.task('env', function () {
+    let buildCommand = [
+      'env'
+    ];
+
+    return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
+  });
+
   shipit.blTask('build', function () {
     let buildCommand = [
       'cd ' + shipit.config.deployTo + '/current/server',
@@ -54,9 +62,8 @@ module.exports = function (shipit) {
 
   shipit.blTask('deploy-start', function () {
     let buildCommand = [
-      'source ~/.bashrc',
       'cd ' + shipit.config.deployTo + '/current',
-      'pm2 startOrRestart --env production process.json'
+      'NODE_ENV="production" pm2 startOrRestart --env production process.json'
     ];
 
     return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
