@@ -6,18 +6,24 @@ module.exports = function (shipit) {
 
   shipit.initConfig({
     default: {
-      workspace: '/Users/godong9/muggle-news',
-      deployTo: '/home/godong/muggle-news',
       repositoryUrl: 'https://github.com/godong9/MuggleNews.git',
       ignores: ['.git', 'node_modules'],
       keepReleases: 2,
       deleteOnRollback: false,
-      key: '/Users/godong9/.ssh/id_rsa',
       shallowClone: true
     },
-    staging: {
-      servers: 'godong@godong9.com',
+    local: {
+      workspace: '/tmp/muggle-news',
+      deployTo: '/Users/godong9/muggle-news',
+      servers: 'godong9@localhost',
       branch: 'master'
+    },
+    production: {
+      workspace: '/Users/godong9/muggle-news',
+      deployTo: '/home/godong/muggle-news',
+      servers: 'godong@godong9.com',
+      branch: 'master',
+      key: '/Users/godong9/.ssh/id_rsa'
     }
   });
 
@@ -49,7 +55,7 @@ module.exports = function (shipit) {
   shipit.blTask('deploy-start', function () {
     let buildCommand = [
       'cd ' + shipit.config.deployTo + '/current',
-      './start.sh'
+      'pm2 startOrRestart process.json'
     ];
 
     return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
@@ -64,7 +70,7 @@ module.exports = function (shipit) {
     return shipit.remote(makeCommandStr(buildCommand), cmdOptions);
   });
 
-  shipit.blTask('deploy-server', ['deploy', 'build', 'deploy-config', 'deploy-restart'], function() {
+  shipit.blTask('deploy-server', ['deploy', 'deploy-config', 'build'], function() {
 
   });
 
