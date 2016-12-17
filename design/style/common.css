@@ -214,6 +214,8 @@ body {
   height:170px;
   margin:0 0 20px 0;
   overflow: hidden;
+  background:url(../images/img_cover_base_00.png) no-repeat center center;
+  background-size:cover;
 }
 .muggle-preview-main .muggle-preview-list .p-thum-img {
   width:100%;
