@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>머글뉴스</title>
+    <link rel="stylesheet" href="./style/common.css">
+    <link rel="stylesheet" href="./style/view.css">
+    <link rel="stylesheet" href="./style/edit.css">
+  </head>
+  <body>
+    <div class="edit">
+      <div class="header">
+        <a class="logo" href="">
+          <span>muggle news</span>
+        </a>
+
+        <div class="mymenu active">
+          <a href="" class="icon-mymenu"></a>
+        </div><!-- e//mymenu-->
+      </div><!-- e//header -->
+
+      <div class="menu-on-box" style="display: none;">
+        <div class="log-on-box">
+          <div class="inner-box">
+            <div class="user">
+              <span class="user-position">머글기자</span>
+              <span class="user-name">출근하기</span>
+              <span class="user-img"><img src="images/avatar@3x.png" alt=""></span>
+              <a href="" class="btn-close"></a>
+            </div>
+
+            <div class="txt-notice">
+              <ul>
+                <li class="addnews"><a href="">새로운 머글뉴스 작성</a></li>
+                <li class="muggle-note"><a href="">머글 기자 수첩<span>(13)</span></a></li>
+                <li class="mg-fb"><a href="">
+                  <div class="muggle-fb">
+                    <p>머글뉴스 페이스북</p>
+                    <div class="fb-like-count">좋아요 28만개</div><!--좋아요 페북카운드 들어가는 자리 임시로 자리만 만들어놓음 -->
+                  </div>
+                </a></li>
+                <li class="muggle-out"><a href="">퇴근하기</a></li>
+              </ul>
+            </div>
+
+            <div class="footer">
+              <ul class="foot-list">
+                <li><a href="">이용악관</a></li>
+                <li><a href="">개인정보 취급방침</a></li>
+              </ul>
+              <div class="copyright">
+                <p>@Muggle.news All right reserved.</p>
+              </div>
+            </div>
+          </div><!--e//inner-box -->
+        </div><!--e//log-on-box -->
+      </div><!--e//menu-on-box -->
+
+      <div class="container edit">
+        <div class="bg"></div>
+
+        <div class="inner-box">
+          <div class="news-cover">
+            <h1><input type="text" placeholder="대제목을 입력하세요."></h1>
+            <p class="h1_desc"><input type="text" placeholder="소제목을 입력하세요."></p>
+
+            <div class="cover-edit">
+              <div class="btn-cover-edit">
+                <input type="file">
+                <span class="">커버이미지 변경</span>
+              </div>
+            </div>
+            <div class="btn-box">
+              <button type="reset" class="btn-cancle">취소</button>
+              <button type="submit" class="btn-save">저장</button>
+            </div>
+          </div><!-- e//news-cover -->
+        </div><!-- e//inner-box -->
+<style>
+
+  .edit .container .news-cover .cover-edit {
+    width:90%;
+    margin:0 auto;
+  }
+  .edit .container .news-cover .cover-edit .btn-cover-edit {
+    position: relative;
+    text-align: center;
+  }
+  .edit .container .news-cover .cover-edit .btn-cover-edit input {
+    position: absolute;
+    top:0;
+    background: none;
+    border:none;
+    opacity: 0;;
+  }
+  .edit .container .news-cover .cover-edit .btn-cover-edit span{
+    display: inline-block;
+    padding:40px 0 0 25px;
+    font-size:14px;
+    color: #ffffff;
+    font-weight:300;
+    background:url() no-repeat 0 0;
+    background-size:18px;
+    z-index:100;
+    cursor: pointer;
+  }
+  .edit .container .news-cover .btn-box {
+    width: 720px;
+    max-width: 720px;
+    height: 20px;
+    line-height: 1.3;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    margin-left: -360px;
+    text-align: right;
+  }
+  .edit .container .news-cover .btn-box .btn-save,
+  .edit .container .news-cover .btn-box .btn-cancle {
+    display: inline-block;
+    color: #ffffff;
+    font-size:16px;
+    padding:0;
+    margin:0;
+    border:none;
+    background:transparent;
+  }
+  .edit .container .news-cover .btn-box .btn-save {
+    position: relative;
+    padding:0 0 0 30px;;
+  }
+  .edit .container .news-cover .btn-box .btn-save::before{
+    display: block;
+    position: absolute;
+    left:15px;
+    top:0;
+    color: #ffffff;
+    font-size:16px;
+    content:"|";
+  }
+</style>
+        <div class="news-container">
+          <ul>
+            <li>
+              <div class="section">
+                <div class="number">
+                  <p class="list-count">1</p>
+                  <h2>시작은 미약하나 끝은..</h2>
+                  <div class="news-date">
+                    <span class="year">2016년</span>
+                    <span class="month">12월</span>
+                    <span class="day">1일</span>
+                    <span class="week">(월)</span>
+                    <span class="time">12:00</span>
+                  </div><!-- e//news-data-->
+                </div><!--number -->
+                <div class="new-conts">
+
+                </div><!--e//new-conts -->
+              </div><!--e//section -->
+            </li>
+
+            <li>
+              <div class="section">
+                <div class="number">
+                  <p class="list-count">1</p>
+                  <h2>시작은 미약하나 끝은..</h2>
+                  <div class="news-date">
+                    <span class="year">2016년</span>
+                    <span class="month">12월</span>
+                    <span class="day">1일</span>
+                    <span class="week">(월)</span>
+                    <span class="time">12:00</span>
+                  </div><!-- e//news-data-->
+                </div><!--number -->
+                <div class="new-conts">
+
+                </div><!--e//new-conts -->
+              </div><!--e//section -->
+            </li>
+            <li>
+              <div class="section">
+                <div class="number">
+                  <p class="list-count">1</p>
+                  <h2>시작은 미약하나 끝은..</h2>
+                  <div class="news-date">
+                    <span class="year">2016년</span>
+                    <span class="month">12월</span>
+                    <span class="day">1일</span>
+                    <span class="week">(월)</span>
+                    <span class="time">12:00</span>
+                  </div><!-- e//news-data-->
+                </div><!--number -->
+                <div class="new-conts">
+                </div><!--e//new-conts -->
+              </div><!--e//section -->
+            </li>
+          </ul>
+          <div class="fb-comment">
+
+          </div>
+        </div><!-- e//news-container -->
+      </div><!-- e//container -->
+    </div><!-- e//wrap -->
+
+    <div class="footer">
+      <div class="foot-wrap">
+        <ul class="foot-list">
+          <li><a href="">문의하기</a></li>
+          <li><a href="">이용악관</a></li>
+          <li><a href="">개인정보 취급방침</a></li>
+        </ul>
+        <div class="copyright">
+          <p>@Muggle.news All right reserved.</p>
+        </div>
+        <a href="https://www.facebook.com/muggle.news/?fref=ts" target="_blank "class="goto-facebook">인기있는 머글뉴스 페이스북에서 받아보기<img src="images/ico-facebook-01@3x.png" alt="페이스북 바로가기"></a>
+      </div><!--e//foot-wrap -->
+    </div><!--e//footer -->
+  </body>
+</html>
