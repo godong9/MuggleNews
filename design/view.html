@@ -13,12 +13,46 @@
         <a class="logo" href="">
           <span>muggle news</span>
         </a>
-
+        <div class="user-profile">
+          <span class="user-images"><img src="images/avatar@3x.png" alt=""></span>
+          <!-- 대표이미지를 설정하지 않았을때는 avatar@3x.png가 고정으로 되어있고 대표이미지를 설정한 경우 그 이미지로 대체-->
+          <span class="name">장팸</span>
+        </div>
         <div class="mymenu active">
           <a href="" class="icon-mymenu"></a>
         </div><!-- e//mymenu-->
       </div><!-- e//header -->
+      <style>
+        .view .user-profile {
+          display: none;
+        }
 
+        .view .header.middle .user-profile {
+          display: block;
+          position: absolute;
+          top:24px;
+          left:35%;
+          width:30%;
+          height:34px;
+          line-height:35px;
+          text-align: center;
+        }
+        .view .header.middle .user-profile span{
+          display: inline-block;
+          font-size:18px;
+          color: #666666;
+        }
+        .view .header.middle .user-profile .user-images {
+          width:34px;
+          height:34px;
+          margin-right:10px;;
+        }
+        .view .header.middle .user-profile .user-images img{
+          width:34px;
+          height:34px;
+          border-radius:30px;
+        }
+      </style>
       <div class="menu-on-box" style="display: none;">
         <div class="log-on-box">
           <div class="inner-box">
