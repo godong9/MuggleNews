@@ -62,17 +62,53 @@ const TimelineController = {
       res.send({ id: result });
     });
   },
-  putTimeline: function putTimeline(req, res) {
-
-  },
   postTimelineItem: function postTimelineItem(req, res) {
-
+    let userId = Session.getSessionUserId(req);
+    if (!userId) {
+      res.status(401).send('로그인을 해주세요!');
+      return;
+    }
+    req.body.userId = userId;
+    Timeline.insertTimelineItem(req.body, function(err, result) {
+      if (err) {
+        logger.error(err);
+        res.status(500).send('서버 에러 발생');
+        return;
+      }
+      res.send({ id: result });
+    });
   },
   putTimelineItem: function putTimelineItem(req, res) {
-
+    let userId = Session.getSessionUserId(req);
+    if (!userId) {
+      res.status(401).send('로그인을 해주세요!');
+      return;
+    }
+    req.body.userId = userId;
+    Timeline.updateTimelineItem(req.body, function(err) {
+      if (err) {
+        logger.error(err);
+        res.status(500).send('서버 에러 발생');
+        return;
+      }
+      res.send({ id: req.body.id });
+    });
   },
   putTimelineOrders: function putTimelineOrders(req, res) {
-
+    let userId = Session.getSessionUserId(req);
+    if (!userId) {
+      res.status(401).send('로그인을 해주세요!');
+      return;
+    }
+    req.body.userId = userId;
+    Timeline.changeTimelineOrders(req.body, function(err) {
+      if (err) {
+        logger.error(err);
+        res.status(500).send('서버 에러 발생');
+        return;
+      }
+      res.send({});
+    });
   }
 };
 

@@ -55,13 +55,12 @@ router.post('/', TimelineController.postTimeline);
  * @apiExample {url} Example usage:
  *    http://localhost:9000/timelines/item
  *
- * @apiParam {Object} item 뉴스 아이템
- * @apiParam {String} item.title 제목
- * @apiParam {Number} item.timelineId 타임라인 ID
- * @apiParam {Number} item.order 순서
- * @apiParam {String} [item.content] 내용
- * @apiParam {Number} [item.previewId] 프리뷰 ID
- * @apiParam {Date} [item.itemDate] 날짜/시간
+ * @apiParam {String} title 제목
+ * @apiParam {Number} timelineId 타임라인 ID
+ * @apiParam {Number} order 순서
+ * @apiParam {String} [content] 내용
+ * @apiParam {Number} [previewId] 프리뷰 ID
+ * @apiParam {Date} [itemDate] 날짜/시간
  *
  * @apiSuccess {Object} data data
  */
@@ -76,13 +75,12 @@ router.post('/item', TimelineController.postTimelineItem);
  * @apiExample {url} Example usage:
  *    http://localhost:9000/timelines/item
  *
- * @apiParam {Object} item 뉴스 아이템
- * @apiParam {Number} item.id 아이템 id
- * @apiParam {String} item.title 제목
- * @apiParam {Number} item.timelineId 타임라인 ID
- * @apiParam {String} item.content 내용
- * @apiParam {Number} item.previewId 프리뷰 ID
- * @apiParam {Date} item.itemDate 날짜/시간
+ * @apiParam {Number} id 아이템 id
+ * @apiParam {String} title 제목
+ * @apiParam {Number} timelineId 타임라인 ID
+ * @apiParam {String} content 내용
+ * @apiParam {Number} previewId 프리뷰 ID
+ * @apiParam {Date} itemDate 날짜/시간
  *
  * @apiSuccess {Object} data data
  */
@@ -97,8 +95,8 @@ router.put('/item', TimelineController.putTimelineItem);
  * @apiExample {url} Example usage:
  *    http://localhost:9000/timelines/orders
  *
- * @apiParam {Number} item.beforeOrder 변경전 order
- * @apiParam {Number} item.nextOrder 변경후 order
+ * @apiParam {Number} beforeOrder 변경전 order
+ * @apiParam {Number} nextOrder 변경후 order
  *
  * @apiSuccess {Object} data data
  */

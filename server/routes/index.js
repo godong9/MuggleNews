@@ -10,7 +10,6 @@ const View = require('../services/view');
 router.get('/', function(req, res) {
   let data = {};
   View.setCommonData(req, data);
-  // console.log(req.user._json);
   res.render('index', data);
 });
 

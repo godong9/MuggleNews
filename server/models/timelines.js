@@ -56,15 +56,16 @@ let Timeline = {
   insertTimelineItem: function insertTimelineItem(params, cb) {
     let query = '' +
         'INSERT INTO items ' +
-          '(title, content, timeline_id, preview_id, order, item_date) ' +
-          'VALUES (?,?,?,?,?,?);';
+          '(title, content, timeline_id, preview_id, order, item_date, user_id) ' +
+          'VALUES (?,?,?,?,?,?,?);';
     let insertItem = [
       params.title,
       params.content,
       params.timelineId,
       params.previewId,
       params.order,
-      params.itemDate
+      params.itemDate,
+      params.userId
     ];
     pool.query(query, insertItem, function(err, result) {
       cb(err, result && result.insertId);
@@ -79,14 +80,15 @@ let Timeline = {
         'timeline_id = ? ' +
         'preview_id = ? ' +
         'item_date = ? ' +
-      'WHERE id = ?';
+      'WHERE id = ? AND user_id = ?';
     let updateItem = [
       params.title,
       params.content,
       params.timelineId,
       params.previewId,
       params.itemDate,
-      params.id
+      params.id,
+      params.userId
     ];
     pool.query(query, updateItem, function(err) {
       cb(err);
@@ -95,20 +97,22 @@ let Timeline = {
   changeTimelineOrders: function changeTimelineOrders(params, cb) {
     async.waterfall([
       function(callback) {
-        let query = 'UPDATE items SET order = ? WHERE id = ?;';
+        let query = 'UPDATE items SET order = ? WHERE id = ? AND user_id = ?;';
         let updateItem = [
           params.beforeOrder,
-          params.nextOrder
+          params.nextOrder,
+          params.userId
         ];
         pool.query(query, updateItem, function(err) {
           callback(err);
         });
       },
       function(callback) {
-        let query = 'UPDATE items SET order = ? WHERE id = ?;';
+        let query = 'UPDATE items SET order = ? WHERE id = ? AND user_id = ?;';
         let updateItem = [
           params.nextOrder,
-          params.beforeOrder
+          params.beforeOrder,
+          params.userId
         ];
         pool.query(query, updateItem, function(err) {
           callback(err);

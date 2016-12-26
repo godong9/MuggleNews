@@ -81,7 +81,7 @@ let CrawlerService = {
     }
 
     let description = $('meta[property="og:description"]').attr('content') || $('meta[name="description"]').attr('content');
-    if(!description && !title ) {
+    if (!description && !title) {
       title = URL.parse(url).host;
     }
     return {
