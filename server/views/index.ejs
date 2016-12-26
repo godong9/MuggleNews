@@ -10,25 +10,16 @@
 
     <div class="wrap">
       <div class="header">
-        <a class="logo" href="">
-          <img src="images/logo-01@3x.png" alt="muggle.news" class="wb">
+        <a class="logo" href="/">
+          <span>muggle news</span>
         </a>
-        <div class="login-box">
-          <% if (me) { %>
-          <div class="log-on">
-            <a href="" class="log-in">
-              <img src="<%= me.picture && me.picture.data && me.picture.data.url %>" alt="">
-              <span><%= me.name %></span>
-            </a>
-          </div>
-          <% } else { %>
-          <a href="/users/login/facebook" class="log-in">
-            <img src="images/ico-facebook-01@3x.png" alt="">
-            <span>로그인</span>
-          </a>
-          <% } %>
-        </div><!-- e//login -->
+
+        <div class="mymenu active">
+          <a href="" class="icon-mymenu"></a>
+        </div><!-- e//mymenu-->
       </div><!-- e//header -->
+
+      <%- include partial/my_menu.ejs %>
 
       <div class="container main">
         <div class="contents">

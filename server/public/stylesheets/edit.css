@@ -1,8 +1,8 @@
 @CHARSET "UTF-8";
-.view {
+.edit {
     position: relative;
 }
-.view .header {
+.edit .header {
     position: absolute;
     top:0;
     left:0;
@@ -12,46 +12,46 @@
     z-index:150;
     background:transparent;
 }
-.view .header a.logo {
+.edit .header a.logo {
     width:130px;
     height:20px;
     margin:30px 0 0 20px;
     background:url(../images/logo-02@3x.png) no-repeat 0 0;
     background-size:131px 20px;
 }
-.view .header .logo img {
+.edit .header .logo img {
     width:18px;
 }
-.view .header .logo span{
+.edit .header .logo span{
     font-size:0;
     text-indent:-999px;
 }
-.view .header .mymenu .icon-mymenu {
+.edit .header .mymenu .icon-mymenu {
     background:url(../images/icon-menu-w@3x.png) no-repeat;
     background-size:24px 20px;
 }
 
-.view .header .edit-box {
+.edit .header .edit-box {
     position: absolute;
     top:30px;
     right:30px;
 }
-.view .header .edit-box a {
+.edit .header .edit-box a {
     padding:0 10px;
 }
-.view .header .edit-box a img{
+.edit .header .edit-box a img{
     width:18px;
     margin-right:5px;
 }
-.view .header .edit-box a.delete img{
+.edit .header .edit-box a.delete img{
     width:15px;
 }
-.view .header .edit-box a span {
+.edit .header .edit-box a span {
     font-size:14px;
     color: #ffffff;
     line-height:1.3;
 }
-.view .header.middle {
+.edit .header.middle {
     position: fixed;
     top:0;
     left:0;
@@ -61,39 +61,39 @@
     border-bottom: solid 1px #efefef;
     z-index: 1000;
 }
-.view .header.middle a.logo {
+.edit .header.middle a.logo {
     background: url(../images/logo-01@3x.png) no-repeat 0 0;
     background-size:130px 20px;
 }
-.view .header.middle .mymenu .icon-mymenu{
+.edit .header.middle .mymenu .icon-mymenu{
     background:url(../images/icon-menu-r@3x.png) no-repeat;
     background-size:24px 20px;
 }
-.view .header.middle .edit-box {
+.edit .header.middle .edit-box {
     display: none;
 }
-.view .header.middle .login-box {
+.edit .header.middle .login-box {
     display: block;
 }
-.container.view {
+.container.edit {
     position: relative;
     width:100%;
     height:auto;
     background: #ffffff;
     border-bottom:1px solid #f7f7f7;
 }
-.container.view .bg {
+.container.edit .bg {
     width:100%;
     height:500px;
     background:url(../images/img_cover_base_00.png) no-repeat center center;
     background-size:cover;
 }
-.container.view .bg img {
+.container.edit .bg img {
     width:100%;
     height:100%;
     object-fit: cover;
 }
-.container.view .inner-box {
+.container.edit .inner-box {
     position: absolute;
     top:0;
     left:0;
@@ -101,14 +101,14 @@
     height:500px;
     background-color: rgba(0, 0, 0, 0.3);
 }
-.container.view .news-cover {
+.container.edit .news-cover {
     position: relative;
     width:100%;
     height:270px;
     padding:230px 0 0 0;
     z-index:10;
 }
-.container.view h1 {
+.container.edit h1 {
     width:94%;
     height:60px;
     line-height:60px;
@@ -121,7 +121,39 @@
     overflow: hidden;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
-.container.view .h1_desc {
+.container.edit h1 input{
+    width:90%;
+    height:60px;
+    line-height:60px;
+    text-align: center;
+    padding:0 5%;
+    margin:0 auto;
+    color: #ffffff;
+    font-size:50px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    border:none;
+}
+.container.edit h1 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ffffff;
+    font-weight: bold;
+}
+.container.edit h1 ::-moz-placeholder { /* Firefox 19+ */
+    color: #ffffff;
+    font-weight: bold;
+}
+.container.edit h1 :-ms-input-placeholder { /* IE 10+ */
+    color: #ffffff;
+    font-weight: bold;
+}
+.container.edit h1 :-moz-placeholder { /* Firefox 18- */
+    color: #ffffff;
+    font-weight: bold;
+}
+.container.edit .h1_desc {
     width:94%;
     line-height:30px;
     text-align: center;
@@ -136,14 +168,43 @@
     word-wrap:break-word;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
-.container.view .user-infor {
+.container.edit .h1_desc input{
+    width:94%;
+    line-height:30px;
+    text-align: center;
+    padding:0 3%;
+    color: #ffffff;
+    font-size:24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    border:none;
+}
+.container.edit .h1_desc ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ffffff;
+}
+.container.edit .h1_desc ::-moz-placeholder { /* Firefox 19+ */
+    color: #ffffff;
+}
+.container.edit .h1_desc :-ms-input-placeholder { /* IE 10+ */
+    color: #ffffff;
+}
+.container.edit .h1_desc :-moz-placeholder { /* Firefox 18- */
+    color: #ffffff;
+}
+.container.edit .user-infor {
     width:100%;
     text-align: center;
     margin-top:25px;
     height:34px;
     line-height:34px;
 }
-.container.view .user-infor .user-profile {
+.container.edit .user-infor .user-profile {
     left:0;
     display: inline-block;
     width:33px;
@@ -154,12 +215,12 @@
     border-radius:34px;
     border: solid 1px #ffffff;
 }
-.container.view .user-infor .user-profile img{
+.container.edit .user-infor .user-profile img{
     vertical-align: middle;
     width:100%;
     height:100%;
 }
-.container.view .user-name {
+.container.edit .user-name {
     /*display: inline-block;
     position: relative;
     line-height:33px;
@@ -168,7 +229,7 @@
     color: #ffffff;
     vertical-align: top;*/
 }
-.container.view .last-edit {
+.container.edit .last-edit {
     position: absolute;
     bottom:20px;;
     height:20px;
@@ -177,11 +238,11 @@
     font-size:14px;
     color: #dddddd;
 }
-.container.view .last-edit span{
+.container.edit .last-edit span{
     display: inline-block;
     margin:0 8px 0 0;
 }
-.container.view .view-count {
+.container.edit .view-count {
     position: absolute;
     bottom:20px;
     height:20px;
@@ -190,29 +251,90 @@
     font-size:14px;
     color: #dddddd;
 }
-.container.view .view-count span {
+.container.edit .view-count span {
     padding-left:20px;
     background:url(../images/ico-viewcount@3x.png) no-repeat 0 3px;
     background-size: 14px 10px;
 }
-.view .news-container  {
+.edit .container .news-cover .cover-edit {
+    width:90%;
     margin:0 auto;
 }
-.view .news-container ul {
+.edit .container .news-cover .cover-edit .btn-cover-edit {
+    position: relative;
+    text-align: center;
+}
+.edit .container .news-cover .cover-edit .btn-cover-edit input {
+    position: absolute;
+    top:0;
+    background: none;
+    border:none;
+    opacity: 0;;
+}
+.edit .container .news-cover .cover-edit .btn-cover-edit span{
+    display: inline-block;
+    padding:40px 0 0 25px;
+    font-size:14px;
+    color: #ffffff;
+    font-weight:300;
+    background:url(../images/ico-cover-change-00@3x.png) no-repeat 0 100%;
+    background-size:18px;
+    z-index:100;
+    cursor: pointer;
+}
+.edit .container .news-cover .btn-box {
+    width: 720px;
+    max-width: 720px;
+    height: 20px;
+    line-height: 1.3;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    margin-left: -360px;
+    text-align: right;
+}
+.edit .container .news-cover .btn-box .btn-save,
+.edit .container .news-cover .btn-box .btn-cancle {
+    display: inline-block;
+    color: #ffffff;
+    font-size:16px;
+    padding:0;
+    margin:0;
+    border:none;
+    background:transparent;
+}
+.edit .container .news-cover .btn-box .btn-save {
+    position: relative;
+    padding:0 0 0 30px;;
+}
+.edit .container .news-cover .btn-box .btn-save::before{
+    display: block;
+    position: absolute;
+    left:15px;
+    top:0;
+    color: #ffffff;
+    font-size:16px;
+    content:"|";
+}
+/* news-container {*/
+.edit .news-container  {
+    margin:0 auto;
+}
+.edit .news-container ul {
     padding:0 0 0 22px;
     margin-top:90px;
 }
-.view .news-container ul li:first-child {
+.edit .news-container ul li:first-child {
     padding:0;
 }
-.view .news-container ul li:last-child {
+.edit .news-container ul li:last-child {
     padding:90px 0 150px 0;
     border-left:1px solid #ffffff;
 }
-.view .news-container ul li:last-child .section {
+.edit .news-container ul li:last-child .section {
     position: relative;
 }
-.view .news-container ul li:last-child .section::after{
+.edit .news-container ul li:last-child .section::after{
     display: block;
     position: absolute;
     top: -90px;
@@ -222,18 +344,18 @@
     content:"";
     background:#eeeeee;
 }
-.view .news-container ul li {
+.edit .news-container ul li {
     display: block;
     position: relative;
     padding:90px 0 0 0;
     border-left:1px solid #eeeeee;
 }
-.view .news-container .section .number {
+.edit .news-container .section .number {
     position: relative;
     margin-left: -50px;
     padding: 0 0 0 50px;
 }
-.view .news-container .section .number .list-count {
+.edit .news-container .section .number .list-count {
     position: absolute;
     top:0;
     left:0;
@@ -248,35 +370,35 @@
     -moz-border-radius:25px;
     border-radius:25px;
 }
-.view .news-container .section h2 {
+.edit .news-container .section h2 {
     line-height:1.2;
     font-size:42px;
     color: #333333;
     font-weight:600;
 }
-.view .news-container .section .news-date {
+.edit .news-container .section .news-date {
     position: absolute;
     top:-26px;
     left:60px;
 }
-.view .news-container .section .news-date span {
+.edit .news-container .section .news-date span {
     color: #999999;
     font-size:14px;
     line-height:14px;
     font-weight: 300;
 }
-.view .news-container .section .new-conts {
+.edit .news-container .section .new-conts {
 }
-.view .news-container .section .new-conts p {
+.edit .news-container .section .new-conts p {
     font-size:16px;
     line-height:24px;
     color: #666666;;
 }
-.view .news-container .section .new-conts p:first-child {
+.edit .news-container .section .new-conts p:first-child {
     padding-top:20px;
 }
 /* 프리뷰 가로 { */
-.view .news-container .section .preview {
+.edit .news-container .section .preview {
     position: relative;
     width:100%;
     height:275px;
@@ -285,15 +407,15 @@
     border:1px solid #dddddd;
     z-index:500;
 }
-.view .news-container .section .preview .preview-wrap {
+.edit .news-container .section .preview .preview-wrap {
     position: relative;
     height:100%;
 }
-.view .news-container .section .preview .preview-wrap a{
+.edit .news-container .section .preview .preview-wrap a{
     display: block;
     text-align: left;
 }
-.view .news-container .section .preview .thum-img {
+.edit .news-container .section .preview .thum-img {
     width:100%;
     height:150px;
     overflow: hidden;
@@ -301,16 +423,16 @@
     background-size:cover;
     border-bottom:1px solid #eeeeee;
 }
-.view .news-container .section .preview .thum-img img{
+.edit .news-container .section .preview .thum-img img{
     width:100%;
     height:100%;
     /*object-fit: cover;*/
 }
-.view .news-container .section .preview .title {
+.edit .news-container .section .preview .title {
     padding:10px 10px 5px 10px;
     text-align: left;
 }
-.view .news-container .section .preview .title p {
+.edit .news-container .section .preview .title p {
     font-size:20px;
     color: #333333;
     line-height:1.2;
@@ -319,7 +441,7 @@
     overflow: hidden;
 }
 
-.view .news-container .section .preview .txt-area p {
+.edit .news-container .section .preview .txt-area p {
     font-size:14px;
     color: #666666;
     line-height:1.4;
@@ -331,7 +453,7 @@
     -webkit-box-orient: vertical;
     word-wrap:break-word;
 }
-.view .news-container .section .preview .preview-link {
+.edit .news-container .section .preview .preview-link {
     position: absolute;
     bottom:10px;
     left:10px;
@@ -347,14 +469,14 @@
 }
 /* 프리뷰 가로 } */
 /* 프리뷰 세로 { */
-.view .news-container .section .preview.vertical{
+.edit .news-container .section .preview.vertical{
     height:auto!important;
 }
-.view .news-container .section .preview.vertical a{
+.edit .news-container .section .preview.vertical a{
     display: block;
     overflow: hidden;
 }
-.view .news-container .section .preview.vertical .thum-img {
+.edit .news-container .section .preview.vertical .thum-img {
     width:35%;
     height:100%;
     float:left;
@@ -363,17 +485,17 @@
     background-size:cover;
     border-bottom:1px solid #eeeeee;
 }
-.view .news-container .section .preview.vertical .thum-img img{
+.edit .news-container .section .preview.vertical .thum-img img{
     width:100%;
     height:100%;
     /*object-fit: cover;*/
 }
-.view .news-container .section .preview.vertical .title {
+.edit .news-container .section .preview.vertical .title {
     width:65%;
     float:right;
     padding:0;
 }
-.view .news-container .section .preview.vertical .title p {
+.edit .news-container .section .preview.vertical .title p {
     width:auto;
     padding:10px 10px 5px 10px;
     font-size:20px;
@@ -382,12 +504,12 @@
     text-align: left;
     overflow: hidden;
 }
-.view .news-container .section .preview.vertical .txt-area{
+.edit .news-container .section .preview.vertical .txt-area{
     width:65%;
     float:right;
     padding:0;
 }
-.view .news-container .section .preview.vertical .txt-area p {
+.edit .news-container .section .preview.vertical .txt-area p {
     font-size:14px;
     color: #666666;
     line-height:1.4;
@@ -399,7 +521,7 @@
     -webkit-box-orient: vertical;
     word-wrap:break-word;
 }
-.view .news-container .section .preview.vertical .preview-link {
+.edit .news-container .section .preview.vertical .preview-link {
     position: absolute;
     bottom:10px;
     left:35%;
@@ -416,96 +538,97 @@
 }
 /* 프리뷰 세로 } */
 
-.view .news-container .section .new-conts .other-news-list {
+.edit .news-container .section .new-conts .other-news-list {
     margin-top:30px;
     width:100%;
 }
-.view .other-news-list {
+.edit .other-news-list {
     overflow: hidden;
     height:110px;
 }
-.view .other-news-list h3 {
+.edit .other-news-list h3 {
     text-align: left;
     font-size:18px;
     line-height:1.2;
     color: #666666;
 }
-.view .other-news-list li {
+.edit .other-news-list li {
     float:left;
     width:170px;
     height:80px;
 }
+/* news-container {*/
 .fb-container {
     width:100%;
     margin:0 auto;
     text-align: center;
 }
 @media all and (max-width: 360px){
-    .view .news-container .section .preview {
+    .edit .news-container .section .preview {
         height:275px !important;
     }
-    .view .news-container .section .preview .thum-img {
+    .edit .news-container .section .preview .thum-img {
         height:150px !important;
     }
 }
 @media all and (max-width: 719px) {
 
-    .view .header .edit-box {
+    .edit .header .edit-box {
         position: absolute;
         top: 85px;
         right:20px;
     }
-    .view .header a.logo {
+    .edit .header a.logo {
         margin:30px 0 0 20px;
         background: url(../images/logo-02@3x.png) no-repeat 0 0;
         background-size:130px 20px;
     }
-    .view .header .login-box {
+    .edit .header .login-box {
         display: none;
     }
-    .view .header .edit-box a {
+    .edit .header .edit-box a {
         padding:0 5px;
     }
-    .container.view .news-cover {
+    .container.edit .news-cover {
         position: relative;
         width: 100%;
         height:280px;
         padding: 220px 0 0 0;
         z-index: 10;
     }
-    .container.view h1 {
+    .container.edit h1 {
         height: 30px;
         line-height: 30px;
         font-size:23px;
     }
-    .container.view .h1_desc {
+    .container.edit .h1_desc {
         line-height: 1.3;
         padding: 5px 0 0 0;
         font-size:17px;
     }
-    .container.view .last-edit {
+    .container.edit .last-edit {
         width:88%;
         left:20px;
     }
-    .container.view .view-count {
+    .container.edit .view-count {
         width:auto;
         right:20px;
     }
-    .view .news-container {
+    .edit .news-container {
         width: 96%;
         margin: 0 3% 0 1%;
     }
-    .view .news-container .section {
+    .edit .news-container .section {
         position: relative;
         padding-left: 25px;
     }
 
-    .view .news-container .section .number {
+    .edit .news-container .section .number {
         position: relative;
         margin-left: -50px;
         padding: 0 0 0 50px;
     }
-    .view .news-container .section .number .list-count {
+    .edit .news-container .section .number .list-count {
         position: absolute;
         top: 0px;
         left: 10px;
@@ -520,37 +643,37 @@
         -moz-border-radius: 25px;
         border-radius: 25px;
     }
-    .view .news-container .section .news-date {
+    .edit .news-container .section .news-date {
         left:50px;
     }
-    .view .news-container .section h2 {
+    .edit .news-container .section h2 {
         font-size:23px;
     }
-    .view .news-container .section .new-conts p{
+    .edit .news-container .section .new-conts p{
         font-size: 17px;
         font-weight:300;
     }
-    .view .news-container .section .preview {
+    .edit .news-container .section .preview {
         height:325px;
     }
-    .view .news-container .section .preview .thum-img {
+    .edit .news-container .section .preview .thum-img {
         height:200px;
         background-size:cover;
     }
-    .view .news-container .section .preview .title {
+    .edit .news-container .section .preview .title {
         max-height:27px;
         padding: 15px 10px 10px 10px;
     }
-    .view .news-container .section .preview .title p {
+    .edit .news-container .section .preview .title p {
         width:100%;
         overflow: hidden;
         white-space:nowrap;
         text-overflow: ellipsis;
     }
-    .view .news-container .section .preview .txt-area {
+    .edit .news-container .section .preview .txt-area {
         padding: 0 10px;
     }
-    .view .news-container .section .preview .txt-area p {
+    .edit .news-container .section .preview .txt-area p {
         font-size: 14px;
         color: #666666;
         line-height: 1.4;
@@ -562,13 +685,13 @@
         word-wrap: break-word;
     }
 
-    .view .news-container .section .preview .preview-link {
+    .edit .news-container .section .preview .preview-link {
         position: absolute;
         font-size: 12px;
         color: #aaaaaa;
     }
     /*프리뷰 세로 {*/
-    .view .news-container .section .preview.vertical .title {
+    .edit .news-container .section .preview.vertical .title {
         min-height:40px;
     }
     /*프리뷰 세로 }*/
@@ -579,58 +702,58 @@
     }
 }
 @media all and (min-width: 720px) {
-    .view .header .login-box {
+    .edit .header .login-box {
         display: none;
     }
-    .container.view .news-cover {
+    .container.edit .news-cover {
         position: relative;
         width:100%;
         height:300px;
         padding:200px 0 0 0;
         z-index:10;
     }
-    .container.view .last-edit {
+    .container.edit .last-edit {
         width:720px;
         position: absolute;
         left:50%;
         margin-left:-360px;
         text-align: left;
     }
-    .container.view .view-count {
+    .container.edit .view-count {
         width:720px;
         max-width:720px;
         left:50%;
         margin-left:-360px;
         text-align: right;
     }
-    .view .news-container  {
+    .edit .news-container  {
         width:720px;
         margin:0 auto;
     }
-    .view .news-container .section {
+    .edit .news-container .section {
         position: relative;
         width:660px;
         padding-left:35px;
     }
-    .view .news-container .section .number {
+    .edit .news-container .section .number {
         position: relative;
         margin-left:-60px;
         padding:0 0 0 60px;
     }
-    .view .news-container .section .preview {
+    .edit .news-container .section .preview {
         height:425px;
     }
-    .view .news-container .section .preview .thum-img {
+    .edit .news-container .section .preview .thum-img {
         height:300px;
         background-size:cover;
     }
-    .view .news-container .section .preview .title {
+    .edit .news-container .section .preview .title {
         padding:10px 20px 5px 20px;
     }
-    .view .news-container .section .preview .txt-area {
+    .edit .news-container .section .preview .txt-area {
         padding:0 20px;
     }
-    .view .news-container .section .preview .txt-area p {
+    .edit .news-container .section .preview .txt-area p {
         font-size:14px;
         color: #666666;
         line-height:1.4;
@@ -641,7 +764,7 @@
         -webkit-box-orient: vertical;
         word-wrap:break-word;
     }
-    .view .news-container .section .preview .preview-link {
+    .edit .news-container .section .preview .preview-link {
         position: absolute;
         bottom:10px;
         left:20px;
