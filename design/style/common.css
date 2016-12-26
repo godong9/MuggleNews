@@ -34,6 +34,9 @@ body {
   background:#ffffff;
   width:100%;
 }
+.ov-h {
+  overflow:hidden;
+}
 .wrap {
   width:100%;
   margin:0 auto;
@@ -128,6 +131,7 @@ body {
 .log-on-box .user .user-img img{
   width:34px;
   height:34px;
+  border-radius:30px;
   vertical-align: top;
 }
 .log-on-box .user .btn-close {
@@ -144,6 +148,7 @@ body {
   padding:20px 20px 0 20px;
   position: relative;
   font-weight: normal;
+  border-bottom:1px solid #eeeeee;
 }
 .log-on-box .txt-notice p strong{
   font-size:18px;
