@@ -13,7 +13,9 @@ img {
   vertical-align: top;
   border:0;
 }
-
+input, textarea {
+  outline:none;
+}
 a, a:hover, a:active{
   text-decoration: none;
 }
@@ -34,6 +36,9 @@ body {
   background:#ffffff;
   width:100%;
 }
+.ov-h {
+  overflow:hidden;
+}
 .wrap {
   width:100%;
   margin:0 auto;
@@ -49,7 +54,7 @@ body {
 .header a.logo {
   display: block;
   float:left;
-  margin:30px 0 0 20px;
+  margin:30px 0 0 30px;
   width: 131px;
   height: 20px;
   background:url(../images/logo-01@3x.png) no-repeat;
@@ -128,6 +133,7 @@ body {
 .log-on-box .user .user-img img{
   width:34px;
   height:34px;
+  border-radius:30px;
   vertical-align: top;
 }
 .log-on-box .user .btn-close {
@@ -144,6 +150,7 @@ body {
   padding:20px 20px 0 20px;
   position: relative;
   font-weight: normal;
+  border-bottom:1px solid #eeeeee;
 }
 .log-on-box .txt-notice p strong{
   font-size:18px;
@@ -651,10 +658,10 @@ body {
   .header a.logo {
     display: block;
     float:left;
-    margin:25px 0 0 30px;
-    width: 196px;
-    height: 30px;
-    background-size:196px 30px
+    margin:30px 0 0 30px;
+    width: 130px;
+    height: 20px;
+    background-size:130px 20px
   }
 
   .footer {
@@ -874,10 +881,10 @@ body {
   .header a.logo {
     display: block;
     float:left;
-    margin:25px 0 0 30px;
-    width: 196px;
-    height: 30px;
-    background-size:196px 30px
+    margin:30px 0 0 30px;
+    width: 130px;
+    height: 20px;
+    background-size:130px 20px
   }
 
   .footer {

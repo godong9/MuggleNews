@@ -75,6 +75,37 @@
 .view .header.middle .login-box {
     display: block;
 }
+.view .user-profile {
+    display: none;
+}
+.view .header.middle .user-profile {
+    display: block;
+    position: absolute;
+    top:24px;
+    left:35%;
+    width:30%;
+    height:34px;
+    line-height:35px;
+    text-align: center;
+}
+.view .header.middle .user-profile span{
+    display: inline-block;
+    font-size:18px;
+    color: #666666;
+    vertical-align: middle;
+}
+.view .header.middle .user-profile .user-images {
+    width:34px;
+    height:34px;
+    margin-right:10px;;
+}
+.view .header.middle .user-profile .user-images img{
+    width:34px;
+    height:34px;
+    border-radius:30px;
+}
+
+/* container */
 .container.view {
     position: relative;
     width:100%;
