@@ -43,15 +43,6 @@
               </ul>
             </div>
 
-            <div class="footer">
-              <ul class="foot-list">
-                <li><a href="">이용악관</a></li>
-                <li><a href="">개인정보 취급방침</a></li>
-              </ul>
-              <div class="copyright">
-                <p>@Muggle.news All right reserved.</p>
-              </div>
-            </div>
           </div><!--e//inner-box -->
         </div><!--e//log-on-box -->
       </div><!--e//menu-on-box -->
@@ -76,138 +67,7 @@
             </div>
           </div><!-- e//news-cover -->
         </div><!-- e//inner-box -->
-<style>
-.edit .news-container .section h2 input {
-  width:95%;
-  height:45px;
-  font-size:42px;
-  border:none;
-  background: transparent;
-  margin-bottom:30px;
-}
-.edit .news-container .section h2 input ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #bbbbbb;
-  font-weight: bold;
-}
-.edit .news-container .section h2 input ::-moz-placeholder { /* Firefox 19+ */
-  color: #bbbbbb;
-  font-weight: bold;
-}
-.edit .news-container .section h2 input :-ms-input-placeholder { /* IE 10+ */
-  color: #bbbbbb;
-  font-weight: bold;
-}
-.edit .news-container .section h2 input :-moz-placeholder { /* Firefox 18- */
-  color: #bbbbbb;
-  font-weight: bold;
-}
-.edit .news-container .section .news-date {
-  height:36px;
-}
-.edit .news-container .section .news-date .data-table,
-.edit .news-container .section .news-date .time-table {
-  float:left;
-  margin-right:10px;
-}
-.edit .news-container .section .news-date .data-table {
-  width:140px;
-  height:36px;
-  font-size:16px;
-  color: #bbbbbb;
-  border:1px solid #f7f7f7;
-  background:url(images/ic-date@3x.png) no-repeat 7px center;
-  background-size:24px 24px;
-}
-.edit .news-container .section .news-date .data-table input ,
-.edit .news-container .section .news-date .time-table input {
-  width:100px;
-  height:36px;
-  padding:0 0 0 40px;
-  text-align: left;
-  font-size:16px;
-  color: #bbbbbb;
-  border: none;
-  background:transparent;
-}
-.edit .news-container .section .news-date .time-table {
-  width:140px;
-  height:36px;
-  font-size:16px;
-  color: #bbbbbb;
-  border:1px solid #f7f7f7;
-  background:url(images/ic-time@3x.png) no-repeat 7px center;
-  background-size:24px 24px;
-}
-.edit .news-container .section .new-conts .txt-area-zone {
-  width:600px;
-  height:auto;
-  border:none;
-  background:transparent;
-}
-.edit .news-container .section .new-conts .txt-area-zone textarea {
-  border:none;
-  background:transparent;
-  width:100%;
-  height:auto;
-  min-height:24px;
-  line-height:24px;
-  resize: vertical;
-  font-size:16px;
-  color: #bbbbbb;
-  outline:none;
-}
-.edit .news-container .section .new-conts .link-write {
-  position: relative;
-  padding:0 0 0 30px;
-  background:url(images/ic-link@3x.png) no-repeat 2px 7px;
-  background-size:18px;
-}
-.edit .news-container .section .new-conts .link-write p {
-  padding:0;
-  background
-}
-.edit .news-container .section .new-conts .link-write p input {
-  width:550px;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #666666;
-  background:transparent;
-  border:none;
-}
-.edit .news-container .section .new-conts .btn-box{
-  width:100%;
-  height:80px;
-  text-align: right;
-}
-.edit .news-container .section .new-conts .btn-box button {
-  width:auto;
-  min-width:80px;
-  height:46px;
-  line-height:46px;
-  padding:0 20px;
-  margin:0 0 0 10px;
-  text-align: center;
-  font-size:20px;;
-  outline:none;
-  box-shadow: none;
-  border:none;
-}
-.edit .news-container .section .new-conts .btn-box button:hover,
-.edit .news-container .section .new-conts .btn-box button:active,
-.edit .news-container .section .new-conts .btn-box button:focus {
-  border:none;
-  outline:none;
-  box-shadow: none;
-}
-.edit .news-container .section .new-conts .btn-box .btn-cncl {
-  color: #ffffff;
-  background: #cccccc;
-}
-.edit .news-container .section .new-conts .btn-box .btn-save {
-  color: #ffffff;
-  background: #ef5441;
-}
-</style>
+
         <div class="news-container">
           <ul>
             <li>
@@ -217,7 +77,7 @@
                   <h2><input type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>
                   <div class="news-date">
                     <div class="data-table">
-                      <input type="text" id="datepicker" class="hasDatepicker">
+                      <input type="text" id="datepicker" class="hasDatepicker" placeholder="날짜입력">
                     </div>
                     <div class="time-table">
                       <input type="text" placeholder="시간입력">
@@ -238,9 +98,90 @@
                 </div><!--e//new-conts -->
               </div><!--e//section -->
             </li>
-          </ul>
-          <div class="fb-comment">
+            <li>
+              <div class="section">
+                <div class="number">
+                  <p class="list-count">2</p>
+                  <h2>시작은 미약하나 끝은..</h2>
+                  <div class="news-date">
+                    <div class="data-table">
+                      <input type="text" id="datepicker" class="hasDatepicker" placeholder="날짜입력">
+                    </div>
+                    <div class="time-table">
+                      <input type="text" placeholder="시간입력">
+                    </div>
+                  </div><!-- e//news-data-->
+                </div><!--number -->
+                <div class="new-conts">
+                  <p>촛불집회에 100만명이 모였습니다.</p>
 
+                  <div class="preview"><!-- 프리뷰 이미지가 세로이미지일때 ! {-->
+                    <div class="preview-wrap">
+                      <a href="">
+                        <div class="thum-img"><img src="https://scontent-icn1-1.cdninstagram.com/t51.2885-15/e35/15306040_1230044450366429_7512486176863813632_n.jpg" alt="차마 언니얼굴은 쓸수가 없었다고 한다" /></div>
+                        <div class="title">
+                          <p>박 대통령은 왜 최태민 가족 곁을 떠나지 못하나? - 오마이뉴스</p>
+                        </div>
+                        <div class="txt-area">
+                          <p>대통령이 ‘개헌 추진’을 선언했던 그날 밤, JTBC는 ‘최순실씨가 박 대통령의 연설문은 물론 국정자료까지 사전에 받아봤다는 물증을 입수했다’고 보도했다. ‘물증’은 최순실씨가 쓰던 PC…</p>
+                          <span class="preview-link">http://www.ohmynews.com</span>
+                        </div>
+                        <button type="submit" class="btn-del"><span>삭제</span></button>
+                      </a>
+
+                    </div><!--e//preview-wrap-box -->
+                  </div><!--e//#preview -->
+                  <div class="btn-box">
+                    <button type="submit" class="btn-cncl">취소</button>
+                    <button type="submit" class="btn-save">저장</button>
+                  </div>
+                </div><!--e//conts -->
+              </div><!--e//section -->
+            </li>
+            <li>
+              <div class="section">
+                <div class="number">
+                  <p class="list-count">1</p>
+                  <h2>시작은 미약하나 끝은..</h2>
+                  <div class="news-date">
+                    <span class="year">2016년</span>
+                    <span class="month">12월</span>
+                    <span class="day">1일</span>
+                    <span class="week">(월)</span>
+                    <span class="time">12:00</span>
+                  </div><!-- e//news-data-->
+                </div><!--number -->
+                <div class="new-conts">
+                  <p>‘비선실세’ 최순실씨의 딸 정유라씨에게
+                    부정입학·학사관리 특혜를 제공한 이화여대에 이달중 정부의 재정지원 중단 조치가 내려진다.</p>
+                  <p>교육부 관계자는 1일 “이달 중 사업총괄관리위원회의 심의를 거쳐 교육부 특별감사 결과
+                    입시 부정이 확인된 이대에 대한 재정지원 사업 중 고교교육 기여대학 지원 사업의 올해
+                    예산 지원을 중단하는 방안을 확정할 것”이라고 밝혔다.</p>
+                  <div class="preview">
+                    <div class="preview-wrap">
+                      <a href="" target="_blank">
+                        <div class="thum-img"><img src="https://scontent-icn1-1.cdninstagram.com/t51.2885-15/e35/15306040_1230044450366429_7512486176863813632_n.jpg" alt="차마 언니얼굴은 쓸수가 없었다고 한다" /></div>
+                        <div class="title">
+                          <p>박 대통령은 왜 최태민 가족 곁을 떠나지 못하나? - 오마이뉴스</p>
+                        </div>
+                        <div class="txt-area">
+                          <p>대통령이 ‘개헌 추진’을 선언했던 그날 밤, JTBC는 ‘최순실씨가 박 대통령의 연설문은 물론 국정자료까지 사전에 받아봤다는 물증을 입수했다’고 보도했다. ‘물증’은 최순실씨가 쓰던 PC…</p>
+                          <span class="preview-link">http://www.ohmynews.com</span>
+                        </div>
+                        <button type="submit" class="btn-del"><span>삭제</span></button>
+                      </a>
+                    </div><!--e//preview-wrap -->
+                  </div><!--e//#preview -->
+
+                </div><!--e//conts -->
+              </div><!--e//section -->
+            </li>
+          </ul>
+          <div class="btn-add-new">
+            <a href="">
+              <span class="add-icon"></span>
+              뉴스 추가
+            </a>
           </div>
         </div><!-- e//news-container -->
       </div><!-- e//container -->
