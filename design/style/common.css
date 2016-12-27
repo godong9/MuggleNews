@@ -13,7 +13,9 @@ img {
   vertical-align: top;
   border:0;
 }
-
+input, textarea {
+  outline:none;
+}
 a, a:hover, a:active{
   text-decoration: none;
 }

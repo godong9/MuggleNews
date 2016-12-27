@@ -344,6 +344,9 @@
     content:"";
     background:#eeeeee;
 }
+.edit .news-container ul li:first-child .section::after {
+    display: none;
+}
 .edit .news-container ul li {
     display: block;
     position: relative;
@@ -378,7 +381,7 @@
 }
 .edit .news-container .section .news-date {
     position: absolute;
-    top:-26px;
+    top:-56px;
     left:60px;
 }
 .edit .news-container .section .news-date span {

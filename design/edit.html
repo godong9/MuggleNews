@@ -77,8 +77,115 @@
           </div><!-- e//news-cover -->
         </div><!-- e//inner-box -->
 <style>
-
-
+.edit .news-container .section h2 input {
+  width:95%;
+  height:45px;
+  font-size:42px;
+  border:none;
+  background: transparent;
+  margin-bottom:30px;
+}
+.edit .news-container .section h2 input ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #bbbbbb;
+  font-weight: bold;
+}
+.edit .news-container .section h2 input ::-moz-placeholder { /* Firefox 19+ */
+  color: #bbbbbb;
+  font-weight: bold;
+}
+.edit .news-container .section h2 input :-ms-input-placeholder { /* IE 10+ */
+  color: #bbbbbb;
+  font-weight: bold;
+}
+.edit .news-container .section h2 input :-moz-placeholder { /* Firefox 18- */
+  color: #bbbbbb;
+  font-weight: bold;
+}
+.edit .news-container .section .news-date {
+  height:36px;
+}
+.edit .news-container .section .news-date .data-table,
+.edit .news-container .section .news-date .time-table {
+  float:left;
+  margin-right:10px;
+}
+.edit .news-container .section .news-date .data-table {
+  width:140px;
+  height:36px;
+  font-size:16px;
+  color: #bbbbbb;
+  border:1px solid #f7f7f7;
+  background:url(images/ic-date@3x.png) no-repeat 7px center;
+  background-size:24px 24px;
+}
+.edit .news-container .section .news-date .data-table input ,
+.edit .news-container .section .news-date .time-table input {
+  width:100px;
+  height:36px;
+  padding:0 0 0 40px;
+  text-align: left;
+  font-size:16px;
+  color: #bbbbbb;
+  border: none;
+  background:transparent;
+}
+.edit .news-container .section .news-date .time-table {
+  width:140px;
+  height:36px;
+  font-size:16px;
+  color: #bbbbbb;
+  border:1px solid #f7f7f7;
+  background:url(images/ic-time@3x.png) no-repeat 7px center;
+  background-size:24px 24px;
+}
+.edit .news-container .section .new-conts .txt-area-zone {
+  width:600px;
+  height:auto;
+  border:none;
+  background:transparent;
+}
+.edit .news-container .section .new-conts .txt-area-zone textarea {
+  border:none;
+  background:transparent;
+  width:100%;
+  height:auto;
+  min-height:24px;
+  line-height:24px;
+  resize: vertical;
+  font-size:16px;
+  color: #bbbbbb;
+  outline:none;
+}
+.edit .news-container .section .new-conts .btn-box{
+  width:100%;
+  height:80px;
+  text-align: right;
+}
+.edit .news-container .section .new-conts .btn-box button {
+  padding:0 20px;
+  margin:0 0 0 10px;
+  text-align: center;
+  font-size:20px;;
+  width:auto;
+  min-width:80px;
+  outline:none;
+  box-shadow: none;
+}
+.edit .news-container .section .new-conts .btn-box button:hover,
+.edit .news-container .section .new-conts .btn-box button:active,
+.edit .news-container .section .new-conts .btn-box button:focus {
+  border:none;
+  outline:none;
+  box-shadow: none;
+}
+.edit .news-container .section .new-conts .btn-box .btn-cncl {
+  color: #ffffff;
+  background: #cccccc;
+}
+.edit .news-container .section .new-conts .btn-box .btn-save {
+  color: #ffffff;
+  background: #ef5441;
+}
 </style>
         <div class="news-container">
           <ul>
@@ -86,53 +193,27 @@
               <div class="section">
                 <div class="number">
                   <p class="list-count">1</p>
-                  <h2>시작은 미약하나 끝은..</h2>
+                  <h2><input type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>
                   <div class="news-date">
-                    <span class="year">2016년</span>
-                    <span class="month">12월</span>
-                    <span class="day">1일</span>
-                    <span class="week">(월)</span>
-                    <span class="time">12:00</span>
+                    <div class="data-table">
+                      <input type="text" id="datepicker" class="hasDatepicker">
+                    </div>
+                    <div class="time-table">
+                      <input type="text" placeholder="시간입력">
+                    </div>
                   </div><!-- e//news-data-->
                 </div><!--number -->
                 <div class="new-conts">
-
-                </div><!--e//new-conts -->
-              </div><!--e//section -->
-            </li>
-
-            <li>
-              <div class="section">
-                <div class="number">
-                  <p class="list-count">1</p>
-                  <h2>시작은 미약하나 끝은..</h2>
-                  <div class="news-date">
-                    <span class="year">2016년</span>
-                    <span class="month">12월</span>
-                    <span class="day">1일</span>
-                    <span class="week">(월)</span>
-                    <span class="time">12:00</span>
-                  </div><!-- e//news-data-->
-                </div><!--number -->
-                <div class="new-conts">
-
-                </div><!--e//new-conts -->
-              </div><!--e//section -->
-            </li>
-            <li>
-              <div class="section">
-                <div class="number">
-                  <p class="list-count">1</p>
-                  <h2>시작은 미약하나 끝은..</h2>
-                  <div class="news-date">
-                    <span class="year">2016년</span>
-                    <span class="month">12월</span>
-                    <span class="day">1일</span>
-                    <span class="week">(월)</span>
-                    <span class="time">12:00</span>
-                  </div><!-- e//news-data-->
-                </div><!--number -->
-                <div class="new-conts">
+                  <div class="txt-area-zone">
+                    <textarea name="" id="" cols="30" rows="1" placeholder="요약 설명을 입력하세요."></textarea>
+                  </div>
+                  <div class="link-write">
+                    <p><input type="text" placeholder="URL입력하세요"></p>
+                  </div>
+                  <div class="btn-box">
+                    <button type="submit" class="btn-cncl">취소</button>
+                    <button type="submit" class="btn-save">저장</button>
+                  </div>
                 </div><!--e//new-conts -->
               </div><!--e//section -->
             </li>
