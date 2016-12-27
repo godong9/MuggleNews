@@ -39,6 +39,15 @@ body {
 .ov-h {
   overflow:hidden;
 }
+.deam {
+  position: absolute;
+  top: 500px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  z-index: 501;
+}
 .wrap {
   width:100%;
   margin:0 auto;

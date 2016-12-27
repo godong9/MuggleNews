@@ -81,6 +81,7 @@
     height:auto;
     background: #ffffff;
     border-bottom:1px solid #f7f7f7;
+    overflow: hidden;
 }
 .container.edit .bg {
     width:100%;
