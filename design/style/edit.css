@@ -847,6 +847,9 @@
     .edit .news-container .section h2 {
         font-size:23px;
     }
+    .edit .news-container .section h2 input{
+        font-size:23px;
+    }
     .edit .news-container .section .new-conts p{
         font-size: 17px;
         font-weight:300;
