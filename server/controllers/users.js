@@ -8,6 +8,9 @@ const User = require('../models/users');
 const Slack = require('../services/slack');
 
 const UserController = {
+  getUserMyPage: function getUserMyPage(req, res) {
+    res.send({});
+  },
   facebookLoginCallback: function facebookLoginCallback(req, res) {
     let fbUser = req.user._json;
     let params = {
