@@ -1,10 +1,12 @@
 //main.js
 define([
   './libs/jquery/dist/jquery',
-  './utils/http-util'
+  './utils/http-util',
+  './controllers/my-menu-controller'
 ], function (
   $,
-  HttpUtil
+  HttpUtil,
+  MyMenuController
 ) {
   'use strict';
 
