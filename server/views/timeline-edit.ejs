@@ -11,43 +11,8 @@
 <%- include partial/fb.ejs %>
 
 <div class="edit">
-    <div class="header">
-        <a class="logo" href="">
-            <span>muggle news</span>
-        </a>
 
-        <div class="mymenu active">
-            <a href="" class="icon-mymenu"></a>
-        </div><!-- e//mymenu-->
-    </div><!-- e//header -->
-
-    <div class="menu-on-box" style="display: none;">
-        <div class="log-on-box">
-            <div class="inner-box">
-                <div class="user">
-                    <span class="user-position">머글기자</span>
-                    <span class="user-name">출근하기</span>
-                    <span class="user-img"><img src="images/avatar@3x.png" alt=""></span>
-                    <a href="" class="btn-close"></a>
-                </div>
-
-                <div class="txt-notice">
-                    <ul>
-                        <li class="addnews"><a href="">새로운 머글뉴스 작성</a></li>
-                        <li class="muggle-note"><a href="">머글 기자 수첩<span>(13)</span></a></li>
-                        <li class="mg-fb"><a href="">
-                                <div class="muggle-fb">
-                                    <p>머글뉴스 페이스북</p>
-                                    <div class="fb-like-count">좋아요 28만개</div><!--좋아요 페북카운드 들어가는 자리 임시로 자리만 만들어놓음 -->
-                                </div>
-                            </a></li>
-                        <li class="muggle-out"><a href="">퇴근하기</a></li>
-                    </ul>
-                </div>
-
-            </div><!--e//inner-box -->
-        </div><!--e//log-on-box -->
-    </div><!--e//menu-on-box -->
+    <%- include partial/my_menu.ejs %>
 
     <div class="container edit">
         <div class="bg"></div>
@@ -85,7 +50,7 @@
                                     <input type="text" placeholder="시간입력">
                                 </div>
                                 <div class="btn-box">
-                                    <a href=""><img src="images/ic-more-vert@3x.png" alt=""></a>
+                                    <a href=""><img src="/images/ic-more-vert@3x.png" alt=""></a>
                                     <div class="mynew-edit">
                                         <a href="" class="edit-news">기사수정</a>
                                         <a href="" class="del-news">삭제</a>

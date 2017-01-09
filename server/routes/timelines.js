@@ -11,7 +11,7 @@ const TimelineController = require('../controllers/timelines');
  * @apiGroup Timeline
  *
  * @apiExample {url} Example usage:
- *    http://localhost:9000/1
+ *    http://localhost:9000/timelines/1
  *
  * @apiParam {String} id Timeline ID
  */

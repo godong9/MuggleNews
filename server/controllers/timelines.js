@@ -27,7 +27,7 @@ const TimelineController = {
         logger.error(err);
         return res.redirect('/page/error');
       }
-      if (!items) {
+      if (!items || items.length === 0) {
         return res.status(404).send('Not Found!');
       }
       View.setCommonData(req, data);
@@ -44,7 +44,9 @@ const TimelineController = {
     });
   },
   getTimelineEditPage: function getNewTimelinePage(req, res) {
-    res.render('timeline-edit', {});
+    let data = {};
+    View.setCommonData(req, data);
+    res.render('timeline-edit', data);
   },
   postTimeline: function postTimeline(req, res) {
     let userId = Session.getSessionUserId(req);
