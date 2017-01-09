@@ -93,6 +93,7 @@ body {
 /* header }*/
 /* mymenu {*/
 .menu-on-box {
+  display: none;
   position: absolute;
   top:0;
   right:0;
