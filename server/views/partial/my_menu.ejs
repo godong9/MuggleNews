@@ -2,7 +2,12 @@
     <a class="logo" href="">
         <span>muggle news</span>
     </a>
-
+    <% if (me) { %>
+    <div class="user-profile">
+        <span class="user-images"><img src="<%= me.profileUrl %>" alt=""></span>
+        <span class="name"><%= me.name %></span>
+    </div>
+    <% } %>
     <div id="my_menu_open_btn" class="mymenu active">
         <a class="icon-mymenu"></a>
     </div><!-- e//mymenu-->
@@ -15,7 +20,7 @@
                 <% if (me) { %>
                 <span class="user-position">머글기자</span>
                 <span class="user-name"><%= me.name %></span>
-                <span class="user-img"><img src="<%= me.picture && me.picture.data && me.picture.data.url %>" alt=""></span>
+                <span class="user-img"><img src="<%= me.profileUrl %>" alt=""></span>
                 <% } else { %>
                 <a href="/users/login/facebook" class="log-in">
                     <span class="user-name">출근하기</span>

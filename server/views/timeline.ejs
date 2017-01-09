@@ -12,7 +12,7 @@
         <div class="view">
             <div class="header">
                 <a class="logo" href="/">
-                    <span>muggle.news</span>
+                    <span>muggle news</span>
                 </a>
                 <div class="edit-box" style="display: none;">
                     <a href="" class="modify"><img src="/images/ico-modify@3x.png" alt=""><span>수정</span></a>
@@ -25,7 +25,7 @@
                     <% if (me) { %>
                     <div class="log-on">
                         <a href="" class="log-in">
-                            <img src="<%= me.picture && me.picture.data && me.picture.data.url %>" alt="">
+                            <img src="<%= me.profileUrl %>" alt="">
                             <span><%= me.name %></span>
                         </a>
                     </div>
