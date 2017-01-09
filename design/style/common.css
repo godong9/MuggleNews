@@ -91,6 +91,10 @@ body {
   display: block;
 }
 /* header }*/
+.user-profile {
+  display: none;
+}
+
 /* mymenu {*/
 .menu-on-box {
   display: none;
