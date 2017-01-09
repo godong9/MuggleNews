@@ -452,6 +452,57 @@
     background:url(../images/ic-time@3x.png) no-repeat 7px center;
     background-size:20px 20px;
 }
+.edit .news-container .number .btn-box .more-vert {
+    display: block;
+    width:24px;
+    height:24px;
+}
+.edit .news-container .number .btn-box .more-vert img {
+    width:16px;
+    height:4px;
+}
+.edit .news-container .number .btn-box {
+    position: absolute;
+    top:-45px;
+    right:0;
+}
+.edit .news-container .number .mynew-edit {
+    width:90px;
+    position: absolute;
+    top:24px;
+    right:24px;
+    padding:10px;
+    background-color: #fefefe;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+.edit .news-container .number .mynew-edit a{
+    display: block;
+    width:65px;
+    padding:5px 0 5px 25px;
+    font-size:14px;
+    color: #999999;
+}
+.edit .news-container .number .mynew-edit a.edit-news{
+    background:url(../images/mynews-add@3x.png) no-repeat 3px 7px;
+    background-size:12px 12px;
+
+}
+.edit .news-container .number .mynew-edit a.del-news{
+    padding:5px 0 10px 25px;
+    background:url(../images/mynews-del@3x.png) no-repeat 3px 6px;
+    background-size:10px 12px;
+}
+.edit .news-container .number .mynew-edit a.up-news {
+    padding:10px 0 5px 25px;
+    border-top:1px solid #eeeeee;
+    background:url(../images/mynews-up@3x.png) no-repeat 3px 15px;
+    background-size:9px 6px;
+}
+.edit .news-container .number .mynew-edit a.down-news{
+    background:url(../images/mynews-down@3x.png) no-repeat 3px 10px;
+    background-size:9px 6px;
+
+}
 .edit .news-container .section .new-conts .txt-area-zone {
     width:98%;
     height:auto;
