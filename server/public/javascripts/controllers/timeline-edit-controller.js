@@ -1,6 +1,8 @@
 //timeline-edit-controller
 define([
+  '../libs/underscore/underscore'
 ], function (
+  _
 ) {
   'use strict';
 
@@ -29,13 +31,11 @@ define([
     self.view.bind('saveCover', function(data) {
       self.model.create(data, function(err, timeline) {
         if (err) {
-          return alert(err);
+          return;
         }
         if (timeline && timeline.id) {
-          self.model = data;
-          self.model.id = timeline.id;
+          self.model = _.extend(self.model, data, timeline);
           self.model.isView = true;
-          console.log('timeline: ', self.model);
 
           self.view.render('draw', self.model);
         }

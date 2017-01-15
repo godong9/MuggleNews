@@ -55,16 +55,18 @@ const TimelineController = {
       return;
     }
     req.body.userId = userId;
-    logger.debug(req.body);
-    logger.debug(req.user._json);
-    logger.debug(req.user.userId);
     Timeline.insertTimeline(req.body, function(err, result) {
       if (err) {
         logger.error(err);
         res.status(500).send('서버 에러 발생');
         return;
       }
-      res.send({ id: result });
+      res.send({
+        id: result,
+        userName: Session.getSessionUserName(req),
+        viewCount: 0,
+        createdAt: moment().format("YYYY년 M월 D일")
+      });
     });
   },
   postTimelineItem: function postTimelineItem(req, res) {

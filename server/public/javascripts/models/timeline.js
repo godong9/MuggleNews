@@ -17,6 +17,9 @@ define([
     this.title = params.title;
     this.subtitle = params.subtitle;
     this.coverImg = params.coverImg;
+    this.viewCount = params.viewCount;
+    this.userName = params.userName;
+    this.createdAt = params.createdAt;
   }
 
   Timeline.prototype.create = function(data, callback) {

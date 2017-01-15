@@ -11,6 +11,7 @@
   "dependencies": {
     "jquery": "^3.1.1",
     "blueimp-file-upload": "jquery-file-upload#^9.14.2",
-    "jquery-ui": "jquery.ui#^1.12.1"
+    "jquery-ui": "jquery.ui#^1.12.1",
+    "underscore": "^1.8.3"
   }
 }

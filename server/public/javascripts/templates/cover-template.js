@@ -1,6 +1,8 @@
 //cover-template.js
 define([
+  '../libs/underscore/underscore'
 ], function (
+  _
 ) {
   'use strict';
 
@@ -36,7 +38,7 @@ define([
       +		  '<h1>{{title}}</h1>'
       + 		'<p class="h1_desc">{{subtitle}}</p>'
       + 		'<div class="last-edit">'
-      + 		  '<p><span class="user-name">by. {{userName}}</span><span>|</span><span>2016년 1월 1일</span></p>'
+      + 		  '<p><span class="user-name">by. {{userName}}</span><span>|</span><span>{{createdAt}}</span></p>'
       +	    '</div>'
       +	    '<div class="view-count">'
       +	      '<span>{{viewCount}}</span>명이 봤습니다.'
@@ -80,8 +82,9 @@ define([
     template = template.replace('{{coverImg}}', data.coverImg || '');
     template = template.replace('{{title}}', escape(data.title) || '');
     template = template.replace('{{subtitle}}', escape(data.subtitle) || '');
-    template = template.replace('{{userName}}', escape(data.userName) || '');
-    template = template.replace('{{viewCount}}', escape(data.viewCount) || '');
+    template = template.replace('{{userName}}', data.userName || '');
+    template = template.replace('{{createdAt}}', data.createdAt || '');
+    template = template.replace('{{viewCount}}', _.isNumber(data.viewCount) ? data.viewCount : '');
 
     view = view + template;
 
