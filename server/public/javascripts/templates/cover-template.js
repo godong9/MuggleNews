@@ -50,8 +50,8 @@ define([
       +	'</div>'
       +	'<div class="inner-box">'
       +	  '<div class="news-cover">'
-      +		  '<h1><input type="text" value="{{title}}" placeholder="대제목을 입력하세요."></h1>'
-      + 		'<p class="h1_desc"><input type="text" value="{{subtitle}}" placeholder="소제목을 입력하세요."></p>'
+      +		  '<h1><input id="title_input" type="text" value="{{title}}" placeholder="대제목을 입력하세요."></h1>'
+      + 		'<p class="h1_desc"><input id="subtitle_input" type="text" value="{{subtitle}}" placeholder="소제목을 입력하세요."></p>'
       +	  	'<div class="cover-edit">'
       +		    '<div class="btn-cover-edit">'
       + 		    '<input id="cover_change_btn" type="file" name="files[]" data-url="/images/upload">'
@@ -59,8 +59,8 @@ define([
       +	  	  '</div>'
       +	    '</div>'
       +	    '<div class="btn-box">'
-      + 	    '<button type="reset" class="btn-cancle">취소</button>'
-      + 	    '<button type="submit" class="btn-save">저장</button>'
+      + 	    '<button id="cancel_cover_btn" type="reset" class="btn-cancle">취소</button>'
+      + 	    '<button id="save_cover_btn" type="submit" class="btn-save">저장</button>'
       +	    '</div>'
       +	  '</div>'
       +	'</div>';
@@ -72,7 +72,8 @@ define([
 
     if (data.isNew) {
       template = this.editTemplate;
-    } else {
+    }
+    if (data.isView) {
       template = this.viewTemplate;
     }
 

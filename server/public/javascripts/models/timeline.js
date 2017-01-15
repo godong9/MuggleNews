@@ -1,6 +1,8 @@
 //card.js
 define([
+  '../utils/http-util'
 ], function (
+  HttpUtil
 ) {
   'use strict';
 
@@ -11,10 +13,21 @@ define([
    */
   function Timeline(params) {
     this.isNew = params.isNew;
+    this.id = params.id;
     this.title = params.title;
     this.subtitle = params.subtitle;
     this.coverImg = params.coverImg;
   }
+
+  Timeline.prototype.create = function(data, callback) {
+    let newTimeline = {
+      title: data.title,
+      subtitle: data.subtitle,
+      coverImg: data.coverImg
+    };
+
+    HttpUtil.postData('/timelines', newTimeline, callback);
+  };
 
   return Timeline;
 });

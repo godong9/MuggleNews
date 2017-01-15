@@ -4,7 +4,7 @@ const logger = require('log4js').getLogger('service/user');
 
 let SessionService = {
   getSessionUserId: function getSessionUser(req) {
-    return req.user && req.user._json && req.user._json.id;
+    return req.user && req.user.userId;
   }
 };
 

@@ -55,6 +55,9 @@ const TimelineController = {
       return;
     }
     req.body.userId = userId;
+    logger.debug(req.body);
+    logger.debug(req.user._json);
+    logger.debug(req.user.userId);
     Timeline.insertTimeline(req.body, function(err, result) {
       if (err) {
         logger.error(err);
