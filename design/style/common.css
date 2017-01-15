@@ -634,17 +634,20 @@ body {
   overflow: hidden;
 }
 .mypage .muggle-preview-list a.btn-news-add {
-  background:url(../images/ic-note-add@3x.png) no-repeat 46px 166px;
+  height:70px;
+  padding-top:100px;
+  text-align: center;
+  color: #999999;
+  background:url(../images/ic-note-add@3x.png) no-repeat 166px 46px;
   background-size:29px 36px;
 }
 .mypage .muggle-preview-list a.btn-news-add:hover {
-  background:url(../images/ic-note-over@3x.png) no-repeat 46px 166px;
-  background-size:29px 36px;
-}
-.mypage .muggle-preview-list a.btn-news-add span {
-  padding-top:99px;
+  height:70px;
+  padding-top:100px;
   text-align: center;
-  
+  color: #f1543f;
+  background:url(../images/ic-note-add-over@3x.png) no-repeat 166px 46px;
+  background-size:29px 36px;
 }
 .mypage .muggle-preview-list a {
   position: relative;
