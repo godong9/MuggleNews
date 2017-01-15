@@ -15,7 +15,7 @@ define([
   'use strict';
 
   function TimelineEditPage() {
-    this.model = new Timeline({});
+    this.model = new Timeline(g_timeline);
     this.template = new CoverTemplate();
     this.view = new TimelineEditView(this.template);
     this.controller = new TimelineEditController(this.model, this.view);
