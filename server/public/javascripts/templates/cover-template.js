@@ -75,8 +75,8 @@ define([
     let template = this.editTemplate;
 
     template = template.replace('{{coverImg}}', data.coverImg || '');
-    template = template.replace('{{title}}', data.title || '');
-    template = template.replace('{{subtitle}}', data.subtitle || '');
+    template = template.replace('{{title}}', escape(data.title) || '');
+    template = template.replace('{{subtitle}}', escape(data.subtitle) || '');
 
     view = view + template;
 
