@@ -54,8 +54,8 @@ define([
       +	'</div>'
       +	'<div class="inner-box">'
       +	  '<div class="news-cover">'
-      +		  '<h1><input type="text" placeholder="대제목을 입력하세요."></h1>'
-      + 		'<p class="h1_desc"><input type="text" placeholder="소제목을 입력하세요."></p>'
+      +		  '<h1><input type="text" value="{{title}}" placeholder="대제목을 입력하세요."></h1>'
+      + 		'<p class="h1_desc"><input type="text" value="{{subtitle}}" placeholder="소제목을 입력하세요."></p>'
       +	  	'<div class="cover-edit">'
       +		    '<div class="btn-cover-edit">'
       + 		    '<input id="cover_change_btn" type="file" name="files[]" data-url="/images/upload">'
@@ -74,10 +74,9 @@ define([
     let view = '';
     let template = this.editTemplate;
 
-    // TODO: edit 모드일 때 이미지 세팅
-    if (data.coverImg) {
-      template = template.replace('{{coverImg}}', data.coverImg || '');
-    }
+    template = template.replace('{{coverImg}}', data.coverImg || '');
+    template = template.replace('{{title}}', data.title || '');
+    template = template.replace('{{subtitle}}', data.subtitle || '');
 
     view = view + template;
 
