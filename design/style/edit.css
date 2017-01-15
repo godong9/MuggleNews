@@ -267,10 +267,12 @@
 }
 .edit .container .news-cover .cover-edit .btn-cover-edit input {
     position: absolute;
-    top:0;
+    top:30px;
     background: none;
     border:none;
-    opacity: 0;;
+    opacity: 0;
+    height:36px;
+    margin-left:-60px;
 }
 .edit .container .news-cover .cover-edit .btn-cover-edit span{
     display: inline-block;

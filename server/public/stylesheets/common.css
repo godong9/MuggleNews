@@ -593,7 +593,186 @@ body {
 .adnwMRectRoot {
   margin:0 auto;
 }
+/* mypage {*/
+.container.mypage {
+  background: none;
+}
+.mypage .my-news-note {
+  width: 100%;
+  height: 80px;
+  background-color: #fafafa;
+  border-top: 1px solid #e9e9e9;
+  border-bottom: 1px solid #f6f6f6;
+  text-align: center;
+}
+.mypage .my-news-note .inner-box {
+  width:1140px;
+  margin:0 auto;
+}
+.mypage .my-news-note .inner-box span {
+  display: inline-block;
+  line-height: 80px;
+  vertical-align: top;
+  font-size: 16px;
+  color: #999999;
+}
+.mypage .my-news-note .inner-box span.user-img {
+  width:50px;
+  height:50px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+.mypage .my-news-note .inner-box span.user-name {
+  line-height: 80px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #666666;
+}
+.mypage .muggle-preview-list {
+  width:1140px;
+  margin:50px auto;
+  overflow: hidden;
+}
+.mypage .muggle-preview-list a.btn-news-add {
+  height:70px;
+  padding-top:100px;
+  text-align: center;
+  color: #999999;
+  background:url(../images/ic-note-add@3x.png) no-repeat 166px 46px;
+  background-size:29px 36px;
+}
+.mypage .muggle-preview-list a.btn-news-add:hover {
+  height:70px;
+  padding-top:100px;
+  text-align: center;
+  color: #f1543f;
+  background:url(../images/ic-note-add-over@3x.png) no-repeat 166px 46px;
+  background-size:29px 36px;
+}
+.mypage .muggle-preview-list a {
+  position: relative;
+  display: block;
+  float:left;
+  width:360px;
+  height:170px;
+  margin:0 10px 30px 10px;
+  overflow: hidden;
+  background:url(../images/img_cover_base_00.png) no-repeat center center;
+  background-size:cover;
+}
+.mypage .muggle-preview-list .p-thum-img {
+  width:100%;
+  height:100%;
+}
+.mypage .muggle-preview-list .p-thum-img img{
+  width:100%;
+  height:100%;
+  display: none;/* 이미지다시넣기 전까지 임시로 안보이게 */
+}
+.mypage .muggle-preview-list .p-list-wrap {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:170px;
+  padding-top:45px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.mypage .p-list-wrap .title p{
+  line-height:1.0;;
+  text-align: center;
+  font-size:24px;
+  padding:0 5px;
+  color: #ffffff;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.mypage .p-list-wrap .desc p{
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.0;
+  text-align: center;
+  color: #ffffff;
+  padding:6px 5px 13px 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.mypage .muggle-preview-list .user-infor {
+  width:95%;
+  text-align: center;
+  margin:5px auto;
+  height:20px;
+  line-height:20px;;
+}
+.mypage .muggle-preview-list .user-infor .user-profile {
+  display: inline-block;
+  width:20px;
+  height:20px;
+  overflow: hidden;
+  -webkit-border-radius:20px;
+  -moz-border-radius:20px;
+  border-radius:20px;
+  border: solid 1px #ffffff;
+}
+.mypage .muggle-preview-list .user-infor .user-profile img{
+  width:100%;
+  height:100%;
+  vertical-align: middle;
+  object-fit: cover;
+}
+.mypage .muggle-preview-list .user-infor .user-name {
+  display: inline-block;
+  height:20px;
+  line-height:20px;
+  vertical-align: top;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  color: #ffffff;
 
+}
+.mypage .muggle-preview-list .last-edit {
+  width:50%;
+  position: absolute;
+  left:10px;
+  bottom:10px;;
+  height:20px;
+  line-height:1.3;
+  text-align: left;
+  font-size:14px;
+  color: #ffffff;
+}
+.mypage .muggle-preview-list .last-edit span{
+  display: inline-block;
+  margin:0 8px 0 0;
+}
+.mypage .muggle-preview-list .view-count {
+  width:50%;
+  position: absolute;
+  right:10px;
+  bottom:10px;
+  height:20px;
+  line-height:1.3;
+  text-align: right;
+  font-size:14px;
+  color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.mypage .muggle-preview-list .view-count span {
+  padding-left:20px;
+  background:url(../images/ico-viewcount@3x.png) no-repeat 0 3px;
+  background-size: 14px 10px;
+}
+/* mypage }*/
 /*광고 배너  }*/
 @media all and (min-width: 300px) and (max-width: 490px){
   .who-are .muggle-member li {
