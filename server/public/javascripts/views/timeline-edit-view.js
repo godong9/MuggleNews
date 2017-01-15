@@ -13,8 +13,8 @@ define([
   }
 
   TimelineEditView.prototype.render = function(viewCmd, params) {
-    var self = this;
-    var viewCommands = {
+    let self = this;
+    let viewCommands = {
       draw: function () {
         self.$coverContainer.html(self.template.draw(params));
 
@@ -25,7 +25,7 @@ define([
   };
 
   TimelineEditView.prototype.redraw = function(model) {
-    var self = this;
+    let self = this;
     self.$coverImg = $('#cover_img');
 
     if (model.coverImg) {
@@ -35,7 +35,7 @@ define([
   };
 
   TimelineEditView.prototype.bind = function(event, handler) {
-    var self = this;
+    let self = this;
     if (event === 'changeCover') {
       $('#cover_change_btn').fileupload({
         dataType: 'json',

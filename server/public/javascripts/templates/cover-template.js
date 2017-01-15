@@ -4,7 +4,7 @@ define([
 ) {
   'use strict';
 
-  var htmlEscapes = {
+  let htmlEscapes = {
     '&': '&amp;',
     '<': '&lt;',
     '>': '&gt;',
@@ -13,14 +13,14 @@ define([
     '`': '&#x60;'
   };
 
-  var escapeHtmlChar = function (chr) {
+  let escapeHtmlChar = function (chr) {
     return htmlEscapes[chr];
   };
 
-  var reUnescapedHtml = /[&<>"'`]/g;
-  var reHasUnescapedHtml = new RegExp(reUnescapedHtml.source);
+  let reUnescapedHtml = /[&<>"'`]/g;
+  let reHasUnescapedHtml = new RegExp(reUnescapedHtml.source);
 
-  var escape = function (string) {
+  let escape = function (string) {
     return (string && reHasUnescapedHtml.test(string))
       ? string.replace(reUnescapedHtml, escapeHtmlChar)
       : string;
@@ -71,8 +71,8 @@ define([
   }
 
   CoverTemplate.prototype.draw = function (data) {
-    var view = '';
-    var template = this.editTemplate;
+    let view = '';
+    let template = this.editTemplate;
 
     // TODO: edit 모드일 때 이미지 세팅
     if (data.coverImg) {

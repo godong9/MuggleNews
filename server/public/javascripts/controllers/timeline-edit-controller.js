@@ -5,7 +5,7 @@ define([
   'use strict';
 
   function TimelineEditController(model, view) {
-    var self = this;
+    let self = this;
     self.model = model;
     self.view = view;
 
@@ -14,7 +14,7 @@ define([
   }
 
   TimelineEditController.prototype.bindHandlers = function() {
-    var self = this;
+    let self = this;
     self.view.bind('changeCover', function(data) {
       self.model.coverImg = data;
       self.view.redraw(self.model);
