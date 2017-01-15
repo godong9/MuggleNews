@@ -1,21 +1,24 @@
 //timeline.js
 define([
+  './controllers/my-menu-controller',
   './models/timeline',
-  './views/timeline-view',
-  './controllers/timeline-controller',
-  './controllers/my-menu-controller'
+  './templates/cover-template',
+  './views/timeline-edit-view',
+  './controllers/timeline-edit-controller'
 ], function (
+  MyMenuController,
   Timeline,
-  TimelineView,
-  TimelineController,
-  MyMenuController
+  CoverTemplate,
+  TimelineEditView,
+  TimelineEditController
 ) {
   'use strict';
 
   function TimelineEditPage() {
     this.model = new Timeline();
-    this.view = new TimelineView();
-    this.controller = new TimelineController(this.model, this.view);
+    this.template = new CoverTemplate();
+    this.view = new TimelineEditView(this.template);
+    this.controller = new TimelineEditController(this.model, this.view);
   }
 
   return new TimelineEditPage();

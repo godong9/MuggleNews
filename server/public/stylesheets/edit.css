@@ -1030,3 +1030,7 @@
         text-align: center;
     }
 }
+
+#cover_img {
+    display: none;
+}

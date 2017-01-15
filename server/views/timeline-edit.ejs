@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/edit.css">
 </head>
 <body>
+
 <%- include partial/ga.ejs %>
 <%- include partial/fb.ejs %>
 
@@ -15,25 +16,11 @@
     <%- include partial/my_menu.ejs %>
 
     <div class="container edit">
-        <div class="bg"></div>
 
-        <div class="inner-box">
-            <div class="news-cover">
-                <h1><input type="text" placeholder="대제목을 입력하세요."></h1>
-                <p class="h1_desc"><input type="text" placeholder="소제목을 입력하세요."></p>
-
-                <div class="cover-edit">
-                    <div class="btn-cover-edit">
-                        <input type="file">
-                        <span class="">커버이미지 변경</span>
-                    </div>
-                </div>
-                <div class="btn-box">
-                    <button type="reset" class="btn-cancle">취소</button>
-                    <button type="submit" class="btn-save">저장</button>
-                </div>
-            </div><!-- e//news-cover -->
-        </div><!-- e//inner-box -->
+        <div id="cover_container">
+            <div class="bg"></div>
+            <div class="inner-box"></div><!-- e//inner-box -->
+        </div>
 
         <div class="news-container">
             <ul>
@@ -50,14 +37,14 @@
                                     <input type="text" placeholder="시간입력">
                                 </div>
                                 <div class="btn-box">
-                                    <a href=""><img src="/images/ic-more-vert@3x.png" alt=""></a>
+                                    <a href="" class="more-vert"><img src="images/icon-mynews@3x.png" alt=""></a>
                                     <div class="mynew-edit">
                                         <a href="" class="edit-news">기사수정</a>
                                         <a href="" class="del-news">삭제</a>
                                         <a href="" class="up-news">위로</a>
                                         <a href="" class="down-news">아래로</a>
                                     </div>
-                                </div>
+                                </div><!-- e//btn-box-->
                             </div><!-- e//news-data-->
                         </div><!--number -->
                         <div class="new-conts">
@@ -166,6 +153,10 @@
 
 <%- include partial/footer.ejs %>
 
-<script type="text/javascript" src="/timeline.bundle.js" charset="utf-8"></script>
+<script src="/javascripts/libs/jquery/dist/jquery.js"></script>
+<script src="/javascripts/libs/jquery-ui/ui/widget.js"></script>
+<script src="/javascripts/libs/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="/javascripts/libs/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="/timeline-edit.bundle.js" charset="utf-8"></script>
 </body>
 </html>
