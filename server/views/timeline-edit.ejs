@@ -13,9 +13,7 @@
 
 <script>
   var g_timeline = {
-    isNew: <%= isNew %>, //TODO: 새로 만들때만 true
-    isEdit: true,
-    timeline: <%- JSON.stringify(items[0]) %>,
+    timeline: <%- JSON.stringify(timeline) %>,
     items: <%- JSON.stringify(items) %>,
     lastUpdatedAt: "<%= lastUpdatedAt %>"
   }
@@ -33,130 +31,9 @@
 
         <div class="news-container">
             <ul id="news_container">
-                <li>
-                    <div class="section">
-                        <div class="number">
-                            <p class="list-count">1</p>
-                            <h2><input type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>
-                            <div class="news-date">
-                                <div class="data-table">
-                                    <input type="text" id="datepicker" class="hasDatepicker" placeholder="날짜입력">
-                                </div>
-                                <div class="time-table">
-                                    <input type="text" placeholder="시간입력">
-                                </div>
-                                <div class="btn-box">
-                                    <a href="" class="more-vert"><img src="/images/icon-mynews@3x.png" alt=""></a>
-                                    <div class="mynew-edit">
-                                        <a href="" class="edit-news">기사수정</a>
-                                        <a href="" class="del-news">삭제</a>
-                                        <a href="" class="up-news">위로</a>
-                                        <a href="" class="down-news">아래로</a>
-                                    </div>
-                                </div><!-- e//btn-box-->
-                            </div><!-- e//news-data-->
-                        </div><!--number -->
-                        <div class="new-conts">
-                            <div class="txt-area-zone">
-                                <textarea  placeholder="요약 설명을 입력하세요."></textarea>
-                            </div>
-                            <div class="link-write">
-                                <p><input type="text" placeholder="URL입력하세요"></p>
-                            </div>
-                            <div class="btn-box">
-                                <button type="submit" class="btn-cncl">취소</button>
-                                <button type="submit" class="btn-save">저장</button>
-                            </div>
-                        </div><!--e//new-conts -->
-                    </div><!--e//section -->
-                </li>
-                <li>
-                    <div class="section">
-                        <div class="number">
-                            <p class="list-count">2</p>
-                            <h2>시작은 미약하나 끝은..</h2>
-                            <div class="news-date">
-                                <div class="data-table">
-                                    <input type="text" id="datepicker" class="hasDatepicker" placeholder="날짜입력">
-                                </div>
-                                <div class="time-table">
-                                    <input type="text" placeholder="시간입력">
-                                </div>
-                            </div><!-- e//news-data-->
-                        </div><!--number -->
-                        <div class="new-conts">
-                            <p>촛불집회에 100만명이 모였습니다.</p>
 
-                            <div class="preview"><!-- 프리뷰 이미지가 세로이미지일때 ! {-->
-                                <div class="preview-wrap">
-                                    <a href="">
-                                        <div class="thum-img"><img src="https://scontent-icn1-1.cdninstagram.com/t51.2885-15/e35/15306040_1230044450366429_7512486176863813632_n.jpg" alt="차마 언니얼굴은 쓸수가 없었다고 한다" /></div>
-                                        <div class="title">
-                                            <p>박 대통령은 왜 최태민 가족 곁을 떠나지 못하나? - 오마이뉴스</p>
-                                        </div>
-                                        <div class="txt-area">
-                                            <p>대통령이 ‘개헌 추진’을 선언했던 그날 밤, JTBC는 ‘최순실씨가 박 대통령의 연설문은 물론 국정자료까지 사전에 받아봤다는 물증을 입수했다’고 보도했다. ‘물증’은 최순실씨가 쓰던 PC…</p>
-                                            <span class="preview-link">http://www.ohmynews.com</span>
-                                        </div>
-                                        <button type="submit" class="btn-del"><span>삭제</span></button>
-                                    </a>
-
-                                </div><!--e//preview-wrap-box -->
-                            </div><!--e//#preview -->
-                            <div class="btn-box">
-                                <button type="submit" class="btn-cncl">취소</button>
-                                <button type="submit" class="btn-save">저장</button>
-                            </div>
-                        </div><!--e//conts -->
-                    </div><!--e//section -->
-                </li>
-                <li>
-                    <div class="section">
-                        <div class="number">
-                            <p class="list-count">1</p>
-                            <h2>시작은 미약하나 끝은..</h2>
-                            <div class="news-date">
-                                <span class="year">2016년</span>
-                                <span class="month">12월</span>
-                                <span class="day">1일</span>
-                                <span class="week">(월)</span>
-                                <span class="time">12:00</span>
-                            </div><!-- e//news-data-->
-                        </div><!--number -->
-                        <div class="new-conts">
-                            <p>‘비선실세’ 최순실씨의 딸 정유라씨에게
-                                부정입학·학사관리 특혜를 제공한 이화여대에 이달중 정부의 재정지원 중단 조치가 내려진다.</p>
-                            <p>교육부 관계자는 1일 “이달 중 사업총괄관리위원회의 심의를 거쳐 교육부 특별감사 결과
-                                입시 부정이 확인된 이대에 대한 재정지원 사업 중 고교교육 기여대학 지원 사업의 올해
-                                예산 지원을 중단하는 방안을 확정할 것”이라고 밝혔다.</p>
-                            <div class="preview">
-                                <div class="preview-wrap">
-                                    <a href="" target="_blank">
-                                        <div class="thum-img"><img src="https://scontent-icn1-1.cdninstagram.com/t51.2885-15/e35/15306040_1230044450366429_7512486176863813632_n.jpg" alt="차마 언니얼굴은 쓸수가 없었다고 한다" /></div>
-                                        <div class="title">
-                                            <p>박 대통령은 왜 최태민 가족 곁을 떠나지 못하나? - 오마이뉴스</p>
-                                        </div>
-                                        <div class="txt-area">
-                                            <p>대통령이 ‘개헌 추진’을 선언했던 그날 밤, JTBC는 ‘최순실씨가 박 대통령의 연설문은 물론 국정자료까지 사전에 받아봤다는 물증을 입수했다’고 보도했다. ‘물증’은 최순실씨가 쓰던 PC…</p>
-                                            <span class="preview-link">http://www.ohmynews.com</span>
-                                        </div>
-                                        <button type="submit" class="btn-del"><span>삭제</span></button>
-                                    </a>
-                                </div><!--e//preview-wrap -->
-                            </div><!--e//#preview -->
-
-                        </div><!--e//conts -->
-                    </div><!--e//section -->
-                </li>
             </ul>
-            <div class="btn-add-new">
-                <a href="">
-                    <span class="add-icon"></span>
-                    뉴스 추가
-                </a>
-            </div><!-- e//btn-add-new -->
         </div><!-- e//news-container -->
-        <div id="edit_deam" class="deam" style="display: none;"></div><!-- 커버를 작성할때 생겼다가 커버가 완료되면 style="display:none" -->
     </div><!-- e//container -->
 </div><!-- e//wrap -->
 

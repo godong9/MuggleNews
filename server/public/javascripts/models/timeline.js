@@ -15,7 +15,6 @@ define([
     let timeline = params.timeline;
 
     this.isNew = params.isNew;
-    this.isEdit = params.isEdit;
 
     this.id = timeline.id;
     this.title = timeline.timeline_title;

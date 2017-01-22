@@ -14,19 +14,14 @@ define([
     self.$coverContainer = $('#cover_container');
     self.$newsContainer = $('#news_container');
     self.$coverImg = $('#cover_img');
-    self.$edit_deam = $('#edit_deam');
 
     let viewCommands = {
       draw: function () {
         self.$coverContainer.html(self.coverTemplate.draw(params));
-        if (params.isNew) {
-          self.$edit_deam.show();
-        }
         if (params.coverImg) {
           self.$coverImg = $('#cover_img');
           self.$coverImg.show();
         }
-
         self.$newsContainer.html(self.itemTemplate.draw(params));
       },
       redrawCover: function () {
@@ -54,22 +49,6 @@ define([
           self.render('redrawCover', {coverImg: data.result});
           handler();
         }
-      });
-    }
-
-    if (event === 'cancelCover') {
-      $('#cancel_cover_btn').unbind('click').click(function() {
-        handler();
-      });
-    }
-
-    if (event === 'saveCover') {
-      $('#save_cover_btn').unbind('click').click(function() {
-        handler({
-          coverImg: self.$coverImg.attr('src'),
-          title: self.$titleInput.val(),
-          subtitle: self.$subtitleInput.val()
-        });
       });
     }
   };

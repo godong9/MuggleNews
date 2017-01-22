@@ -49,6 +49,9 @@ const TimelineController = {
     if (!editId || editId === 'new') {
       let data = {};
       data.isNew = true;
+      data.items = [];
+      data.lastUpdatedAt = '0000-00-00';
+      data.timeline = {};
       View.setCommonData(req, data);
       res.render('timeline-edit', data);
       return;
@@ -78,7 +81,7 @@ const TimelineController = {
         items[i].item_date_text = moment(items[i].item_date).format("YYYY년 M월 D일 HH:mm:ss");
       }
       data.items = items;
-      data.commentPage = 'timelines#' + items[0].timeline_id;
+      data.timeline = items[0];
       data.lastUpdatedAt = moment(items[0].timeline_updated_at).format("YYYY년 M월 D일");
       res.render('timeline-edit', data);
     });

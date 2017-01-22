@@ -29,7 +29,7 @@ define([
   };
 
   function ItemTemplate() {
-    this.editTemplate
+    this.template
       =	'<li id="{{listId}}">'
       +   '<div class="section">'
       +     '<div class="number">'
@@ -59,39 +59,42 @@ define([
       +       '<div class="link-write">'
       +         '<p><input type="text" placeholder="URL입력하세요"></p>'
       +       '</div>'
-      +       '<div class="btn-box">'
-      +         '<button type="submit" class="btn-cncl">취소</button>'
-      +         '<button type="submit" class="btn-save">저장</button>'
-      +       '</div>'
       +     '</div><!--e//new-conts -->'
       +   '</div><!--e//section -->'
       +	'</li>';
 
-    this.viewTemplate
-      =	'<li id="{{listId}}">'
+    this.emptyTemplate
+      =	'<li id="empty_item">'
       +   '<div class="section">'
       +     '<div class="number">'
       +       '<p class="list-count">{{listCount}}</p>'
-      +       '<h2>{{title}}</h2>'
+      +       '<h2><input id="item_title_input" type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>'
       +       '<div class="news-date">'
-      +         '<span>{{item_date}}</span>'
+      +         '<div class="data-table">'
+      +           '<input type="text" id="datepicker" class="hasDatepicker" placeholder="날짜입력">'
+      +         '</div>'
+      +         '<div class="time-table">'
+      +           '<input type="text" placeholder="시간입력">'
+      +         '</div>'
+      +         '<div class="btn-box">'
+      +           '<a href="" class="more-vert"><img src="/images/icon-mynews@3x.png" alt=""></a>'
+      +           '<div class="mynew-edit">'
+      +             '<a href="" class="del-news">삭제</a>'
+      +             '<a href="" class="up-news">위로</a>'
+      +             '<a href="" class="down-news">아래로</a>'
+      +           '</div>'
+      +         '</div><!-- e//btn-box-->'
       +       '</div><!-- e//news-data-->'
       +     '</div><!--number -->'
       +     '<div class="new-conts">'
-      +       '<p>{{content}}</p>'
-      +       '<div class="preview">'
-      +         '<div class="preview-wrap">'
-      +           '<a href="{{preview_url}}">'
-      +             '<div class="thum-img"><img src="{{preview_img}}" alt="" /></div>'
-      +             '<div class="title">'
-      +               '<p>{{preview_title}}</p>'
-      +             '</div>'
-      +             '<div class="txt-area">'
-      +               '<p>{{preview_content}}</p>'
-      +               '<span class="preview-link">{{preview_url}}</span>'
-      +             '</div>'
-      +           '</a>'
-      +         '</div>'
+      +       '<div class="txt-area-zone">'
+      +         '<textarea placeholder="요약 설명을 입력하세요."></textarea>'
+      +       '</div>'
+      +       '<div class="link-write">'
+      +         '<p><input type="text" placeholder="URL입력하세요"></p>'
+      +       '</div>'
+      +       '<div class="btn-box">'
+      +         '<button type="submit" class="btn-save">추가</button>'
       +       '</div>'
       +     '</div><!--e//new-conts -->'
       +   '</div><!--e//section -->'
@@ -100,16 +103,8 @@ define([
 
   ItemTemplate.prototype.draw = function (data) {
     let view = '';
-    let template;
     let items = data.items;
-
-    console.log(data);
-
-    if (data.isEdit) {
-      template = this.editTemplate;
-    } else {
-      template = this.viewTemplate;
-    }
+    let template = this.template;
 
     for (let i in items) {
       let timelineItem = items[i];
@@ -128,6 +123,7 @@ define([
       view = view + itemTemplate;
     }
 
+    view = view + this.emptyTemplate;
 
     return view;
   };

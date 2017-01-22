@@ -29,24 +29,7 @@ define([
   };
 
   function CoverTemplate() {
-    this.viewTemplate
-      =	'<div class="bg">'
-      +		'<img id="cover_img" src="{{coverImg}}" alt="">'
-      +	'</div>'
-      +	'<div class="inner-box">'
-      +	  '<div class="news-cover">'
-      +		  '<h1>{{title}}</h1>'
-      + 		'<p class="h1_desc">{{subtitle}}</p>'
-      + 		'<div class="last-edit">'
-      + 		  '<p><span class="user-name">by. {{userName}}</span><span>|</span><span>{{createdAt}}</span></p>'
-      +	    '</div>'
-      +	    '<div class="view-count">'
-      +	      '<span>{{viewCount}}</span>명이 봤습니다.'
-      +	    '</div>'
-      +	  '</div>'
-      +	'</div>';
-
-    this.editTemplate
+    this.template
       =	'<div class="bg">'
       +		'<img id="cover_img" src="{{coverImg}}" alt="">'
       +	'</div>'
@@ -60,23 +43,13 @@ define([
       + 		    '<span class="">커버이미지 변경</span>'
       +	  	  '</div>'
       +	    '</div>'
-      +	    '<div class="btn-box">'
-      + 	    '<button id="cancel_cover_btn" type="reset" class="btn-cancle">취소</button>'
-      + 	    '<button id="save_cover_btn" type="submit" class="btn-save">저장</button>'
-      +	    '</div>'
       +	  '</div>'
       +	'</div>';
   }
 
   CoverTemplate.prototype.draw = function (data) {
     let view = '';
-    let template;
-
-    if (data.isNew) {
-      template = this.editTemplate;
-    } else {
-      template = this.viewTemplate;
-    }
+    let template = this.template;
 
     template = template.replace('{{coverImg}}', data.coverImg || '');
     template = template.replace('{{title}}', escape(data.title) || '');
