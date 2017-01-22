@@ -43,8 +43,8 @@ define([
       +           '<input type="text" placeholder="시간입력">'
       +         '</div>'
       +         '<div class="btn-box">'
-      +           '<a href="" class="more-vert"><img src="/images/icon-mynews@3x.png" alt=""></a>'
-      +           '<div class="mynew-edit">'
+      +           '<a class="item-more-btn more-vert"><img src="/images/icon-mynews@3x.png" alt=""></a>'
+      +           '<div class="mynew-edit more-menu">'
       +             '<a href="" class="del-news">삭제</a>'
       +             '<a href="" class="up-news">위로</a>'
       +             '<a href="" class="down-news">아래로</a>'
@@ -99,12 +99,12 @@ define([
       +	'</li>';
 
     this.previewInputTemplate
-      = '<div class="link-write">'
+      = '<div class="link-write preview-input-container">'
       +  '<p><input class="item-preview-input" type="text" placeholder="URL입력하세요"></p>'
       + '</div>';
 
     this.previewViewTemplate
-      = '<div class="preview">'
+      = '<div class="preview preview-view-container">'
       +   '<div class="preview-wrap">'
       +     '<a href="{{preview_url}}" target="_blank">'
       +       '<div class="thum-img"><img src="{{preview_img}}" alt="" /></div>'
@@ -115,7 +115,7 @@ define([
       +         '<p>{{preview_content}}</p>'
       +         '<span class="preview-link">{{preview_url_text}}</span>'
       +       '</div>'
-      +       '<button type="submit" class="btn-del"><span>삭제</span></button>'
+      +       '<button type="submit" class="btn-del preview-del-btn"><span>삭제</span></button>'
       +     '</a>'
       +   '</div><!--e//preview-wrap -->'
       + '</div><!--e//#preview -->';
@@ -199,6 +199,16 @@ define([
     previewTemplate = previewTemplate.replace('{{preview_content}}', escape(previewItem.content) || '');
 
     view = view + previewTemplate;
+
+    return view;
+  };
+
+  ItemTemplate.prototype.drawPreviewInput = function () {
+    let view = '';
+    let previewTemplate = this.previewInputTemplate;
+
+    view = view + previewTemplate;
+
 
     return view;
   };

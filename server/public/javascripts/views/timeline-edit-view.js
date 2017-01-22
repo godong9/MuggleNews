@@ -87,7 +87,7 @@ define([
             let $parentItem = $(previewInput).parents('.content-container');
             $parentItem.data('preview', previewId);
 
-            $parentItem.find('.link-write').remove();
+            $parentItem.find('.preview-input-container').remove();
             $parentItem.append(self.itemTemplate.drawPreview(data));
 
             handler(data);
@@ -97,7 +97,22 @@ define([
     }
 
     if (event === 'delPreview') {
+      $('.preview-del-btn').unbind('click').click(function() {
+        let previewView = this;
+        let $parentItem = $(previewView).parents('.content-container');
 
+        $parentItem.find('.preview-view-container').remove();
+        $parentItem.append(self.itemTemplate.drawPreviewInput());
+        return false;
+      });
+    }
+
+    if (event === 'clickMore') {
+      $('.item-more-btn').unbind('click').click(function() {
+        let $parentItem = $(this).parents('.btn-box');
+
+        $parentItem.find('.more-menu').toggle();
+      });
     }
   };
 

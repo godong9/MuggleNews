@@ -469,6 +469,7 @@
     right:0;
 }
 .edit .news-container .number .mynew-edit {
+    display: none;
     width:90px;
     position: absolute;
     top:24px;

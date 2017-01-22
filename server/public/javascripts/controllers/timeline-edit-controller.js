@@ -28,6 +28,10 @@ define([
     });
 
     self.view.bind('addPreview', function(data) {});
+
+    self.view.bind('delPreview', function(data) {});
+
+    self.view.bind('clickMore', function(data) {});
   };
 
   return TimelineEditController;
