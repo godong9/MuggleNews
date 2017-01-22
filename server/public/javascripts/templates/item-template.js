@@ -30,11 +30,11 @@ define([
 
   function ItemTemplate() {
     this.template
-      =	'<li id="{{listId}}">'
+      =	'<li class="timeline-item" data-order="{{order}}">'
       +   '<div class="section">'
       +     '<div class="number">'
       +       '<p class="list-count">{{listCount}}</p>'
-      +       '<h2><input id="item_title_input" value="{{title}}" type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>'
+      +       '<h2><input class="item-title-input" value="{{title}}" type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>'
       +       '<div class="news-date">'
       +         '<div class="data-table">'
       +           '<input type="text" id="datepicker" class="hasDatepicker" placeholder="날짜입력">'
@@ -52,9 +52,9 @@ define([
       +         '</div><!-- e//btn-box-->'
       +       '</div><!-- e//news-data-->'
       +     '</div><!--number -->'
-      +     '<div class="new-conts">'
+      +     '<div class="new-conts content-container" data-preview="{{previewId}}">'
       +       '<div class="txt-area-zone">'
-      +         '<textarea placeholder="요약 설명을 입력하세요.">{{content}}</textarea>'
+      +         '<textarea class="item-content-input" placeholder="요약 설명을 입력하세요.">{{content}}</textarea>'
       +       '</div>'
       +       '<div class="link-write">'
       +         '<p><input type="text" placeholder="URL입력하세요"></p>'
@@ -64,11 +64,11 @@ define([
       +	'</li>';
 
     this.emptyTemplate
-      =	'<li id="empty_item">'
+      =	'<li id="new_timeline_item" data-order="{{order}}">'
       +   '<div class="section">'
       +     '<div class="number">'
       +       '<p class="list-count">{{listCount}}</p>'
-      +       '<h2><input id="item_title_input" type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>'
+      +       '<h2><input class="item-title-input" type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>'
       +       '<div class="news-date">'
       +         '<div class="data-table">'
       +           '<input type="text" id="datepicker" class="hasDatepicker" placeholder="날짜입력">'
@@ -88,13 +88,13 @@ define([
       +     '</div><!--number -->'
       +     '<div class="new-conts">'
       +       '<div class="txt-area-zone">'
-      +         '<textarea placeholder="요약 설명을 입력하세요."></textarea>'
+      +         '<textarea class="item-content-input" placeholder="요약 설명을 입력하세요."></textarea>'
       +       '</div>'
       +       '<div class="link-write">'
       +         '<p><input type="text" placeholder="URL입력하세요"></p>'
       +       '</div>'
       +       '<div class="btn-box">'
-      +         '<button type="submit" class="btn-save">추가</button>'
+      +         '<button type="submit" id="add_item_btn" class="btn-save">추가</button>'
       +       '</div>'
       +     '</div><!--e//new-conts -->'
       +   '</div><!--e//section -->'
@@ -105,25 +105,58 @@ define([
     let view = '';
     let items = data.items;
     let template = this.template;
+    let lastOrder = 1;
+    console.log(items);
 
     for (let i in items) {
       let timelineItem = items[i];
-      let idx = parseInt(i) + 1;
-      let itemId = 'timeline_item_' + idx;
       let itemTemplate = template;
-      itemTemplate = itemTemplate.replace('{{listId}}', itemId);
-      itemTemplate = itemTemplate.replace('{{listCount}}', idx);
+      itemTemplate = itemTemplate.replace('{{order}}', timelineItem.order);
+      itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.order);
       itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
       itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date_text) || '');
       itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
+      itemTemplate = itemTemplate.replace('{{previewId}}', escape(timelineItem.preview_id) || '');
       itemTemplate = itemTemplate.replace('{{preview_url}}', escape(timelineItem.preview_url) || '');
       itemTemplate = itemTemplate.replace('{{preview_title}}', escape(timelineItem.preview_title) || '');
       itemTemplate = itemTemplate.replace('{{preview_content}}', escape(timelineItem.preview_content) || '');
 
+      lastOrder += 1;
       view = view + itemTemplate;
     }
 
-    view = view + this.emptyTemplate;
+    let emptyTemplate = this.emptyTemplate;
+    emptyTemplate = emptyTemplate.replace('{{order}}', lastOrder);
+    emptyTemplate = emptyTemplate.replace('{{listCount}}', lastOrder);
+
+    view = view + emptyTemplate;
+
+    return view;
+  };
+
+  ItemTemplate.prototype.drawItem = function (item) {
+    let view = '';
+    let timelineItem = item;
+    let itemTemplate = this.template;
+    let lastOrder = parseInt(timelineItem.order) + 1;
+
+    itemTemplate = itemTemplate.replace('{{order}}', timelineItem.order);
+    itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.order);
+    itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
+    itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date_text) || '');
+    itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
+    itemTemplate = itemTemplate.replace('{{previewId}}', escape(timelineItem.preview_id) || '');
+    itemTemplate = itemTemplate.replace('{{preview_url}}', escape(timelineItem.preview_url) || '');
+    itemTemplate = itemTemplate.replace('{{preview_title}}', escape(timelineItem.preview_title) || '');
+    itemTemplate = itemTemplate.replace('{{preview_content}}', escape(timelineItem.preview_content) || '');
+
+    view = view + itemTemplate;
+
+    let emptyTemplate = this.emptyTemplate;
+    emptyTemplate = emptyTemplate.replace('{{order}}', lastOrder);
+    emptyTemplate = emptyTemplate.replace('{{listCount}}', lastOrder);
+
+    view = view + emptyTemplate;
 
     return view;
   };

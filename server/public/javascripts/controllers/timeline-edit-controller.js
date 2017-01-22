@@ -20,7 +20,7 @@ define([
     self.view.bind('changeCover', function() {});
 
     self.view.bind('addItem', function(data) {
-
+      self.model.addItem(data);
     });
   };
 

@@ -36,5 +36,11 @@ define([
     HttpUtil.postData('/timelines', newTimeline, callback);
   };
 
+  Timeline.prototype.addItem = function(data) {
+    this.items.push(data);
+    console.log(this);
+
+  };
+
   return Timeline;
 });

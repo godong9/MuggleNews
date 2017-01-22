@@ -38,6 +38,7 @@ define([
   TimelineEditView.prototype.bind = function(event, handler) {
     let self = this;
     self.$coverContainer = $('#cover_container');
+    self.$newsContainer = $('#news_container');
     self.$coverImg = $('#cover_img');
     self.$titleInput = $('#title_input');
     self.$subtitleInput = $('#subtitle_input');
@@ -49,6 +50,25 @@ define([
           self.render('redrawCover', {coverImg: data.result});
           handler();
         }
+      });
+    }
+
+    if (event === 'addItem') {
+      $('#add_item_btn').unbind('click').click(function() {
+        let $timelineItem = $('#new_timeline_item');
+        let timelineItem = {
+          order: $timelineItem.data('order'),
+          title: $timelineItem.find('.item-title-input').val(),
+          content: $timelineItem.find('.item-content-input').val(),
+        };
+        console.log(timelineItem);
+        if (!timelineItem.title) {
+          alert('제목을 입력해주세요!');
+          return;
+        }
+        $timelineItem.remove();
+        self.$newsContainer.append(self.itemTemplate.drawItem(timelineItem));
+        handler(timelineItem)
       });
     }
   };
