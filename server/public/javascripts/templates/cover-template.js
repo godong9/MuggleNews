@@ -74,8 +74,7 @@ define([
 
     if (data.isNew) {
       template = this.editTemplate;
-    }
-    if (data.isView) {
+    } else {
       template = this.viewTemplate;
     }
 

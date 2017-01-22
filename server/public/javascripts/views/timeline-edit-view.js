@@ -4,22 +4,30 @@ define([
 ) {
   'use strict';
 
-  function TimelineEditView(template) {
-    this.template = template;
+  function TimelineEditView(coverTemplate, itemTemplate) {
+    this.coverTemplate = coverTemplate;
+    this.itemTemplate = itemTemplate;
   }
 
   TimelineEditView.prototype.render = function(viewCmd, params) {
     let self = this;
     self.$coverContainer = $('#cover_container');
+    self.$newsContainer = $('#news_container');
     self.$coverImg = $('#cover_img');
+    self.$edit_deam = $('#edit_deam');
 
     let viewCommands = {
       draw: function () {
-        self.$coverContainer.html(self.template.draw(params));
+        self.$coverContainer.html(self.coverTemplate.draw(params));
+        if (params.isNew) {
+          self.$edit_deam.show();
+        }
         if (params.coverImg) {
           self.$coverImg = $('#cover_img');
           self.$coverImg.show();
         }
+
+        self.$newsContainer.html(self.itemTemplate.draw(params));
       },
       redrawCover: function () {
         if (params.coverImg) {

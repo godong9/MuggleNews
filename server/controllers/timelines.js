@@ -44,9 +44,45 @@ const TimelineController = {
     });
   },
   getTimelineEditPage: function getNewTimelinePage(req, res) {
-    let data = {};
-    View.setCommonData(req, data);
-    res.render('timeline-edit', data);
+    let editId = req.params.id;
+    logger.debug("id: ", editId);
+    if (!editId || editId === 'new') {
+      let data = {};
+      data.isNew = true;
+      View.setCommonData(req, data);
+      res.render('timeline-edit', data);
+      return;
+    }
+
+    async.waterfall([
+      function(callback) {
+        Timeline.getItemsByTimelineId(editId, callback);
+      }
+    ], function (err, items) {
+      let i;
+      let data = {};
+      data.isNew = false;
+
+      if (err) {
+        logger.error(err);
+        return res.redirect('/page/error');
+      }
+      if (!items || items.length === 0) {
+        return res.status(404).send('Not Found!');
+      }
+      View.setCommonData(req, data);
+      for (i=0; i<items.length; i++) {
+        if (items[i].preview_title && !items[i].preview_img) {
+          items[i].preview_img = '/images/no_image.png';
+        }
+        items[i].item_date_text = moment(items[i].item_date).format("YYYY년 M월 D일 HH:mm:ss");
+      }
+      data.items = items;
+      data.commentPage = 'timelines#' + items[0].timeline_id;
+      data.lastUpdatedAt = moment(items[0].timeline_updated_at).format("YYYY년 M월 D일");
+      res.render('timeline-edit', data);
+    });
+
   },
   postTimeline: function postTimeline(req, res) {
     let userId = Session.getSessionUserId(req);

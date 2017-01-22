@@ -41,6 +41,10 @@ define([
         }
       });
     });
+
+    self.view.bind('addItem', function(data) {
+
+    });
   };
 
   return TimelineEditController;

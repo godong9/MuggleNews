@@ -12,14 +12,19 @@ define([
    * @constructor
    */
   function Timeline(params) {
+    let timeline = params.timeline;
+
     this.isNew = params.isNew;
-    this.id = params.id;
-    this.title = params.title;
-    this.subtitle = params.subtitle;
-    this.coverImg = params.coverImg;
-    this.viewCount = params.viewCount;
-    this.userName = params.userName;
-    this.createdAt = params.createdAt;
+    this.isEdit = params.isEdit;
+
+    this.id = timeline.id;
+    this.title = timeline.timeline_title;
+    this.subtitle = timeline.timeline_subtitle;
+    this.coverImg = timeline.timeline_cover_img;
+    this.viewCount = timeline.timeline_view_count;
+    this.userName = timeline.user_name;
+    this.createdAt = params.lastUpdatedAt;
+    this.items = params.items;
   }
 
   Timeline.prototype.create = function(data, callback) {

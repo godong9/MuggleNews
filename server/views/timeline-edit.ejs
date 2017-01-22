@@ -13,7 +13,11 @@
 
 <script>
   var g_timeline = {
-    isNew: true //TODO: 새로 만들때만 isNew
+    isNew: <%= isNew %>, //TODO: 새로 만들때만 true
+    isEdit: true,
+    timeline: <%- JSON.stringify(items[0]) %>,
+    items: <%- JSON.stringify(items) %>,
+    lastUpdatedAt: "<%= lastUpdatedAt %>"
   }
 </script>
 <div class="edit">
@@ -28,7 +32,7 @@
         </div>
 
         <div class="news-container">
-            <ul>
+            <ul id="news_container">
                 <li>
                     <div class="section">
                         <div class="number">
@@ -152,7 +156,7 @@
                 </a>
             </div><!-- e//btn-add-new -->
         </div><!-- e//news-container -->
-        <div class="deam" style="display: none;"></div><!-- 커버를 작성할때 생겼다가 커버가 완료되면 style="display:none" -->
+        <div id="edit_deam" class="deam" style="display: none;"></div><!-- 커버를 작성할때 생겼다가 커버가 완료되면 style="display:none" -->
     </div><!-- e//container -->
 </div><!-- e//wrap -->
 

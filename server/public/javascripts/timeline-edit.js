@@ -3,12 +3,14 @@ define([
   './controllers/my-menu-controller',
   './models/timeline',
   './templates/cover-template',
+  './templates/item-template',
   './views/timeline-edit-view',
   './controllers/timeline-edit-controller'
 ], function (
   MyMenuController,
   Timeline,
   CoverTemplate,
+  ItemTemplate,
   TimelineEditView,
   TimelineEditController
 ) {
@@ -16,8 +18,9 @@ define([
 
   function TimelineEditPage() {
     this.model = new Timeline(g_timeline);
-    this.template = new CoverTemplate();
-    this.view = new TimelineEditView(this.template);
+    this.coverTemplate = new CoverTemplate();
+    this.itemTemplate = new ItemTemplate();
+    this.view = new TimelineEditView(this.coverTemplate, this.itemTemplate);
     this.controller = new TimelineEditController(this.model, this.view);
   }
 
