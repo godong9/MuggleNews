@@ -1,7 +1,9 @@
 //card.js
 define([
+  '../libs/underscore/underscore',
   '../utils/http-util'
 ], function (
+  _,
   HttpUtil
 ) {
   'use strict';
@@ -38,8 +40,42 @@ define([
 
   Timeline.prototype.addItem = function(data) {
     this.items.push(data);
-    console.log(this);
+  };
 
+  Timeline.prototype.changeItem = function(kind, id) {
+    let self = this;
+    let isEnd = false;
+
+    _.map(self.items, function(item, idx) {
+      if (!isEnd && item && (id === item.id)) {
+        switch(kind) {
+          case 'del':
+            self.items.splice(idx, 1);
+            self.reorderItem();
+            break;
+          case 'up':
+            self.items.splice(idx - 1, 0, item);
+            self.items.splice(idx + 1, 1);
+            self.reorderItem();
+            break;
+          case 'down':
+            isEnd = true;
+            self.items.splice(idx + 2, 0, item);
+            self.items.splice(idx, 1);
+            self.reorderItem();
+            break;
+          default:
+            break;
+        }
+      }
+    });
+  };
+
+  Timeline.prototype.reorderItem = function() {
+    let self = this;
+    _.map(self.items, function(item, idx) {
+      item.order = idx + 1;
+    });
   };
 
   return Timeline;

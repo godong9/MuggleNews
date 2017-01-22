@@ -22,16 +22,20 @@ define([
     self.view.bind('addItem', function(data) {
       self.model.addItem(data);
 
-      self.view.bind('addItem', function(data) {
-        self.model.addItem(data);
-      });
+      self.bindHandlers();
     });
 
     self.view.bind('addPreview', function(data) {});
 
     self.view.bind('delPreview', function(data) {});
 
-    self.view.bind('clickMore', function(data) {});
+    self.view.bind('clickMore', function(kind, id) {
+      self.model.changeItem(kind, id);
+
+      console.log("model: ", self.model);
+      self.view.render('draw', self.model);
+      self.bindHandlers();
+    });
   };
 
   return TimelineEditController;

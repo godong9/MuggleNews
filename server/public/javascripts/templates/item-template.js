@@ -45,9 +45,9 @@ define([
       +         '<div class="btn-box">'
       +           '<a class="item-more-btn more-vert"><img src="/images/icon-mynews@3x.png" alt=""></a>'
       +           '<div class="mynew-edit more-menu">'
-      +             '<a href="" class="del-news">삭제</a>'
-      +             '<a href="" class="up-news">위로</a>'
-      +             '<a href="" class="down-news">아래로</a>'
+      +             '<a class="del-news">삭제</a>'
+      +             '<a class="up-news">위로</a>'
+      +             '<a class="down-news">아래로</a>'
       +           '</div>'
       +         '</div><!-- e//btn-box-->'
       +       '</div><!-- e//news-data-->'
@@ -74,17 +74,9 @@ define([
       +         '<div class="time-table">'
       +           '<input type="text" placeholder="시간입력">'
       +         '</div>'
-      +         '<div class="btn-box">'
-      +           '<a href="" class="more-vert"><img src="/images/icon-mynews@3x.png" alt=""></a>'
-      +           '<div class="mynew-edit">'
-      +             '<a href="" class="del-news">삭제</a>'
-      +             '<a href="" class="up-news">위로</a>'
-      +             '<a href="" class="down-news">아래로</a>'
-      +           '</div>'
-      +         '</div><!-- e//btn-box-->'
       +       '</div><!-- e//news-data-->'
       +     '</div><!--number -->'
-      +     '<div class="new-conts content-container" data-preview="{{previewId}}">'
+      +     '<div class="new-conts content-container" data-preview="">'
       +       '<div class="txt-area-zone">'
       +         '<textarea class="item-content-input" placeholder="요약 설명을 입력하세요."></textarea>'
       +       '</div>'
@@ -176,6 +168,16 @@ define([
     itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
     itemTemplate = itemTemplate.replace('{{previewId}}', escape(timelineItem.preview_id) || '');
 
+    if (timelineItem.preview_id) {
+      itemTemplate = itemTemplate.replace('{{preview_template}}', this.previewViewTemplate);
+      itemTemplate = itemTemplate.replace('{{preview_img}}', timelineItem.preview_img || '');
+      itemTemplate = itemTemplate.replace('{{preview_url}}', escape(timelineItem.preview_url) || '');
+      itemTemplate = itemTemplate.replace('{{preview_title}}', escape(timelineItem.preview_title) || '');
+      itemTemplate = itemTemplate.replace('{{preview_content}}', escape(timelineItem.preview_content) || '');
+    } else {
+      itemTemplate = itemTemplate.replace('{{preview_template}}', this.previewInputTemplate);
+    }
+
     view = view + itemTemplate;
 
     let emptyTemplate = this.emptyTemplate;
@@ -208,7 +210,6 @@ define([
     let previewTemplate = this.previewInputTemplate;
 
     view = view + previewTemplate;
-
 
     return view;
   };

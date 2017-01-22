@@ -64,8 +64,7 @@ define([
           content: $timelineItem.find('.item-content-input').val(),
           preview_id: $timelineItem.find('.content-container').data('preview')
         };
-        // TODO: 프리뷰 데이터도 넣어야함!
-        console.log(timelineItem);
+        console.log("addedItem: ", timelineItem);
         if (!timelineItem.title) {
           alert('제목을 입력해주세요!');
           return;
@@ -89,8 +88,6 @@ define([
 
             $parentItem.find('.preview-input-container').remove();
             $parentItem.append(self.itemTemplate.drawPreview(data));
-
-            handler(data);
           });
         }
       });
@@ -110,8 +107,22 @@ define([
     if (event === 'clickMore') {
       $('.item-more-btn').unbind('click').click(function() {
         let $parentItem = $(this).parents('.btn-box');
-
         $parentItem.find('.more-menu').toggle();
+      });
+
+      $('.del-news').unbind('click').click(function() {
+        let $parentItem = $(this).parents('.timeline-item');
+        handler('del', $parentItem.data('id'));
+      });
+
+      $('.up-news').unbind('click').click(function() {
+        let $parentItem = $(this).parents('.timeline-item');
+        handler('up', $parentItem.data('id'));
+      });
+
+      $('.down-news').unbind('click').click(function() {
+        let $parentItem = $(this).parents('.timeline-item');
+        handler('down', $parentItem.data('id'));
       });
     }
   };
