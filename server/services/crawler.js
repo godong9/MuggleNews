@@ -15,7 +15,7 @@ let CrawlerService = {
       encoding: null
     };
     request.get(url, options, function (error, response, body) {
-      let contentType = response.headers['content-type'] || "";
+      let contentType = response && response.headers['content-type'] || "";
       let charSet = self.getCharset(contentType);
       body = self.convert({charSet:charSet,content:body});
       cb(null, self.getPreviewDataFromHtml(url, body));

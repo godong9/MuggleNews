@@ -1,6 +1,8 @@
 //timeline-edit-view.js
 define([
+  '../utils/http-util'
 ], function (
+  HttpUtil
 ) {
   'use strict';
 
@@ -60,7 +62,9 @@ define([
           order: $timelineItem.data('order'),
           title: $timelineItem.find('.item-title-input').val(),
           content: $timelineItem.find('.item-content-input').val(),
+          preview_id: $timelineItem.find('.content-container').data('preview')
         };
+        // TODO: 프리뷰 데이터도 넣어야함!
         console.log(timelineItem);
         if (!timelineItem.title) {
           alert('제목을 입력해주세요!');
@@ -70,6 +74,30 @@ define([
         self.$newsContainer.append(self.itemTemplate.drawItem(timelineItem));
         handler(timelineItem)
       });
+    }
+
+    if (event === 'addPreview') {
+      $('.item-preview-input').unbind('keydown').keydown(function(event) {
+        let previewInput = this;
+
+        if (event.which === 13) {
+          let url = $(previewInput).val();
+          HttpUtil.postData('/previews', {previewUrl: url}, function(err, data) {
+            let previewId = data && data.id;
+            let $parentItem = $(previewInput).parents('.content-container');
+            $parentItem.data('preview', previewId);
+
+            $parentItem.find('.link-write').remove();
+            $parentItem.append(self.itemTemplate.drawPreview(data));
+
+            handler(data);
+          });
+        }
+      });
+    }
+
+    if (event === 'delPreview') {
+
     }
   };
 

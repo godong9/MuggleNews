@@ -21,7 +21,13 @@ define([
 
     self.view.bind('addItem', function(data) {
       self.model.addItem(data);
+
+      self.view.bind('addItem', function(data) {
+        self.model.addItem(data);
+      });
     });
+
+    self.view.bind('addPreview', function(data) {});
   };
 
   return TimelineEditController;

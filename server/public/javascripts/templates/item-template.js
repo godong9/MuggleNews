@@ -30,7 +30,7 @@ define([
 
   function ItemTemplate() {
     this.template
-      =	'<li class="timeline-item" data-order="{{order}}">'
+      =	'<li class="timeline-item" data-id="{{id}}" data-order="{{order}}">'
       +   '<div class="section">'
       +     '<div class="number">'
       +       '<p class="list-count">{{listCount}}</p>'
@@ -56,15 +56,13 @@ define([
       +       '<div class="txt-area-zone">'
       +         '<textarea class="item-content-input" placeholder="요약 설명을 입력하세요.">{{content}}</textarea>'
       +       '</div>'
-      +       '<div class="link-write">'
-      +         '<p><input type="text" placeholder="URL입력하세요"></p>'
-      +       '</div>'
+      +       '{{preview_template}}'
       +     '</div><!--e//new-conts -->'
       +   '</div><!--e//section -->'
       +	'</li>';
 
     this.emptyTemplate
-      =	'<li id="new_timeline_item" data-order="{{order}}">'
+      =	'<li id="new_timeline_item" class="timeline-item" data-id="new" data-order="{{order}}">'
       +   '<div class="section">'
       +     '<div class="number">'
       +       '<p class="list-count">{{listCount}}</p>'
@@ -86,19 +84,41 @@ define([
       +         '</div><!-- e//btn-box-->'
       +       '</div><!-- e//news-data-->'
       +     '</div><!--number -->'
-      +     '<div class="new-conts">'
+      +     '<div class="new-conts content-container" data-preview="{{previewId}}">'
       +       '<div class="txt-area-zone">'
       +         '<textarea class="item-content-input" placeholder="요약 설명을 입력하세요."></textarea>'
       +       '</div>'
       +       '<div class="link-write">'
-      +         '<p><input type="text" placeholder="URL입력하세요"></p>'
-      +       '</div>'
-      +       '<div class="btn-box">'
-      +         '<button type="submit" id="add_item_btn" class="btn-save">추가</button>'
+      +         '<p><input class="item-preview-input" type="text" placeholder="URL입력하세요"></p>'
       +       '</div>'
       +     '</div><!--e//new-conts -->'
+      +     '<div class="btn-box">'
+      +       '<button type="submit" id="add_item_btn" class="btn-save">추가</button>'
+      +     '</div>'
       +   '</div><!--e//section -->'
       +	'</li>';
+
+    this.previewInputTemplate
+      = '<div class="link-write">'
+      +  '<p><input class="item-preview-input" type="text" placeholder="URL입력하세요"></p>'
+      + '</div>';
+
+    this.previewViewTemplate
+      = '<div class="preview">'
+      +   '<div class="preview-wrap">'
+      +     '<a href="{{preview_url}}" target="_blank">'
+      +       '<div class="thum-img"><img src="{{preview_img}}" alt="" /></div>'
+      +       '<div class="title">'
+      +         '<p>{{preview_title}}</p>'
+      +       '</div>'
+      +       '<div class="txt-area">'
+      +         '<p>{{preview_content}}</p>'
+      +         '<span class="preview-link">{{preview_url_text}}</span>'
+      +       '</div>'
+      +       '<button type="submit" class="btn-del"><span>삭제</span></button>'
+      +     '</a>'
+      +   '</div><!--e//preview-wrap -->'
+      + '</div><!--e//#preview -->';
   }
 
   ItemTemplate.prototype.draw = function (data) {
@@ -111,15 +131,23 @@ define([
     for (let i in items) {
       let timelineItem = items[i];
       let itemTemplate = template;
+      itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id);
       itemTemplate = itemTemplate.replace('{{order}}', timelineItem.order);
       itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.order);
       itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
       itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date_text) || '');
       itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
       itemTemplate = itemTemplate.replace('{{previewId}}', escape(timelineItem.preview_id) || '');
-      itemTemplate = itemTemplate.replace('{{preview_url}}', escape(timelineItem.preview_url) || '');
-      itemTemplate = itemTemplate.replace('{{preview_title}}', escape(timelineItem.preview_title) || '');
-      itemTemplate = itemTemplate.replace('{{preview_content}}', escape(timelineItem.preview_content) || '');
+
+      if (timelineItem.preview_id) {
+        itemTemplate = itemTemplate.replace('{{preview_template}}', this.previewViewTemplate);
+        itemTemplate = itemTemplate.replace('{{preview_img}}', timelineItem.preview_img || '');
+        itemTemplate = itemTemplate.replace('{{preview_url}}', escape(timelineItem.preview_url) || '');
+        itemTemplate = itemTemplate.replace('{{preview_title}}', escape(timelineItem.preview_title) || '');
+        itemTemplate = itemTemplate.replace('{{preview_content}}', escape(timelineItem.preview_content) || '');
+      } else {
+        itemTemplate = itemTemplate.replace('{{preview_template}}', this.previewInputTemplate);
+      }
 
       lastOrder += 1;
       view = view + itemTemplate;
@@ -140,15 +168,13 @@ define([
     let itemTemplate = this.template;
     let lastOrder = parseInt(timelineItem.order) + 1;
 
+    itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id);
     itemTemplate = itemTemplate.replace('{{order}}', timelineItem.order);
     itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.order);
     itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
     itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date_text) || '');
     itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
     itemTemplate = itemTemplate.replace('{{previewId}}', escape(timelineItem.preview_id) || '');
-    itemTemplate = itemTemplate.replace('{{preview_url}}', escape(timelineItem.preview_url) || '');
-    itemTemplate = itemTemplate.replace('{{preview_title}}', escape(timelineItem.preview_title) || '');
-    itemTemplate = itemTemplate.replace('{{preview_content}}', escape(timelineItem.preview_content) || '');
 
     view = view + itemTemplate;
 
@@ -157,6 +183,22 @@ define([
     emptyTemplate = emptyTemplate.replace('{{listCount}}', lastOrder);
 
     view = view + emptyTemplate;
+
+    return view;
+  };
+
+  ItemTemplate.prototype.drawPreview = function (item) {
+    let view = '';
+    let previewItem = item;
+    let previewTemplate = this.previewViewTemplate;
+
+    previewTemplate = previewTemplate.replace('{{preview_template}}', this.previewViewTemplate);
+    previewTemplate = previewTemplate.replace('{{preview_img}}', previewItem.preview_img || '');
+    previewTemplate = previewTemplate.replace('{{preview_url}}', escape(previewItem.preview_url) || '');
+    previewTemplate = previewTemplate.replace('{{preview_title}}', escape(previewItem.title) || '');
+    previewTemplate = previewTemplate.replace('{{preview_content}}', escape(previewItem.content) || '');
+
+    view = view + previewTemplate;
 
     return view;
   };
