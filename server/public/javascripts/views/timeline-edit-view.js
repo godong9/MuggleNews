@@ -88,6 +88,7 @@ define([
 
             $parentItem.find('.preview-input-container').remove();
             $parentItem.append(self.itemTemplate.drawPreview(data));
+            handler();
           });
         }
       });

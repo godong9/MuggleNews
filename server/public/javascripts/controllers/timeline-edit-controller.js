@@ -25,7 +25,9 @@ define([
       self.bindHandlers();
     });
 
-    self.view.bind('addPreview', function(data) {});
+    self.view.bind('addPreview', function() {
+      self.bindHandlers();
+    });
 
     self.view.bind('delPreview', function(data) {});
 
