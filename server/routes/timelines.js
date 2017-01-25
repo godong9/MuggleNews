@@ -40,11 +40,32 @@ router.get('/edit/:id', TimelineController.getTimelineEditPage);
  * @apiParam {String} title 제목
  * @apiParam {String} subtitle 부제목
  * @apiParam {String} coverImg 커버이미지
+ * @apiParam {Object[]} items 타임라인 아이템 리스트
  *
  * @apiSuccess {Object} data data
  * @apiSuccess {String} data.id 생성된 timeline id
  */
 router.post('/', TimelineController.postTimeline);
+
+/**
+ * @api {put} /timelines Put Timeline
+ * @apiVersion 1.0.0
+ * @apiName putTimeline
+ * @apiGroup Timeline
+ *
+ * @apiExample {url} Example usage:
+ *    http://localhost:9000/timelines
+ *
+ * @apiParam {Number} id timeline ID
+ * @apiParam {String} title 제목
+ * @apiParam {String} subtitle 부제목
+ * @apiParam {String} coverImg 커버이미지
+ * @apiParam {Object[]} items 타임라인 아이템 리스트
+ *
+ * @apiSuccess {Object} data data
+ * @apiSuccess {String} data.id 수정된 timeline id
+ */
+router.put('/', TimelineController.putTimeline);
 
 /**
  * @api {post} /timelines/item Post Timeline Item

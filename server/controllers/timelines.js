@@ -88,13 +88,60 @@ const TimelineController = {
 
   },
   postTimeline: function postTimeline(req, res) {
-    let userId = Session.getSessionUserId(req);
-    if (!userId) {
-      res.status(401).send('로그인을 해주세요!');
-      return;
-    }
+    // let userId = Session.getSessionUserId(req);
+    // if (!userId) {
+    //   res.status(401).send('로그인을 해주세요!');
+    //   return;
+    // }
+    //TODO: 테스트용
+    let userId = 1;
     req.body.userId = userId;
-    Timeline.insertTimeline(req.body, function(err, result) {
+
+    async.waterfall([
+        function(callback) {
+          Timeline.insertTimeline(req.body, callback);
+        },
+        function(result, callback) {
+          req.body.timelineId = result;
+          logger.info("req.body:", req.body);
+          Timeline.insertTimelineItems(req.body, function(err) {
+            callback(err, result);
+          });
+        }
+      ], function (err, result) {
+        if (err) {
+          logger.error(err);
+          res.status(500).send('서버 에러 발생');
+          return;
+        }
+        res.send({
+          id: result,
+          userName: Session.getSessionUserName(req),
+          viewCount: 0,
+          createdAt: moment().format("YYYY년 M월 D일")
+        });
+      });
+  },
+  putTimeline: function putTimeline(req, res) {
+    // let userId = Session.getSessionUserId(req);
+    // if (!userId) {
+    //   res.status(401).send('로그인을 해주세요!');
+    //   return;
+    // }
+    //TODO: 테스트용
+    let userId = 1;
+    req.body.userId = userId;
+
+    async.waterfall([
+      function(callback) {
+        Timeline.updateTimeline(req.body, callback);
+      },
+      function(result, callback) {
+        Timeline.updateTimelineItems(req.body, function(err) {
+          callback(err, result);
+        });
+      }
+    ], function (err, result) {
       if (err) {
         logger.error(err);
         res.status(500).send('서버 에러 발생');

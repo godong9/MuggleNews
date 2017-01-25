@@ -1,5 +1,6 @@
 'use strict';
 
+const _ = require('underscore');
 const async = require('async');
 const pool = require('../db/db').pool;
 
@@ -51,24 +52,50 @@ let Timeline = {
     });
   },
   updateTimeline: function updateTimeline(params, cb) {
-
+    let query =
+      'UPDATE ' +
+        'timelines ' +
+      'SET title = ?, ' +
+        'subtitle = ?, ' +
+        'cover_img = ? ' +
+      'WHERE id = ? AND user_id = ?;';
+    let insertItem = [
+      params.title,
+      params.subtitle,
+      params.coverImg,
+      params.id,
+      params.userId
+    ];
+    pool.query(query, insertItem, function(err, result) {
+      cb(err, result && result.insertId);
+    });
   },
   insertTimelineItem: function insertTimelineItem(params, cb) {
     let query = '' +
-        'INSERT INTO items ' +
-          '(title, content, timeline_id, preview_id, order, item_date, user_id) ' +
-          'VALUES (?,?,?,?,?,?,?);';
+      'INSERT INTO items ' +
+      '(title, content, timeline_id, preview_id, item_order, item_date) ' +
+      'VALUES (?,?,?,?,?,?);';
     let insertItem = [
       params.title,
       params.content,
       params.timelineId,
       params.previewId,
-      params.order,
-      params.itemDate,
-      params.userId
+      params.itemOrder,
+      params.itemDate
     ];
     pool.query(query, insertItem, function(err, result) {
       cb(err, result && result.insertId);
+    });
+  },
+  insertTimelineItems: function insertTimelineItems(params, cb) {
+    let self = this;
+    let items = _.map(params.items, function(item) {
+      item.timelineId = params.timelineId;
+      return item;
+    });
+
+    async.each(items, self.insertTimelineItem, function(err){
+      cb(err);
     });
   },
   updateTimelineItem: function updateTimelineItem(params, cb) {
@@ -76,28 +103,35 @@ let Timeline = {
       'UPDATE ' +
         'items ' +
       'SET title = ?, ' +
-        'content = ? ' +
-        'timeline_id = ? ' +
-        'preview_id = ? ' +
-        'item_date = ? ' +
-      'WHERE id = ? AND user_id = ?';
+        'content = ?, ' +
+        'preview_id = ?, ' +
+        'item_date = ?, ' +
+        'item_order = ? ' +
+      'WHERE id = ?;';
     let updateItem = [
       params.title,
       params.content,
-      params.timelineId,
       params.previewId,
       params.itemDate,
-      params.id,
-      params.userId
+      params.itemOrder,
+      params.id
     ];
     pool.query(query, updateItem, function(err) {
+      cb(err);
+    });
+  },
+  updateTimelineItems: function updateTimelineItems(params, cb) {
+    let self = this;
+    let items = params.items;
+
+    async.each(items, self.updateTimelineItem, function(err){
       cb(err);
     });
   },
   changeTimelineOrders: function changeTimelineOrders(params, cb) {
     async.waterfall([
       function(callback) {
-        let query = 'UPDATE items SET order = ? WHERE id = ? AND user_id = ?;';
+        let query = 'UPDATE items SET item_order = ? WHERE id = ? AND user_id = ?;';
         let updateItem = [
           params.beforeOrder,
           params.nextOrder,
@@ -108,7 +142,7 @@ let Timeline = {
         });
       },
       function(callback) {
-        let query = 'UPDATE items SET order = ? WHERE id = ? AND user_id = ?;';
+        let query = 'UPDATE items SET item_order = ? WHERE id = ? AND user_id = ?;';
         let updateItem = [
           params.nextOrder,
           params.beforeOrder,
