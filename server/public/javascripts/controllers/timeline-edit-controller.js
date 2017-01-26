@@ -17,7 +17,9 @@ define([
 
   TimelineEditController.prototype.bindHandlers = function() {
     let self = this;
-    self.view.bind('changeCover', function() {});
+    self.view.bind('changeCover', function(coverImg) {
+      self.model.setCoverImg(coverImg);
+    });
 
     self.view.bind('addItem', function(data) {
       self.model.addItem(data);
@@ -34,9 +36,18 @@ define([
     self.view.bind('clickMore', function(kind, id) {
       self.model.changeItem(kind, id);
 
-      console.log("model: ", self.model);
       self.view.render('draw', self.model);
       self.bindHandlers();
+    });
+
+    self.view.bind('saveTimeline', function(title, subtitle) {
+      self.model.setTitle(title);
+      self.model.setSubtitle(subtitle);
+      console.log('savedModel: ', self.model);
+    });
+
+    self.view.bind('cancelTimeline', function() {
+
     });
   };
 

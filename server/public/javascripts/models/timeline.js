@@ -37,6 +37,18 @@ define([
     HttpUtil.postData('/timelines', newTimeline, callback);
   };
 
+  Timeline.prototype.setCoverImg = function(coverImg) {
+    this.coverImg = coverImg;
+  };
+
+  Timeline.prototype.setTitle = function(title) {
+    this.title = title;
+  };
+
+  Timeline.prototype.setSubtitle = function(subtitle) {
+    this.subtitle = subtitle;
+  };
+
   Timeline.prototype.addItem = function(data) {
     this.items.push(data);
   };

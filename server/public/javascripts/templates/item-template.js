@@ -80,7 +80,7 @@ define([
       +       '<div class="txt-area-zone">'
       +         '<textarea class="item-content-input" placeholder="요약 설명을 입력하세요."></textarea>'
       +       '</div>'
-      +       '<div class="link-write">'
+      +       '<div class="link-write preview-input-container">'
       +         '<p><input class="item-preview-input" type="text" placeholder="URL입력하세요"></p>'
       +       '</div>'
       +     '</div><!--e//new-conts -->'
@@ -124,8 +124,8 @@ define([
       let timelineItem = items[i];
       let itemTemplate = template;
       itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id);
-      itemTemplate = itemTemplate.replace('{{order}}', timelineItem.order);
-      itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.order);
+      itemTemplate = itemTemplate.replace('{{order}}', timelineItem.itemOrder);
+      itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.itemOrder);
       itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
       itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date_text) || '');
       itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
@@ -158,11 +158,11 @@ define([
     let view = '';
     let timelineItem = item;
     let itemTemplate = this.template;
-    let lastOrder = parseInt(timelineItem.order) + 1;
+    let lastOrder = parseInt(timelineItem.itemOrder) + 1;
 
     itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id);
-    itemTemplate = itemTemplate.replace('{{order}}', timelineItem.order);
-    itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.order);
+    itemTemplate = itemTemplate.replace('{{order}}', timelineItem.itemOrder);
+    itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.itemOrder);
     itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
     itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date_text) || '');
     itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');

@@ -50,7 +50,7 @@ define([
         dataType: 'json',
         done: function (e, data) {
           self.render('redrawCover', {coverImg: data.result});
-          handler();
+          handler(data.result);
         }
       });
     }
@@ -59,10 +59,10 @@ define([
       $('#add_item_btn').unbind('click').click(function() {
         let $timelineItem = $('#new_timeline_item');
         let timelineItem = {
-          order: $timelineItem.data('order'),
           title: $timelineItem.find('.item-title-input').val(),
           content: $timelineItem.find('.item-content-input').val(),
-          preview_id: $timelineItem.find('.content-container').data('preview')
+          itemOrder: $timelineItem.data('order'),
+          previewId: $timelineItem.find('.content-container').data('preview')
         };
         console.log("addedItem: ", timelineItem);
         if (!timelineItem.title) {
@@ -124,6 +124,18 @@ define([
       $('.down-news').unbind('click').click(function() {
         let $parentItem = $(this).parents('.timeline-item');
         handler('down', $parentItem.data('id'));
+      });
+    }
+
+    if (event === 'saveTimeline') {
+      $('#timeline_save_btn').unbind('click').click(function() {
+        handler($('#title_input').val(), $('#subtitle_input').val());
+      });
+    }
+
+    if (event === 'cancelTimeline') {
+      $('#timeline_cancel_btn').unbind('click').click(function() {
+        handler();
       });
     }
   };
