@@ -37,10 +37,12 @@
                         <li>
                             <div class="section">
                                 <div class="number">
-                                    <p class="list-count"><%= item.order %></p>
+                                    <p class="list-count"><%= item.item_order %></p>
                                     <h2><%= item.title %></h2>
                                     <div class="news-date">
+                                        <% if (item.item_date_text) { %>
                                         <span><%= item.item_date_text %></span>
+                                        <% } %>
                                     </div><!-- e//news-data-->
                                 </div><!--number -->
                                 <div class="new-conts">

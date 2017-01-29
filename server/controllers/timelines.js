@@ -35,7 +35,9 @@ const TimelineController = {
         if (items[i].preview_title && !items[i].preview_img) {
           items[i].preview_img = '/images/no_image.png';
         }
-        items[i].item_date_text = moment(items[i].item_date).format("YYYY년 M월 D일 HH:mm:ss");
+        if (items[i].item_date) {
+          items[i].item_date_text = moment(items[i].item_date).format("YYYY년 M월 D일 HH:mm:ss");
+        }
       }
       data.items = items;
       data.commentPage = 'timelines#' + items[0].timeline_id;

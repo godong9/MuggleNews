@@ -118,7 +118,7 @@ define([
     let items = data.items;
     let template = this.template;
     let lastOrder = 1;
-    console.log(items);
+    console.log("items:", items);
 
     for (let i in items) {
       let timelineItem = items[i];

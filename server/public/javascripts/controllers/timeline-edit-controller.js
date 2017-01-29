@@ -43,7 +43,10 @@ define([
     self.view.bind('saveTimeline', function(title, subtitle) {
       self.model.setTitle(title);
       self.model.setSubtitle(subtitle);
-      console.log('savedModel: ', self.model);
+
+      self.model.create(self.model, function(err, data) {
+
+      });
     });
 
     self.view.bind('cancelTimeline', function() {

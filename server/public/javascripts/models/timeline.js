@@ -28,11 +28,8 @@ define([
   }
 
   Timeline.prototype.create = function(data, callback) {
-    let newTimeline = {
-      title: data.title,
-      subtitle: data.subtitle,
-      coverImg: data.coverImg
-    };
+    let newTimeline = data;
+    console.log('savedModel: ', newTimeline);
 
     HttpUtil.postData('/timelines', newTimeline, callback);
   };
