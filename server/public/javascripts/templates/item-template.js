@@ -37,10 +37,10 @@ define([
       +       '<h2><input class="item-title-input" value="{{title}}" type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>'
       +       '<div class="news-date">'
       +         '<div class="data-table">'
-      +           '<input type="text" id="datepicker" class="hasDatepicker" placeholder="날짜입력">'
+      +           '<input type="text" class="datepicker" class="hasDatepicker" placeholder="날짜입력">'
       +         '</div>'
       +         '<div class="time-table">'
-      +           '<input type="text" placeholder="시간입력">'
+      +           '<input type="text" class="item-time" placeholder="시간입력">'
       +         '</div>'
       +         '<div class="btn-box">'
       +           '<a class="item-more-btn more-vert"><img src="/images/icon-mynews@3x.png" alt=""></a>'
@@ -69,10 +69,10 @@ define([
       +       '<h2><input class="item-title-input" type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>'
       +       '<div class="news-date">'
       +         '<div class="data-table">'
-      +           '<input type="text" id="datepicker" class="hasDatepicker" placeholder="날짜입력">'
+      +           '<input type="text" class="datepicker" class="hasDatepicker" placeholder="날짜입력">'
       +         '</div>'
       +         '<div class="time-table">'
-      +           '<input type="text" placeholder="시간입력">'
+      +           '<input type="text" class="item-time" placeholder="시간입력">'
       +         '</div>'
       +       '</div><!-- e//news-data-->'
       +     '</div><!--number -->'
@@ -127,7 +127,7 @@ define([
       itemTemplate = itemTemplate.replace('{{order}}', timelineItem.itemOrder);
       itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.itemOrder);
       itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
-      itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date_text) || '');
+      itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.itemDateText) || '');
       itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
       itemTemplate = itemTemplate.replace('{{previewId}}', escape(timelineItem.preview_id) || '');
 
@@ -164,7 +164,7 @@ define([
     itemTemplate = itemTemplate.replace('{{order}}', timelineItem.itemOrder);
     itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.itemOrder);
     itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
-    itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date_text) || '');
+    itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.itemDateText) || '');
     itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
     itemTemplate = itemTemplate.replace('{{previewId}}', escape(timelineItem.preview_id) || '');
 

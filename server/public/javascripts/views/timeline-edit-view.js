@@ -45,6 +45,10 @@ define([
     self.$titleInput = $('#title_input');
     self.$subtitleInput = $('#subtitle_input');
 
+    $('.datepicker').datepicker({
+      dateFormat: "yy-mm-dd"
+    });
+
     if (event === 'changeCover') {
       $('#cover_change_btn').fileupload({
         dataType: 'json',
@@ -62,7 +66,9 @@ define([
           title: $timelineItem.find('.item-title-input').val(),
           content: $timelineItem.find('.item-content-input').val(),
           itemOrder: $timelineItem.data('order'),
-          previewId: $timelineItem.find('.content-container').data('preview')
+          previewId: $timelineItem.find('.content-container').data('preview'),
+          itemDate: $timelineItem.find('.datepicker').val(),
+          itemTime: $timelineItem.find('.item-time').val()
         };
         console.log("addedItem: ", timelineItem);
         if (!timelineItem.title) {

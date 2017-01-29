@@ -80,8 +80,10 @@ const TimelineController = {
         if (items[i].preview_title && !items[i].preview_img) {
           items[i].preview_img = '/images/no_image.png';
         }
-        items[i].item_date_text = moment(items[i].item_date).format("YYYY년 M월 D일 HH:mm:ss");
+        items[i].itemOrder = items[i].item_order;
+        items[i].itemDateText = moment(items[i].item_date).format("YYYY년 M월 D일");
       }
+
       data.items = items;
       data.timeline = items[0];
       data.lastUpdatedAt = moment(items[0].timeline_updated_at).format("YYYY년 M월 D일");
