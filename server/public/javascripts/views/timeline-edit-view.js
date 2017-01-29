@@ -20,15 +20,15 @@ define([
     let viewCommands = {
       draw: function () {
         self.$coverContainer.html(self.coverTemplate.draw(params));
-        if (params.coverImg) {
+        if (params.cover_img) {
           self.$coverImg = $('#cover_img');
           self.$coverImg.show();
         }
         self.$newsContainer.html(self.itemTemplate.draw(params));
       },
       redrawCover: function () {
-        if (params.coverImg) {
-          self.$coverImg.attr('src', params.coverImg);
+        if (params.cover_img) {
+          self.$coverImg.attr('src', params.cover_img);
           self.$coverImg.show();
         }
       }
@@ -53,7 +53,7 @@ define([
       $('#cover_change_btn').fileupload({
         dataType: 'json',
         done: function (e, data) {
-          self.render('redrawCover', {coverImg: data.result});
+          self.render('redrawCover', {cover_img: data.result});
           handler(data.result);
         }
       });
@@ -65,11 +65,16 @@ define([
         let timelineItem = {
           title: $timelineItem.find('.item-title-input').val(),
           content: $timelineItem.find('.item-content-input').val(),
-          itemOrder: $timelineItem.data('order'),
-          previewId: $timelineItem.find('.content-container').data('preview'),
-          itemDate: $timelineItem.find('.datepicker').val(),
-          itemTime: $timelineItem.find('.item-time').val()
+          item_order: $timelineItem.data('order'),
+          preview_id: $timelineItem.find('.content-container').data('preview'),
+          preview_url: $timelineItem.find('.preview-url').text(),
+          preview_title: $timelineItem.find('.preview-title').text(),
+          preview_content: $timelineItem.find('.preview-content').text(),
+          preview_img: $timelineItem.find('.preview-img').attr('src'),
+          item_date: $timelineItem.find('.datepicker').val(),
+          item_time: $timelineItem.find('.item-time').val()
         };
+
         console.log("addedItem: ", timelineItem);
         if (!timelineItem.title) {
           alert('제목을 입력해주세요!');
@@ -87,10 +92,10 @@ define([
 
         if (event.which === 13) {
           let url = $(previewInput).val();
-          HttpUtil.postData('/previews', {previewUrl: url}, function(err, data) {
-            let previewId = data && data.id;
+          HttpUtil.postData('/previews', {preview_url: url}, function(err, data) {
+            let preview_id = data && data.id;
             let $parentItem = $(previewInput).parents('.content-container');
-            $parentItem.data('preview', previewId);
+            $parentItem.data('preview', preview_id);
 
             $parentItem.find('.preview-input-container').remove();
             $parentItem.append(self.itemTemplate.drawPreview(data));

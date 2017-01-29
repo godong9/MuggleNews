@@ -17,13 +17,12 @@ define([
 
   TimelineEditController.prototype.bindHandlers = function() {
     let self = this;
-    self.view.bind('changeCover', function(coverImg) {
-      self.model.setCoverImg(coverImg);
+    self.view.bind('changeCover', function(cover_img) {
+      self.model.setCoverImg(cover_img);
     });
 
     self.view.bind('addItem', function(data) {
       self.model.addItem(data);
-
       self.bindHandlers();
     });
 
@@ -45,7 +44,7 @@ define([
       self.model.setSubtitle(subtitle);
 
       self.model.create(self.model, function(err, data) {
-
+        console.log("savedData: ", data);
       });
     });
 

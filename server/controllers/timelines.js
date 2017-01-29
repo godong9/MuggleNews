@@ -36,7 +36,10 @@ const TimelineController = {
           items[i].preview_img = '/images/no_image.png';
         }
         if (items[i].item_date) {
-          items[i].item_date_text = moment(items[i].item_date).format("YYYY년 M월 D일 HH:mm:ss");
+          items[i].item_date_text = moment(items[i].item_date).format("YYYY년 M월 D일");
+        }
+        if (items[i].item_time) {
+          items[i].item_date_text += " " + items[i].item_time;
         }
       }
       data.items = items;
@@ -80,8 +83,6 @@ const TimelineController = {
         if (items[i].preview_title && !items[i].preview_img) {
           items[i].preview_img = '/images/no_image.png';
         }
-        items[i].itemOrder = items[i].item_order;
-        items[i].itemDateText = moment(items[i].item_date).format("YYYY년 M월 D일");
       }
 
       data.items = items;
@@ -106,7 +107,7 @@ const TimelineController = {
           Timeline.insertTimeline(req.body, callback);
         },
         function(result, callback) {
-          req.body.timelineId = result;
+          req.body.timeline_id = result;
           logger.info("req.body:", req.body);
           Timeline.insertTimelineItems(req.body, function(err) {
             callback(err, result);

@@ -44,7 +44,7 @@ let Timeline = {
     let insertItem = [
       params.title,
       params.subtitle,
-      params.coverImg,
+      params.cover_img,
       params.userId
     ];
     pool.query(query, insertItem, function(err, result) {
@@ -62,7 +62,7 @@ let Timeline = {
     let insertItem = [
       params.title,
       params.subtitle,
-      params.coverImg,
+      params.cover_img,
       params.id,
       params.userId
     ];
@@ -71,18 +71,36 @@ let Timeline = {
     });
   },
   insertTimelineItem: function insertTimelineItem(params, cb) {
-    let query = '' +
-      'INSERT INTO items ' +
-      '(title, content, timeline_id, preview_id, item_order, item_date) ' +
-      'VALUES (?,?,?,?,?,?);';
-    let insertItem = [
-      params.title,
-      params.content,
-      params.timelineId,
-      params.previewId,
-      params.itemOrder,
-      params.itemDate
-    ];
+    let query, insertItem;
+    if (params.preview_id) {
+      query = '' +
+        'INSERT INTO items ' +
+        '(title, content, timeline_id, preview_id, item_order, item_date, item_time) ' +
+        'VALUES (?,?,?,?,?,?,?);';
+      insertItem = [
+        params.title,
+        params.content,
+        params.timeline_id,
+        params.preview_id,
+        params.item_order,
+        params.item_date || null,
+        params.item_time
+      ];
+    } else {
+      query = '' +
+        'INSERT INTO items ' +
+        '(title, content, timeline_id, item_order, item_date, item_time) ' +
+        'VALUES (?,?,?,?,?,?);';
+      insertItem = [
+        params.title,
+        params.content,
+        params.timeline_id,
+        params.item_order,
+        params.item_date || null,
+        params.item_time
+      ];
+    }
+
     pool.query(query, insertItem, function(err, result) {
       cb(err, result && result.insertId);
     });
@@ -90,7 +108,7 @@ let Timeline = {
   insertTimelineItems: function insertTimelineItems(params, cb) {
     let self = this;
     let items = _.map(params.items, function(item) {
-      item.timelineId = params.timelineId;
+      item.timeline_id = params.timeline_id;
       return item;
     });
 
@@ -106,14 +124,16 @@ let Timeline = {
         'content = ?, ' +
         'preview_id = ?, ' +
         'item_date = ?, ' +
+        'item_time = ?, ' +
         'item_order = ? ' +
       'WHERE id = ?;';
     let updateItem = [
       params.title,
       params.content,
-      params.previewId,
-      params.itemDate,
-      params.itemOrder,
+      params.preview_id,
+      params.item_date || null,
+      params.item_time,
+      params.item_order,
       params.id
     ];
     pool.query(query, updateItem, function(err) {

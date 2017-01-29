@@ -7,7 +7,7 @@ const Crawler = require('../services/crawler');
 
 const PreviewController = {
   postPreview: function login(req, res) {
-    let previewUrl = req.body.previewUrl;
+    let previewUrl = req.body.preview_url;
     if (!previewUrl) {
       res.status(400).send('잘못된 URL을 입력하였습니다.');
       return;

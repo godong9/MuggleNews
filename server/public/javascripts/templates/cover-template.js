@@ -51,7 +51,7 @@ define([
     let view = '';
     let template = this.template;
 
-    template = template.replace('{{coverImg}}', data.coverImg || '');
+    template = template.replace('{{coverImg}}', data.cover_img || '');
     template = template.replace('{{title}}', escape(data.title) || '');
     template = template.replace('{{subtitle}}', escape(data.subtitle) || '');
     template = template.replace('{{userName}}', data.userName || '');
@@ -59,7 +59,6 @@ define([
     template = template.replace('{{viewCount}}', _.isNumber(data.viewCount) ? data.viewCount : '');
 
     view = view + template;
-
     return view;
   };
 

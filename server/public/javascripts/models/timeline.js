@@ -20,9 +20,9 @@ define([
     this.id = timeline.id;
     this.title = timeline.timeline_title;
     this.subtitle = timeline.timeline_subtitle;
-    this.coverImg = timeline.timeline_cover_img;
-    this.viewCount = timeline.timeline_view_count;
-    this.userName = timeline.user_name;
+    this.cover_img = timeline.timeline_cover_img;
+    this.view_count = timeline.timeline_view_count;
+    this.user_name = timeline.user_name;
     this.createdAt = params.lastUpdatedAt;
     this.items = params.items;
   }
@@ -35,7 +35,7 @@ define([
   };
 
   Timeline.prototype.setCoverImg = function(coverImg) {
-    this.coverImg = coverImg;
+    this.cover_img = coverImg;
   };
 
   Timeline.prototype.setTitle = function(title) {

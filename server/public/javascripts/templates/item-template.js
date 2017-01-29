@@ -37,10 +37,10 @@ define([
       +       '<h2><input class="item-title-input" value="{{title}}" type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>'
       +       '<div class="news-date">'
       +         '<div class="data-table">'
-      +           '<input type="text" class="datepicker" class="hasDatepicker" placeholder="날짜입력">'
+      +           '<input type="text" class="datepicker" class="hasDatepicker" placeholder="날짜입력" value="{{itemDate}}">'
       +         '</div>'
       +         '<div class="time-table">'
-      +           '<input type="text" class="item-time" placeholder="시간입력">'
+      +           '<input type="text" class="item-time" placeholder="시간입력" value="{{itemTime}}">'
       +         '</div>'
       +         '<div class="btn-box">'
       +           '<a class="item-more-btn more-vert"><img src="/images/icon-mynews@3x.png" alt=""></a>'
@@ -99,13 +99,13 @@ define([
       = '<div class="preview preview-view-container">'
       +   '<div class="preview-wrap">'
       +     '<a href="{{preview_url}}" target="_blank">'
-      +       '<div class="thum-img"><img src="{{preview_img}}" alt="" /></div>'
+      +       '<div class="thum-img"><img class="preview-img" src="{{preview_img}}" alt="" /></div>'
       +       '<div class="title">'
-      +         '<p>{{preview_title}}</p>'
+      +         '<p class="preview-title">{{preview_title}}</p>'
       +       '</div>'
       +       '<div class="txt-area">'
-      +         '<p>{{preview_content}}</p>'
-      +         '<span class="preview-link">{{preview_url_text}}</span>'
+      +         '<p class="preview-content">{{preview_content}}</p>'
+      +         '<span class="preview-url" class="preview-link">{{preview_url_text}}</span>'
       +       '</div>'
       +       '<button type="submit" class="btn-del preview-del-btn"><span>삭제</span></button>'
       +     '</a>'
@@ -124,10 +124,11 @@ define([
       let timelineItem = items[i];
       let itemTemplate = template;
       itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id);
-      itemTemplate = itemTemplate.replace('{{order}}', timelineItem.itemOrder);
-      itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.itemOrder);
+      itemTemplate = itemTemplate.replace('{{order}}', timelineItem.item_order);
+      itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.item_order);
       itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
-      itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.itemDateText) || '');
+      itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date) || '');
+      itemTemplate = itemTemplate.replace('{{itemTime}}', escape(timelineItem.item_time) || '');
       itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
       itemTemplate = itemTemplate.replace('{{previewId}}', escape(timelineItem.preview_id) || '');
 
@@ -158,13 +159,14 @@ define([
     let view = '';
     let timelineItem = item;
     let itemTemplate = this.template;
-    let lastOrder = parseInt(timelineItem.itemOrder) + 1;
+    let lastOrder = parseInt(timelineItem.item_order) + 1;
 
     itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id);
-    itemTemplate = itemTemplate.replace('{{order}}', timelineItem.itemOrder);
-    itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.itemOrder);
+    itemTemplate = itemTemplate.replace('{{order}}', timelineItem.item_order);
+    itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.item_order);
     itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
-    itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.itemDateText) || '');
+    itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date) || '');
+    itemTemplate = itemTemplate.replace('{{itemTime}}', escape(timelineItem.item_time) || '');
     itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
     itemTemplate = itemTemplate.replace('{{previewId}}', escape(timelineItem.preview_id) || '');
 
@@ -172,6 +174,7 @@ define([
       itemTemplate = itemTemplate.replace('{{preview_template}}', this.previewViewTemplate);
       itemTemplate = itemTemplate.replace('{{preview_img}}', timelineItem.preview_img || '');
       itemTemplate = itemTemplate.replace('{{preview_url}}', escape(timelineItem.preview_url) || '');
+      itemTemplate = itemTemplate.replace('{{preview_url_text}}', escape(timelineItem.preview_url) || '');
       itemTemplate = itemTemplate.replace('{{preview_title}}', escape(timelineItem.preview_title) || '');
       itemTemplate = itemTemplate.replace('{{preview_content}}', escape(timelineItem.preview_content) || '');
     } else {
@@ -197,6 +200,7 @@ define([
     previewTemplate = previewTemplate.replace('{{preview_template}}', this.previewViewTemplate);
     previewTemplate = previewTemplate.replace('{{preview_img}}', previewItem.preview_img || '');
     previewTemplate = previewTemplate.replace('{{preview_url}}', escape(previewItem.preview_url) || '');
+    previewTemplate = previewTemplate.replace('{{preview_url_text}}', escape(previewItem.preview_url) || '');
     previewTemplate = previewTemplate.replace('{{preview_title}}', escape(previewItem.title) || '');
     previewTemplate = previewTemplate.replace('{{preview_content}}', escape(previewItem.content) || '');
 
