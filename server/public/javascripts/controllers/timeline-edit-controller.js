@@ -45,14 +45,18 @@ define([
       self.model.setTitle(timelineItem.title);
       self.model.setSubtitle(timelineItem.subtitle);
       self.model.setItems(timelineItem.items);
-      // TODO: create, edit에 따라 수정, 생성 조정
-      self.model.create(self.model, function(err, data) {
-        console.log("savedData: ", data);
-      });
+
+      if (!self.model.id) {
+        self.model.create(self.model, function(err, data) {
+          console.log("savedData: ", data);
+        });
+      } else {
+        // TODO: update
+      }
     });
 
     self.view.bind('cancelTimeline', function() {
-
+      // TODO: cancel시 화면 새로 고침
     });
   };
 

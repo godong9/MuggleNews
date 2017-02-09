@@ -31,7 +31,7 @@ define([
     let newTimeline = data;
     console.log('savedModel: ', newTimeline);
 
-    // HttpUtil.postData('/timelines', newTimeline, callback);
+    HttpUtil.postData('/timelines', newTimeline, callback);
   };
 
   Timeline.prototype.setCoverImg = function(coverImg) {
