@@ -291,33 +291,27 @@
     height: 20px;
     line-height: 1.3;
     position: absolute;
-    left: 50%;
-    bottom: 30px;
-    margin-left: -360px;
+    right: 20px;
+    top: 20px;
     text-align: right;
 }
-.edit .container .news-cover .btn-box .btn-save,
-.edit .container .news-cover .btn-box .btn-cancle {
+.edit .container .news-cover .btn-box .btn-red,
+.edit .container .news-cover .btn-box .btn-gray {
     display: inline-block;
+    height:40px;
+    line-height:41px;
+    padding:0 20px;
     color: #ffffff;
     font-size:16px;
-    padding:0;
-    margin:0;
+    margin:0 0 0 20px;
     border:none;
     background:transparent;
 }
-.edit .container .news-cover .btn-box .btn-save {
-    position: relative;
-    padding:0 0 0 30px;;
+.edit .container .news-cover .btn-box .btn-red {
+    background:#ef5441;
 }
-.edit .container .news-cover .btn-box .btn-save::before{
-    display: block;
-    position: absolute;
-    left:15px;
-    top:0;
-    color: #ffffff;
-    font-size:16px;
-    content:"|";
+.edit .container .news-cover .btn-box .btn-gray{
+    background:#cccccc;
 }
 /* news-container {*/
 .edit .news-container  {
