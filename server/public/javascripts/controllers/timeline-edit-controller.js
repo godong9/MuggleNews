@@ -30,7 +30,9 @@ define([
       self.bindHandlers();
     });
 
-    self.view.bind('delPreview', function(data) {});
+    self.view.bind('delPreview', function() {
+      self.bindHandlers();
+    });
 
     self.view.bind('clickMore', function(kind, id) {
       self.model.changeItem(kind, id);

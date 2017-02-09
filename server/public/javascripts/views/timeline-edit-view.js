@@ -114,6 +114,7 @@ define([
 
         $parentItem.find('.preview-view-container').remove();
         $parentItem.append(self.itemTemplate.drawPreviewInput());
+        handler();
         return false;
       });
     }
