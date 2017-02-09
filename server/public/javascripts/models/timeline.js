@@ -28,10 +28,15 @@ define([
   }
 
   Timeline.prototype.create = function(data, callback) {
-    let newTimeline = data;
-    console.log('savedModel: ', newTimeline);
+    console.log('savedModel: ', data);
 
-    HttpUtil.postData('/timelines', newTimeline, callback);
+    HttpUtil.postData('/timelines', data, callback);
+  };
+
+  Timeline.prototype.update = function(data, callback) {
+    console.log('updatedModel: ', data);
+
+    HttpUtil.putData('/timelines', data, callback);
   };
 
   Timeline.prototype.setCoverImg = function(coverImg) {

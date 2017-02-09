@@ -51,7 +51,9 @@ define([
           console.log("savedData: ", data);
         });
       } else {
-        // TODO: update
+        self.model.update(self.model, function(err, data) {
+          console.log("updatedData: ", data);
+        });
       }
     });
 

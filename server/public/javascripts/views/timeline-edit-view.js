@@ -164,6 +164,7 @@ define([
     let items = _.map($items, function(item) {
       return {
         id: $(item).data('id'),
+        item_order: $(item).data('order'),
         title: $(item).find('.item-title-input').val(),
         content: $(item).find('.item-content-input').val(),
         preview_id: $(item).find('.content-container').data('preview'),
