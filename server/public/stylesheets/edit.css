@@ -1074,3 +1074,35 @@
 #cover_img {
     display: none;
 }
+.edit #my_menu_open_btn {
+    display: none;
+}
+.btn-box-save{
+    width:100%;
+    height: 20px;
+    line-height: 1.3;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    text-align: right;
+}
+.btn-box-save .btn-red,
+.btn-box-save  .btn-gray {}
+.btn-red,
+.btn-gray {
+    display: inline-block;
+    height:40px;
+    line-height:41px;
+    padding:0 20px;
+    color: #ffffff;
+    font-size:16px;
+    margin:0 0 0 20px;
+    border:none;
+    background:transparent;
+}
+.btn-red {
+    background:#ef5441 !important;
+}
+.btn-gray{
+    background:#cccccc !important;
+}

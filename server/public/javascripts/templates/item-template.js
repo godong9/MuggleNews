@@ -95,7 +95,8 @@ define([
 
     this.previewInputTemplate
       = '<div class="link-write preview-input-container">'
-      +  '<p><input class="item-preview-input" type="text" placeholder="URL입력하세요"></p>'
+      +  '<p><input class="item-preview-input" type="text" placeholder="URL입력하세요">'
+      +  '<button class="input-link-checking"></button></p>'
       + '</div>';
 
     this.previewViewTemplate
