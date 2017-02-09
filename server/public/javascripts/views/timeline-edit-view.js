@@ -1,7 +1,9 @@
 //timeline-edit-view.js
 define([
+  '../libs/underscore/underscore',
   '../utils/http-util'
 ], function (
+  _,
   HttpUtil
 ) {
   'use strict';
@@ -140,7 +142,12 @@ define([
 
     if (event === 'saveTimeline') {
       $('#timeline_save_btn').unbind('click').click(function() {
-        handler($('#title_input').val(), $('#subtitle_input').val());
+        let timelineItem = {
+          title: $('#title_input').val(),
+          subtitle: $('#subtitle_input').val(),
+          items: self.getTimelineItems()
+        };
+        handler(timelineItem);
       });
     }
 
@@ -149,6 +156,21 @@ define([
         handler();
       });
     }
+  };
+
+  TimelineEditView.prototype.getTimelineItems = function() {
+    let $items = $('#news_container > li[data-id!="empty"]');
+    let items = _.map($items, function(item) {
+      return {
+        id: $(item).data('id'),
+        title: $(item).find('.item-title-input').val(),
+        content: $(item).find('.item-content-input').val(),
+        preview_id: $(item).find('.content-container').data('preview'),
+        item_date: $(item).find('.item-date').val(),
+        item_time: $(item).find('.item-time').val()
+      }
+    });
+    return items;
   };
 
   return TimelineEditView;

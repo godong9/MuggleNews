@@ -31,7 +31,7 @@ define([
     let newTimeline = data;
     console.log('savedModel: ', newTimeline);
 
-    HttpUtil.postData('/timelines', newTimeline, callback);
+    // HttpUtil.postData('/timelines', newTimeline, callback);
   };
 
   Timeline.prototype.setCoverImg = function(coverImg) {
@@ -48,6 +48,10 @@ define([
 
   Timeline.prototype.addItem = function(data) {
     this.items.push(data);
+  };
+
+  Timeline.prototype.setItems = function(data) {
+    this.items = data;
   };
 
   Timeline.prototype.changeItem = function(kind, id) {

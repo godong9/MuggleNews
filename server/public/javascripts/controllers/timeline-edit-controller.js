@@ -39,10 +39,11 @@ define([
       self.bindHandlers();
     });
 
-    self.view.bind('saveTimeline', function(title, subtitle) {
-      self.model.setTitle(title);
-      self.model.setSubtitle(subtitle);
-
+    self.view.bind('saveTimeline', function(timelineItem) {
+      self.model.setTitle(timelineItem.title);
+      self.model.setSubtitle(timelineItem.subtitle);
+      self.model.setItems(timelineItem.items);
+      // TODO: create, edit에 따라 수정, 생성 조정
       self.model.create(self.model, function(err, data) {
         console.log("savedData: ", data);
       });

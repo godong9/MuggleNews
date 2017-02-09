@@ -1,8 +1,10 @@
 //cover-template.js
 define([
-  '../libs/underscore/underscore'
+  '../libs/underscore/underscore',
+  '../libs/moment/moment'
 ], function (
-  _
+  _,
+  moment
 ) {
   'use strict';
 
@@ -37,7 +39,7 @@ define([
       +       '<h2><input class="item-title-input" value="{{title}}" type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>'
       +       '<div class="news-date">'
       +         '<div class="data-table">'
-      +           '<input type="text" class="datepicker" class="hasDatepicker" placeholder="날짜입력" value="{{itemDate}}">'
+      +           '<input type="text" class="item-date datepicker" placeholder="날짜입력" value="{{itemDate}}">'
       +         '</div>'
       +         '<div class="time-table">'
       +           '<input type="text" class="item-time" placeholder="시간입력" value="{{itemTime}}">'
@@ -62,14 +64,14 @@ define([
       +	'</li>';
 
     this.emptyTemplate
-      =	'<li id="new_timeline_item" class="timeline-item" data-id="new" data-order="{{order}}">'
+      =	'<li id="new_timeline_item" class="timeline-item" data-id="empty" data-order="{{order}}">'
       +   '<div class="section">'
       +     '<div class="number">'
       +       '<p class="list-count">{{listCount}}</p>'
       +       '<h2><input class="item-title-input" type="text" placeholder="타이틀을 입력하세요.(필수)"></h2>'
       +       '<div class="news-date">'
       +         '<div class="data-table">'
-      +           '<input type="text" class="datepicker" class="hasDatepicker" placeholder="날짜입력">'
+      +           '<input type="text" class="item-date datepicker" placeholder="날짜입력">'
       +         '</div>'
       +         '<div class="time-table">'
       +           '<input type="text" class="item-time" placeholder="시간입력">'
@@ -123,11 +125,11 @@ define([
     for (let i in items) {
       let timelineItem = items[i];
       let itemTemplate = template;
-      itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id);
+      itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id || 'new');
       itemTemplate = itemTemplate.replace('{{order}}', timelineItem.item_order);
       itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.item_order);
       itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
-      itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date) || '');
+      itemTemplate = itemTemplate.replace('{{itemDate}}', timelineItem.item_date ? moment(escape(timelineItem.item_date)).format('YYYY-MM-DD') : '');
       itemTemplate = itemTemplate.replace('{{itemTime}}', escape(timelineItem.item_time) || '');
       itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
       itemTemplate = itemTemplate.replace('{{previewId}}', escape(timelineItem.preview_id) || '');
@@ -136,6 +138,7 @@ define([
         itemTemplate = itemTemplate.replace('{{preview_template}}', this.previewViewTemplate);
         itemTemplate = itemTemplate.replace('{{preview_img}}', timelineItem.preview_img || '');
         itemTemplate = itemTemplate.replace('{{preview_url}}', escape(timelineItem.preview_url) || '');
+        itemTemplate = itemTemplate.replace('{{preview_url_text}}', escape(timelineItem.preview_url) || '');
         itemTemplate = itemTemplate.replace('{{preview_title}}', escape(timelineItem.preview_title) || '');
         itemTemplate = itemTemplate.replace('{{preview_content}}', escape(timelineItem.preview_content) || '');
       } else {
@@ -161,11 +164,11 @@ define([
     let itemTemplate = this.template;
     let lastOrder = parseInt(timelineItem.item_order) + 1;
 
-    itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id);
+    itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id || 'new');
     itemTemplate = itemTemplate.replace('{{order}}', timelineItem.item_order);
     itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.item_order);
     itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
-    itemTemplate = itemTemplate.replace('{{itemDate}}', escape(timelineItem.item_date) || '');
+    itemTemplate = itemTemplate.replace('{{itemDate}}', timelineItem.item_date ? moment(escape(timelineItem.item_date)).format('YYYY-MM-DD') : '');
     itemTemplate = itemTemplate.replace('{{itemTime}}', escape(timelineItem.item_time) || '');
     itemTemplate = itemTemplate.replace('{{content}}', escape(timelineItem.content) || '');
     itemTemplate = itemTemplate.replace('{{previewId}}', escape(timelineItem.preview_id) || '');
