@@ -528,15 +528,34 @@
     position: relative;
     padding:0 0 0 30px;
     margin:0 0 50px 0;
-    background:url(../images/ic-link@3x.png) no-repeat 2px 7px;
     background-size:18px;
 }
 .edit .news-container .section .new-conts .link-write p {
+    position: relative;
     padding:0 !important;
-    background:url(../images/ic-check-off@3x.png) no-repeat 98% 5px;
-    background-size:18px 14px;
+    /*background:url(../images/ic-check-off@3x.png) no-repeat 98% 5px;
+    background-size:18px 14px;*/
 }
 .edit .news-container .section .new-conts .link-write p:hover {
+   /* background:url(../images/ic-check-on@3x.png) no-repeat 98% 5px;
+    background-size:18px 14px;*/
+}
+.edit .news-container .section .new-conts .link-write .input-link-checking {
+    position: absolute;
+    top:0;
+    right:0;
+    width:20px;
+    height:20px;
+    background:url(../images/ic-check-off@3x.png) no-repeat 98% 5px;
+    background-size:18px 14px;
+    border:none;
+}
+.edit .news-container .section .new-conts .link-write:hover .input-link-checking {
+    position: absolute;
+    top:0;
+    right:0;
+    width:20px;
+    height:20px;
     background:url(../images/ic-check-on@3x.png) no-repeat 98% 5px;
     background-size:18px 14px;
 }
@@ -684,7 +703,24 @@
     white-space:nowrap;
     text-overflow:ellipsis;
 }
-/* 프리뷰 가로 } */
+.edit .news-container .section .btn-box {
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+.edit .news-container .section #add_item_btn {
+    height:40px;
+    line-height:41px;
+    padding:0 20px;
+    margin:0 0 0 20px;
+    border:none;
+    background:#ef5441;
+    box-shadow: none;
+    font-size:18px;
+    color: #ffffff;
+
+}
+    /* 프리뷰 가로 } */
 /* 프리뷰 세로 { */
 .edit .news-container .section .preview.vertical{
     height:auto!important;
