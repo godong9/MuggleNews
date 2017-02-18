@@ -34,7 +34,6 @@ const UserController = {
         return res.redirect('/page/error');
       }
 
-
       data.timelines = _.map(timelines || [], function(timeline) {
         timeline.date_text = moment(timeline.created_at).format("YYYY년 M월 D일");
         return timeline;

@@ -1,8 +1,7 @@
 'use strict';
 
 const _ = require('underscore');
-const async = require('async');
-const logger = require('log4js').getLogger('controllers/timelines');
+const moment = require('moment');
 const Timeline = require('../models/timelines');
 const View = require('../services/view');
 
@@ -11,7 +10,10 @@ const IndexController = {
     Timeline.getMainTimelines(function(err, timelines) {
       let data = {};
       View.setCommonData(req, data);
-      data.timelines = timelines || [];
+      data.timelines = _.map(timelines || [], function(timeline) {
+        timeline.date_text = moment(timeline.created_at).format("YYYY년 M월 D일");
+        return timeline;
+      });
       res.render('index', data);
     });
   }
