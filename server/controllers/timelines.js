@@ -12,13 +12,13 @@ const Session = require('../services/session');
 const TimelineController = {
   getTimelinePage: function login(req, res) {
     let userId = Session.getSessionUserId(req);
-
+    let timelineId = req.params.id;
     async.waterfall([
       function(callback) {
-        Timeline.increaseTimelineViewCount(req.params.id, callback);
+        Timeline.increaseTimelineViewCount(timelineId, callback);
       },
       function(callback) {
-        Timeline.getItemsByTimelineId(req.params.id, callback);
+        Timeline.getItemsByTimelineId(timelineId, callback);
       }
     ], function (err, items) {
       let i;
@@ -45,6 +45,7 @@ const TimelineController = {
       }
       data.items = items;
       data.timeline = _.extend({}, items[0]);
+      data.timeline.id = timelineId;
       data.commentPage = 'timelines#' + items[0].timeline_id;
       data.lastUpdatedAt = moment(items[0].timeline_updated_at).format("YYYY년 M월 D일");
       data.isOwner = (userId === data.timeline.user_id);
