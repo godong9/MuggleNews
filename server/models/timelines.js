@@ -9,6 +9,7 @@ let Timeline = {
     let query =
       'SELECT ' +
       '*, ' +
+      'timelines.id AS id, ' +
       'users.id AS user_id, ' +
       'users.name AS user_name ' +
       'FROM timelines ' +
@@ -22,6 +23,7 @@ let Timeline = {
     let query =
       'SELECT ' +
       '*, ' +
+      'timelines.id AS id, ' +
       'users.id AS user_id, ' +
       'users.name AS user_name ' +
       'FROM timelines ' +
