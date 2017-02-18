@@ -324,11 +324,11 @@
     margin-top:35px;
 }
 .edit .news-container ul li:first-child {
-    padding:0;
+    padding:90px 0 70px 0;
 }
 .edit .news-container ul li:last-child {
     padding:90px 0 70px 0;
-    border-left:1px solid #ffffff;
+    border-left:1px solid #ffb2b2
 }
 .edit .news-container ul li:last-child .section {
     position: relative;
