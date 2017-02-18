@@ -875,6 +875,25 @@ body {
   background:url(../images/ico-viewcount@3x.png) no-repeat 0 3px;
   background-size: 14px 10px;
 }
+.mypage .muggle-preview-list a .btn-del {
+  display: none;
+}
+.mypage .muggle-preview-list a:hover .btn-del {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: url(../images/ic-close@3x.png) no-repeat 0 0;
+  background-size: 20px 20px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.mypage .muggle-preview-list a:hover .btn-del span {
+  font-size: 0;
+}
 /* mypage }*/
 
 /* 개인정보취급 방침 및 이용약관 {*/
