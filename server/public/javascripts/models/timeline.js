@@ -90,8 +90,9 @@ define([
 
   Timeline.prototype.reorderItem = function() {
     let self = this;
+
     _.map(self.items, function(item, idx) {
-      item.order = idx + 1;
+      item.item_order = idx + 1;
     });
   };
 

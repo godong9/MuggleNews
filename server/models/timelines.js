@@ -35,7 +35,7 @@ let Timeline = {
         'LEFT JOIN previews ON items.preview_id = previews.id ' +
         'INNER JOIN timelines ON items.timeline_id = timelines.id ' +
         'INNER JOIN users ON timelines.user_id = users.id ' +
-        'WHERE timelines.id=?;';
+        'WHERE timelines.id=? ORDER BY items.item_order;';
     pool.query(query, id, function(err, rows) {
       cb(err, rows);
     });
