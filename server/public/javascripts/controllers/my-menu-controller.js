@@ -1,8 +1,10 @@
 //my-menu-controller.js
 define([
-  '../libs/jquery/dist/jquery'
+  '../libs/jquery/dist/jquery',
+  '../utils/http-util'
 ], function (
-  $
+  $,
+  HttpUtil
 ) {
   'use strict';
 
@@ -15,12 +17,24 @@ define([
   };
 
   MyMenuController.prototype.bindHandlers = function() {
-    $('#my_menu_open_btn').click(function() {
+    $('#my_menu_open_btn').unbind('click').click(function() {
       $('#my_menu_container').show();
     });
 
-    $('#my_menu_close_btn').click(function() {
+    $('#my_menu_close_btn').unbind('click').click(function() {
       $('#my_menu_container').hide();
+    });
+
+    $('.timeline-del').unbind('click').click(function() {
+      if (!confirm("정말 삭제하시겠습니까?")) {
+        return false;
+      }
+      let timelineId = $(this).parents('.timeline-item').data('id');
+
+      HttpUtil.deleteData('/timelines/' + timelineId, {}, function(err, data) {
+        location.reload();
+      });
+      return false;
     });
 
     $(document).ready(function() {

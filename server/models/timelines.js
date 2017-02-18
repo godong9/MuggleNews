@@ -210,6 +210,44 @@ let Timeline = {
     ], function (err) {
       cb(err);
     });
+  },
+  deleteTimelineById: function deleteTimelineById(params, cb) {
+    async.waterfall([
+      function(callback) {
+        let query = 'SELECT id FROM timelines WHERE id = ? AND user_id = ?;';
+        let queryItem = [
+          params.id,
+          params.userId
+        ];
+        pool.query(query, queryItem, function(err, rows) {
+          callback(err, rows);
+        });
+      },
+      function(rows, callback) {
+        if (!rows || rows.length === 0) {
+          return callback('권한이 없습니다!');
+        }
+        let query = 'DELETE FROM items WHERE timeline_id = ?;';
+        let deleteItem = [
+          params.id
+        ];
+        pool.query(query, deleteItem, function(err) {
+          callback(err);
+        });
+      },
+      function(callback) {
+        let query = 'DELETE FROM timelines WHERE id = ? AND user_id = ?;';
+        let deleteItem = [
+          params.id,
+          params.userId
+        ];
+        pool.query(query, deleteItem, function(err) {
+          callback(err);
+        });
+      }
+    ], function (err) {
+      cb(err);
+    });
   }
 };
 

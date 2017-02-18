@@ -222,6 +222,25 @@ const TimelineController = {
       }
       res.send({});
     });
+  },
+  deleteTimeline: function deleteTimeline(req, res) {
+    let userId = Session.getSessionUserId(req);
+    if (!userId) {
+      res.status(401).send('로그인을 해주세요!');
+      return;
+    }
+    let params = {
+      id: req.params.id,
+      userId: userId
+    };
+    Timeline.deleteTimelineById(params, function(err) {
+      if (err) {
+        logger.error(err);
+        res.status(500).send('서버 에러 발생');
+        return;
+      }
+      res.send({});
+    });
   }
 };
 
