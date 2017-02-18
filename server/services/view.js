@@ -11,6 +11,7 @@ let ViewService = {
     }
     data.me = req.user && req.user._json;
     if (data.me) {
+      data.me.userId = req.user.userId;
       data.me.profileUrl =
         (data.me.picture && data.me.picture.data && data.me.picture.data.url)
         || '/images/avatar@3x.png';
