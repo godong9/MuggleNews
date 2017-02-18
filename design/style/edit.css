@@ -159,6 +159,7 @@
     line-height:30px;
     text-align: center;
     padding:0 3%;
+    margin:0 auto;
     color: #ffffff;
     font-size:24px;
     overflow: hidden;
@@ -881,11 +882,6 @@
         height:280px;
         padding: 220px 0 0 0;
         z-index: 10;
-    }
-    .container.edit h1 {
-        height: 30px;
-        line-height: 30px;
-        font-size:23px;
     }
     .container.edit .h1_desc {
         line-height: 1.3;
