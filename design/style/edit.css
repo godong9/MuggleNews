@@ -321,7 +321,7 @@
 }
 .edit .news-container ul {
     padding:0 0 0 22px;
-    margin-top:125px;
+    margin-top:35px;
 }
 .edit .news-container ul li:first-child {
     padding:0;
@@ -350,7 +350,7 @@
     display: block;
     position: relative;
     padding:90px 0 0 0;
-    border-left:1px solid #eeeeee;
+    border-left:1px solid #ffb2b2;
 }
 .edit .news-container .section .number {
     position: relative;
@@ -426,7 +426,7 @@
     left:0;
     font-size:16px;
     color: #bbbbbb;
-    border:1px solid #f7f7f7;
+    border:1px solid #dddddd;
     background:url(../images/ic-date@3x.png) no-repeat 7px center;
     background-size:18px 20px;
 }
@@ -437,7 +437,7 @@
     padding:0 0 0 40px;
     text-align: left;
     font-size:16px;
-    color: #bbbbbb;
+    color: #dddddd;
     border: none;
     background:transparent;
 }
@@ -447,7 +447,7 @@
     left:150px;
     font-size:16px;
     color: #bbbbbb;
-    border:1px solid #f7f7f7;
+    border:1px solid #dddddd;
     background:url(../images/ic-time@3x.png) no-repeat 7px center;
     background-size:20px 20px;
 }
@@ -504,15 +504,16 @@
 
 }
 .edit .news-container .section .new-conts .txt-area-zone {
-    width:98%;
+    width:100%;
     height:auto;
-    border:none;
+    border:1px solid #dddddd;
     background:transparent;
 }
 .edit .news-container .section .new-conts .txt-area-zone textarea {
     border:none;
     background:transparent;
-    width:100%;
+    width:96%;
+    padding:2%;
     height:auto;
     min-height:24px;
     line-height:24px;
@@ -524,7 +525,7 @@
 .edit .news-container .section .new-conts .link-write {
     position: relative;
     padding:0 0 0 30px;
-    margin:0 0 50px 0;
+    margin:15px 0 50px 0;
     background:url(../images/ic-link@3x.png) no-repeat 2px 7px;
     background-size:18px;
 }
@@ -600,7 +601,8 @@
     background: #ef5441;
 }
 .edit .news-container .section .new-conts {
-    min-height:250px;
+    /*min-height:250px;*/
+    margin-top:-10px;
 }
 .edit .news-container .section .new-conts p {
     font-size:16px;
@@ -663,7 +665,7 @@
 .edit .news-container .section .preview .thum-img img{
     width:100%;
     height:100%;
-    /*object-fit: cover;*/
+    object-fit: cover;
 }
 .edit .news-container .section .preview .title {
     padding:10px 10px 5px 10px;
@@ -742,7 +744,7 @@
 .edit .news-container .section .preview.vertical .thum-img img{
     width:100%;
     height:100%;
-    /*object-fit: cover;*/
+    object-fit: cover;
 }
 .edit .news-container .section .preview.vertical .title {
     width:65%;

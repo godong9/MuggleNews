@@ -185,7 +185,7 @@ body {
   width:18px;
   height:20px;
   position: absolute;
-  top:29px;
+  top:32px;
   left:20px;
   background:url(../images/icon-cacl@3x.png) no-repeat center center;
   background-size:18px;
@@ -208,6 +208,9 @@ body {
   font-size:14px;
   line-height:20px;
   color: #999999;
+}
+.log-on-box .txt-notice ul {
+  margin-top:10px;
 }
 .log-on-box .txt-notice li {
   position: relative;
@@ -819,11 +822,11 @@ body {
 }
 .privacy .term-box {
   position: relative;
-  width: 1000px;
+  width:90%;
+  max-width: 1000px;
   margin:0 auto 0;
-  padding:60px;
+  padding:60px 5%;
   background:#ffffff;
-  border:1px solid #cccccc;
   font-size:16px;
   font-weight:300;
   color: #888888;
