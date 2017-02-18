@@ -19,6 +19,18 @@ router.get('/page/error', function(req, res) {
   });
 });
 
+router.get('/terms', function(req, res) {
+  let data = {};
+  View.setCommonData(req, data);
+  res.render('terms', data);
+});
+
+router.get('/privacy', function(req, res) {
+  let data = {};
+  View.setCommonData(req, data);
+  res.render('privacy', data);
+});
+
 // router.get('/test', function(req, res) {
 //   Crawler.getPreviewData('http://www.naver.com', function(err, body) {
 //     res.send(body);
