@@ -84,7 +84,6 @@ body {
   background:#cccccc !important;
 }
 /* header { */
-/* header { */
 .header {
   position: relative;
   width:100%;
@@ -803,7 +802,9 @@ body {
   background:url(../images/ico-viewcount@3x.png) no-repeat 0 3px;
   background-size: 14px 10px;
 }
-/* mypage }*//* 개인정보취급 방침 및 이용약관 {*/
+/* mypage }*/
+
+/* 개인정보취급 방침 및 이용약관 {*/
 .privacy{
   width:100%;
   background:#fafafa;
@@ -942,7 +943,7 @@ body {
     padding-top:30px;;
   }
   .who-are .muggle-member  ul{
-    widht:100%;
+    width:100%;
     text-align: center;
   }
   .who-are .muggle-member li {
