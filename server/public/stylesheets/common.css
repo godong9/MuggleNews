@@ -800,6 +800,18 @@ body {
   display: inline-block;
   margin:0 8px 0 0;
 }
+.mypage  .muggle-preview-list .last-edit span{
+  display: inline-block;
+  margin:0 8px 0 0;
+  vertical-align: top;
+}
+.mypage .muggle-preview-list .last-edit span .user-name,
+.mypage .muggle-preview-list .last-edit span span:last-child{
+  max-width:45%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .mypage .muggle-preview-list .view-count {
   width:50%;
   position: absolute;
