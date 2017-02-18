@@ -5,33 +5,60 @@
     <title>머글뉴스</title>
     <link rel="stylesheet" href="./style/common.css">
     <link rel="stylesheet" href="./style/view.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   </head>
   <body>
     <div class="view">
-      <div class="header"> <!--스크롤되서 창이 내려가면 .middle를 추가해주세요 -->
-        <a class="logo" href="./">
-          <span>muggle.news</span>
+      <div class="header">
+        <a class="logo" href="">
+          <span>muggle news</span>
         </a>
-        <div class="edit-box">
-          <a href="" class="modify"><img src="images/ico-modify@3x.png" alt=""><span>수정</span></a>
-          <a href="" class="delete"><img src="images/ico-delete@3x.png" alt=""><span>삭제</span></a>
-          <a href="" class="summary"><img src="images/ico-summary@3x.png" alt=""><span>요약</span></a>
-          <a href="" class="share"><img src="images/ico-share@3x.png" alt=""><span>공유</span></a>
-        </div><!-- e//edit-box -->
-
-        <div class="login-box">
-          <a href="" class="log-in">
-            <img src="images/ico-facebook-01@3x.png" alt="">
-            <span>로그인</span>
-          </a>
-          <div class="log-on">
-            <a href="" class="log-in">
-              <img src="images/ico-facebook-01@3x.png" alt="">
-              <span>장팸 </span>
-            </a>
-          </div>
-        </div><!-- e//login -->
+        <div class="user-profile">
+          <span class="user-images"><img src="images/avatar@3x.png" alt=""></span>
+          <!-- 대표이미지를 설정하지 않았을때는 avatar@3x.png가 고정으로 되어있고 대표이미지를 설정한 경우 그 이미지로 대체-->
+          <span class="name">장팸</span>
+        </div>
+        <div class="mymenu active">
+          <a href="" class="icon-mymenu"></a>
+        </div><!-- e//mymenu-->
       </div><!-- e//header -->
+
+      <div class="menu-on-box" style="display: none;">
+        <div class="log-on-box">
+          <div class="inner-box">
+            <div class="user">
+              <span class="user-position">머글기자</span>
+              <span class="user-name">출근하기</span>
+              <span class="user-img"><img src="images/avatar@3x.png" alt=""></span>
+              <a href="" class="btn-close"></a>
+            </div>
+
+            <div class="txt-notice">
+              <ul>
+                <li class="addnews"><a href="">새로운 머글뉴스 작성</a></li>
+                <li class="muggle-note"><a href="">머글 기자 수첩<span>(13)</span></a></li>
+                <li class="mg-fb"><a href="">
+                  <div class="muggle-fb">
+                    <p>머글뉴스 페이스북</p>
+                    <div class="fb-like-count">좋아요 28만개</div><!--좋아요 페북카운드 들어가는 자리 임시로 자리만 만들어놓음 -->
+                  </div>
+                </a></li>
+                <li class="muggle-out"><a href="">퇴근하기</a></li>
+              </ul>
+            </div>
+
+            <div class="footer">
+              <ul class="foot-list">
+                <li><a href="">이용악관</a></li>
+                <li><a href="">개인정보 취급방침</a></li>
+              </ul>
+              <div class="copyright">
+                <p>@Muggle.news All right reserved.</p>
+              </div>
+            </div>
+          </div><!--e//inner-box -->
+        </div><!--e//log-on-box -->
+      </div><!--e//menu-on-box -->
 
       <div class="container view">
         <div class="bg"><img src="https://scontent-icn1-1.cdninstagram.com/t51.2885-15/e35/15258722_1654006911565000_3650811953531584512_n.jpg" alt=""></div>
@@ -40,17 +67,14 @@
           <div class="news-cover">
             <h1>최순실 게이트 총정리</h1>
             <p class="h1_desc">대한민국 현실을 즉시하자, 역사는 반복딘다.</p>
-            <div class="user-infor">
-              <span class="user-profile"><img src="http://imgnews.naver.net/image/032/2016/12/03/l_2016120301000389900025911_99_20161203170517.jpg" alt=""></span>
-              <span class="user-name">장팸</span>
-            </div><!-- e// user-infor-->
+
             <div class="last-edit">
-              <p>최종수정일: <span>2016년 1월 1일</span></p>
+              <p><span class="user-name">by. 장팸</span><span>|</span><span>2016년 1월 1일</span></p>
             </div>
             <div class="view-count">
-              <span>98,267</span>
+              <span>98,267</span>명이 봤습니다.
             </div>
-        </div><!-- e//news-cover -->
+          </div><!-- e//news-cover -->
         </div><!-- e//inner-box -->
 
         <div class="news-container">
@@ -166,8 +190,52 @@
         <div class="copyright">
           <p>@Muggle.news All right reserved.</p>
         </div>
-        <a href="https://www.facebook.com/muggle.news/?fref=ts" target="_blank "class="goto-facebook"><img src="images/ico-facebook-01@3x.png" alt="페이스북 바로가기"></a>
+        <a href="https://www.facebook.com/muggle.news/?fref=ts" target="_blank "class="goto-facebook">인기있는 머글뉴스 페이스북에서 받아보기<img src="images/ico-facebook-01@3x.png" alt="페이스북 바로가기"></a>
       </div><!--e//foot-wrap -->
     </div><!--e//footer -->
+    <script>
+      /*$(document).ready(function() {
+        var bgHeight = $('.container > .bg').height(),  // 배경화면 높이
+            header = $('.header'); // 헤더 변수 캐싱
+        $(window).on('scroll', function() { // 스크롤 이벤트 발생
+          var top = $(this).scrollTop(),  // 스크롤 이벤트 발생시 스크롤 상단 값
+              opacity = 0;                // 투명도 초기화: 0
+
+          // 스크롤이 발생되면
+          if (top > 0) { // 스크롤 값 0이 넘어설 경우
+            header.addClass('middle');  // middle 클래스 header 앨리먼트에 추가
+          } else {
+            header.removeClass('middle'); // 스크롤 값이 다시 0으로 바뀔 경우 middle 클래스 제거
+          }
+
+          // 배경화면 높이 보다 스크롤 값이 작을경우
+          if (top < bgHeight) {
+            opacity = top/bgHeight; // 스크롤 값에 따라 투명도 조절
+          } else if (top >= bgHeight) { // 스크롤 값이 배경 높이를 벗어날 경우
+            opacity = 1;  // 투명도 1로 고정
+          }
+
+
+          header.css({
+            borderBottom: 'solid 1px rgba(239,239,239,' + opacity + ')',
+            backgroundColor: 'rgba(255,255,255,' + opacity + ')'
+          });
+        });
+      });*/
+
+      $(document).ready(function() {
+        var header = $('.header'); // 헤더 변수 캐싱
+        $(window).on('scroll', function() { // 스크롤 이벤트 발생
+          var top = $(this).scrollTop();                // 투명도 초기화: 0
+
+          // 스크롤이 발생되면
+          if (top > 100) { // 스크롤 값 0이 넘어설 경우
+            header.addClass('middle');  // middle 클래스 header 앨리먼트에 추가
+          } else {
+            header.removeClass('middle'); // 스크롤 값이 다시 0으로 바뀔 경우 middle 클래스 제거
+          }
+        });
+      });
+    </script>
   </body>
 </html>

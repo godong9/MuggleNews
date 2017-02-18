@@ -11,22 +11,22 @@ const TimelineController = require('../controllers/timelines');
  * @apiGroup Timeline
  *
  * @apiExample {url} Example usage:
- *    http://localhost:9000/1
+ *    http://localhost:9000/timelines/1
  *
  * @apiParam {String} id Timeline ID
  */
 router.get('/:id', TimelineController.getTimelinePage);
 
 /**
- * @api {get} /timelines/new Get New Timeline Page
+ * @api {get} /timelines/edit/:id Get Timeline Edit Page
  * @apiVersion 1.0.0
- * @apiName GetNewTimelinePage
+ * @apiName GetTimelineEditPage
  * @apiGroup Timeline
  *
  * @apiExample {url} Example usage:
- *    http://localhost:9000/timelines/new
+ *    http://localhost:9000/timelines/edit/1
  */
-router.get('/edit', TimelineController.getNewTimelinePage);
+router.get('/edit/:id', TimelineController.getTimelineEditPage);
 
 /**
  * @api {post} /timelines Post Timeline
@@ -40,11 +40,32 @@ router.get('/edit', TimelineController.getNewTimelinePage);
  * @apiParam {String} title 제목
  * @apiParam {String} subtitle 부제목
  * @apiParam {String} coverImg 커버이미지
+ * @apiParam {Object[]} items 타임라인 아이템 리스트
  *
  * @apiSuccess {Object} data data
  * @apiSuccess {String} data.id 생성된 timeline id
  */
 router.post('/', TimelineController.postTimeline);
+
+/**
+ * @api {put} /timelines Put Timeline
+ * @apiVersion 1.0.0
+ * @apiName putTimeline
+ * @apiGroup Timeline
+ *
+ * @apiExample {url} Example usage:
+ *    http://localhost:9000/timelines
+ *
+ * @apiParam {Number} id timeline ID
+ * @apiParam {String} title 제목
+ * @apiParam {String} subtitle 부제목
+ * @apiParam {String} coverImg 커버이미지
+ * @apiParam {Object[]} items 타임라인 아이템 리스트
+ *
+ * @apiSuccess {Object} data data
+ * @apiSuccess {String} data.id 수정된 timeline id
+ */
+router.put('/', TimelineController.putTimeline);
 
 /**
  * @api {post} /timelines/item Post Timeline Item
@@ -55,13 +76,12 @@ router.post('/', TimelineController.postTimeline);
  * @apiExample {url} Example usage:
  *    http://localhost:9000/timelines/item
  *
- * @apiParam {Object} item 뉴스 아이템
- * @apiParam {String} item.title 제목
- * @apiParam {Number} item.timelineId 타임라인 ID
- * @apiParam {Number} item.order 순서
- * @apiParam {String} [item.content] 내용
- * @apiParam {Number} [item.previewId] 프리뷰 ID
- * @apiParam {Date} [item.itemDate] 날짜/시간
+ * @apiParam {String} title 제목
+ * @apiParam {Number} timelineId 타임라인 ID
+ * @apiParam {Number} order 순서
+ * @apiParam {String} [content] 내용
+ * @apiParam {Number} [previewId] 프리뷰 ID
+ * @apiParam {Date} [itemDate] 날짜/시간
  *
  * @apiSuccess {Object} data data
  */
@@ -76,13 +96,12 @@ router.post('/item', TimelineController.postTimelineItem);
  * @apiExample {url} Example usage:
  *    http://localhost:9000/timelines/item
  *
- * @apiParam {Object} item 뉴스 아이템
- * @apiParam {Number} item.id 아이템 id
- * @apiParam {String} item.title 제목
- * @apiParam {Number} item.timelineId 타임라인 ID
- * @apiParam {String} item.content 내용
- * @apiParam {Number} item.previewId 프리뷰 ID
- * @apiParam {Date} item.itemDate 날짜/시간
+ * @apiParam {Number} id 아이템 id
+ * @apiParam {String} title 제목
+ * @apiParam {Number} timelineId 타임라인 ID
+ * @apiParam {String} content 내용
+ * @apiParam {Number} previewId 프리뷰 ID
+ * @apiParam {Date} itemDate 날짜/시간
  *
  * @apiSuccess {Object} data data
  */
@@ -97,8 +116,8 @@ router.put('/item', TimelineController.putTimelineItem);
  * @apiExample {url} Example usage:
  *    http://localhost:9000/timelines/orders
  *
- * @apiParam {Number} item.beforeOrder 변경전 order
- * @apiParam {Number} item.nextOrder 변경후 order
+ * @apiParam {Number} beforeOrder 변경전 order
+ * @apiParam {Number} nextOrder 변경후 order
  *
  * @apiSuccess {Object} data data
  */

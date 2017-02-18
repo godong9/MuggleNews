@@ -15,7 +15,7 @@ let CrawlerService = {
       encoding: null
     };
     request.get(url, options, function (error, response, body) {
-      let contentType = response.headers['content-type'] || "";
+      let contentType = response && response.headers['content-type'] || "";
       let charSet = self.getCharset(contentType);
       body = self.convert({charSet:charSet,content:body});
       cb(null, self.getPreviewDataFromHtml(url, body));
@@ -81,7 +81,7 @@ let CrawlerService = {
     }
 
     let description = $('meta[property="og:description"]').attr('content') || $('meta[name="description"]').attr('content');
-    if(!description && !title ) {
+    if (!description && !title) {
       title = URL.parse(url).host;
     }
     return {

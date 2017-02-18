@@ -8,35 +8,9 @@
     <body>
         <%- include partial/ga.ejs %>
         <%- include partial/fb.ejs %>
-        <% var timeline = items[0]; %>
         <div class="view">
-            <div class="header">
-                <a class="logo" href="/">
-                    <span>muggle.news</span>
-                </a>
-                <div class="edit-box" style="display: none;">
-                    <a href="" class="modify"><img src="/images/ico-modify@3x.png" alt=""><span>수정</span></a>
-                    <a href="" class="delete"><img src="/images/ico-delete@3x.png" alt=""><span>삭제</span></a>
-                    <a href="" class="summary"><img src="/images/ico-summary@3x.png" alt=""><span>요약</span></a>
-                    <a href="" class="share"><img src="/images/ico-share@3x.png" alt=""><span>공유</span></a>
-                </div><!-- e//login -->
 
-                <div class="login-box">
-                    <% if (me) { %>
-                    <div class="log-on">
-                        <a href="" class="log-in">
-                            <img src="<%= me.picture && me.picture.data && me.picture.data.url %>" alt="">
-                            <span><%= me.name %></span>
-                        </a>
-                    </div>
-                    <% } else { %>
-                    <a href="/users/login/facebook" class="log-in">
-                        <img src="/images/ico-facebook-01@3x.png" alt="">
-                        <span>로그인</span>
-                    </a>
-                    <% } %>
-                </div><!-- e//login -->
-            </div><!-- e//header -->
+            <%- include partial/my_menu.ejs %>
 
             <div class="container view">
                 <div class="bg">
@@ -46,12 +20,8 @@
                     <div class="news-cover">
                         <h1><%= timeline.timeline_title %></h1>
                         <p class="h1_desc"><%= timeline.timeline_subtitle %></p>
-                        <div class="user-infor">
-                            <span class="user-profile"><img src="<%= timeline.user_profile_img %>" alt=""></span>
-                            <span class="user-name"><%= timeline.user_name %></span>
-                        </div><!-- e// user-infor-->
                         <div class="last-edit">
-                            <p>최종수정일: <span><%= lastUpdatedAt %></span></p>
+                            <p><span class="user-name"><%= timeline.user_name %></span>| <span><%= lastUpdatedAt %></span></p>
                         </div>
                         <div class="view-count">
                             <span><%= timeline.timeline_view_count %></span>
@@ -66,10 +36,12 @@
                         <li>
                             <div class="section">
                                 <div class="number">
-                                    <p class="list-count"><%= item.order %></p>
+                                    <p class="list-count"><%= item.item_order %></p>
                                     <h2><%= item.title %></h2>
                                     <div class="news-date">
+                                        <% if (item.item_date_text) { %>
                                         <span><%= item.item_date_text %></span>
+                                        <% } %>
                                     </div><!-- e//news-data-->
                                 </div><!--number -->
                                 <div class="new-conts">
@@ -96,6 +68,13 @@
                         <% } %>
                     </ul>
                 </div><!-- e//news-container -->
+                <% if (isOwner) { %>
+                <div class="btn-box-save">
+                    <a href="/timelines/edit/<%=  %>">
+                        <button id="timeline_edit_btn" type="submit" class="btn-red">수정</button>
+                    </a>
+                </div>
+                <% } %>
             </div><!-- e//container -->
 
         </div><!-- e//wrap -->
@@ -108,6 +87,6 @@
 
         <%- include partial/footer.ejs %>
 
-        <script type="text/javascript" src="/main.bundle.js" charset="utf-8"></script>
+        <script type="text/javascript" src="/timeline.bundle.js" charset="utf-8"></script>
     </body>
 </html>

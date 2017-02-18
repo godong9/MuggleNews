@@ -13,7 +13,9 @@ img {
   vertical-align: top;
   border:0;
 }
-
+input, textarea {
+  outline:none;
+}
 a, a:hover, a:active{
   text-decoration: none;
 }
@@ -34,10 +36,52 @@ body {
   background:#ffffff;
   width:100%;
 }
+.ov-h {
+  overflow:hidden;
+}
+.deam {
+  position: absolute;
+  top: 500px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  z-index: 501;
+}
 .wrap {
   width:100%;
   margin:0 auto;
   position: relative;
+}
+.btn-box-save{
+  width:50%;
+  height: 20px;
+  line-height: 1.3;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  text-align: right;
+  z-index:500;
+}
+.btn-box-save .btn-red,
+.btn-box-save  .btn-gray {}
+.btn-red,
+.btn-gray {
+  display: inline-block;
+  height:40px;
+  line-height:41px;
+  padding:0 20px;
+  color: #ffffff;
+  font-size:16px;
+  margin:0 0 0 20px;
+  border:none;
+  background:transparent;
+}
+.btn-red {
+  background:#ef5441 !important;
+}
+.btn-gray{
+  background:#cccccc !important;
 }
 /* header { */
 .header {
@@ -49,81 +93,174 @@ body {
 .header a.logo {
   display: block;
   float:left;
-  margin:30px 0 0 20px;
+  margin:30px 0 0 30px;
   width: 131px;
   height: 20px;
+  background:url(../images/logo-01@3x.png) no-repeat;
+  background-size:131px 20px
 }
-.header .logo img{
-  width:100%;
-  height:100%;
+.header .logo span{
+  font-size:0;
+  line-height:0;
 }
-.header .login-box {
+.header .mymenu {
   position: absolute;
-  right:20px;
-  top:25px;
+  right:30px;
+  top:30px;
   text-align:right;
 }
-.header .login-box a {
+.header .mymenu .icon-mymenu {
   display: block;
-  float:left;
-  text-align: left;
-  height:30px;
-  line-height: 30px;
-  padding:0 10px;
-  font-size:14px;
-  color: #ef5441;
-}
-.header .login-box a.login {
-  position: relative;
-}
-.header .login-box .login::after {
-  position: absolute;
-  top:0;
-  right:-1px;
-  content:"|";
-  color: #dddddd;
-  font-size:14px;
-}
-.header .login-box a img{
   width:24px;
-  height:24px;
-  margin-right:10px;
-  vertical-align: middle;
+  height:20px;
+  text-align:right;
+  background:url(../images/icon-menu-r@3x.png) no-repeat;
+  background-size:24px 20px;
 }
-.header .login-box a span {
-  line-height:32px;
-  font-size: 14px;
-  color: #ef5441;
-  vertical-align: top;
-}
-.header .login-box .log-on {
-  line-height:30px;
-}
-.header .login-box .log-on .log-in {
-  padding:0 0 0 10px;
-}
-.header .login-box .log-on a img {
-  width:24px;
-  height:24px;
-  margin:0 5px 0 0;
-  -webkit-border-radius:15px;
-  -moz-border-radius:15px;
-  border-radius:15px;
-  vertical-align: middle;
-  /* border: solid 1px #eeeeee;*/
-}
-.header .login-box .log-on a span {
-  line-height:32px;
-  font-size:14px;
-  color:#bbbbbb;
-  vertical-align: top;
+.header .mymenu .active .logon {
+  display: block;
 }
 /* header }*/
+.user-profile {
+  display: none;
+}
+
+/* mymenu {*/
+.menu-on-box {
+  display: none;
+  position: absolute;
+  top:0;
+  right:0;
+  background: rgba(0, 0, 0, 0.3);
+  width:100%;
+  height:100%;
+  z-index:501;
+}
+.menu-on-box .log-on-box {
+  width:300px;
+  height:100%;
+  background:#ffffff;
+  position: absolute;
+  top:0;
+  right:0;
+}
+.menu-on-box .log-on-box .inner-box{
+  position: relative;;
+}
+.menu-on-box .log-on-box .user {
+  position: relative;
+  width:280px;
+  height:35px;
+  line-height:35px;
+  padding:25px 20px 20px 0;
+  text-align: right;
+  color: #666666;
+  border-bottom:1px solid #eeeeee;
+}
+.log-on-box .user span {
+  display: inline-block;
+}
+.log-on-box .user .user-position{
+  font-size:12px;
+  color: #bbbbbb;
+  vertical-align: middle;
+}
+.log-on-box .user .user-name {
+  font-size:18px;
+  color: #666666;
+  margin:0 6px;
+}
+.log-on-box .user .user-img {
+  width:34px;
+  height:34px;
+}
+.log-on-box .user .user-img img{
+  width:34px;
+  height:34px;
+  border-radius:30px;
+  vertical-align: top;
+}
+.log-on-box .user .btn-close {
+  display: block;
+  width:18px;
+  height:20px;
+  position: absolute;
+  top:32px;
+  left:20px;
+  background:url(../images/icon-cacl@3x.png) no-repeat center center;
+  background-size:18px;
+}
+.log-on-box .txt-notice{
+  padding:20px 20px 0 20px;
+  position: relative;
+  font-weight: normal;
+  border-bottom:1px solid #eeeeee;
+}
+.log-on-box .txt-notice p strong{
+  font-size:18px;
+  color: #ef5441;
+}
+.log-on-box .txt-notice p{
+  color: #333333;
+  line-height:24px;;
+}
+.log-on-box .txt-notice span{
+  font-size:14px;
+  line-height:20px;
+  color: #999999;
+}
+.log-on-box .txt-notice ul {
+  margin-top:10px;
+}
+.log-on-box .txt-notice li {
+  position: relative;
+  height:20px;
+  padding:0 0 20px 0;
+}
+.log-on-box .txt-notice a{
+  display: block;
+  width:100%;
+  height:100%;
+  line-height: 20px;
+  padding:0 0 0 30px;
+  font-size: 14px;
+  color: #333333;
+
+}
+.log-on-box .txt-notice a span{
+  color: #ef5441;
+}
+.log-on-box .txt-notice .addnews a {
+  background:url(../images/icon-addnews@3x.png) no-repeat;
+  background-size: 16px;
+}
+.log-on-box .txt-notice .muggle-note a{
+  background:url(../images/icon-newsnote@3x.png) no-repeat;
+  background-size: 16px;
+}
+.log-on-box .txt-notice .mg-fb a{
+  background:url(../images/icon-list-fb@3x.png) no-repeat;
+  background-size: 16px;
+}
+.log-on-box .txt-notice .muggle-out a{
+  background:url(../images/icon-logout@3x.png) no-repeat;
+  background-size: 16px;
+}
+.log-on-box .txt-notice .mg-fb .fb-like-count{
+  position: absolute;
+  top:0;
+  right:0;
+}
+.log-on-box .footer {
+  padding:20px;
+  border-top:1px solid #eeeeee;
+}
+/* mymenu }*/
 /* footer { */
 .footer {
   position: relative;
   width:100%;
-  height:170px;
+  height:110px;
   margin:0 auto;
 }
 .foot-wrap {
@@ -178,12 +315,16 @@ body {
 }
 .footer .goto-facebook {
   display: block;
+  line-height:24px;
   padding-top:30px;
   text-align: center;
+  font-size:14px;
+  color: #999999;
 }
 .footer .goto-facebook img{
   width:24px;
   height:24px;
+  margin-left:10px;
 }
 /* footer ) */
 
@@ -225,6 +366,9 @@ body {
   width:100%;
   height:100%;
   display: none;/* 이미지다시넣기 전까지 임시로 안보이게 */
+}
+.muggle-preview-main .muggle-preview-list .p-thum-img img.has-cover {
+  display: block;
 }
 .muggle-preview-main .muggle-preview-list .p-list-wrap {
   position: absolute;
@@ -295,16 +439,58 @@ body {
   color: #ffffff;
 
 }
+.muggle-preview-main .muggle-preview-list .last-edit {
+  width:60%;
+  position: absolute;
+  left:10px;
+  bottom:10px;;
+  height:20px;
+  line-height:1.3;
+  text-align: left;
+  font-size:14px;
+  color: #ffffff;
+}
+.muggle-preview-main .muggle-preview-list .last-edit span{
+  display: inline-block;
+  margin:0 8px 0 0;
+  vertical-align: top;
+}
+.muggle-preview-main .muggle-preview-list .last-edit .user-name,
+.muggle-preview-main .muggle-preview-list .last-edit span:last-child{
+  max-width:45%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.muggle-preview-main .muggle-preview-list .view-count {
+  width:40%;
+  position: absolute;
+  right:10px;
+  bottom:10px;
+  height:20px;
+  line-height:1.3;
+  text-align: right;
+  font-size:14px;
+  color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.muggle-preview-main .muggle-preview-list .view-count span {
+  padding-left:20px;
+  background:url(../images/ico-viewcount@3x.png) no-repeat 0 3px;
+  background-size: 14px 10px;
+}
 /*스토리뉴스 미리보기스토리뉴스 미리보기 }*/
 .container{
   width: 100%;
   height: auto;
-  background:#f05440 url(../images/main-visual@3x.png) no-repeat center 100%;;
-  background-size:200px 133px;
+  /*background:#f05440 url(../images/main-visual@3x.png) no-repeat center 100%;;
+  background-size:200px 133px;*/
+  background:#f05440;
 }
 .container.main .contents {
   height:auto;
-  padding: 0 0 150px 0;
+  padding: 0 0 70px 0;
   background:url(../images/m-img-dot@3x.png) no-repeat 7px 83px;
   background-size:18px 537px;
 }
@@ -342,7 +528,7 @@ body {
   color: #ffffff;;
 }
 .main .contents .desc br {
-  display: none;
+
 }
 .sign-up-email {
   position: relative;
@@ -451,7 +637,258 @@ body {
 .adnwMRectRoot {
   margin:0 auto;
 }
+/* mypage {*/
+.container.mypage {
+  background: none;
+  height:auto !important;
+}
+.mypage .my-news-note {
+  width: 100%;
+  height: 80px;
+  background-color: #fafafa;
+  border-top: 1px solid #e9e9e9;
+  border-bottom: 1px solid #f6f6f6;
+  text-align: center;
+}
+.mypage .my-news-note .inner-box {
+  width:1140px;
+  margin:0 auto;
+}
+.mypage .my-news-note .inner-box span {
+  display: inline-block;
+  line-height: 80px;
+  vertical-align: top;
+  font-size: 16px;
+  color: #999999;
+}
+.mypage .my-news-note .inner-box span.user-img {
+  width:50px;
+  height:50px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+.mypage .my-news-note .inner-box span.user-name {
+  line-height: 80px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #666666;
+}
+.mypage .muggle-preview-list {
+  width:1140px;
+  margin:50px auto;
+  overflow: hidden;
+}
+.mypage .muggle-preview-list a.btn-news-add {
+  height:70px;
+  padding-top:100px;
+  text-align: center;
+  color: #999999;
+  background:url(../images/ic-note-add@3x.png) no-repeat 166px 46px;
+  background-size:29px 36px;
+}
+.mypage .muggle-preview-list a.btn-news-add:hover {
+  height:70px;
+  padding-top:100px;
+  text-align: center;
+  color: #f1543f;
+  background:url(../images/ic-note-add-over@3x.png) no-repeat 166px 46px;
+  background-size:29px 36px;
+}
+.mypage .muggle-preview-list a {
+  position: relative;
+  display: block;
+  float:left;
+  width:360px;
+  height:170px;
+  margin:0 10px 30px 10px;
+  overflow: hidden;
+  background:url(../images/img_cover_base_00.png) no-repeat center center;
+  background-size:cover;
+}
+.mypage .muggle-preview-list .p-thum-img {
+  width:100%;
+  height:100%;
+}
+.mypage .muggle-preview-list .p-thum-img img{
+  width:100%;
+  height:100%;
+  display: none;/* 이미지다시넣기 전까지 임시로 안보이게 */
+}
+.mypage .muggle-preview-list .p-thum-img img.has-cover {
+  display: block;
+}
+.mypage .muggle-preview-list .p-list-wrap {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:170px;
+  padding-top:45px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.mypage .p-list-wrap .title p{
+  line-height:1.0;;
+  text-align: center;
+  font-size:24px;
+  padding:0 5px;
+  color: #ffffff;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.mypage .p-list-wrap .desc p{
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.0;
+  text-align: center;
+  color: #ffffff;
+  padding:6px 5px 13px 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.mypage .muggle-preview-list .user-infor {
+  width:95%;
+  text-align: center;
+  margin:5px auto;
+  height:20px;
+  line-height:20px;;
+}
+.mypage .muggle-preview-list .user-infor .user-profile {
+  display: inline-block;
+  width:20px;
+  height:20px;
+  overflow: hidden;
+  -webkit-border-radius:20px;
+  -moz-border-radius:20px;
+  border-radius:20px;
+  border: solid 1px #ffffff;
+}
+.mypage .muggle-preview-list .user-infor .user-profile img{
+  width:100%;
+  height:100%;
+  vertical-align: middle;
+  object-fit: cover;
+}
+.mypage .muggle-preview-list .user-infor .user-name {
+  display: inline-block;
+  height:20px;
+  line-height:20px;
+  vertical-align: top;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  color: #ffffff;
 
+}
+.mypage .muggle-preview-list .last-edit {
+  width:60%;
+  position: absolute;
+  left:10px;
+  bottom:10px;;
+  height:20px;
+  line-height:1.3;
+  text-align: left;
+  font-size:14px;
+  color: #ffffff;
+}
+.mypage .muggle-preview-list .last-edit span{
+  display: inline-block;
+  margin:0 8px 0 0;
+  vertical-align: top;
+}
+.mypage .muggle-preview-list .last-edit .user-name,
+.mypage .muggle-preview-list .last-edit span:last-child{
+  max-width:43%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.mypage .muggle-preview-list .view-count {
+  width:40%;
+  position: absolute;
+  right:10px;
+  bottom:10px;
+  height:20px;
+  line-height:1.3;
+  text-align: right;
+  font-size:14px;
+  color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.mypage .muggle-preview-list .view-count span {
+  padding-left:20px;
+  background:url(../images/ico-viewcount@3x.png) no-repeat 0 3px;
+  background-size: 14px 10px;
+}
+/* mypage }*/
+
+/* 개인정보취급 방침 및 이용약관 {*/
+.privacy{
+  width:100%;
+  background:#fafafa;
+  padding:30px 0;
+}
+.privacy .term-box {
+  position: relative;
+  width:90%;
+  max-width: 1000px;
+  margin:0 auto 0;
+  padding:60px 5%;
+  background:#ffffff;
+  font-size:16px;
+  font-weight:300;
+  color: #888888;
+}
+.privacy .term-box h1 {
+  position: relative;
+  width:100%;
+  padding-top:17px;
+  margin-bottom:50px;
+  font-size: 44px;
+  font-weight: 300;
+  color: #666666;
+}
+.privacy .term-box h1::after {
+  position: absolute;
+  top:0;
+  left:0;
+  width:70px;
+  height:3px;
+  background:#666666;
+  display: block;
+  content:"";
+}
+.privacy .term-box h3 {
+  line-height:1.5;
+  margin-top:35px;
+  font-size:18px;
+  font-weight:600;
+  color: #888888;
+}
+.privacy .term-box p {
+  line-height:1.5;
+  font-size:16px;
+  font-weight:300;
+  color: #888888;
+}
+.privacy .term-box li {
+  line-height:1.5;
+  font-size:16px;
+  font-weight:300;
+  color: #888888;
+}
+.last-privacy {
+  margin:50px 0 0 0;
+}
+/* 개인정보취급 방침 및 이용약관 }*/
 /*광고 배너  }*/
 @media all and (min-width: 300px) and (max-width: 490px){
   .who-are .muggle-member li {
@@ -532,7 +969,7 @@ body {
     padding-top:30px;;
   }
   .who-are .muggle-member  ul{
-    widht:100%;
+    width:100%;
     text-align: center;
   }
   .who-are .muggle-member li {
@@ -564,15 +1001,16 @@ body {
   .header a.logo {
     display: block;
     float:left;
-    margin:25px 0 0 30px;
-    width: 196px;
-    height: 30px;
+    margin:30px 0 0 30px;
+    width: 130px;
+    height: 20px;
+    background-size:130px 20px
   }
 
   .footer {
     position: relative;
     width:100%;
-    height:170px;
+    height:auto;
     margin:0 auto;
   }
   .foot-wrap {
@@ -630,13 +1068,11 @@ body {
     position: absolute;
     top:30px;
     right:30px;
-    width:24px;
-    height:24px;
     padding:0;
   }
   .footer .goto-facebook img{
-    width:100%;
-    height:100%;
+    width:24px;
+    height:24px;
   }
   /* 스토리 뉴스 미리보기 {*/
   .muggle-preview-main {
@@ -663,8 +1099,9 @@ body {
   .container{
     width: 100%;
     height: 620px;
-    background:#f05440 url(../images/main-visual.png) no-repeat 100% 100%;
-    background-size:320px 271px
+    /*background:#f05440 url(../images/main-visual.png) no-repeat 100% 100%;
+    background-size:320px 271px*/
+    background:#f05440 ;
   }
   .container.main .contents {
     height:620px;
@@ -672,7 +1109,7 @@ body {
     background:url(../images/img-dot.png) no-repeat 150px 120px;
   }
   .main .contents h1 {
-    padding:110px 0 0 0;
+    padding:130px 0 0 0;
     text-align: left;
     font-size:80px;
     font-weight: bold;
@@ -788,15 +1225,16 @@ body {
   .header a.logo {
     display: block;
     float:left;
-    margin:25px 0 0 30px;
-    width: 196px;
-    height: 30px;
+    margin:30px 0 0 30px;
+    width: 130px;
+    height: 20px;
+    background-size:130px 20px
   }
 
   .footer {
     position: relative;
     width:100%;
-    height:170px;
+    height:110px;
   }
   .foot-wrap {
     padding: 30px;
@@ -852,13 +1290,11 @@ body {
     position: absolute;
     top:30px;
     right:30px;
-    width:24px;
-    height:24px;
     padding:0;
   }
   .footer .goto-facebook img{
-    width:100%;
-    height:100%;
+    width:24px;
+    height:24px;
   }
   /* 스토리 뉴스 미리보기 {*/
   .muggle-preview-main {
@@ -882,8 +1318,7 @@ body {
   .container{
     width: 100%;
     height: 620px;
-    background:#f05440 url(../images/main-visual.png) no-repeat 90% 95%;
-    background-size:390px 330px
+    background:#f05440 url(../images/main-visual.png) no-repeat 90% 100%;
   }
   .container.main .contents {
     height:620px;
@@ -979,7 +1414,7 @@ body {
     padding-top:30px;;
   }
   .who-are .muggle-member  ul{
-    widht:100%;
+    width:100%;
     text-align: center;
   }
   .who-are .muggle-member li {

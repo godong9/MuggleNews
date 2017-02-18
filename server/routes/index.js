@@ -10,8 +10,25 @@ const View = require('../services/view');
 router.get('/', function(req, res) {
   let data = {};
   View.setCommonData(req, data);
-  // console.log(req.user._json);
   res.render('index', data);
+});
+
+router.get('/page/error', function(req, res) {
+  res.render('error', {
+    message: 'Server error!'
+  });
+});
+
+router.get('/terms', function(req, res) {
+  let data = {};
+  View.setCommonData(req, data);
+  res.render('terms', data);
+});
+
+router.get('/privacy', function(req, res) {
+  let data = {};
+  View.setCommonData(req, data);
+  res.render('privacy', data);
 });
 
 // router.get('/test', function(req, res) {

@@ -1,13 +1,48 @@
 'use strict';
 
+const _ = require('underscore');
 const async = require('async');
 const log4js = require('log4js');
+const moment = require('moment');
 const logger = log4js.getLogger('controllers/users');
 const PreUser = require('../models/pre_users');
 const User = require('../models/users');
 const Slack = require('../services/slack');
+const View = require('../services/view');
+const Timeline = require('../models/timelines');
 
 const UserController = {
+  getUserMyPage: function getUserMyPage(req, res) {
+    let data = {};
+    let userId = req.params.userId;
+    View.setCommonData(req, data);
+
+    async.waterfall([
+      function(callback) {
+        User.getUserById(userId, callback);
+      },
+      function(user, callback) {
+        if (!user) {
+          return res.status(404).send('Not Found!');
+        }
+        data.user = user;
+        Timeline.getTimelinesByUserId(user.id, callback);
+      }
+    ], function (err, timelines) {
+      if (err) {
+        logger.error(err);
+        return res.redirect('/page/error');
+      }
+
+
+      data.timelines = _.map(timelines || [], function(timeline) {
+        timeline.date_text = moment(timeline.created_at).format("YYYY년 M월 D일");
+        return timeline;
+      });
+      res.render('mypage', data);
+    });
+
+  },
   facebookLoginCallback: function facebookLoginCallback(req, res) {
     let fbUser = req.user._json;
     let params = {

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include partial/common_head.ejs %>
+    <%- include partial/ga_pre.ejs %>
+</head>
+<body>
+<%- include partial/ga.ejs %>
+<%- include partial/fb.ejs %>
+
+<div class="wrap">
+
+    <%- include partial/my_menu.ejs %>
+
+    <div class="container mypage">
+        <div class="my-news-note">
+            <div class="inner-box">
+                <span class="user-name"><%= user.name %></span>
+                <span>님의 기자 수첩</span>
+            </div>
+        </div><!-- e//my-news-note -->
+
+        <div class="muggle-preview-list">
+            <% for (var i = 0; i < timelines.length; i++) { %>
+            <% var timeline = timelines[i]; %>
+            <a href="/timelines/<%= timeline.id %>">
+                <span class="p-thum-img"><img <% if(timeline.cover_img) { %> class="has-cover" src="<%= timeline.cover_img %>" <% } %> alt=""></span>
+                <div class="p-list-wrap">
+                    <div class="title">
+                        <p><%= timeline.title %></p>
+                    </div>
+                    <div class="desc">
+                        <p><%= timeline.subtitle %></p>
+                    </div>
+                </div>
+                <div class="last-edit">
+                    <p><span class="user-name">by. <%= user.name %></span><span>|</span><span><%= timeline.date_text %></span></p>
+                </div>
+                <div class="view-count">
+                    <span><%= timeline.view_count %></span>
+                </div>
+            </a>
+            <% } %>
+        </div>
+    </div><!-- e//container -->
+
+</div><!-- e//wrap -->
+
+<%- include partial/footer.ejs %>
+
+<script type="text/javascript" src="/main.bundle.js" charset="utf-8"></script>
+</body>
+</html>
