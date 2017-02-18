@@ -257,7 +257,7 @@ body {
 .footer {
   position: relative;
   width:100%;
-  height:170px;
+  height:110px;
   margin:0 auto;
 }
 .foot-wrap {
@@ -434,7 +434,7 @@ body {
 
 }
 .muggle-preview-main .muggle-preview-list .last-edit {
-  width:50%;
+  width:60%;
   position: absolute;
   left:10px;
   bottom:10px;;
@@ -447,9 +447,17 @@ body {
 .muggle-preview-main .muggle-preview-list .last-edit span{
   display: inline-block;
   margin:0 8px 0 0;
+  vertical-align: top;
+}
+.muggle-preview-main .muggle-preview-list .last-edit .user-name,
+.muggle-preview-main .muggle-preview-list .last-edit span:last-child{
+  max-width:45%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .muggle-preview-main .muggle-preview-list .view-count {
-  width:50%;
+  width:40%;
   position: absolute;
   right:10px;
   bottom:10px;
@@ -460,7 +468,6 @@ body {
   color: #ffffff;
   overflow: hidden;
   text-overflow: ellipsis;
-
 }
 .muggle-preview-main .muggle-preview-list .view-count span {
   padding-left:20px;
@@ -984,7 +991,7 @@ body {
   .footer {
     position: relative;
     width:100%;
-    height:170px;
+    height:auto;
     margin:0 auto;
   }
   .foot-wrap {
@@ -1207,7 +1214,7 @@ body {
   .footer {
     position: relative;
     width:100%;
-    height:170px;
+    height:110px;
   }
   .foot-wrap {
     padding: 30px;
