@@ -8,7 +8,7 @@ let Timeline = {
   getMainTimelines: function getMainTimelines(cb) {
     let query =
       'SELECT ' +
-      '*, ' +
+      'timelines.*, ' +
       'timelines.id AS id, ' +
       'users.id AS user_id, ' +
       'users.name AS user_name ' +
@@ -22,8 +22,7 @@ let Timeline = {
   getTimelinesByUserId: function getTimelinesByUserId(userId, cb) {
     let query =
       'SELECT ' +
-      '*, ' +
-      'timelines.id AS id, ' +
+      'timelines.*, ' +
       'users.id AS user_id, ' +
       'users.name AS user_name ' +
       'FROM timelines ' +

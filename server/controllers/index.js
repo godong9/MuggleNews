@@ -1,8 +1,7 @@
 'use strict';
 
-const _ = require('underscore');
-const moment = require('moment');
 const Timeline = require('../models/timelines');
+const TimelineService = require('../services/timeline');
 const View = require('../services/view');
 
 const IndexController = {
@@ -10,10 +9,7 @@ const IndexController = {
     Timeline.getMainTimelines(function(err, timelines) {
       let data = {};
       View.setCommonData(req, data);
-      data.timelines = _.map(timelines || [], function(timeline) {
-        timeline.date_text = moment(timeline.created_at).format("YYYY년 M월 D일");
-        return timeline;
-      });
+      data.timelines = TimelineService.getFormattedTimelines(timelines || [])
       res.render('index', data);
     });
   }
