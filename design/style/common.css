@@ -640,6 +640,7 @@ body {
 /* mypage {*/
 .container.mypage {
   background: none;
+  height:auto !important;
 }
 .mypage .my-news-note {
   width: 100%;
@@ -786,7 +787,7 @@ body {
 
 }
 .mypage .muggle-preview-list .last-edit {
-  width:50%;
+  width:60%;
   position: absolute;
   left:10px;
   bottom:10px;;
@@ -799,9 +800,17 @@ body {
 .mypage .muggle-preview-list .last-edit span{
   display: inline-block;
   margin:0 8px 0 0;
+  vertical-align: top;
+}
+.mypage .muggle-preview-list .last-edit .user-name,
+.mypage .muggle-preview-list .last-edit span:last-child{
+  max-width:43%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .mypage .muggle-preview-list .view-count {
-  width:50%;
+  width:40%;
   position: absolute;
   right:10px;
   bottom:10px;
