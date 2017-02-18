@@ -621,11 +621,14 @@
     position: relative;
     height:100%;
 }
-.edit .news-container .section .preview .preview-wrap a{
+.edit .news-container .section .preview .preview-wrap a,
+.edit .news-container .section .preview .preview-wrap a:hover,
+.edit .news-container .section .preview .preview-wrap a:active{
     display: block;
     position: relative;
     height:100%;
     text-align: left;
+    color: #aaaaaa;
 }
 .edit .news-container .section .preview .preview-wrap a .btn-del {
     display: none;
@@ -700,7 +703,7 @@
 }
 .edit .news-container .section .btn-box {
     position:absolute;
-    bottom:0;
+    bottom:-50px;
     right:0;
 }
 .edit .news-container .section #add_item_btn {
