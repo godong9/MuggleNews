@@ -320,14 +320,14 @@
     margin:0 auto;
 }
 .edit .news-container ul {
-    padding:0 0 0 22px;
-    margin-top:35px;
+    padding:0px 0 0 22px;
+    margin-top:0;
 }
 .edit .news-container ul li:first-child {
     padding:90px 0 70px 0;
 }
 .edit .news-container ul li:last-child {
-    padding:90px 0 70px 0;
+    padding:90px 0 90px 0;
     border-left:1px solid #ffb2b2
 }
 .edit .news-container ul li:last-child .section {
@@ -341,7 +341,7 @@
     width:1px;
     height:90px;
     content:"";
-    background:#eeeeee;
+    background:#ffb2b2;
 }
 .edit .news-container ul li:first-child .section::after {
     display: none;
@@ -349,7 +349,7 @@
 .edit .news-container ul li {
     display: block;
     position: relative;
-    padding:90px 0 0 0;
+    padding:90px 0 10px 0;
     border-left: 1px solid #ffb2b2;
 }
 .edit .news-container .section .number {
@@ -360,7 +360,7 @@
 .edit .news-container .section .number .list-count {
     position: absolute;
     top:0;
-    left:0;
+    left:2px;
     width:45px;
     height:45px;
     line-height:46px;
@@ -525,7 +525,7 @@
 .edit .news-container .section .new-conts .link-write {
     position: relative;
     padding:0 0 0 30px;
-    margin:15px 0 50px 0;
+    margin:15px 0 0px 0;
     background:url(../images/ic-link@3x.png) no-repeat 2px 7px;
     background-size:18px;
 }
