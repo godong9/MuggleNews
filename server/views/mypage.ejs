@@ -12,6 +12,38 @@
 
     <%- include partial/my_menu.ejs %>
 
+    <div class="container mypage">
+        <div class="my-news-note">
+            <div class="inner-box">
+                <span class="user-img"><img src="<%= user.profile_img %>" alt=""></span>
+                <span class="user-name"><%= user.name %></span>
+                <span>님의 기자 수첩</span>
+            </div>
+        </div><!-- e//my-news-note -->
+
+        <div class="muggle-preview-list">
+            <% for (var i = 0; i < timelines.length; i++) { %>
+            <% var timeline = timelines[i]; %>
+            <a href="/timelines/<%= timeline.id %>">
+                <span class="p-thum-img"><img <% if(timeline.cover_img) { %> class="has-cover" src="<%= timeline.cover_img %>" <% } %> alt=""></span>
+                <div class="p-list-wrap">
+                    <div class="title">
+                        <p><%= timeline.title %></p>
+                    </div>
+                    <div class="desc">
+                        <p><%= timeline.subtitle %></p>
+                    </div>
+                </div>
+                <div class="last-edit">
+                    <p><span class="user-name">by. <%= user.name %></span><span>|</span><span>2016년 1월 1일</span></p>
+                </div>
+                <div class="view-count">
+                    <span><%= timeline.view_count %></span>
+                </div>
+            </a>
+            <% } %>
+        </div>
+    </div><!-- e//container -->
 
 </div><!-- e//wrap -->
 

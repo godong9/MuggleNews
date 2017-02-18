@@ -5,6 +5,16 @@ const async = require('async');
 const pool = require('../db/db').pool;
 
 let Timeline = {
+  getTimelinesByUserId: function getTimelinesByUserId(userId, cb) {
+    let query =
+      'SELECT ' +
+      '* ' +
+      'FROM timelines ' +
+      'WHERE timelines.user_id=?;';
+    pool.query(query, userId, function(err, rows) {
+      cb(err, rows);
+    });
+  },
   getItemsByTimelineId: function getUser(id, cb) {
     let query =
         'SELECT ' +

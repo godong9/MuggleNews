@@ -5,7 +5,7 @@ const router = express.Router();
 const UserController = require('../controllers/users');
 const passport = require('passport');
 
-router.get('/mypage', UserController.getUserMyPage);
+router.get('/mypage/:userId', UserController.getUserMyPage);
 
 router.get('/login/facebook', passport.authenticate('facebook', { scope: ['email'] }));
 

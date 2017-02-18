@@ -7,12 +7,34 @@ const PreUser = require('../models/pre_users');
 const User = require('../models/users');
 const Slack = require('../services/slack');
 const View = require('../services/view');
+const Timeline = require('../models/timelines');
 
 const UserController = {
   getUserMyPage: function getUserMyPage(req, res) {
     let data = {};
+    let userId = req.params.userId;
     View.setCommonData(req, data);
-    res.render('mypage', data);
+
+    async.waterfall([
+      function(callback) {
+        User.getUserById(userId, callback);
+      },
+      function(user, callback) {
+        if (!user) {
+          return res.status(404).send('Not Found!');
+        }
+        data.user = user;
+        Timeline.getTimelinesByUserId(user.id, callback);
+      }
+    ], function (err, timelines) {
+      if (err) {
+        logger.error(err);
+        return res.redirect('/page/error');
+      }
+      data.timelines = timelines || [];
+      res.render('mypage', data);
+    });
+
   },
   facebookLoginCallback: function facebookLoginCallback(req, res) {
     let fbUser = req.user._json;
