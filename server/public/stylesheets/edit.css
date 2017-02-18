@@ -9,7 +9,7 @@
     width:100%;
     height:80px;
     margin:0 auto;
-    z-index:150;
+    z-index:5;
     background:transparent;
 }
 .edit .header a.logo {
@@ -291,33 +291,27 @@
     height: 20px;
     line-height: 1.3;
     position: absolute;
-    left: 50%;
-    bottom: 30px;
-    margin-left: -360px;
+    right: 20px;
+    top: 20px;
     text-align: right;
 }
-.edit .container .news-cover .btn-box .btn-save,
-.edit .container .news-cover .btn-box .btn-cancle {
+.edit .container .news-cover .btn-box .btn-red,
+.edit .container .news-cover .btn-box .btn-gray {
     display: inline-block;
+    height:40px;
+    line-height:41px;
+    padding:0 20px;
     color: #ffffff;
     font-size:16px;
-    padding:0;
-    margin:0;
+    margin:0 0 0 20px;
     border:none;
     background:transparent;
 }
-.edit .container .news-cover .btn-box .btn-save {
-    position: relative;
-    padding:0 0 0 30px;;
+.edit .container .news-cover .btn-box .btn-red {
+    background:#ef5441;
 }
-.edit .container .news-cover .btn-box .btn-save::before{
-    display: block;
-    position: absolute;
-    left:15px;
-    top:0;
-    color: #ffffff;
-    font-size:16px;
-    content:"|";
+.edit .container .news-cover .btn-box .btn-gray{
+    background:#cccccc;
 }
 /* news-container {*/
 .edit .news-container  {
@@ -528,6 +522,7 @@
     position: relative;
     padding:0 0 0 30px;
     margin:0 0 50px 0;
+    background:url(../images/ic-link@3x.png) no-repeat 2px 7px;
     background-size:18px;
 }
 .edit .news-container .section .new-conts .link-write p {
@@ -537,8 +532,8 @@
     background-size:18px 14px;*/
 }
 .edit .news-container .section .new-conts .link-write p:hover {
-   /* background:url(../images/ic-check-on@3x.png) no-repeat 98% 5px;
-    background-size:18px 14px;*/
+    /* background:url(../images/ic-check-on@3x.png) no-repeat 98% 5px;
+     background-size:18px 14px;*/
 }
 .edit .news-container .section .new-conts .link-write .input-link-checking {
     position: absolute;
@@ -720,7 +715,7 @@
     color: #ffffff;
 
 }
-    /* 프리뷰 가로 } */
+/* 프리뷰 가로 } */
 /* 프리뷰 세로 { */
 .edit .news-container .section .preview.vertical{
     height:auto!important;
