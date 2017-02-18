@@ -713,6 +713,9 @@ body {
   height:100%;
   display: none;/* 이미지다시넣기 전까지 임시로 안보이게 */
 }
+.mypage .muggle-preview-list .p-thum-img img.has-cover {
+  display: block;
+}
 .mypage .muggle-preview-list .p-list-wrap {
   position: absolute;
   top:0;

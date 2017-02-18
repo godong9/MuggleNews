@@ -713,6 +713,9 @@ body {
   height:100%;
   display: none;/* 이미지다시넣기 전까지 임시로 안보이게 */
 }
+.mypage .muggle-preview-list .p-thum-img img.has-cover {
+  display: block;
+}
 .mypage .muggle-preview-list .p-list-wrap {
   position: absolute;
   top:0;
@@ -942,8 +945,8 @@ body {
   /* 스토리 뉴스 미리보기 }*/
   /*{ 우리가 누구*/
   .who-are {
-  width:100%;
-  background-color: #fafafa
+    width:100%;
+    background-color: #fafafa
   }
   .who-are h3 {
     width:100%;
@@ -1002,7 +1005,7 @@ body {
     margin:0 auto;
   }
   .foot-wrap {
-  padding: 30px;
+    padding: 30px;
   }
   .footer ul {
     width:100%;
@@ -1170,8 +1173,8 @@ body {
   }
   /*{ 우리가 누구*/
   .who-are {
-  width:100%;
-  background-color: #fafafa
+    width:100%;
+    background-color: #fafafa
   }
   .who-are h3 {
     width:100%;
@@ -1291,8 +1294,8 @@ body {
     margin:0 auto;
   }
   .muggle-preview-main .muggle-preview-list {
-     width:100%;
-   }
+    width:100%;
+  }
   .muggle-preview-main .muggle-preview-list a {
     position: relative;
     display: block;
@@ -1387,8 +1390,8 @@ body {
   }
   /*{ 우리가 누구*/
   .who-are {
-  width:100%;
-  background-color: #fafafa
+    width:100%;
+    background-color: #fafafa
   }
   .who-are h3 {
     width:100%;
