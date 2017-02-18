@@ -28,6 +28,7 @@ const TimelineController = {
         return res.redirect('/page/error');
       }
       if (!items || items.length === 0) {
+        logger.debug(items);
         return res.status(404).send('Not Found!');
       }
       View.setCommonData(req, data);

@@ -152,7 +152,10 @@ define([
           items: self.getTimelineItems()
         };
         if (!timelineItem.title) {
-          return alert("제목을 입력해주세요!");
+          return alert("대제목을 입력해주세요!");
+        }
+        if (timelineItem.items.length === 0) {
+          return alert("타임라인을 추가해주세요!");
         }
         handler(timelineItem);
       });

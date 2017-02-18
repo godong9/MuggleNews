@@ -35,7 +35,7 @@ define([
       +	'</div>'
       +	'<div class="inner-box">'
       +	  '<div class="news-cover">'
-      +		  '<h1><input id="title_input" type="text" value="{{title}}" placeholder="대제목을 입력하세요."></h1>'
+      +		  '<h1><input id="title_input" type="text" value="{{title}}" placeholder="대제목을 입력하세요.(필수)"></h1>'
       + 		'<p class="h1_desc"><input id="subtitle_input" type="text" value="{{subtitle}}" placeholder="소제목을 입력하세요."></p>'
       +	  	'<div class="cover-edit">'
       +		    '<div class="btn-cover-edit">'
