@@ -48,13 +48,13 @@ define([
 
       if (!self.model.id) {
         self.model.create(self.model, function(err, data) {
-          console.log("savedData: ", data);
+          // console.log("savedData: ", data);
           location.href = '/timelines/' + data.id;
         });
       } else {
         self.model.update(self.model, function(err, data) {
           console.log("updatedData: ", data);
-          location.href = '/timelines/' + data.id;
+          // location.href = '/timelines/' + data.id;
         });
       }
     });

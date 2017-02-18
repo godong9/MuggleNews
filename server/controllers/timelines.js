@@ -140,6 +140,7 @@ const TimelineController = {
     // }
     //TODO: 테스트용
     let userId = 1;
+    let timelineId = req.body.id;
     req.body.userId = userId;
 
     async.waterfall([
@@ -157,8 +158,9 @@ const TimelineController = {
         res.status(500).send('서버 에러 발생');
         return;
       }
+      logger.debug(result);
       res.send({
-        id: result,
+        id: timelineId,
         userName: Session.getSessionUserName(req),
         viewCount: 0,
         createdAt: moment().format("YYYY년 M월 D일")
