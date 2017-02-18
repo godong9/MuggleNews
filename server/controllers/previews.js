@@ -17,6 +17,9 @@ const PreviewController = {
     }
     Crawler.getPreviewData(previewUrl, function(err, body) {
       logger.debug(body);
+      if (!body) {
+        return res.status(500).send('잘못된 URL입니다!');
+      }
       Preview.insertPreview(body, function(err, result) {
         if (err) {
           logger.error(err);

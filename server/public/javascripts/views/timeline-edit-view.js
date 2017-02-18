@@ -95,6 +95,9 @@ define([
         if (event.which === 13) {
           let url = $(previewInput).val();
           HttpUtil.postData('/previews', {preview_url: url}, function(err, data) {
+            if (err) {
+              return;
+            }
             let preview_id = data && data.id;
             let $parentItem = $(previewInput).parents('.content-container');
             $parentItem.data('preview', preview_id);
