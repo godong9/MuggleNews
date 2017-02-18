@@ -1306,8 +1306,7 @@ body {
   .container{
     width: 100%;
     height: 620px;
-    background:#f05440 url(../images/main-visual.png) no-repeat 90% 95%;
-    background-size:390px 330px
+    background:#f05440 url(../images/main-visual.png) no-repeat 90% 100%;
   }
   .container.main .contents {
     height:620px;
