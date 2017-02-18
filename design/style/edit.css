@@ -274,6 +274,7 @@
     opacity: 0;
     height:36px;
     margin-left:-60px;
+    cursor: pointer;
 }
 .edit .container .news-cover .cover-edit .btn-cover-edit span{
     display: inline-block;
