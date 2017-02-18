@@ -367,7 +367,7 @@ body {
   height:100%;
   display: none;/* 이미지다시넣기 전까지 임시로 안보이게 */
 }
-.muggle-preview-main .muggle-preview-list .p-thum-img img.has_cover {
+.muggle-preview-main .muggle-preview-list .p-thum-img img.has-cover {
   display: block;
 }
 .muggle-preview-main .muggle-preview-list .p-list-wrap {
@@ -1306,8 +1306,7 @@ body {
   .container{
     width: 100%;
     height: 620px;
-    background:#f05440 url(../images/main-visual.png) no-repeat 90% 95%;
-    background-size:390px 330px
+    background:#f05440 url(../images/main-visual.png) no-repeat 90% 100%;
   }
   .container.main .contents {
     height:620px;
