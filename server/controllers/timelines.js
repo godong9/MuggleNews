@@ -52,6 +52,11 @@ const TimelineController = {
     });
   },
   getTimelineEditPage: function getNewTimelinePage(req, res) {
+    let userId = Session.getSessionUserId(req);
+    if (!userId) {
+      res.status(401).send('로그인을 해주세요!');
+      return;
+    }
     let editId = req.params.id;
     logger.debug("id: ", editId);
     if (!editId || editId === 'new') {
@@ -92,6 +97,11 @@ const TimelineController = {
       data.timeline = _.extend({}, items[0]);
       data.timeline.id = editId;
       data.lastUpdatedAt = moment(items[0].timeline_updated_at).format("YYYY년 M월 D일");
+      data.isOwner = (userId === data.timeline.user_id);
+      if (!data.isOwner) {
+        res.status(401).send('권한이 없습니다!');
+        return;
+      }
       res.render('timeline-edit', data);
     });
 
