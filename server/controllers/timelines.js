@@ -87,7 +87,7 @@ const TimelineController = {
       }
 
       data.items = items;
-      data.timeline = items[0];
+      data.timeline = _.extend({}, items[0]);
       data.timeline.id = editId;
       data.lastUpdatedAt = moment(items[0].timeline_updated_at).format("YYYY년 M월 D일");
       res.render('timeline-edit', data);

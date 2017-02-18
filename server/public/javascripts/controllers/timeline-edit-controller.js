@@ -10,7 +10,6 @@ define([
     let self = this;
     self.model = model;
     self.view = view;
-
     self.view.render('draw', self.model);
     self.bindHandlers();
   }
