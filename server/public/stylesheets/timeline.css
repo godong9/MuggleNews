@@ -335,7 +335,7 @@
 .view .news-container .section .preview .thum-img img{
     width:100%;
     height:100%;
-    /*object-fit: cover;*/
+    object-fit: cover;
 }
 .view .news-container .section .preview .title {
     padding:10px 10px 5px 10px;
@@ -397,7 +397,7 @@
 .view .news-container .section .preview.vertical .thum-img img{
     width:100%;
     height:100%;
-    /*object-fit: cover;*/
+    object-fit: cover;
 }
 .view .news-container .section .preview.vertical .title {
     width:65%;
