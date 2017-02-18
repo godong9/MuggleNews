@@ -5,12 +5,28 @@ const async = require('async');
 const pool = require('../db/db').pool;
 
 let Timeline = {
+  getMainTimelines: function getMainTimelines(cb) {
+    let query =
+      'SELECT ' +
+      '*, ' +
+      'users.id AS user_id, ' +
+      'users.name AS user_name ' +
+      'FROM timelines ' +
+      'INNER JOIN users ON timelines.user_id = users.id ' +
+      'WHERE timelines.main_order IS NOT NULL ORDER BY timelines.main_order;';
+    pool.query(query, function(err, rows) {
+      cb(err, rows);
+    });
+  },
   getTimelinesByUserId: function getTimelinesByUserId(userId, cb) {
     let query =
       'SELECT ' +
-      '* ' +
+      '*, ' +
+      'users.id AS user_id, ' +
+      'users.name AS user_name ' +
       'FROM timelines ' +
-      'WHERE timelines.user_id=?;';
+      'INNER JOIN users ON timelines.user_id = users.id ' +
+      'WHERE timelines.user_id = ?;';
     pool.query(query, userId, function(err, rows) {
       cb(err, rows);
     });

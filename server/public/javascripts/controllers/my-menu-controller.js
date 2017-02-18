@@ -24,9 +24,9 @@ define([
     });
 
     $(document).ready(function() {
-      var header = $('.header'); // 헤더 변수 캐싱
+      let header = $('.header'); // 헤더 변수 캐싱
       $(window).on('scroll', function() { // 스크롤 이벤트 발생
-        var top = $(this).scrollTop();                // 투명도 초기화: 0
+        let top = $(this).scrollTop();                // 투명도 초기화: 0
 
         // 스크롤이 발생되면
         if (top > 100) { // 스크롤 값 0이 넘어설 경우
