@@ -381,6 +381,8 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 .muggle-preview-main .p-list-wrap .title p{
+  width:90%;
+  margin:0 auto;
   line-height:1.0;;
   text-align: center;
   font-size:24px;
@@ -440,7 +442,7 @@ body {
 
 }
 .muggle-preview-main .muggle-preview-list .last-edit {
-  width:60%;
+  width:70%;
   position: absolute;
   left:10px;
   bottom:10px;;
@@ -455,15 +457,14 @@ body {
   margin:0 8px 0 0;
   vertical-align: top;
 }
-.muggle-preview-main .muggle-preview-list .last-edit .user-name,
-.muggle-preview-main .muggle-preview-list .last-edit span:last-child{
-  max-width:45%;
+.muggle-preview-main .muggle-preview-list .last-edit .user-name{
+  max-width:46%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 .muggle-preview-main .muggle-preview-list .view-count {
-  width:40%;
+  width:30%;
   position: absolute;
   right:10px;
   bottom:10px;
@@ -728,6 +729,8 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 .mypage .p-list-wrap .title p{
+  width:90%;
+  margin:0 auto;
   line-height:1.0;;
   text-align: center;
   font-size:24px;
@@ -787,7 +790,7 @@ body {
 
 }
 .mypage .muggle-preview-list .last-edit {
-  width:60%;
+  width:70%;
   position: absolute;
   left:10px;
   bottom:10px;;
@@ -802,15 +805,14 @@ body {
   margin:0 8px 0 0;
   vertical-align: top;
 }
-.mypage .muggle-preview-list .last-edit .user-name,
-.mypage .muggle-preview-list .last-edit span:last-child{
-  max-width:43%;
+.mypage .muggle-preview-list .last-edit .user-name{
+  max-width:46%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 .mypage .muggle-preview-list .view-count {
-  width:40%;
+  width:30%;
   position: absolute;
   right:10px;
   bottom:10px;
