@@ -11,7 +11,7 @@ const Session = require('../services/session');
 
 const TimelineController = {
   getTimelinePage: function login(req, res) {
-    logger.debug("id: ", req.params.id);
+    let userId = Session.getSessionUserId(req);
 
     async.waterfall([
       function(callback) {
@@ -44,8 +44,10 @@ const TimelineController = {
         }
       }
       data.items = items;
+      data.timeline = _.extend({}, items[0]);
       data.commentPage = 'timelines#' + items[0].timeline_id;
       data.lastUpdatedAt = moment(items[0].timeline_updated_at).format("YYYY년 M월 D일");
+      data.isOwner = (userId === data.timeline.user_id);
       res.render('timeline', data);
     });
   },
@@ -95,13 +97,11 @@ const TimelineController = {
 
   },
   postTimeline: function postTimeline(req, res) {
-    // let userId = Session.getSessionUserId(req);
-    // if (!userId) {
-    //   res.status(401).send('로그인을 해주세요!');
-    //   return;
-    // }
-    //TODO: 테스트용
-    let userId = 1;
+    let userId = Session.getSessionUserId(req);
+    if (!userId) {
+      res.status(401).send('로그인을 해주세요!');
+      return;
+    }
     req.body.userId = userId;
     if (!req.body.title) {
       return res.redirect('/page/error');
@@ -133,13 +133,11 @@ const TimelineController = {
       });
   },
   putTimeline: function putTimeline(req, res) {
-    // let userId = Session.getSessionUserId(req);
-    // if (!userId) {
-    //   res.status(401).send('로그인을 해주세요!');
-    //   return;
-    // }
-    //TODO: 테스트용
-    let userId = 1;
+    let userId = Session.getSessionUserId(req);
+    if (!userId) {
+      res.status(401).send('로그인을 해주세요!');
+      return;
+    }
     let timelineId = req.body.id;
     req.body.userId = userId;
 

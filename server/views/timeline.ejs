@@ -8,7 +8,6 @@
     <body>
         <%- include partial/ga.ejs %>
         <%- include partial/fb.ejs %>
-        <% var timeline = items[0]; %>
         <div class="view">
 
             <%- include partial/my_menu.ejs %>
@@ -69,6 +68,13 @@
                         <% } %>
                     </ul>
                 </div><!-- e//news-container -->
+                <% if (isOwner) { %>
+                <div class="btn-box-save">
+                    <a href="/timelines/edit/<%=  %>">
+                        <button id="timeline_edit_btn" type="submit" class="btn-red">수정</button>
+                    </a>
+                </div>
+                <% } %>
             </div><!-- e//container -->
 
         </div><!-- e//wrap -->
