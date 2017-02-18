@@ -502,7 +502,7 @@ body {
   vertical-align: top;
 }
 .muggle-preview-main .muggle-preview-list .last-edit .user-name{
-  max-width:46%;
+  max-width:42%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
