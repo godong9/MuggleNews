@@ -803,6 +803,66 @@ body {
   background-size: 14px 10px;
 }
 /* mypage }*/
+
+/* 개인정보취급 방침 및 이용약관 {*/
+.privacy{
+  width:100%;
+  background:#fafafa;
+  padding:30px 0;
+}
+.privacy .term-box {
+  position: relative;
+  width: 1000px;
+  margin:0 auto 0;
+  padding:60px;
+  background:#ffffff;
+  border:1px solid #cccccc;
+  font-size:16px;
+  font-weight:300;
+  color: #888888;
+}
+.privacy .term-box h1 {
+  position: relative;
+  width:100%;
+  padding-top:17px;
+  margin-bottom:50px;
+  font-size: 44px;
+  font-weight: 300;
+  color: #666666;
+}
+.privacy .term-box h1::after {
+  position: absolute;
+  top:0;
+  left:0;
+  width:70px;
+  height:3px;
+  background:#666666;
+  display: block;
+  content:"";
+}
+.privacy .term-box h3 {
+  line-height:1.5;
+  margin-top:35px;
+  font-size:18px;
+  font-weight:600;
+  color: #888888;
+}
+.privacy .term-box p {
+  line-height:1.5;
+  font-size:16px;
+  font-weight:300;
+  color: #888888;
+}
+.privacy .term-box li {
+  line-height:1.5;
+  font-size:16px;
+  font-weight:300;
+  color: #888888;
+}
+.last-privacy {
+  margin:50px 0 0 0;
+}
+/* 개인정보취급 방침 및 이용약관 }*/
 /*광고 배너  }*/
 @media all and (min-width: 300px) and (max-width: 490px){
   .who-are .muggle-member li {
