@@ -19,69 +19,25 @@
             <br>시간에 따라, 처음부터 끝까지
           </h2>
           <p class="img">
-            <img src="images/main-visual02.png" alt="">
+            <img src="/images/main-visual02.png" alt="">
           </p>
           <p class="desc">
-            뉴스레터를 등록하시면 머글뉴스 오픈 소식과 함께 #최순실게이트, #4대강 등 <br>최근 이슈를 시간순으로 정리한 뉴스를 보내드립니다.
+            당신만의 전문 분야가 있나요?<br>지금 바로 머글뉴스의 만들어 보세요!
           </p>
           <div class="sign-up-email">
-            <div class="input-box">
-              <input id="email" type="text" placeholder="이메일 주소를 입력하세요.">
-            </div>
-            <a id="send_pre_user" class="btn-sign-up">등록하기</a>
+            <% if (me) { %>
+            <a href="/timelines/edit/new" class="btn-logoin">새로운 머글 뉴스 작성</a><!-- 로그인-->
+            <% } else { %>
+            <a href="/users/login/facebook" class="btn-logoff">머글뉴스 기자로 출근하기</a><!-- 로그아웃 -->
+            <% } %>
           </div>
         </div><!-- e//contents -->
       </div><!-- e//container -->
 
       <div class="muggle-preview-main">
         <h3>미리보기</h3>
-        <div class="muggle-preview-list">
-          <a href="/timelines/1">
-            <span class="p-thum-img"><img src="/images/1480798146979_131159721807007245.png" alt=""></span>
-            <div class="p-list-wrap">
-              <div class="title">
-                <p>국민 대표 예능 무한도전 멤버 변천사!</p>
-              </div>
-              <div class="desc">
-                <p>05부터 16년까지의 무한도전을 돌아보자</p>
-              </div>
-              <div class="user-infor">
-                <span class="user-profile"><img src="https://fb-s-c-a.akamaihd.net/h-ak-xfl1/v/t1.0-1/p50x50/14947561_1418000544891585_4705404331979595537_n.jpg?oh=32f3f4b88bc410ea0025e8d4dac89636&oe=58FA8507&__gda__=1492902257_5b3a5f255f6544236fee737cf32fd871" alt=""></span>
-                <span class="user-name">Jangpyo Kwon</span>
-              </div><!-- e// user-infor-->
-            </div>
-          </a>
-          <a href="/timelines/3">
-            <span class="p-thum-img"><img src="/images/1480797751874_2569640155_0f11964cbc_b.jpg" alt=""></span>
-            <div class="p-list-wrap">
-              <div class="title">
-                <p>함께해요, 대한민국.</p>
-              </div>
-              <div class="desc">
-                <p>대통령 사과 말고 하야하라!</p>
-              </div>
-              <div class="user-infor">
-                <span class="user-profile"><img src="https://fb-s-b-a.akamaihd.net/h-ak-xpf1/v/t1.0-1/c8.0.50.50/p50x50/320214_2240377962265_944900411_n.jpg?oh=9efbc509411b8a722c431d374ee792eb&oe=58BCB33B&__gda__=1489300502_949b2357f67d68f8caecc9feaf734e74" alt=""></span>
-                <span class="user-name">Hayan Park</span>
-              </div><!-- e// user-infor-->
-            </div>
-          </a>
-          <a href="/timelines/8">
-            <span class="p-thum-img"><img src="/images/1480797897404_29378114066_a0c4b70bee_k.jpg" alt=""></span>
-            <div class="p-list-wrap">
-              <div class="title">
-                <p>갤럭시노트7 폭발, 그리고 그 결말..</p>
-              </div>
-              <div class="desc">
-                <p>안녕..갤럭시노트7</p>
-              </div>
-              <div class="user-infor">
-                <span class="user-profile"><img src="https://fb-s-b-a.akamaihd.net/h-ak-xta1/v/t1.0-1/p50x50/13502040_10156984659290524_7301745328043044748_n.jpg?oh=e8e74548bbb1a74d6cd5a9d77f1edd49&oe=58F785EC&__gda__=1489312675_52be84628ccb803bdc8dc73af9a8ee8b" alt=""></span>
-                <span class="user-name">Lee SeungMin</span>
-              </div><!-- e// user-infor-->
-            </div>
-          </a>
-        </div>
+
+        <%- include partial/timelines.ejs %>
       </div>
 
       <div class="who-are">

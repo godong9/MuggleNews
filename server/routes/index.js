@@ -3,15 +3,10 @@
 const express = require('express');
 const router = express.Router();
 const View = require('../services/view');
-
-// const Crawler = require('../services/crawler');
+const IndexController = require('../controllers/index');
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  let data = {};
-  View.setCommonData(req, data);
-  res.render('index', data);
-});
+router.get('/', IndexController.indexPage);
 
 router.get('/page/error', function(req, res) {
   res.render('error', {

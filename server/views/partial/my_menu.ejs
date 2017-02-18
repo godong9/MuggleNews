@@ -1,5 +1,5 @@
 <div class="header">
-    <a class="logo" href="">
+    <a class="logo" href="/">
         <span>muggle news</span>
     </a>
     <% if (me) { %>
@@ -38,7 +38,7 @@
                 <ul>
                     <% if (me) { %>
                     <li class="addnews"><a href="/timelines/edit/new">새로운 머글뉴스 작성</a></li>
-                    <li class="muggle-note"><a href="/users/mypage">머글 기자 수첩<span style="display:none;">(13)</span></a></li>
+                    <li class="muggle-note"><a href="/users/mypage/<%= me.userId %>">머글 기자 수첩<span style="display:none;">(13)</span></a></li>
                     <li class="mg-fb">
                         <a href="https://www.facebook.com/muggle.news/?fref=ts" target="_blank">
                             <div class="muggle-fb">

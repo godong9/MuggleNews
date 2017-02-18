@@ -67,6 +67,8 @@ router.post('/', TimelineController.postTimeline);
  */
 router.put('/', TimelineController.putTimeline);
 
+router.delete('/:id', TimelineController.deleteTimeline);
+
 /**
  * @api {post} /timelines/item Post Timeline Item
  * @apiVersion 1.0.0

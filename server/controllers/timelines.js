@@ -3,8 +3,7 @@
 const _ = require('underscore');
 const async = require('async');
 const moment = require('moment');
-const log4js = require('log4js');
-const logger = log4js.getLogger('controllers/timelines');
+const logger = require('log4js').getLogger('controllers/timelines');
 const Timeline = require('../models/timelines');
 const View = require('../services/view');
 const Session = require('../services/session');
@@ -12,13 +11,13 @@ const Session = require('../services/session');
 const TimelineController = {
   getTimelinePage: function login(req, res) {
     let userId = Session.getSessionUserId(req);
-
+    let timelineId = req.params.id;
     async.waterfall([
       function(callback) {
-        Timeline.increaseTimelineViewCount(req.params.id, callback);
+        Timeline.increaseTimelineViewCount(timelineId, callback);
       },
       function(callback) {
-        Timeline.getItemsByTimelineId(req.params.id, callback);
+        Timeline.getItemsByTimelineId(timelineId, callback);
       }
     ], function (err, items) {
       let i;
@@ -45,6 +44,7 @@ const TimelineController = {
       }
       data.items = items;
       data.timeline = _.extend({}, items[0]);
+      data.timeline.id = timelineId;
       data.commentPage = 'timelines#' + items[0].timeline_id;
       data.lastUpdatedAt = moment(items[0].timeline_updated_at).format("YYYY년 M월 D일");
       data.isOwner = (userId === data.timeline.user_id);
@@ -215,6 +215,25 @@ const TimelineController = {
     }
     req.body.userId = userId;
     Timeline.changeTimelineOrders(req.body, function(err) {
+      if (err) {
+        logger.error(err);
+        res.status(500).send('서버 에러 발생');
+        return;
+      }
+      res.send({});
+    });
+  },
+  deleteTimeline: function deleteTimeline(req, res) {
+    let userId = Session.getSessionUserId(req);
+    if (!userId) {
+      res.status(401).send('로그인을 해주세요!');
+      return;
+    }
+    let params = {
+      id: req.params.id,
+      userId: userId
+    };
+    Timeline.deleteTimelineById(params, function(err) {
       if (err) {
         logger.error(err);
         res.status(500).send('서버 에러 발생');

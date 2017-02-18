@@ -1,8 +1,6 @@
 //timeline-edit-controller
 define([
-  '../libs/underscore/underscore'
 ], function (
-  _
 ) {
   'use strict';
 
@@ -59,7 +57,6 @@ define([
     });
 
     self.view.bind('cancelTimeline', function() {
-      // TODO: cancel시 화면 새로 고침
       if (self.model.id) {
         location.href = '/timelines/' + self.model.id;
       } else {

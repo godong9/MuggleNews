@@ -70,7 +70,7 @@
                 </div><!-- e//news-container -->
                 <% if (isOwner) { %>
                 <div class="btn-box-save">
-                    <a href="/timelines/edit/<%=  %>">
+                    <a href="/timelines/edit/<%= timeline.id %>">
                         <button id="timeline_edit_btn" type="submit" class="btn-red">수정</button>
                     </a>
                 </div>
@@ -80,8 +80,6 @@
         </div><!-- e//wrap -->
 
         <div class="fb-container">
-            <%- include partial/fb_page.ejs %>
-            <%- include partial/fb_ad.ejs %>
             <%- include partial/fb_comment.ejs %>
         </div>
 

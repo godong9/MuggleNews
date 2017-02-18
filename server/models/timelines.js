@@ -5,12 +5,29 @@ const async = require('async');
 const pool = require('../db/db').pool;
 
 let Timeline = {
+  getMainTimelines: function getMainTimelines(cb) {
+    let query =
+      'SELECT ' +
+      'timelines.*, ' +
+      'timelines.id AS id, ' +
+      'users.id AS user_id, ' +
+      'users.name AS user_name ' +
+      'FROM timelines ' +
+      'INNER JOIN users ON timelines.user_id = users.id ' +
+      'WHERE timelines.main_order IS NOT NULL ORDER BY timelines.main_order;';
+    pool.query(query, function(err, rows) {
+      cb(err, rows);
+    });
+  },
   getTimelinesByUserId: function getTimelinesByUserId(userId, cb) {
     let query =
       'SELECT ' +
-      '* ' +
+      'timelines.*, ' +
+      'users.id AS user_id, ' +
+      'users.name AS user_name ' +
       'FROM timelines ' +
-      'WHERE timelines.user_id=?;';
+      'INNER JOIN users ON timelines.user_id = users.id ' +
+      'WHERE timelines.user_id = ?;';
     pool.query(query, userId, function(err, rows) {
       cb(err, rows);
     });
@@ -35,7 +52,7 @@ let Timeline = {
         'LEFT JOIN previews ON items.preview_id = previews.id ' +
         'INNER JOIN timelines ON items.timeline_id = timelines.id ' +
         'INNER JOIN users ON timelines.user_id = users.id ' +
-        'WHERE timelines.id=?;';
+        'WHERE timelines.id=? ORDER BY items.item_order;';
     pool.query(query, id, function(err, rows) {
       cb(err, rows);
     });
@@ -190,6 +207,44 @@ let Timeline = {
           callback(err);
         });
       },
+    ], function (err) {
+      cb(err);
+    });
+  },
+  deleteTimelineById: function deleteTimelineById(params, cb) {
+    async.waterfall([
+      function(callback) {
+        let query = 'SELECT id FROM timelines WHERE id = ? AND user_id = ?;';
+        let queryItem = [
+          params.id,
+          params.userId
+        ];
+        pool.query(query, queryItem, function(err, rows) {
+          callback(err, rows);
+        });
+      },
+      function(rows, callback) {
+        if (!rows || rows.length === 0) {
+          return callback('권한이 없습니다!');
+        }
+        let query = 'DELETE FROM items WHERE timeline_id = ?;';
+        let deleteItem = [
+          params.id
+        ];
+        pool.query(query, deleteItem, function(err) {
+          callback(err);
+        });
+      },
+      function(callback) {
+        let query = 'DELETE FROM timelines WHERE id = ? AND user_id = ?;';
+        let deleteItem = [
+          params.id,
+          params.userId
+        ];
+        pool.query(query, deleteItem, function(err) {
+          callback(err);
+        });
+      }
     ], function (err) {
       cb(err);
     });

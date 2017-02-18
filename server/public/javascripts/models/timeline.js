@@ -28,14 +28,12 @@ define([
   }
 
   Timeline.prototype.create = function(data, callback) {
-    console.log('savedModel: ', data);
-
+    // console.log('savedModel: ', data);
     HttpUtil.postData('/timelines', data, callback);
   };
 
   Timeline.prototype.update = function(data, callback) {
-    console.log('updatedModel: ', data);
-
+    // console.log('updatedModel: ', data);
     HttpUtil.putData('/timelines', data, callback);
   };
 
@@ -91,7 +89,7 @@ define([
   Timeline.prototype.reorderItem = function() {
     let self = this;
     _.map(self.items, function(item, idx) {
-      item.order = idx + 1;
+      item.item_order = idx + 1;
     });
   };
 
