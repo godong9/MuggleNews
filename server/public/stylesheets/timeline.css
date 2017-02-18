@@ -306,6 +306,11 @@
 .view .news-container .section .new-conts p:first-child {
     padding-top:20px;
 }
+.view .btn-box-save {
+    position: fixed;
+    right:75px;
+    z-index:1001;
+}
 /* 프리뷰 가로 { */
 .view .news-container .section .preview {
     position: relative;
