@@ -406,6 +406,7 @@
     position: absolute;
     top:-26px;
     left:60px;
+    width:92%;
 }
 .edit .news-container .section .news-date span {
     color: #999999;
@@ -461,8 +462,8 @@
 }
 .edit .news-container .number .btn-box {
     position: absolute;
-    top:-13px;
-    left:-50px;
+    top:-15px;
+    right:0;
 }
 .edit .news-container .number .mynew-edit {
     display: none;
@@ -706,7 +707,7 @@
 .edit .news-container .section .btn-box {
     position:absolute;
     bottom:-50px;
-    left:0;
+    right:0;
 }
 .edit .news-container .section #add_item_btn {
     height:40px;
