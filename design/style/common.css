@@ -367,6 +367,9 @@ body {
   height:100%;
   display: none;/* 이미지다시넣기 전까지 임시로 안보이게 */
 }
+.muggle-preview-main .muggle-preview-list .p-thum-img img.has_cover {
+  display: block;
+}
 .muggle-preview-main .muggle-preview-list .p-list-wrap {
   position: absolute;
   top:0;
@@ -481,12 +484,13 @@ body {
 .container{
   width: 100%;
   height: auto;
-  background:#f05440 url(../images/main-visual@3x.png) no-repeat center 100%;;
-  background-size:200px 133px;
+  /*background:#f05440 url(../images/main-visual@3x.png) no-repeat center 100%;;
+  background-size:200px 133px;*/
+  background:#f05440;
 }
 .container.main .contents {
   height:auto;
-  padding: 0 0 150px 0;
+  padding: 0 0 70px 0;
   background:url(../images/m-img-dot@3x.png) no-repeat 7px 83px;
   background-size:18px 537px;
 }
@@ -524,7 +528,7 @@ body {
   color: #ffffff;;
 }
 .main .contents .desc br {
-  display: none;
+
 }
 .sign-up-email {
   position: relative;
@@ -1083,8 +1087,9 @@ body {
   .container{
     width: 100%;
     height: 620px;
-    background:#f05440 url(../images/main-visual.png) no-repeat 100% 100%;
-    background-size:320px 271px
+    /*background:#f05440 url(../images/main-visual.png) no-repeat 100% 100%;
+    background-size:320px 271px*/
+    background:#f05440 ;
   }
   .container.main .contents {
     height:620px;
@@ -1092,7 +1097,7 @@ body {
     background:url(../images/img-dot.png) no-repeat 150px 120px;
   }
   .main .contents h1 {
-    padding:110px 0 0 0;
+    padding:130px 0 0 0;
     text-align: left;
     font-size:80px;
     font-weight: bold;
