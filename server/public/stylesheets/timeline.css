@@ -231,7 +231,7 @@
 }
 .view .news-container ul {
     padding:0 0 0 22px;
-    margin-top:90px;
+    margin-top:30px;
 }
 .view .news-container ul li:first-child {
     padding:0;
@@ -252,6 +252,9 @@
     height:90px;
     content:"";
     background:#ffb2b2;
+}
+.view .news-container ul li:first-child .section::after{
+    display: none !important;
 }
 .view .news-container ul li {
     display: block;

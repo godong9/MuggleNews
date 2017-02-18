@@ -324,7 +324,7 @@
     margin-top:0;
 }
 .edit .news-container ul li:first-child {
-    padding:90px 0 70px 0;
+    padding:90px 0 0px 0;
 }
 .edit .news-container ul li:last-child {
     padding:90px 0 90px 0;
@@ -437,7 +437,7 @@
     padding:0 0 0 40px;
     text-align: left;
     font-size:16px;
-    color: #dddddd;
+    color: #bbbbbb;
     border: none;
     background:transparent;
 }
