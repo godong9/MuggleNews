@@ -111,7 +111,7 @@ define([
       $('.preview-del-btn').unbind('click').click(function() {
         let previewView = this;
         let $parentItem = $(previewView).parents('.content-container');
-
+        $parentItem.data('preview', null);
         $parentItem.find('.preview-view-container').remove();
         $parentItem.append(self.itemTemplate.drawPreviewInput());
         handler();
@@ -143,6 +143,7 @@ define([
 
     if (event === 'saveTimeline') {
       $('#timeline_save_btn').unbind('click').click(function() {
+        console.log("timeline_save_btn");
         let timelineItem = {
           title: $('#title_input').val(),
           subtitle: $('#subtitle_input').val(),
