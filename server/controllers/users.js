@@ -6,10 +6,13 @@ const logger = log4js.getLogger('controllers/users');
 const PreUser = require('../models/pre_users');
 const User = require('../models/users');
 const Slack = require('../services/slack');
+const View = require('../services/view');
 
 const UserController = {
   getUserMyPage: function getUserMyPage(req, res) {
-    res.send({});
+    let data = {};
+    View.setCommonData(req, data);
+    res.render('mypage', data);
   },
   facebookLoginCallback: function facebookLoginCallback(req, res) {
     let fbUser = req.user._json;
