@@ -52,8 +52,8 @@ define([
         });
       } else {
         self.model.update(self.model, function(err, data) {
-          console.log("updatedData: ", data);
-          // location.href = '/timelines/' + data.id;
+          // console.log("updatedData: ", data);
+          location.href = '/timelines/' + data.id;
         });
       }
     });
