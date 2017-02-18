@@ -144,7 +144,14 @@ let Timeline = {
     let self = this;
     let items = params.items;
 
-    async.each(items, self.updateTimelineItem, function(err){
+    async.each(items, function(item, callback) {
+      if (item.id === 'new') {
+        item.timeline_id = params.id;
+        self.insertTimelineItem(item, callback);
+      } else {
+        self.updateTimelineItem(item, callback);
+      }
+    }, function(err){
       cb(err);
     });
   },

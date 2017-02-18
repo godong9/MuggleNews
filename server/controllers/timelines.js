@@ -87,6 +87,7 @@ const TimelineController = {
 
       data.items = items;
       data.timeline = items[0];
+      data.timeline.id = editId;
       data.lastUpdatedAt = moment(items[0].timeline_updated_at).format("YYYY년 M월 D일");
       res.render('timeline-edit', data);
     });
@@ -101,6 +102,9 @@ const TimelineController = {
     //TODO: 테스트용
     let userId = 1;
     req.body.userId = userId;
+    if (!req.body.title) {
+      return res.redirect('/page/error');
+    }
 
     async.waterfall([
         function(callback) {

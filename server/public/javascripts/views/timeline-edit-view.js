@@ -143,12 +143,14 @@ define([
 
     if (event === 'saveTimeline') {
       $('#timeline_save_btn').unbind('click').click(function() {
-        console.log("timeline_save_btn");
         let timelineItem = {
           title: $('#title_input').val(),
           subtitle: $('#subtitle_input').val(),
           items: self.getTimelineItems()
         };
+        if (!timelineItem.title) {
+          return alert("제목을 입력해주세요!");
+        }
         handler(timelineItem);
       });
     }

@@ -13,6 +13,12 @@ router.get('/', function(req, res) {
   res.render('index', data);
 });
 
+router.get('/page/error', function(req, res) {
+  res.render('error', {
+    message: 'Server error!'
+  });
+});
+
 // router.get('/test', function(req, res) {
 //   Crawler.getPreviewData('http://www.naver.com', function(err, body) {
 //     res.send(body);
