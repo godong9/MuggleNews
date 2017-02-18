@@ -461,8 +461,8 @@
 }
 .edit .news-container .number .btn-box {
     position: absolute;
-    top:-45px;
-    right:0;
+    top:-13px;
+    left:-50px;
 }
 .edit .news-container .number .mynew-edit {
     display: none;
@@ -706,7 +706,7 @@
 .edit .news-container .section .btn-box {
     position:absolute;
     bottom:-50px;
-    right:0;
+    left:0;
 }
 .edit .news-container .section #add_item_btn {
     height:40px;
