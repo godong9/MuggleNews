@@ -1069,3 +1069,7 @@
 #cover_img {
     display: none;
 }
+
+.edit #my_menu_open_btn {
+    display: none;
+}
