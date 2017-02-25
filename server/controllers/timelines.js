@@ -117,7 +117,7 @@ const TimelineController = {
       logger.error('Empty title!');
       return res.redirect('/page/error');
     }
-
+    logger.info('[postTimeline] req.body:', req.body);
     async.waterfall([
         function(callback) {
           Timeline.insertTimeline(req.body, callback);
