@@ -12,7 +12,7 @@ let SlackService = {
     request({
       url: url,
       method: 'POST',
-      json: { text: '[회원가입]' + data.email + ' / ' + data.userAgent }
+      json: { text: '[회원가입] ' + data.email + ' / ' + data.userAgent }
     }, function (error) {
       if (cb) {
         logger.error(error);
