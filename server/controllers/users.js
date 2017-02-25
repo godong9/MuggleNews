@@ -60,6 +60,10 @@ const UserController = {
         if (user) {
           return callback();
         }
+        Slack.sendToPreUser({
+          email: params.email,
+          userAgent: req.headers['user-agent']
+        });
         User.insertFacebookUser(params, callback);
       }
     ], function (err) {
@@ -67,11 +71,6 @@ const UserController = {
         logger.error(err);
         return res.redirect('/page/error');
       }
-      Slack.sendToPreUser({
-        email: params.email,
-        userAgent: req.headers['user-agent']
-      });
-
       res.redirect('/');
     });
   },
