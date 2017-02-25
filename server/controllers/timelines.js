@@ -114,6 +114,7 @@ const TimelineController = {
     }
     req.body.userId = userId;
     if (!req.body.title) {
+      logger.error('Empty title!');
       return res.redirect('/page/error');
     }
 
@@ -131,8 +132,7 @@ const TimelineController = {
       ], function (err, result) {
         if (err) {
           logger.error(err);
-          res.status(500).send('서버 에러 발생');
-          return;
+          return res.redirect('/page/error');
         }
         res.send({
           id: result,
@@ -163,8 +163,7 @@ const TimelineController = {
     ], function (err, result) {
       if (err) {
         logger.error(err);
-        res.status(500).send('서버 에러 발생');
-        return;
+        return res.redirect('/page/error');
       }
       logger.debug(result);
       res.send({
@@ -185,8 +184,7 @@ const TimelineController = {
     Timeline.insertTimelineItem(req.body, function(err, result) {
       if (err) {
         logger.error(err);
-        res.status(500).send('서버 에러 발생');
-        return;
+        return res.redirect('/page/error');
       }
       res.send({ id: result });
     });
@@ -201,8 +199,7 @@ const TimelineController = {
     Timeline.updateTimelineItem(req.body, function(err) {
       if (err) {
         logger.error(err);
-        res.status(500).send('서버 에러 발생');
-        return;
+        return res.redirect('/page/error');
       }
       res.send({ id: req.body.id });
     });
@@ -217,8 +214,7 @@ const TimelineController = {
     Timeline.changeTimelineOrders(req.body, function(err) {
       if (err) {
         logger.error(err);
-        res.status(500).send('서버 에러 발생');
-        return;
+        return res.redirect('/page/error');
       }
       res.send({});
     });
@@ -236,8 +232,7 @@ const TimelineController = {
     Timeline.deleteTimelineById(params, function(err) {
       if (err) {
         logger.error(err);
-        res.status(500).send('서버 에러 발생');
-        return;
+        return res.redirect('/page/error');
       }
       res.send({});
     });
