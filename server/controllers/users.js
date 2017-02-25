@@ -67,6 +67,11 @@ const UserController = {
         logger.error(err);
         return res.redirect('/page/error');
       }
+      Slack.sendToPreUser({
+        email: params.email,
+        userAgent: req.headers['user-agent']
+      });
+
       res.redirect('/');
     });
   },
@@ -84,7 +89,7 @@ const UserController = {
       referrer: req.headers.referer,
       userAgent: req.headers['user-agent']
     };
-    logger.debug(params);
+    logger.info(params);
     Slack.sendToPreUser(params);
     PreUser.insertPreUser(params, function(err) {
       if (err) {

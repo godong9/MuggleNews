@@ -8,12 +8,15 @@ const PreviewController = {
   postPreview: function login(req, res) {
     let previewUrl = req.body.preview_url;
     if (!previewUrl) {
-      res.status(400).send('잘못된 URL을 입력하였습니다.');
+      let errorMsg = '잘못된 URL을 입력하였습니다.';
+      logger.error(errorMsg);
+      res.status(400).send(errorMsg);
       return;
     }
     if (!previewUrl.startsWith('http') && !previewUrl.startsWith('https')) {
       previewUrl = 'http://' + previewUrl;
     }
+    logger.info('previewUrl: ' + previewUrl);
     Crawler.getPreviewData(previewUrl, function(err, body) {
       logger.debug(body);
       if (!body) {
