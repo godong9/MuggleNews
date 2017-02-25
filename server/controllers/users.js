@@ -48,7 +48,7 @@ const UserController = {
     let params = {
       fbId: fbUser.id,
       name: fbUser.name,
-      email: fbUser.email,
+      email: fbUser.email || 'unknown@muggle.news',
       profileImg: fbUser.picture && fbUser.picture.data && fbUser.picture.data.url
     };
 

@@ -22,8 +22,7 @@ const PreviewController = {
       Preview.insertPreview(body, function(err, result) {
         if (err) {
           logger.error(err);
-          res.status(500).send('서버 에러 발생');
-          return;
+          return res.status(500).send('서버 에러 발생');
         }
         res.send(result);
       });

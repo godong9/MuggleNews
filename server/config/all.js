@@ -10,5 +10,19 @@ module.exports = {
     user: '',
     password: '',
     connectionLimit: 10
+  },
+  debugLevel: 'info',
+  log4js: {
+    "appenders": [
+      {
+        "type":"console"
+      },
+      {
+        "type": "dateFile",
+        "filename": "logs/server.log",
+        "pattern":"-yyyy-MM-dd",
+        "alwaysIncludePattern": false
+      }
+    ]
   }
 };

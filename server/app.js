@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var log4js = require('log4js');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
@@ -16,6 +17,9 @@ var users = require('./routes/users');
 var images = require('./routes/images');
 var timelines = require('./routes/timelines');
 var previews = require('./routes/previews');
+
+log4js.configure(config.log4js);
+log4js.setGlobalLogLevel(config.debugLevel);
 
 var app = express();
 
