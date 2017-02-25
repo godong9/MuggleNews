@@ -124,7 +124,6 @@ const TimelineController = {
         },
         function(result, callback) {
           req.body.timeline_id = result;
-          logger.info("req.body:", req.body);
           Timeline.insertTimelineItems(req.body, function(err) {
             callback(err, result);
           });
