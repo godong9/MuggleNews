@@ -1,4 +1,4 @@
-//my-menu-controller.js
+// my-menu-controller.js
 define([
   '../libs/jquery/dist/jquery',
   '../utils/http-util'

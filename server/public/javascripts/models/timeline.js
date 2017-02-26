@@ -1,4 +1,4 @@
-//card.js
+// timeline.js
 define([
   '../libs/underscore/underscore',
   '../utils/http-util'

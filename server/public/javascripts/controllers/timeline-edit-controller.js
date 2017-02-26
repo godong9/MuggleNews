@@ -1,4 +1,4 @@
-//timeline-edit-controller
+// timeline-edit-controller
 define([
 ], function (
 ) {

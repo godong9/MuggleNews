@@ -1,4 +1,4 @@
-//cover-template.js
+// cover-template.js
 define([
   '../libs/underscore/underscore',
   '../libs/moment/moment'
