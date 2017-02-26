@@ -19,5 +19,4 @@ const PreviewController = require('../controllers/previews');
  */
 router.post('/', PreviewController.postPreview);
 
-
 module.exports = router;

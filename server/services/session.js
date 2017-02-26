@@ -10,4 +10,3 @@ let SessionService = {
 };
 
 module.exports = SessionService;
-
