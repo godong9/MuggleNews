@@ -1,4 +1,4 @@
-//timeline-view.js
+// timeline-view.js
 define([
 ], function (
 ) {

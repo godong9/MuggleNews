@@ -1,4 +1,4 @@
-//main.js
+// main.js
 define([
   './libs/jquery/dist/jquery',
   './utils/http-util',

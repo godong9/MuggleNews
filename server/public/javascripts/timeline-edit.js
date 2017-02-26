@@ -1,4 +1,4 @@
-//timeline.js
+// timeline.js
 define([
   './controllers/my-menu-controller',
   './models/timeline',

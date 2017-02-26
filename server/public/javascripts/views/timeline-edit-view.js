@@ -1,4 +1,4 @@
-//timeline-edit-view.js
+// timeline-edit-view.js
 define([
   '../libs/underscore/underscore',
   '../utils/http-util'

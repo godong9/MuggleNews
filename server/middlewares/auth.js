@@ -1,7 +1,9 @@
-var passport = require('passport');
-var Strategy = require('passport-facebook').Strategy;
-var config = require('../config/index');
-var User = require('../models/users');
+'use strict';
+
+const passport = require('passport');
+const Strategy = require('passport-facebook').Strategy;
+const config = require('../config/index');
+const User = require('../models/users');
 
 passport.use(
   new Strategy(

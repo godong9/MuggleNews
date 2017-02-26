@@ -1,4 +1,4 @@
-//timeline-controller.js
+// timeline-controller.js
 define([
 ], function (
 ) {
