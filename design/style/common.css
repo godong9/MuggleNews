@@ -1001,11 +1001,11 @@ body {
     height:170px;
     margin:0 0 20px 0;
     overflow: hidden;
-  }/*
+  }
   .btn-logoff,
   .btn-logoin {
     display: none;
-  }*/
+  }
 }
 @media all and (min-width: 490px) and (max-width: 768px){
   .muggle-preview-main .muggle-preview-list a {
@@ -1017,7 +1017,6 @@ body {
     margin:0 0 20px 0;
     overflow: hidden;
   }
-  
 }
 @media all and (min-width: 768px) and (max-width: 980px){
   .footer {
@@ -1429,7 +1428,12 @@ body {
   .muggle-preview-main .muggle-preview-list a:nth-of-type(3n-1){
     margin:0 2% !important;
   }
+<<<<<<< Updated upstream
   @media all and (min-width: 300px) and (max-width: 490px){}
+=======
+}
+  @media all and (min-width: 300px) and (max-width: 490px){
+>>>>>>> Stashed changes
   /* 스토리 뉴스 미리보기 }*/
   .container{
     width: 100%;
@@ -1478,7 +1482,6 @@ body {
     margin:10px 0;
   }
   .sign-up-email .input-box {
-    position: relative;
     width: 350px;
     height: 50px;
     margin:0 0 5px 0;
@@ -1551,4 +1554,30 @@ body {
     color:#f05440;
   }
   /* 우리가 누구}*/
+}
+.error{
+  padding: 110px 0 140px 0;
+  text-align: center;
+}
+.error .ops{
+  font-size: 80px;
+  font-weight: 800;
+  color: #fff;
+}
+.error .ops_mail{
+  font-size: 30px;
+  margin-top: 40px;
+  color: #fee4e1;
+  font-weight: 100;
+}
+.error a{
+  display: inline-block;
+  width: 214px;
+  height: 40px;
+  background-color: #fcd0ca;
+  line-height: 40px;
+  font-size: 20px;
+  color: #f05440;
+  text-align: center;
+  margin-top: 90px;
 }
