@@ -26,6 +26,7 @@
     "pm2": "^2.1.5",
     "request": "^2.79.0",
     "serve-favicon": "~2.3.0",
+    "sitemap": "^1.10.1",
     "slack": "^8.1.1",
     "underscore": "^1.8.3",
     "validator": "^6.1.0"
