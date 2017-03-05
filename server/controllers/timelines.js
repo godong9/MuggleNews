@@ -5,10 +5,35 @@ const async = require('async');
 const moment = require('moment');
 const logger = require('log4js').getLogger('controllers/timelines');
 const Timeline = require('../models/timelines');
+const TimelineService = require('../services/timeline');
 const View = require('../services/view');
 const Session = require('../services/session');
 
 const TimelineController = {
+  getTimelineHtmlList: function getTimelineHtmlList(req, res) {
+    let params = {};
+    if (req.query.orderby === 'latest') {
+      params.orderby = 'updated_at';
+    }
+    if (req.query.orderby === 'view') {
+      params.orderby = 'view_count';
+    }
+    if (_.isNumber(parseInt(req.query.offset))) {
+      params.offset = parseInt(req.query.offset);
+    }
+    if (_.isNumber(parseInt(req.query.limit))) {
+      params.limit = parseInt(req.query.limit);
+    } else {
+      params.limit = 9;
+    }
+
+    Timeline.getMainTimelines(params, function(err, timelines) {
+      let data = {};
+      View.setCommonData(req, data);
+      data.timelines = TimelineService.getFormattedTimelines(timelines || [])
+      res.render('partial/timelines', data);
+    });
+  },
   getTimelinePage: function login(req, res) {
     let userId = Session.getSessionUserId(req);
     let timelineId = req.params.id;

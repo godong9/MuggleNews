@@ -5,7 +5,7 @@ const async = require('async');
 const pool = require('../db/db').pool;
 
 let Timeline = {
-  getMainTimelines: function getMainTimelines(cb) {
+  getMainTimelines: function getMainTimelines(params, cb) {
     let query =
       'SELECT ' +
       'timelines.*, ' +
@@ -14,8 +14,13 @@ let Timeline = {
       'users.name AS user_name ' +
       'FROM timelines ' +
       'INNER JOIN users ON timelines.user_id = users.id ' +
-      'WHERE timelines.main_order IS NOT NULL ORDER BY timelines.main_order;';
-    pool.query(query, function(err, rows) {
+      'ORDER BY ?? DESC LIMIT ? OFFSET ?;';
+    let queryItem = [
+      'timelines.' + (params.orderby || 'view_count'),
+      params.limit || 9,
+      params.offset || 0
+    ];
+    pool.query(query, queryItem, function(err, rows) {
       cb(err, rows);
     });
   },
