@@ -10,9 +10,9 @@ router.get('/', IndexController.indexPage);
 
 /* GET error page. */
 router.get('/page/error', function(req, res) {
-  res.render('error', {
-    message: 'Server error!'
-  });
+  let data = {};
+  View.setCommonData(req, data);
+  res.render('error', data);
 });
 
 /* GET terms page. */
