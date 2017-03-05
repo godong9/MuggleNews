@@ -2,9 +2,7 @@
 
 let SessionService = {
   getSessionUserId: function getSessionUserId(req) {
-    return 1;
-
-    // return req.user && req.user.userId;
+    return req.user && req.user.userId;
   },
   getSessionUserName: function getSessionUserName(req) {
     return req.user && req.user._json && req.user._json.name;
