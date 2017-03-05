@@ -78,7 +78,7 @@ define([
           item_time: $timelineItem.find('.item-time').val()
         };
 
-        console.log("addedItem: ", timelineItem);
+        // console.log("addedItem: ", timelineItem);
         if (!timelineItem.title) {
           alert('제목을 입력해주세요!');
           return;
