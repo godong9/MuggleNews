@@ -1558,12 +1558,12 @@ body {
   text-align: center;
 }
 .error .ops{
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 800;
   color: #f05440;
 }
 .error .ops_mail{
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 40px;
   color: #f05440;
   font-weight: 100;
@@ -1579,3 +1579,4 @@ body {
   text-align: center;
   margin-top: 90px;
 }
+ 
