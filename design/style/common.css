@@ -1555,6 +1555,9 @@ body {
   }
   /* 우리가 누구}*/
 }
+.error_wrap{
+  background-color: #f9f9f9;
+}
 .error{
   padding: 110px 0 140px 0;
   text-align: center;
@@ -1562,22 +1565,22 @@ body {
 .error .ops{
   font-size: 80px;
   font-weight: 800;
-  color: #fff;
+  color: #f05440;
 }
 .error .ops_mail{
   font-size: 30px;
   margin-top: 40px;
-  color: #fee4e1;
+  color: #f05440;
   font-weight: 100;
 }
 .error a{
   display: inline-block;
   width: 214px;
   height: 40px;
-  background-color: #fcd0ca;
+  background-color: #eeeeee;
   line-height: 40px;
   font-size: 20px;
-  color: #f05440;
+  color: #666666;
   text-align: center;
   margin-top: 90px;
 }
