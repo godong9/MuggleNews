@@ -60,8 +60,10 @@ define([
   Timeline.prototype.changeItem = function(kind, id) {
     let self = this;
     let isEnd = false;
+    console.log(kind + '/' + id);
 
     _.map(self.items, function(item, idx) {
+      console.log(item);
       if (!isEnd && item && (id === item.id)) {
         switch(kind) {
           case 'del': // 아이템 삭제

@@ -84,7 +84,7 @@ const TimelineController = {
     }
     let editId = req.params.id;
     logger.debug("id: ", editId);
-    if (!editId || editId === 'new') {
+    if (!editId || editId.indexOf('new') >= 0) {
       let data = {};
       data.isNew = true;
       data.items = [];

@@ -178,7 +178,7 @@ let Timeline = {
     let items = params.items;
 
     async.each(items, function(item, callback) {
-      if (item.id === 'new') {
+      if (_.isString(item.id) && item.id.indexOf('new') >= 0) {
         item.timeline_id = params.id;
         self.insertTimelineItem(item, callback);
       } else {

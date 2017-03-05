@@ -127,7 +127,7 @@ define([
     for (let i in items) {
       let timelineItem = items[i];
       let itemTemplate = template;
-      itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id || 'new');
+      itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id || 'new' + timelineItem.item_order);
       itemTemplate = itemTemplate.replace('{{order}}', timelineItem.item_order);
       itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.item_order);
       itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
@@ -166,7 +166,7 @@ define([
     let itemTemplate = this.template;
     let lastOrder = parseInt(timelineItem.item_order) + 1;
 
-    itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id || 'new');
+    itemTemplate = itemTemplate.replace('{{id}}', timelineItem.id || 'new' + timelineItem.item_order);
     itemTemplate = itemTemplate.replace('{{order}}', timelineItem.item_order);
     itemTemplate = itemTemplate.replace('{{listCount}}', timelineItem.item_order);
     itemTemplate = itemTemplate.replace('{{title}}', escape(timelineItem.title) || '');
