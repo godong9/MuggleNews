@@ -2,7 +2,7 @@
     <a class="logo" href="/">
         <span>muggle news</span>
     </a>
-    <% if (me && isMyPage) { %>
+    <% if (me && typeof isMyPage !== 'undefined' && isMyPage) { %>
     <div class="user-profile">
         <span class="user-images"><img src="<%= me.profileUrl %>" alt=""></span>
         <span class="name"><%= me.name %></span>
