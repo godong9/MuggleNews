@@ -79,7 +79,7 @@ const TimelineController = {
   getTimelineEditPage: function getNewTimelinePage(req, res) {
     let userId = Session.getSessionUserId(req);
     if (!userId) {
-      res.status(401).send('로그인을 해주세요!');
+      res.redirect('/page/error');
       return;
     }
     let editId = req.params.id;

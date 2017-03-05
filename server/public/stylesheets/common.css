@@ -1017,18 +1017,10 @@ body {
     margin:0 0 20px 0;
     overflow: hidden;
   }
-  .btn-logoff,
-  .btn-logoin {
-    display: none;
-  }
 }
 @media all and (min-width: 768px) and (max-width: 980px){
   .footer {
     width:100%;
-  }
-  .btn-logoff,
-  .btn-logoin {
-    display: none;
   }
   /* 스토리 뉴스 미리보기 }*/
   .muggle-preview-main {
@@ -1485,7 +1477,6 @@ body {
     margin:10px 0;
   }
   .sign-up-email .input-box {
-    position: relative;
     width: 350px;
     height: 50px;
     margin:0 0 5px 0;
@@ -1558,4 +1549,33 @@ body {
     color:#f05440;
   }
   /* 우리가 누구}*/
+}
+.error_wrap{
+  background-color: #f9f9f9;
+}
+.error{
+  padding: 110px 0 140px 0;
+  text-align: center;
+}
+.error .ops{
+  font-size: 80px;
+  font-weight: 800;
+  color: #f05440;
+}
+.error .ops_mail{
+  font-size: 30px;
+  margin-top: 40px;
+  color: #f05440;
+  font-weight: 100;
+}
+.error a{
+  display: inline-block;
+  width: 214px;
+  height: 40px;
+  background-color: #eeeeee;
+  line-height: 40px;
+  font-size: 20px;
+  color: #666666;
+  text-align: center;
+  margin-top: 90px;
 }
