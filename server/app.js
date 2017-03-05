@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
+var sm = require('sitemap');
 var MySQLStore = require('express-mysql-session')(session);
 
 var auth = require('./middlewares/auth');
@@ -71,6 +72,32 @@ app.use('/users', users);
 app.use('/images', images);
 app.use('/timelines', timelines);
 app.use('/previews', previews);
+
+// Sitemap.xml
+var sitemap = sm.createSitemap({
+  hostname: 'http://muggle.news',
+  cacheTime: 3600000, // 1시간
+  urls: [
+    { url: '/',  changefreq: 'hourly' },
+    { url: '/timelines/1',  changefreq: 'hourly' },
+    { url: '/timelines/2',  changefreq: 'hourly' },
+    { url: '/timelines/3',  changefreq: 'hourly' },
+    { url: '/timelines/24',  changefreq: 'hourly' },
+    { url: '/timelines/25',  changefreq: 'hourly' },
+    { url: '/timelines/29',  changefreq: 'hourly' },
+    { url: '/timelines/30',  changefreq: 'hourly' }
+  ]
+});
+
+app.get('/sitemap.xml', function(req, res) {
+  sitemap.toXML( function (err, xml) {
+    if (err) {
+      return res.status(500).end();
+    }
+    res.header('Content-Type', 'application/xml');
+    res.send( xml );
+  });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

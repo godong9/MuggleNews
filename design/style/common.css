@@ -1001,11 +1001,11 @@ body {
     height:170px;
     margin:0 0 20px 0;
     overflow: hidden;
-  }
+  }/*
   .btn-logoff,
   .btn-logoin {
     display: none;
-  }
+  }*/
 }
 @media all and (min-width: 490px) and (max-width: 768px){
   .muggle-preview-main .muggle-preview-list a {
@@ -1017,18 +1017,11 @@ body {
     margin:0 0 20px 0;
     overflow: hidden;
   }
-  .btn-logoff,
-  .btn-logoin {
-    display: none;
-  }
+  
 }
 @media all and (min-width: 768px) and (max-width: 980px){
   .footer {
     width:100%;
-  }
-  .btn-logoff,
-  .btn-logoin {
-    display: none;
   }
   /* 스토리 뉴스 미리보기 }*/
   .muggle-preview-main {
