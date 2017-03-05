@@ -6,8 +6,9 @@ const View = require('../services/view');
 
 const IndexController = {
   indexPage: function login(req, res) {
-    Timeline.getMainTimelines(function(err, timelines) {
+    Timeline.getMainTimelines({ orderby: 'view_count' }, function(err, timelines) {
       let data = {};
+
       View.setCommonData(req, data);
       data.timelines = TimelineService.getFormattedTimelines(timelines || [])
       res.render('index', data);

@@ -5,6 +5,21 @@ const router = express.Router();
 const TimelineController = require('../controllers/timelines');
 
 /**
+ * @api {get} /timelines/html/list Get Timeline Item List
+ * @apiVersion 1.0.0
+ * @apiName GetTimelineItemList
+ * @apiGroup Timeline
+ *
+ * @apiExample {url} Example usage:
+ *    http://localhost:9000/timelines/html/list
+ *
+ * @apiParam {String} [orderby] 정렬기준(latest, view)
+ * @apiParam {Number} [limit] 가져올 개수
+ * @apiParam {Number} [offset] 오프셋
+ */
+router.get('/html/list', TimelineController.getTimelineHtmlList);
+
+/**
  * @api {get} /timelines/:id Get Timeline Page
  * @apiVersion 1.0.0
  * @apiName GetTimelinePage

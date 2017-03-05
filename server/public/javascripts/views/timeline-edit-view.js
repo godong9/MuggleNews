@@ -65,6 +65,7 @@ define([
       $('#add_item_btn').unbind('click').click(function() {
         let $timelineItem = $('#new_timeline_item');
         let timelineItem = {
+          id: 'new' + $timelineItem.data('order'),
           title: $timelineItem.find('.item-title-input').val(),
           content: $timelineItem.find('.item-content-input').val(),
           item_order: $timelineItem.data('order'),
@@ -77,7 +78,7 @@ define([
           item_time: $timelineItem.find('.item-time').val()
         };
 
-        console.log("addedItem: ", timelineItem);
+        // console.log("addedItem: ", timelineItem);
         if (!timelineItem.title) {
           alert('제목을 입력해주세요!');
           return;

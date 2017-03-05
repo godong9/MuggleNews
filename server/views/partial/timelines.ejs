@@ -1,25 +1,23 @@
-<div class="muggle-preview-list">
-    <% for (var i = 0; i < timelines.length; i++) { %>
-    <% var timeline = timelines[i]; %>
-    <a class="timeline-item" data-id="<%= timeline.id %>" href="/timelines/<%= timeline.id %>">
-        <span class="p-thum-img"><img <% if(timeline.cover_img) { %> class="has-cover" src="<%= timeline.cover_img %>" <% } %> alt=""></span>
-        <div class="p-list-wrap">
-            <div class="title">
-                <p><%= timeline.title %></p>
-            </div>
-            <div class="desc">
-                <p><%= timeline.subtitle %></p>
-            </div>
+<% for (var i = 0; i < timelines.length; i++) { %>
+<% var timeline = timelines[i]; %>
+<a class="timeline-item" data-id="<%= timeline.id %>" href="/timelines/<%= timeline.id %>">
+    <span class="p-thum-img"><img <% if(timeline.cover_img) { %> class="has-cover" src="<%= timeline.cover_img %>" <% } %> alt=""></span>
+    <div class="p-list-wrap">
+        <div class="title">
+            <p><%= timeline.title %></p>
         </div>
-        <div class="last-edit">
-            <p><span class="user-name">by. <%= timeline.user_name %></span><span>|</span><span><%= timeline.date_text %></span></p>
+        <div class="desc">
+            <p><%= timeline.subtitle %></p>
         </div>
-        <div class="view-count">
-            <span><%= timeline.view_count %></span>
-        </div>
-        <% if (typeof isOwner !== 'undefined' && isOwner) { %>
-        <button type="submit" class="timeline-del btn-del preview-del-btn"><span>삭제</span></button>
-        <% } %>
-    </a>
+    </div>
+    <div class="last-edit">
+        <p><span class="user-name">by. <%= timeline.user_name %></span><span>|</span><span><%= timeline.date_text %></span></p>
+    </div>
+    <div class="view-count">
+        <span><%= timeline.view_count %></span>
+    </div>
+    <% if (typeof isOwner !== 'undefined' && isOwner) { %>
+    <button type="submit" class="timeline-del btn-del preview-del-btn"><span>삭제</span></button>
     <% } %>
-</div>
+</a>
+<% } %>
