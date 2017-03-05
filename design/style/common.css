@@ -1006,6 +1006,17 @@ body {
   .btn-logoin {
     display: none;
   }
+  .tab_muggle_lst li {
+  float:left;
+  width:50%;
+  height:50px;
+  line-height:50px;
+  font-size:20px;
+  margin:40px 0 30px 0;
+  color: #999999;
+  font-weight: bold;
+  background: #eeeeee;
+}
 }
 @media all and (min-width: 490px) and (max-width: 768px){
   .muggle-preview-main .muggle-preview-list a {
@@ -1555,6 +1566,7 @@ body {
     color:#f05440;
   }
   /* 우리가 누구}*/
+
 }
 
 .error_wrap{
