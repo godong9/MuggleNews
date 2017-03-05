@@ -64,16 +64,16 @@ define([
     _.map(self.items, function(item, idx) {
       if (!isEnd && item && (id === item.id)) {
         switch(kind) {
-          case 'del':
+          case 'del': // 아이템 삭제
             self.items.splice(idx, 1);
             self.reorderItem();
             break;
-          case 'up':
+          case 'up': // 순서 위로
             self.items.splice(idx - 1, 0, item);
             self.items.splice(idx + 1, 1);
             self.reorderItem();
             break;
-          case 'down':
+          case 'down': // 순서 아래로
             isEnd = true;
             self.items.splice(idx + 2, 0, item);
             self.items.splice(idx, 1);

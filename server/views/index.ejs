@@ -35,7 +35,10 @@
       </div><!-- e//container -->
 
       <div class="muggle-preview-main">
-        <h3>미리보기</h3>
+        <ul id="main_order_by_btn" class="tab_muggle_lst">
+          <li data-orderby="view" class="active"><a>머글들이 많이 본 뉴스</a c></li>
+          <li data-orderby="latest"><a>머글기자가 작성한 최신 뉴스</a></li>
+        </ul>
 
         <%- include partial/timelines.ejs %>
       </div>
