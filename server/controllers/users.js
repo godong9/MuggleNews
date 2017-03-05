@@ -35,6 +35,7 @@ const UserController = {
         return res.redirect('/page/error');
       }
 
+      data.isMyPage = true;
       data.timelines = TimelineService.getFormattedTimelines(timelines || [])
       if (data.timelines[0] && data.timelines[0].user_id) {
         data.isOwner = (currentUserId === data.timelines[0].user_id);
