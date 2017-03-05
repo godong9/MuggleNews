@@ -1017,10 +1017,18 @@ body {
     margin:0 0 20px 0;
     overflow: hidden;
   }
+  .btn-logoff,
+  .btn-logoin {
+    display: none;
+  }
 }
 @media all and (min-width: 768px) and (max-width: 980px){
   .footer {
     width:100%;
+  }
+  .btn-logoff,
+  .btn-logoin {
+    display: none;
   }
   /* 스토리 뉴스 미리보기 }*/
   .muggle-preview-main {
@@ -1043,8 +1051,7 @@ body {
   .muggle-preview-main .muggle-preview-list a:nth-of-type(2),
   .muggle-preview-main .muggle-preview-list a:nth-of-type(5),
   .muggle-preview-main .muggle-preview-list a:nth-of-type(8),
-  .muggle-preview-main .muggle-preview-list a:nth-of-type(11),
-  .muggle-preview-main .muggle-preview-list a:nth-of-type(3n-1){
+  .muggle-preview-main .muggle-preview-list a:nth-of-type(11){
     margin:0 2% !important;
   }
   .muggle-preview-main .muggle-preview-list a:first-child,
@@ -1195,7 +1202,7 @@ body {
   .muggle-preview-main .muggle-preview-list a:nth-of-type(2),
   .muggle-preview-main .muggle-preview-list a:nth-of-type(5),
   .muggle-preview-main .muggle-preview-list a:nth-of-type(8),
-  .muggle-preview-main .muggle-preview-list a:nth-of-type(3n-1){
+  .muggle-preview-main .muggle-preview-list a:nth-of-type(11){
     margin:0 2% !important;
   }
   .muggle-preview-main .muggle-preview-list a:first-child,
@@ -1424,11 +1431,9 @@ body {
   }
   .muggle-preview-main .muggle-preview-list a:nth-of-type(2),
   .muggle-preview-main .muggle-preview-list a:nth-of-type(5),
-  .muggle-preview-main .muggle-preview-list a:nth-of-type(8),
-  .muggle-preview-main .muggle-preview-list a:nth-of-type(3n-1){
+  .muggle-preview-main .muggle-preview-list a:nth-of-type(8){
     margin:0 2% !important;
   }
-  @media all and (min-width: 300px) and (max-width: 490px){}
   /* 스토리 뉴스 미리보기 }*/
   .container{
     width: 100%;
@@ -1477,6 +1482,7 @@ body {
     margin:10px 0;
   }
   .sign-up-email .input-box {
+    position: relative;
     width: 350px;
     height: 50px;
     margin:0 0 5px 0;
@@ -1550,6 +1556,7 @@ body {
   }
   /* 우리가 누구}*/
 }
+
 .error_wrap{
   background-color: #f9f9f9;
 }
@@ -1579,4 +1586,4 @@ body {
   text-align: center;
   margin-top: 90px;
 }
- 
+
