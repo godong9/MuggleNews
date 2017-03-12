@@ -55,6 +55,9 @@ define([
       $('#cover_change_btn').fileupload({
         dataType: 'json',
         done: function (e, data) {
+          if (e) {
+            console.log(e);
+          }
           self.render('redrawCover', {cover_img: data.result});
           handler(data.result);
         }
