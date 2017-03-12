@@ -18,6 +18,7 @@ var users = require('./routes/users');
 var images = require('./routes/images');
 var timelines = require('./routes/timelines');
 var previews = require('./routes/previews');
+var Slack = require('./services/slack');
 
 log4js.configure(config.log4js);
 log4js.setGlobalLogLevel(config.debugLevel);
@@ -119,6 +120,9 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
+
+  Slack.sendErrorReport(err);
+
   res.render('error', data);
 });
 
