@@ -4,6 +4,7 @@ const request = require('request');
 const Iconv  = require('iconv').Iconv;
 const cheerio = require('cheerio');
 const URL = require('url');
+const logger = require('log4js').getLogger('services/crawler');
 
 let CrawlerService = {
   getPreviewData: function getData(url, cb) {
@@ -53,9 +54,9 @@ let CrawlerService = {
       try {
         let iconv = new Iconv(charSet, 'UTF-8');
         content = iconv.convert(content);
-      }catch (e) {
+      } catch (e) {
         // ignore error
-        this.logger.warn('Convert Error:', e);
+        logger.warn('Convert Error:', e);
       }
     }
     return content;
