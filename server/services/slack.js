@@ -19,6 +19,20 @@ let SlackService = {
         cb(error);
       }
     });
+  },
+  sendErrorReport: function sendErrorReport(err, cb) {
+    const url = config.slack.errorReport;
+    logger.debug('err:', err);
+    request({
+      url: url,
+      method: 'POST',
+      json: { text: '[' + err.status + '] ' + err.message }
+    }, function (error) {
+      if (cb) {
+        logger.error(error);
+        cb(error);
+      }
+    });
   }
 };
 
