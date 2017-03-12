@@ -5,7 +5,7 @@ const fs = require('fs');
 const Busboy = require('busboy');
 const logger = require('log4js').getLogger('controllers/images');
 
-const FILE_UPLOAD_SIZE_LIMIT = 5 * 1024 * 1024; // 5MB 사이즈 제한
+const FILE_UPLOAD_SIZE_LIMIT = 10 * 1024 * 1024; // 5MB 사이즈 제한
 
 const ImageController = {
   getImage: function getImage(req, res) {
