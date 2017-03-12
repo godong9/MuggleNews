@@ -5,9 +5,9 @@
         <%- include partial/ga_pre.ejs %>
         <link rel="stylesheet" href="/css/timeline.css">
         <meta property="og:title" content="<%= timeline.timeline_title || '' %>" />
-        <meta property="og:image" content="<%= timeline.timeline_cover_img %>" />
+        <meta property="og:image" content="http://www.muggle.news<%= timeline.timeline_cover_img %>" />
         <meta property="og:description" content="<%= timeline.timeline_subtitle || '' %>" />
-        <meta property="og:url" content="/timelines/<%= timeline.id %>" />
+        <meta property="og:url" content="http://www.muggle.news/timelines/<%= timeline.id %>" />
     </head>
     <body>
         <%- include partial/ga.ejs %>
