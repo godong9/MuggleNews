@@ -1062,7 +1062,8 @@ body {
   .muggle-preview-main .muggle-preview-list a:nth-of-type(2),
   .muggle-preview-main .muggle-preview-list a:nth-of-type(5),
   .muggle-preview-main .muggle-preview-list a:nth-of-type(8),
-  .muggle-preview-main .muggle-preview-list a:nth-of-type(11){
+  .muggle-preview-main .muggle-preview-list a:nth-of-type(11),
+  .muggle-preview-main .muggle-preview-list a:nth-of-type(3n-1){
     margin:0 2% !important;
   }
   .muggle-preview-main .muggle-preview-list a:first-child,
@@ -1213,7 +1214,8 @@ body {
   .muggle-preview-main .muggle-preview-list a:nth-of-type(2),
   .muggle-preview-main .muggle-preview-list a:nth-of-type(5),
   .muggle-preview-main .muggle-preview-list a:nth-of-type(8),
-  .muggle-preview-main .muggle-preview-list a:nth-of-type(11){
+  .muggle-preview-main .muggle-preview-list a:nth-of-type(11),
+  .muggle-preview-main .muggle-preview-list a:nth-of-type(3n-1){
     margin:0 2% !important;
   }
   .muggle-preview-main .muggle-preview-list a:first-child,
@@ -1442,9 +1444,13 @@ body {
   }
   .muggle-preview-main .muggle-preview-list a:nth-of-type(2),
   .muggle-preview-main .muggle-preview-list a:nth-of-type(5),
-  .muggle-preview-main .muggle-preview-list a:nth-of-type(8){
+  .muggle-preview-main .muggle-preview-list a:nth-of-type(8),
+  .muggle-preview-main .muggle-preview-list a:nth-of-type(3n-1){
     margin:0 2% !important;
   }
+
+  @media all and (min-width: 300px) and (max-width: 490px){}
+
   /* 스토리 뉴스 미리보기 }*/
   .container{
     width: 100%;
