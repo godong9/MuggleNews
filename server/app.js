@@ -84,10 +84,21 @@ var sitemap = sm.createSitemap({
     { url: '/timelines/1',  changefreq: 'hourly' },
     { url: '/timelines/2',  changefreq: 'hourly' },
     { url: '/timelines/3',  changefreq: 'hourly' },
+    { url: '/timelines/8',  changefreq: 'hourly' },
+    { url: '/timelines/23',  changefreq: 'hourly' },
     { url: '/timelines/24',  changefreq: 'hourly' },
     { url: '/timelines/25',  changefreq: 'hourly' },
     { url: '/timelines/29',  changefreq: 'hourly' },
-    { url: '/timelines/30',  changefreq: 'hourly' }
+    { url: '/timelines/30',  changefreq: 'hourly' },
+    { url: '/timelines/32',  changefreq: 'hourly' },
+    { url: '/timelines/33',  changefreq: 'hourly' },
+    { url: '/timelines/34',  changefreq: 'hourly' },
+    { url: '/timelines/35',  changefreq: 'hourly' },
+    { url: '/timelines/36',  changefreq: 'hourly' },
+    { url: '/timelines/37',  changefreq: 'hourly' },
+    { url: '/timelines/38',  changefreq: 'hourly' },
+    { url: '/timelines/39',  changefreq: 'hourly' },
+    { url: '/timelines/40',  changefreq: 'hourly' }
   ]
 });
 
