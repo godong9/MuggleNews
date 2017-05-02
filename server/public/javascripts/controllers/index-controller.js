@@ -12,7 +12,7 @@ define([
 
   function IndexController() {
     let self = this;
-    self.orderby = 'view';
+    self.orderby = 'latest';
     self.offset = 0;
     self.isEnd = false;
     self.$mainNewsContainer = $('#main_news_container');
