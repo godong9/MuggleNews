@@ -6,7 +6,7 @@ const View = require('../services/view');
 
 const IndexController = {
   indexPage: function login(req, res) {
-    Timeline.getMainTimelines({ orderby: 'view_count' }, function(err, timelines) {
+    Timeline.getMainTimelines({ orderby: 'updated_at' }, function(err, timelines) {
       let data = {};
 
       View.setCommonData(req, data);
